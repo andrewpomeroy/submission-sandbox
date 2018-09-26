@@ -1,0 +1,36 @@
+$FlatList-item-paddingV: .66rem;
+$FlatList-item-outerPaddingH: .33rem;
+
+$FlatList-item-fontSize-normal: 14px;
+$FlatList-item-fontSize-small: 12px; // dunno
+$FlatList-item-fontSize-smaller: 10px; // dunno
+
+.FlatList {
+  // display: flex;
+  // flex-direction: column;
+  list-style-type: none;
+  margin: 0;
+  padding: $FlatList-item-paddingV 0;
+  font-size: $FlatList-item-fontSize-normal;
+}
+.FlatList--small {
+  font-size: $FlatList-item-fontSize-small;
+}
+.FlatList--smaller {
+  font-size: $FlatList-item-fontSize-smaller; 
+}
+.FlatList-item {
+  display: flex;
+  align-items: center;
+  padding: 0 $FlatList-item-outerPaddingH;
+}
+.FlatList-item-segment {
+  padding-top: $FlatList-item-paddingV;
+  padding-bottom: $FlatList-item-paddingV;
+  &:not(:last-child) {
+    margin-right: .5em;
+  }
+}
+.FlatList-item--linked {
+
+}

@@ -1,0 +1,32 @@
+.OverviewMeta {
+  
+}
+.OverviewMeta-row, .OverviewMeta-item {
+  // display: flex;
+}
+.OverviewMeta--twoColumn {
+  display: table;
+  width: 100%;
+  .OverviewMeta-row {
+    display: table-row;
+  }
+  .OverviewMeta-item-label, .OverviewMeta-item-value {
+    display: table-cell;
+  }
+  .OverviewMeta-item-label {
+    max-width: 10em;
+  }
+}
+
+.OverviewMeta-item-label {
+  font-size: $CommonMeta-label-size;
+  font-weight: $CommonMeta-label-weight;
+  color: $CommonMeta-label-color;
+  text-transform: uppercase;
+  letter-spacing: $CommonMeta-label-letterSpacing;
+}
+.OverviewMeta-item-value {
+  font-size: $CommonMeta-value-size;
+  color: $CommonMeta-value-color;
+  font-weight: $CommonMeta-value-weight;
+}

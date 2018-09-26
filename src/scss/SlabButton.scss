@@ -1,0 +1,45 @@
+// -- SlabButton -- //  
+
+// $SlabButton-paddingV: 1em;
+$SlabButton-paddingV: $UtilityItems-paddingV;
+// $SlabButton-paddingH: 1.125em;
+$SlabButton-paddingH: $UtilityItems-paddingH;
+
+$SlabButton-bgColor-default: $app-color-panel-top;
+// $SlabButton-bgColor-default: transparent;
+// $SlabButton-color-default: #324f78; // TODO: config
+$SlabButton-color-default: $app-color-electricBlue; // TODO: config
+
+// $SlabButton-fontSize-default: 14px;
+$SlabButton-fontSize-default: 14px;
+$SlabButton-fontSize-small: 12px;
+
+.SlabButton {
+  // border: 0;
+  padding: $SlabButton-paddingV $SlabButton-paddingH;
+  background: $SlabButton-bgColor-default;
+  // background: transparent;
+  // background: rgba(white, .5);
+  color: $SlabButton-color-default;
+  border-radius: 3px;
+  font-size: $SlabButton-fontSize-default;
+  font-weight: 600;
+  cursor: pointer;
+  // border-bottom: 2px solid darken($SlabButton-color-default, 5%);
+  // box-shadow: 0px 2px 2px rgba(0,0,0,.12);
+  @include commonPanelBoxShadow;
+  // box-shadow: 0px 2px 2px hsla(hue($SlabButton-color-default),80%,80%,.9);
+  &:hover, &:focus {
+    background-color: lighten($SlabButton-bgColor-default, 10%);
+    color: lighten($SlabButton-color-default, 10%);
+    outline: 0;
+  }
+  &:active {
+    background-color: darken($SlabButton-bgColor-default, 10%);
+    color: darken($SlabButton-color-default, 10%);
+  }
+  &:first-child {
+  // border-top: 2px solid darken($SlabButton-color-default, 5%);
+    
+  }
+}

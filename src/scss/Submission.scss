@@ -1,0 +1,87 @@
+$Submission-header-paddingTop: 40px;
+$Submission-header-paddingBottom: 32px;
+$Submission-header-paddingH: 48px;
+$Submission-header-bgColor: #005873;
+$Submission-header-mutedOpacity: .7;
+$Submission-header-textColor: #fff;
+$Submission-header-textColor-muted: rgba($Submission-header-textColor, $Submission-header-mutedOpacity);
+
+$Submission-backPanel-bgColor: $app-color-panel-b2;
+$Submission-panel-bgColor: $app-color-panel-b1;
+
+// -- Header -- //
+
+.SubmissionHeader {
+  background-color: $Submission-header-bgColor;
+  color: $Submission-header-textColor;
+}
+.SubmissionHeader-block {
+  padding-top: $Submission-header-paddingTop;
+  padding-bottom: $Submission-header-paddingBottom;
+}
+
+.SubmissionHeading-main {
+  margin-top: 0;
+  margin-bottom: .125em; 
+  font-size: 24px;
+}
+
+// --- Heading --- //
+
+.SubmissionHeading-subtitle, .SubmissionSupplementals {
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: $CommonMeta-label-letterSpacing;
+}
+.SubmissionHeading-subtitle, .SubmissionSupplementals-item-label {
+  color: $Submission-header-textColor-muted;
+}
+
+// --- Supplementals --- //
+
+$SubmissionSupplementals-marginH: 12px;
+$SubmissionSupplementals-paddingV: 4px;
+
+.SubmissionSupplementals-row {
+  display: flex;
+  align-items: center;
+}
+.SubmissionSupplementals-item {
+  padding-top: $SubmissionSupplementals-paddingV;
+  padding-bottom: $SubmissionSupplementals-paddingV;
+  &:not(:last-child) {
+    margin-right: $SubmissionSupplementals-marginH;
+  }
+  &.SubmissionSupplementals-item--noPaddingV {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+
+// --- Body --- //
+
+$SubmissionBody-column-paddingV: 36px;
+
+.SubmissionBody {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: $Submission-backPanel-bgColor;
+}
+.SubmissionBody-columns {
+  // display: flex; // necessary?
+}
+.SubmissionBody-column {
+  padding-top: $SubmissionBody-column-paddingV;
+}
+.SubmissionBody-column--main {
+  // flex: 3;
+  background-color: $Submission-panel-bgColor;
+  padding-left: $CenterColumnWrap-gutter;
+  padding-right: $CenterColumnWrap-gutter;
+  @include commonPanelBoxShadow;
+}
+.SubmissionBody-column--aside {
+  // flex: 1;
+}

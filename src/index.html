@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>starter react</title>
+    <meta name="description" content="A cool thing made with Glitch">
+    <link id="favicon" rel="icon" href="https://glitch.com/edit/favicon-app.ico" type="image/x-icon">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    
+    <div class="Outer" ng-controller="DemoCtrl as $ctrl" ng-app="MyApp">
+      <header class="SubmissionHeader">
+        <div class="CenterColumnWrap">
+          <div class="CenterColumnWrap-content CenterColumnWrap-split">
+            <div class="CenterColumnWrap-split-left">
+              <div class="SubmissionHeader-block">
+                <div class="SubmissionHeading">
+                  <span class="SubmissionHeading-subtitle">Submission</span>
+                  <h2 class="SubmissionHeading-main">Submission Name</h2>
+                </div>
+                <div class="SubmissionSupplementals">
+                  <div class="SubmissionSupplementals-row">
+                    <div class="SubmissionSupplementals-item">
+                      <span class="SubmissionSupplementals-item-label">
+                        ID #
+                      </span>
+                      <span class="SubmissionSupplementals-item-value">
+                        HNF-RJTA-ZWXYB
+                      </span>
+                    </div>
+
+                    <div class="SubmissionSupplementals-item SubmissionSupplementals-item--noPaddingV">
+                      <div class="Chip Chip--small Chip--neutralBlue">
+                        Revision 2
+                      </div>
+                    </div>
+
+
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="CenterColumnWrap-split-right">
+              <div class="SubmissionHeader-block">
+                <!-- Action buttons go here -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <submission-tabs>
+        <submission-tab name="overview" display-name="Overview"></submission-tab>
+        <submission-tab name="forminput" display-name="Form Input"></submission-tab>
+      </submission-tabs>
+      <div class="SubmissionBody">
+        <div class="CenterColumnWrap fillHeight">
+          <div class="SubmissionBody-columns CenterColumnWrap-columns CenterColumnWrap-content fillHeight">
+
+            <div class="CenterColumnWrap-column CenterColumnWrap-column--main flexHeight fillHeight">
+              <div class="SubmissionBody-column SubmissionBody-column--main fillHeight">
+                <div class="OverviewSection">
+                  <div class="OverviewSection-header">
+                    <h3 class="OverviewSection-heading OverviewSection-header-item">
+                      Details
+                    </h3>
+                    <div class="OverviewSection-header-item">
+                      <button class="OverviewButton OverviewButton--small">View Confirmation</button>
+                    </div>
+                  </div>
+                  <div class="OverviewSection-body OverviewSection-body--topPanel">
+                    <div class="WhitePanel OverviewSectionPadding">
+                      <div class="OverviewMeta OverviewMeta--twoColumn">
+                        <div class="OverviewMeta-row OverviewMeta-item">
+                          <div class="OverviewMeta-item-label">Form Alias</div>
+                          <div class="OverviewMeta-item-value">WWTP - Emissions - Stage 1</div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+                <div class="OverviewSection">
+                  <div class="OverviewSection-header">
+<!--                     <div class="OverviewSection-header-split"> -->
+                      <h3 class="OverviewSection-heading OverviewSection-header-item">
+                        Documents &amp; Attachments
+                      </h3>
+                      <div class="OverviewSection-header-item">
+                        <button class="OverviewButton OverviewButton--small OverviewButton--green">
+                          Add New
+                        </button>
+                      </div>
+<!--                     </div> -->
+                  </div>
+                  <div class="OverviewSection-body">
+                    <div class="OverviewSection-body-item">
+                      <ul class="PillTabs PillTabs--small">
+                        <li class="PillTab PillTab--is-active">All (3)</li>
+                        <li class="PillTab">System-generated (2)</li>
+                        <li class="PillTab">Added by Processor (1)</li>
+                      </ul>
+                    </div>
+                    <div class="OverviewSection-body-item">
+                      <div class="WhitePanel">
+                        <ul class="FlatList FlatList--small">
+                          <li class="FlatList-item UtilityItemsPaddingH">
+                            <div class="FlatList-item-icon FlatList-item-segment"></div>
+                            <div class="FlatList-item-title FlatList-item-segment">
+                              Permit for WWTP Emissions
+                            </div>
+                            <div class="FlatList-item-chip FlatList-item-segment">
+                              <div class="Chip Chip--neutralBlue Chip--smaller">
+                                System-generated
+                              </div>
+                            </div>
+                          </li>
+                          <li class="FlatList-item UtilityItemsPaddingH">
+                            <div class="FlatList-item-icon FlatList-item-segment"></div>
+                            <div class="FlatList-item-title FlatList-item-segment">
+                              Licensing Document
+                            </div>
+                            <div class="FlatList-item-chip FlatList-item-segment">
+                              <div class="Chip Chip--neutralBlue Chip--smaller">
+                                System-generated
+                              </div>
+                            </div>
+                          </li>
+                          <li class="FlatList-item UtilityItemsPaddingH">
+                            <div class="FlatList-item-icon FlatList-item-segment"></div>
+                            <div class="FlatList-item-title FlatList-item-segment">
+                              Facility Dimensions - Standard Measurement Guide.pdf
+                            </div>
+                            <div class="FlatList-item-chip FlatList-item-segment">
+                              <div class="Chip Chip--gray Chip--smaller">
+                                Added by Processor
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="CenterColumnWrap-column CenterColumnWrap-column--aside">
+              <div class="SubmissionBody-column SubmissionBody-column--aside">
+
+                <div class="OverviewSection">
+                  <div class="OverviewSection-header">
+                    <div class="OverviewSection-header-split">
+                      <h3 class="OverviewSection-heading OverviewSection-header-item">
+                        Status
+                      </h3>
+                      <div class="OverviewSection-header-item">
+                        <div class="Chip Chip--small Chip--neutralBlue">
+                          In Process
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="OverviewSection-body">
+                    <div class="OverviewActionButtonColumn">
+                      <div class="SlabButton">
+                        <!--                 <div class="SlabButton-icon SlabButton-element"></div> -->
+                        <div class="SlabButton-mainText">View Status History</div>
+                      </div>
+                      <div class="SlabButton">
+                        <!--                 <div class="SlabButton-icon SlabButton-element"></div> -->
+                        <div class="SlabButton-mainText">View Status History</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="OverviewSection" style="display:none;">
+                  <div class="OverviewSection-header">
+                    <div class="OverviewSection-header-split">
+                      <h3 class="OverviewSection-heading OverviewSection-header-item">
+                        Issues
+                      </h3>
+                      <div class="OverviewSection-header-item">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="OverviewSection-body">
+                    <div class="Pillbox">
+                      <div class="Pillbox-header Pillbox-header--correctionRequest">
+                        <h4 class="Pillbox-heading">
+                          1 Open Correction Request
+                        </h4>
+                      </div>
+                      <div class="Pillbox-body">
+                        <div class="Pillbox-body-item">
+                          <p class="Text Text--small Text--onlyInnerMargins">
+                            A processor has requested a correction on one or more areas of your submission. In order to have your submission processed,
+                            you must address the following issues and resubmit:
+                          </p>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="OverviewSection">
+                  <div class="OverviewSection-header">
+                    <div class="OverviewSection-header-split">
+                      <h3 class="OverviewSection-heading OverviewSection-header-item">
+                        Fees
+                      </h3>
+                      <div class="OverviewSection-header-item">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="OverviewSection-body">
+                    <div class="OverviewSection-body-item">
+                      <div class="Text">
+                        Standard Permit Fee
+                      </div>
+                      <div class="TextSplit">
+                        <div class="Text Text--bold">$110.00</div>
+                        <div class="Chip Chip--smaller Chip--green">Paid</div>
+                      </div>
+                    </div>
+                    <div class="OverviewSection-body-item">
+                      <div class="OverviewActionButtonColumn">
+                        <div class="SlabButton">
+                          <!--                 <div class="SlabButton-icon SlabButton-element"></div> -->
+                          <div class="SlabButton-mainText">View Payment Voucher</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    
+      <!-- glitch button and style -->
+<!--       <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
+      <script src="https://button.glitch.me/button.js" data-style="glitch"></script> -->  
+    <script type="text/javascript" src="/bundle.js"></script>
+    
+  </body>
+</html>

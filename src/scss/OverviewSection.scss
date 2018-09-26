@@ -1,0 +1,56 @@
+// -- OverviewSection -- //
+
+$OverviewSection-marginV: 32px;
+
+$OverviewSection-item-marginV: 14px;
+
+.OverviewSection {
+  margin-bottom: $OverviewSection-marginV;
+}
+
+.OverviewSection-body-item {
+  &:not(:last-child) {
+    margin-bottom: $OverviewSection-item-marginV;
+  }
+}
+
+// -- OverviewSection Header -- //
+
+// $OverviewSection-header-paddingV: 12px;
+$OverviewSection-heading-paddingV: 18px;
+$OverviewSection-header-paddingV: $OverviewSection-heading-paddingV - 2px; // Slightly shorter, for header-items other than the heading (buttons, etc)
+$OverviewSection-header-item-marginH: 18px;
+
+$OverviewSection-paddingV: 22px;
+$OverviewSection-paddingH: 24px;
+
+.OverviewSection-header {
+  display: flex;
+  align-items: center;
+}
+
+.OverviewSection-header-split {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.OverviewSection-header-item {
+  margin-top: $OverviewSection-header-paddingV;
+  margin-bottom: $OverviewSection-header-paddingV;
+  &:not(:last-child) {
+    margin-right: $OverviewSection-header-item-marginH;
+  }
+}
+
+.OverviewSectionPadding {
+  padding: $OverviewSection-paddingV $OverviewSection-paddingH;
+}
+
+.OverviewSection-heading {
+  font-size: 20px;
+  margin: 0;
+  margin: $OverviewSection-heading-paddingV 0;
+  
+}
