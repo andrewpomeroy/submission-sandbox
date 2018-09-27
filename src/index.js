@@ -6,6 +6,8 @@ import 'angular-aria';
 import 'angular-sanitize';
 import 'angular-animate';
 
+import faker from 'faker';
+
 import submissionTabs from './components/submission-tabs.js';
 import submissionTab from './components/submission-tab.js';
 
@@ -19,5 +21,8 @@ var MyApp = angular
 MyApp.controller('DemoCtrl', DemoCtrl);
 DemoCtrl.$inject = ['$scope', '$timeout', '$interpolate', '$q'];
 function DemoCtrl($scope, $timeout, $interpolate, $q) {
-  $scope.hello = "Ho!"
+  
+  $scope.faker = faker;
+  $scope.fake = faker.fake;
+
 }

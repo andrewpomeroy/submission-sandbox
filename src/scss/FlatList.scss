@@ -34,3 +34,13 @@ $FlatList-item-fontSize-smaller: 10px; // dunno
 .FlatList-item--linked {
 
 }
+
+.FlatListEmptyPlaceholder {
+  color: $color-lightest-ADA-gray;
+}
+.FlatListEmptyPlaceholder--small {
+  font-size: $FlatList-item-fontSize-small;
+}
+.FlatListEmptyPlaceholder--smaller {
+  font-size: $FlatList-item-fontSize-smaller;
+}

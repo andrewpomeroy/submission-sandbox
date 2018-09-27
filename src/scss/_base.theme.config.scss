@@ -1,0 +1,79 @@
+$themeConfig: () !default; 
+
+$app-chrome-darkgray: #484a4a !default;
+
+$app-chrome-bg: #f2f4f6 !default;
+$app-chrome-bg--panel: white !default;
+
+$theme-primary: #7197c3 !default;
+$theme-dark-gray-blue: #394b57 !default;
+
+$theme-text: $theme-dark-gray-blue !default;
+$theme-text: lighten($theme-dark-gray-blue, 7%);
+$theme-fontWeight: 400 !default;
+
+
+$theme-iconSize: 30px;
+
+// Migrated, need name changes:
+
+$float-button-border-radius: 2px !default;
+
+$color-nearwhite: #f5f8fa !default;
+$color-lightblue-highlight: #78b5dd !default;	
+$color-teal-highlight: #78dddd !default;
+// $color-red: #ff7a86 !default;
+$color-red: hsl(352, 67%, 54%) !default; // Darkened to meet 4.5 contrast ratio (accessibility)
+$color-neutralblue: #5488ab !default;
+$color-neutralblue-light: hsl(204, 50%, 75%) !default;
+$color-neutralblue-darkest: #3d627b !default;
+$color-neutralblue-darker: #2472a7 !default;
+$color-neutralblue-shadow: #1e4c6b !default;
+$color-orange: #F27D0A !default;
+$color-yellow: #ffdf80 !default;
+$color-lightest-ADA-gray: hsl(0,0%,46%) !default;
+
+$color-brightblue: #2F9BE3;
+
+// BASE MAPPINGS
+
+
+$app-color-link: hsl(hue($theme-primary), 49%, 46%) !default;
+$app-color-placeholder: #999 !default;
+$app-color-text-label: #798796 !default;
+$app-color-text-subtitle: #657986 !default; // Darkened to meet 4.5 contrast ratio (accessibility)
+// $app-color-text-label: $theme-dark-gray-blue !default;
+// $app-color-text-label: #272727 !default;
+// $app-color-text-label: #868991 !default;
+// $app-color-text-control: #868991 !default;
+// $app-color-text-control: #61646d !default;
+// $app-color-text-control: #44657b !default;
+// $app-color-text-control: #272727 !default;
+$app-color-text-control: hsl(0, 0%, 35%) !default;
+$app-color-required: $color-yellow !default;
+$app-color-validation-error: $color-red !default;
+// $app-color-validation-error-text: #D45561 !default;
+// $app-color-validation-error-text: #cf4554 !default; // Darkened to meet 4.5 contrast ratio (accessibility)
+$app-color-validation-error-text: hsl(354, 73%, 45%) !default; // Darkened to meet 4.5 contrast ratio (accessibility)
+$app-color-validation-success: $color-teal-highlight !default;
+$app-color-validation-success-text: #008484 !default; // Darkened to meet 4.5 contrast ratio (accessibility)
+$app-color-warning: $color-yellow !default;
+$app-color-warning-text: hsl(hue($app-color-warning), 10%, 62%) !default;
+$app-color-danger: $color-red !default;
+$app-color-danger-text: hsl(hue($app-color-danger), 10%, 62%) !default;
+$app-color-info: $color-neutralblue-darkest !default;
+$app-color-search: $color-neutralblue-darkest !default;
+$app-color-filter-active: hsl(204, 100%, 93%) !default;
+
+$app-color-muted: #969696 !default;
+
+$app-color-correctionRequest-base: $color-orange !default;
+$app-color-note-base: $color-brightblue !default;
+
+// Panel border/shadow/background definitions
+
+$app-panel-large-shadow: 0px 0px 7px 3px rgba(0,0,0,.07);
+$app-panel-large-borderColor: gainsboro;
+
+$app-color-panel-top: #fff;
+$app-color-panel-b1: #F5F7FA;
