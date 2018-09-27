@@ -3,9 +3,9 @@ const webpack = require('webpack');
 const path = require('path');
 
 module.exports = {
-  mode: 'development',
   context: path.join(__dirname, './'),
   entry: './src/index.js',
+  devtool: 'source-map',
   output: {
     path: path.join(__dirname, 'public'),
     filename: 'bundle.js',
@@ -52,6 +52,7 @@ module.exports = {
       }
     ],
   },
+  watch: true
   // devtool: 'source-map',
   // plugins: [
   //   new ExtractTextPlugin({

@@ -8,7 +8,8 @@
   "main": "server.js",
   "scripts": {
     "build": "webpack",
-    "start": "webpack && node server.js"
+    "start": "webpack --mode development",
+    "serve": "node server.js"
   },
   "devDependencies": {
     "babel": "latest",
@@ -17,27 +18,28 @@
     "babel-preset-env": "latest",
     "babel-preset-react": "latest",
     "css-loader": "latest",
+    "faker": "^4.1.0",
     "style-loader": "latest",
     "webpack": "latest",
     "webpack-cli": "^3.1.1"
   },
   "dependencies": {
-    "express": "^4.15.4",
+    "angular": "^1.6.6",
+    "angular-animate": "^1.6.6",
+    "angular-aria": "^1.6.6",
+    "angular-material": "^1.1.10",
+    "angular-messages": "^1.6.6",
+    "angular-route": "^1.6.6",
+    "angular-sanitize": "^1.6.6",
+    "express": "^4.16.3",
+    "extract-text-webpack-plugin": "v4.0.0-beta.0",
+    "html-loader": "^0.5.5",
+    "mini-css-extract-plugin": "^0.4.2",
+    "node-sass": "^4.9.3",
+    "raw-loader": "^0.5.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "angular": "^1.6.6",
-    "angular-route": "^1.6.6",
-    "angular-aria": "^1.6.6",
-    "angular-messages": "^1.6.6",
-    "angular-sanitize": "^1.6.6",
-    "angular-material": "^1.1.10",
-    "sass-loader": "^7.1.0",
-    "angular-animate": "^1.6.6",
-    "node-sass": "^4.9.3",
-    "extract-text-webpack-plugin": "v4.0.0-beta.0",
-    "mini-css-extract-plugin": "^0.4.2",
-    "html-loader": "^0.5.5",
-    "raw-loader": "^0.5.1"
+    "sass-loader": "^7.1.0"
   },
   "engines": {
     "node": "8.x"
