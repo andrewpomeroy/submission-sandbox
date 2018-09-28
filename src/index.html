@@ -80,18 +80,18 @@
                   </div>
                 </div>
 
+                <!-- Documents & Attachments -->
+
                 <div class="OverviewSection">
                   <div class="OverviewSection-header">
-<!--                     <div class="OverviewSection-header-split"> -->
-                      <h3 class="OverviewSection-heading OverviewSection-header-item">
-                        Documents &amp; Attachments
-                      </h3>
-                      <div class="OverviewSection-header-item">
-                        <button class="OverviewButton OverviewButton--small OverviewButton--green">
-                          Add New
-                        </button>
-                      </div>
-<!--                     </div> -->
+                    <h3 class="OverviewSection-heading OverviewSection-header-item">
+                      Documents &amp; Attachments
+                    </h3>
+                    <div class="OverviewSection-header-item">
+                      <button class="OverviewButton OverviewButton--small OverviewButton--green">
+                        Add New
+                      </button>
+                    </div>
                   </div>
                   <div class="OverviewSection-body">
                     <tabs-wrapper items="testItems" filters="filters" initial-tab="all">
@@ -103,7 +103,6 @@
                           <pill-tab name="placeholder" display-name="Placeholder"></pill-tab>
                         </pill-tabs>
                       </div>
-                      <!-- <tabs-content> -->
                         <div class="OverviewSection-body-item" ng-if="!$parent.$ctrl.items || !$parent.$ctrl.items.length">
                           <div class="FlatListEmptyPlaceholder FlatListEmptyPlaceholder--small">
                             None
@@ -117,66 +116,14 @@
                                 {{item.name}}
                               </div>
                               <div class="FlatList-item-chip FlatList-item-segment">
-                                <div class="Chip Chip--neutralBlue Chip--smaller">
+                                <div class="Chip Chip--smaller" ng-class="{'Chip--neutralBlue': item.isGenerated, 'Chip--gray': !item.isGenerated}">
                                   {{item.isGenerated ? 'System-generated' : 'Added by Processor'}}
                                 </div>
                               </div>
                             </li>
                           </ul>
                         </div>
-                      <!-- </tabs-content> -->
                     </tabs-wrapper>
-                    <!-- <div class="OverviewSection-body-item">
-                      <ul class="PillTabs PillTabs--small">
-                        <li class="PillTab PillTab--is-active">All (3)</li>
-                        <li class="PillTab">System-generated (2)</li>
-                        <li class="PillTab">Added by Processor (1)</li>
-                      </ul>
-                    </div> -->
-                    <!-- <div class="OverviewSection-body-item">
-                      <div class="FlatListEmptyPlaceholder FlatListEmptyPlaceholder--small">
-                        None
-                      </div>
-                    </div> -->
-                    <!-- <div class="OverviewSection-body-item">
-                      <div class="WhitePanel">
-                        <ul class="FlatList FlatList--small">
-                          <li class="FlatList-item UtilityItemsPaddingH">
-                            <div class="FlatList-item-icon FlatList-item-segment"></div>
-                            <div class="FlatList-item-title FlatList-item-segment">
-                              Permit for WWTP Emissions
-                            </div>
-                            <div class="FlatList-item-chip FlatList-item-segment">
-                              <div class="Chip Chip--neutralBlue Chip--smaller">
-                                System-generated
-                              </div>
-                            </div>
-                          </li>
-                          <li class="FlatList-item UtilityItemsPaddingH">
-                            <div class="FlatList-item-icon FlatList-item-segment"></div>
-                            <div class="FlatList-item-title FlatList-item-segment">
-                              Licensing Document
-                            </div>
-                            <div class="FlatList-item-chip FlatList-item-segment">
-                              <div class="Chip Chip--neutralBlue Chip--smaller">
-                                System-generated
-                              </div>
-                            </div>
-                          </li>
-                          <li class="FlatList-item UtilityItemsPaddingH">
-                            <div class="FlatList-item-icon FlatList-item-segment"></div>
-                            <div class="FlatList-item-title FlatList-item-segment">
-                              Facility Dimensions - Standard Measurement Guide.pdf
-                            </div>
-                            <div class="FlatList-item-chip FlatList-item-segment">
-                              <div class="Chip Chip--gray Chip--smaller">
-                                Added by Processor
-                              </div>
-                            </div>
-                          </li>
-                        </ul>
-                      </div>
-                    </div> -->
 
                   </div>
                 </div>
@@ -184,6 +131,8 @@
               </div>
 
             </div>
+
+            <!-- Sidebar -->
 
             <div class="CenterColumnWrap-column CenterColumnWrap-column--aside">
               <div class="SubmissionBody-column SubmissionBody-column--aside">
