@@ -6,8 +6,7 @@ const PillTab = {
 		name: '@',
 		displayName: '@',
 		filter: '<',
-		isActive: '<',
-		count: '<'
+		showWhenSolo: '<'
 	},
 	require: {
 		pillTabs: '^pillTabs'
@@ -25,6 +24,16 @@ function PillTabController() {
 			get: function getter() {
 				return !(this.pillTabs.showEmpty === false && this.count === 0);
 			},
+		},
+		isActive: {
+			get: function getter() {
+				return this.name === this.pillTabs.activeTab;
+			}
+		},
+		count: {
+			get: function getter() {
+				return this.pillTabs.getFilteredItems(this.name) && this.pillTabs.getFilteredItems(this.name).length;
+			}
 		}
 	});
 

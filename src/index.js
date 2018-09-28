@@ -34,17 +34,18 @@ function DemoCtrl($scope, $timeout, $interpolate, $q) {
   $scope.testItems = [
     {
       name: "Something",
-      generated: true
+      isGenerated: true
     },
     {
       name: "Something Else",
-      generated: false
+      isGenerated: false
     }
   ];
 
   $scope.filters = {
-    systemGenerated: (item) => item.generated,
-    processorGenerated: (item) => !item.generated
+    systemGenerated: (item) => item.isGenerated,
+    processorGenerated: (item) => !item.isGenerated,
+    placeholder: (item) => !1
   }
 
 }
