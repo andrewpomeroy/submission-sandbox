@@ -94,6 +94,37 @@
 <!--                     </div> -->
                   </div>
                   <div class="OverviewSection-body">
+                    <tabs-wrapper items="testItems">
+                      <div class="OverviewSection-body-item">
+                        <pill-tabs on-change="$ctrl.doAThing">
+                          <pill-tab name="all" display-name="All"></pill-tab>
+                          <pill-tab name="systemGenerated" filter="$parent.$parent.$parent.filters.systemGenerated" display-name="System-Generated"></pill-tab>
+                          <pill-tab name="processorGenerated" filter="$parent.$parent.$parent.filters.processorGenerated" display-name="Added by Processor"></pill-tab>
+                        </pill-tabs>
+                      </div>
+                      <tabs-content>
+                        <div class="OverviewSection-body-item" ng-if="!$parent.$ctrl.allTabItems || !$parent.$ctrl.allTabItems.length">
+                          <div class="FlatListEmptyPlaceholder FlatListEmptyPlaceholder--small">
+                            None
+                          </div>
+                        </div>
+                        <div class="WhitePanel" ng-if="$parent.$ctrl.allTabItems.length">
+                          <ul class="FlatList FlatList--small">
+                            <li class="FlatList-item UtilityItemsPaddingH" ng-repeat="item in $parent.$ctrl.filteredTabItems">
+                              <div class="FlatList-item-icon FlatList-item-segment"></div>
+                              <div class="FlatList-item-title FlatList-item-segment">
+                                Permit for WWTP Emissions
+                              </div>
+                              <div class="FlatList-item-chip FlatList-item-segment">
+                                <div class="Chip Chip--neutralBlue Chip--smaller">
+                                  System-generated
+                                </div>
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                      </tabs-content>
+                    </pill-tabs-wrapper>
                     <!-- <div class="OverviewSection-body-item">
                       <ul class="PillTabs PillTabs--small">
                         <li class="PillTab PillTab--is-active">All (3)</li>
@@ -101,11 +132,11 @@
                         <li class="PillTab">Added by Processor (1)</li>
                       </ul>
                     </div> -->
-                    <div class="OverviewSection-body-item">
+                    <!-- <div class="OverviewSection-body-item">
                       <div class="FlatListEmptyPlaceholder FlatListEmptyPlaceholder--small">
                         None
                       </div>
-                    </div>
+                    </div> -->
                     <!-- <div class="OverviewSection-body-item">
                       <div class="WhitePanel">
                         <ul class="FlatList FlatList--small">
