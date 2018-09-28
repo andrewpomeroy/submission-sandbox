@@ -94,37 +94,33 @@
                     </div>
                   </div>
                   <div class="OverviewSection-body">
-                    <tabs-wrapper items="testItems" filters="filters" initial-tab="all">
+                    <tabs-wrapper items="testItems" filters="filters" tabs="tabs" initial-tab="all">
                       <div class="OverviewSection-body-item">
-                        <pill-tabs filters="$parent.$ctrl.filters" active-tab="$parent.$ctrl.activeTab" on-change="$parent.$ctrl.doAThing" show-empty="false">
-                          <pill-tab name="all" display-name="All"></pill-tab>
-                          <pill-tab name="systemGenerated" display-name="System-Generated"></pill-tab>
-                          <pill-tab name="processorGenerated" display-name="Added by Processor"></pill-tab>
-                          <pill-tab name="placeholder" display-name="Placeholder"></pill-tab>
-                        </pill-tabs>
+                        <pill-tabs tabs="$parent.$ctrl.tabs" active-tab="$parent.$ctrl.activeTab" on-change="$parent.$ctrl.doAThing"
+                          show-empty="false" tabs="$parent.$ctrl.tabs"></pill-tabs>
                       </div>
-                        <div class="OverviewSection-body-item" ng-if="!$parent.$ctrl.items || !$parent.$ctrl.items.length">
-                          <div class="FlatListEmptyPlaceholder FlatListEmptyPlaceholder--small">
-                            None
-                          </div>
+                      <div class="OverviewSection-body-item" ng-if="!$parent.$ctrl.items || !$parent.$ctrl.items.length">
+                        <div class="FlatListEmptyPlaceholder FlatListEmptyPlaceholder--small">
+                          None
                         </div>
-                        <div class="WhitePanel" ng-if="$parent.$ctrl.items.length">
-                          <ul class="FlatList FlatList--small">
-                            <li class="FlatList-item UtilityItemsPaddingH" ng-repeat="item in $parent.$parent.$ctrl.currentlyFilteredItems">
-                              <div class="FlatList-item-icon FlatList-item-segment"></div>
-                              <div class="FlatList-item-title FlatList-item-segment">
-                                {{item.name}}
+                      </div>
+                      <div class="WhitePanel" ng-if="$parent.$ctrl.items.length">
+                        <ul class="FlatList FlatList--small">
+                          <li class="FlatList-item UtilityItemsPaddingH" ng-repeat="item in $parent.$parent.$ctrl.currentlyFilteredItems">
+                            <div class="FlatList-item-icon FlatList-item-segment"></div>
+                            <div class="FlatList-item-title FlatList-item-segment">
+                              {{item.name}}
+                            </div>
+                            <div class="FlatList-item-chip FlatList-item-segment">
+                              <div class="Chip Chip--smaller" ng-class="{'Chip--neutralBlue': item.isGenerated, 'Chip--gray': !item.isGenerated}">
+                                {{item.isGenerated ? 'System-generated' : 'Added by Processor'}}
                               </div>
-                              <div class="FlatList-item-chip FlatList-item-segment">
-                                <div class="Chip Chip--smaller" ng-class="{'Chip--neutralBlue': item.isGenerated, 'Chip--gray': !item.isGenerated}">
-                                  {{item.isGenerated ? 'System-generated' : 'Added by Processor'}}
-                                </div>
-                              </div>
-                            </li>
-                          </ul>
-                        </div>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
                     </tabs-wrapper>
-
+                
                   </div>
                 </div>
 

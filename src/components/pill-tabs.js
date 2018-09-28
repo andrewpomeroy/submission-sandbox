@@ -3,17 +3,16 @@ import template from './pill-tabs.html';
 const PillTabs = {
 	template: template,
 	bindings: {
+		tabs: '<',
 		onChange: '<',
 		showEmpty: '<',
 		showCount: '<',
-		filters: '<',
 		activeTab: '<'
 	},
 	require: {
 		'tabsWrapper': '?^tabsWrapper'
 	},
 	controller: PillTabsController,
-	transclude: true,
 };
 
 PillTabsController.$inject = [];
@@ -21,9 +20,9 @@ PillTabsController.$inject = [];
 function PillTabsController() {
 
 	Object.defineProperties(this, {
-		// filters: {
+		// tabs: {
 		// 	get: function getter() {
-		// 		return this.tabsWrapper.filters
+		// 		return this.tabsWrapper.tabs
 		// 	},
 		// },
 		// activeTab: {

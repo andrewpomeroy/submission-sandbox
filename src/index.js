@@ -42,10 +42,33 @@ function DemoCtrl($scope, $timeout, $interpolate, $q) {
     }
   ];
 
+  
   $scope.filters = {
     systemGenerated: (item) => item.isGenerated,
     processorGenerated: (item) => !item.isGenerated,
     placeholder: (item) => !1
   }
+
+  $scope.tabs = [
+    {
+      name: 'all',
+      displayName: "All",
+    },
+    {
+      name: 'systemGenerated',
+      displayName: "System-Generated",
+      filterFn: (item) => item.isGenerated,
+    },
+    {
+      name: 'processorGenerated',
+      displayName: "Added by Processor",
+      filterFn: (item) => !item.isGenerated,
+    },
+    {
+      name: 'placeholder',
+      displayName: "placeholder",
+      filterFn: () => !1
+    }
+  ]
 
 }

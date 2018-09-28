@@ -4,7 +4,7 @@ const TabsWrapper = {
 	template: template,
 	bindings: {
 		items: '<',
-		filters: '<',
+		tabs: '<',
 		initialTab: '@'
 	},
 	transclude: true,
@@ -19,8 +19,7 @@ function TabsWrapperController() {
 	Object.defineProperties(this, {
 		currentlyFilteredItems: {
 			get: function getter() {
-				if (!this.filters[this.activeTab]) return  this.items;
-				return this.items.filter(this.filters[this.activeTab]);
+				return $ctrl.getFilteredItems($ctrl.activeTab);
 			}
 		}
 	});
@@ -34,8 +33,9 @@ function TabsWrapperController() {
 		}
 
 		$ctrl.getFilteredItems = function (name) {
-			if (!$ctrl.filters[name]) return $ctrl.items;
-			return $ctrl.items.filter($ctrl.filters[name]);
+			const tab = $ctrl.tabs.find(t => t.name === name);
+			if (!tab || !tab.filterFn) return $ctrl.items;
+			return $ctrl.items.filter(tab.filterFn);
 		}
 
 	};

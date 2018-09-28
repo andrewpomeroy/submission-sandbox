@@ -1,1 +1,3 @@
-<ul class="PillTabs PillTabs--small" ng-transclude></ul>
+<ul class="PillTabs PillTabs--small">
+	<pill-tab name="{{tab.name}}" display-name="{{tab.displayName}}" ng-repeat="tab in $ctrl.tabs"></pill-tab>
+</ul>

@@ -5,7 +5,6 @@ const PillTab = {
 	bindings: {
 		name: '@',
 		displayName: '@',
-		filter: '<',
 		showWhenSolo: '<'
 	},
 	require: {
