@@ -1,4 +1,4 @@
 <li class="PillTab" ng-class="{'PillTab--is-active':$ctrl.isActive}" aria-label="[FIX]"
  ng-if="$ctrl.shouldShow" ng-click="$ctrl.clickHandler()">
-	{{$ctrl.displayName}}{{$ctrl.count != null ? ' ' + $ctrl.count : ''}}
+	{{$ctrl.displayName}}{{$ctrl.pillTabs.showCount && $ctrl.count != null ? ' (' + $ctrl.count + ')' : ''}}
 </li>

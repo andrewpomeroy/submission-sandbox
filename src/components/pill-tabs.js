@@ -5,6 +5,7 @@ const PillTabs = {
 	bindings: {
 		onChange: '<',
 		showEmpty: '<',
+		showCount: '<',
 		filters: '<',
 		activeTab: '<'
 	},
@@ -34,8 +35,10 @@ function PillTabsController() {
 
 	this.$onInit = function() {
 
+		if (this.showCount !== false) this.showCount = true;
+
 		this.getFilteredItems = this.tabsWrapper.getFilteredItems;
-		
+
 	};
 }
 
