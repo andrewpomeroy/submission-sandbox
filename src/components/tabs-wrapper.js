@@ -75,11 +75,10 @@ function TabsWrapperController() {
 
 	this.$onInit = function() {
 		$ctrl.activeTab = $ctrl.initialActiveTab || $ctrl.tabs[0];
-
-		console.log(this.tabContentsAreUnique);
+		if ($ctrl.showOnlyUnique !== false) $ctrl.showOnlyUnique = true;
 
 		if ($ctrl.noFilterTabCount > 1) {
-			console.warn("More than one 'all' tab (no filter criteria) has been defined, this is maybe a bad idea.");
+			console.warn("More than one 'all' tab (no filter criteria) has been defined, something's probably not right.");
 		}
 
 	};
