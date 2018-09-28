@@ -46,7 +46,7 @@ function DemoCtrl($scope, $timeout, $interpolate, $q) {
   $scope.filters = {
     systemGenerated: (item) => item.isGenerated,
     processorGenerated: (item) => !item.isGenerated,
-    placeholder: (item) => !1
+    placeholder: () => !1
   }
 
   $scope.tabs = [
