@@ -15,6 +15,7 @@ import pillTabs from './components/pill-tabs';
 import pillTab from './components/pill-tab';
 
 import './scss/index.scss';
+import 'angular-material/angular-material.css';
 
 var MyApp = angular
   .module('MyApp', ['ngMaterial', 'ngMessages', 'ngSanitize'])
