@@ -24,6 +24,21 @@ $FlatList-item-fontSize-smaller: 10px; // dunno
   align-items: center;
   padding: 0 $FlatList-item-outerPaddingH;
 }
+.FlatList-item-split {
+  flex: 1;
+  display: flex;
+  align-items: inherit;
+  padding: 0 $FlatList-item-outerPaddingH;
+}
+.FlatList-item-split-child {
+  display: flex;
+  align-items: inherit;
+}
+.FlatList-item-split-child--fill {
+  display: flex;
+  flex: 1;
+}
+
 .FlatList-item-segment {
   padding-top: $FlatList-item-paddingV;
   padding-bottom: $FlatList-item-paddingV;

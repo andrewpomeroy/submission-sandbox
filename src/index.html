@@ -107,13 +107,22 @@
                       <div class="WhitePanel" ng-if="$parent.$ctrl.items.length">
                         <ul class="FlatList FlatList--small">
                           <li class="FlatList-item UtilityItemsPaddingH" ng-repeat="item in $parent.$parent.$ctrl.currentlyFilteredItems">
-                            <div class="FlatList-item-icon FlatList-item-segment"></div>
-                            <div class="FlatList-item-title FlatList-item-segment">
-                              {{item.name}}
-                            </div>
-                            <div class="FlatList-item-chip FlatList-item-segment">
-                              <div class="Chip Chip--smaller" ng-class="{'Chip--neutralBlue': item.isGenerated, 'Chip--gray': !item.isGenerated}">
-                                {{item.isGenerated ? 'System-generated' : 'Added by Processor'}}
+                            <div class="FlatList-item-split">
+                              <div class="FlatList-item-split-child FlatList-item-split-child--fill">
+                                <div class="FlatList-item-icon FlatList-item-segment"></div>
+                                <div class="FlatList-item-title FlatList-item-segment">
+                                  {{item.name}}
+                                </div>
+                                <div class="FlatList-item-chip FlatList-item-segment">
+                                  <div class="Chip Chip--smaller" ng-class="{'Chip--neutralBlue': item.isGenerated, 'Chip--gray': !item.isGenerated}">
+                                    {{item.isGenerated ? 'System-generated' : 'Added by Processor'}}
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="FlatList-item-split-child">
+                                <div class="FlatList-item-title FlatList-item-segment">
+                                  {{item.name}}
+                                </div>
                               </div>
                             </div>
                           </li>
