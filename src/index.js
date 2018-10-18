@@ -15,6 +15,7 @@ import pillTabs from './components/pill-tabs';
 import pillTab from './components/pill-tab';
 
 import './scss/index.scss';
+import 'angular-material/angular-material.css';
 
 var MyApp = angular
   .module('MyApp', ['ngMaterial', 'ngMessages', 'ngSanitize'])
@@ -46,7 +47,7 @@ function DemoCtrl($scope, $timeout, $interpolate, $q) {
   $scope.filters = {
     systemGenerated: (item) => item.isGenerated,
     processorGenerated: (item) => !item.isGenerated,
-    placeholder: (item) => !1
+    placeholder: () => !1
   }
 
   $scope.tabs = [
