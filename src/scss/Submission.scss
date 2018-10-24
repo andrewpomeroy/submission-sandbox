@@ -64,7 +64,7 @@ $SubmissionSupplementals-paddingV: 4px;
 $SubmissionBody-column-paddingV: 36px;
 
 .SubmissionBody {
-  flex: 1;
+  flex: 1 0 auto;
   display: flex;
   flex-direction: column;
   background-color: $Submission-backPanel-bgColor;
