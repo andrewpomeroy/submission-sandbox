@@ -5,6 +5,11 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      svg {
+        visibility: hidden;
+      }
+    </style>
   </head>
   <body>
     
@@ -44,8 +49,8 @@
           <div class="HorizontalLayoutWrap-item FloatedSidebar--widthMedium l-LargeColumnLayout-paddingH" layout="horizontal" flex="fill" align-items="flex-end">
             <div class="SubmissionHeader-block" flex="fill" layout="vertical" justify-content="flex-end">
               <!-- Action buttons go here -->
-              <div class="SlabButton SlabButton--primary">
-                <span class="SlabButton-icon SlabButton-icon--faded SlabButton-element">
+              <div class="SlabButton SlabButton--primary SlabButton--leftAligned">
+                <span class="SlabButton-icon SlabButton-element">
                   <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                     viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
                     <g>
@@ -146,8 +151,22 @@
                       Documents &amp; Attachments
                     </h3>
                     <div class="OverviewSection-header-item">
-                      <button class="OverviewButton OverviewButton--small OverviewButton--green">
-                        Add New
+                      <button class="OverviewButton OverviewButton--small OverviewButton--addNew">
+                        <span class="OverviewButton-icon">
+                          <div class="SvgWrap SvgWrap--fillDimensions SvgWrap--stroke">
+                            <svg class="SvgWrap-icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                            viewBox="0 0 16 16" style="enable-background:new 0 0 16 16;" xml:space="preserve" fill="none">
+                            <g>
+                              <line x1="8" y1="4.9" x2="8" y2="11.1" />
+                              <line x1="11.1" y1="8" x2="4.9" y2="8" />
+                            </g>
+                            <circle cx="8" cy="8" r="6.5" />
+                            </svg>
+                          </div>
+                        </span>
+                        <span class="OverviewButton-mainText">
+                          Add New
+                        </span>
                       </button>
                     </div>
                   </div>

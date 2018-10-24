@@ -5,11 +5,10 @@ $OverviewButton-bgColor-default: #61b4d1;  //TODO: Config
 $OverviewButton-color-default: #004257; //TODO: Config
 
 // $OverviewButton-fontSize-default: 14px;
-$OverviewButton-fontSize-default: 14px;
+$OverviewButton-fontSize-default: 13px;
 $OverviewButton-fontSize-small: 12px;
 
 .OverviewButton {
-  border: 0;
   padding: $OverviewButton-paddingV $OverviewButton-paddingH;
   background: $OverviewButton-bgColor-default;
   color: $OverviewButton-color-default;
@@ -35,6 +34,15 @@ $OverviewButton-fontSize-small: 12px;
 .OverviewButton--green {
   background-color: $app-color-brightGreen;
   color: rgba(0,0,0,.65);
+}
+
+.OverviewButton-icon {
+  width: 1.75em;
+  height: 1.75em;
+  margin-right: .5em;
+  margin-left: -.25em;
+  margin-top: -.875em;
+  margin-bottom: -.875em;
 }
 
 .OverviewActionButtonColumn {

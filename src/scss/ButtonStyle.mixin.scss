@@ -1,0 +1,66 @@
+$color-electricBlue: #146be6; // yikes
+$app-color-highlightBlue: $color-electricBlue; // yikes
+
+
+@mixin ButtonStyle-base {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border-radius: 5px;
+  font-weight: 600;
+  transition: 70ms linear;
+  transition-property: color, border-color, background-color;
+}
+
+
+@mixin ButtonStyle-default {
+  color: $app-color-highlightBlue;
+  border: 2px solid currentColor;
+}
+@mixin ButtonStyle-default-hover {
+  background-color: $app-color-highlightBlue;
+  color: white;
+  border-color: $app-color-highlightBlue;
+}
+@mixin ButtonStyle-default-active {
+  background-color: $app-color-highlightBlue;
+}
+
+
+@mixin ButtonStyle-primary {
+    background-color: $app-color-highlightBlue;
+    color: white;
+    border-color: $app-color-highlightBlue;
+}
+@mixin ButtonStyle-primary-hover {
+  background-color: white;
+  border-color: white;
+  color: $app-color-highlightBlue;
+}
+@mixin ButtonStyle-primary-active {
+  background-color: mix(white, $app-color-highlightBlue, 90%);
+  border-color: mix(white, $app-color-highlightBlue, 90%);
+}
+
+
+@mixin ButtonStyle-addNew {
+  background: none;
+  border-color: $app-color-brightGreen;
+  color: rgba(0,0,0,.65);
+  .OverviewButton-icon {
+    color: $app-color-brightGreen;
+  }
+}
+@mixin ButtonStyle-addNew-hover {
+  background-color: $app-color-brightGreen;
+  border-color: $app-color-brightGreen;
+  color: white;
+  .OverviewButton-icon {
+    color: white;
+  }
+}
+@mixin ButtonStyle-addNew-active {
+  background-color: rgba($app-color-brightGreen, .9);
+  border-color: rgba($app-color-brightGreen, .9);
+}
