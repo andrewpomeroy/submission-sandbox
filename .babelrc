@@ -6,7 +6,8 @@
                "last 5 versions",
                "ie >= 11"
             ]
-         }
+         },
+         "useBuiltIns": true
       }],
       "es2015",
       "react",

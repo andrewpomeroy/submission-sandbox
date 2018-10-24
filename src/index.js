@@ -1,3 +1,5 @@
+import 'babel-polyfill';
+
 import angular from 'angular';
 import 'angular-sanitize';
 import 'angular-material';

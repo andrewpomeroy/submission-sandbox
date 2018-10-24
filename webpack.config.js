@@ -20,10 +20,6 @@ module.exports = {
         loader: 'babel-loader',
         exclude: /node_modules/,
         include: path.join(__dirname, 'src'),
-        // query: {
-        //   presets: ['es2016'],
-        //   plugins: ['transform-class-properties']
-        // }
       },
       // {
       //   test: /\.css$/,
