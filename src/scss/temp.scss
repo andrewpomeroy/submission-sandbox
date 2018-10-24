@@ -1,21 +1,32 @@
+$color-electricBlue: #146be6;
+
+$app-color-highlightBlue: $color-electricBlue;
+
 .SubmissionHeader {
-    background: #242f40;
+    background-color: #242f40;
 }
 
 // buttons
 
 .OverviewButton, .SlabButton {
     border: 2px solid currentColor;
-    color: #146be6;
+    color: $app-color-highlightBlue;
     background: none;
     border-radius: 5px;
     font-weight: 600;
     font-size: 14px;
     &:hover, &:focus {
-      background: #146be6;
+      background-color: $app-color-highlightBlue;
       color: white;
-      border-color: #146be6;
+      border-color: $app-color-highlightBlue;
     }
+    &:active {
+      background-color: $app-color-highlightBlue;
+      
+    }
+    
+    transition: 70ms linear;
+    transition-property: color, border-color, background-color;
 }
 
 .SlabButton {
@@ -23,8 +34,10 @@
     padding: .25em 1.5em;
     box-shadow: none;
 
-    margin-bottom: 10px; // no
-
+    // margin-bottom: 10px; // no
+    & + & {
+      margin-top: 10px; // no
+  }
 }
 
 .SlabButton-icon {
@@ -39,22 +52,22 @@
 
 
 .OverviewButton--primary, .SlabButton--primary {
-    background: #146be6;
+    background-color: $app-color-highlightBlue;
     color: white;
-    border-color: #146be6;
+    border-color: $app-color-highlightBlue;
 }
 
 .OverviewButton--primary, .SlabButton--primary:hover, .OverviewButton--primary, .SlabButton--primary:focus {
-    background: white;
+    background-color: white;
     border-color: white;
-    color: #146be6;
+    color: $app-color-highlightBlue;
 }
 
 // Body style
 
 
 .SubmissionBody {
-    background: #f7f7fc;
+    background-color: #f7f7fc;
 }
 
 
@@ -120,7 +133,7 @@
 }
 // .CenterColumnWrap-column--aside {
 .u-FloatedSidebar-style {
-  background: white;
+  background-color: white;
   box-shadow: 0px 0px 6px rgba(0,0,0,.13);
 }
 .FloatedSidebar--widthMedium {

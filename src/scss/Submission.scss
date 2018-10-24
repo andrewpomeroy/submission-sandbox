@@ -16,8 +16,10 @@ $Submission-panel-bgColor: $app-color-panel-top;
   color: $Submission-header-textColor;
 }
 .SubmissionHeader-block {
-  padding-top: $Submission-header-paddingTop / 2;
-  padding-bottom: $Submission-header-paddingBottom / 2;
+  // padding-top: $Submission-header-paddingTop / 2;
+  // padding-bottom: $Submission-header-paddingBottom / 2;
+  padding-top: $Submission-header-paddingTop;
+  padding-bottom: $Submission-header-paddingBottom;
 }
 .SubmissionHeader-block--heading {
   padding-top: $Submission-header-paddingTop;
