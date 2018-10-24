@@ -10,10 +10,10 @@
     
     <div class="Outer" ng-controller="DemoCtrl as $ctrl" ng-app="MyApp">
       <header class="SubmissionHeader">
-        <div class="CenterColumnWrap">
-          <div class="CenterColumnWrap-content CenterColumnWrap-split">
-            <div class="CenterColumnWrap-split-left">
-              <div class="SubmissionHeader-block">
+        <div class="HorizontalLayoutWrap">
+          <div class="HorizontalLayoutWrap-item l-LargeColumnLayout-paddingH" layout="horizontal" flex="fill" justify-content="center">
+            <div class="l-mediumPageMaxWidth">
+              <div class="SubmissionHeader-block SubmissionHeader-block--heading">
                 <div class="SubmissionHeading">
                   <span class="SubmissionHeading-subtitle">Submission</span>
                   <h2 class="SubmissionHeading-main">Submission Name</h2>
@@ -40,218 +40,225 @@
                 </div>
               </div>
             </div>
-            <div class="CenterColumnWrap-split-right">
-              <div class="SubmissionHeader-block">
-                <!-- Action buttons go here -->
-              </div>
+          </div>
+          <div class="HorizontalLayoutWrap-item FloatedSidebar--widthMedium l-LargeColumnLayout-paddingH" layout="horizontal" flex="fill" align-items="flex-end">
+            <div class="SubmissionHeader-block" flex="fill">
+              <!-- Action buttons go here -->
+              <div class="SlabButton SlabButton--primary">It's an Action</div>
             </div>
           </div>
         </div>
       </header>
       <submission-tabs>
-        <submission-tab name="overview" display-name="Overview"></submission-tab>
-        <submission-tab name="forminput" display-name="Form Input"></submission-tab>
+        <div class="HorizontalLayoutWrap">
+          <div class="HorizontalLayoutWrap-item l-LargeColumnLayout-paddingH" flex="fill" layout="horizontal" justify-content="center">
+            <div class="TabStrip-tabs l-mediumPageMaxWidth">
+              <submission-tab name="overview" display-name="Overview"></submission-tab>
+              <submission-tab name="forminput" display-name="Form Input"></submission-tab>
+            </div>
+          </div>
+          <!-- Spacer -->
+          <div class="HorizontalLayoutWrap-item FloatedSidebar--widthMedium l-LargeColumnLayout-paddingH"></div>
+        </div>
       </submission-tabs>
       <div class="SubmissionBody">
         <div>
-          <div class="CenterColumnWrap fillHeight">
-            <div class="SubmissionBody-columns CenterColumnWrap-columns CenterColumnWrap-content fillHeight">
-  
-              <div class="CenterColumnWrap-column CenterColumnWrap-column--main flexHeight fillHeight">
-                <div class="SubmissionBody-column SubmissionBody-column--main fillHeight">
-                  <div class="OverviewSection">
-                    <div class="OverviewSection-header">
-                      <h3 class="OverviewSection-heading OverviewSection-header-item">
-                        Details
-                      </h3>
-                      <div class="OverviewSection-header-item">
-                        <button class="OverviewButton OverviewButton--small">View Confirmation</button>
-                      </div>
+          <div class="HorizontalLayoutWrap fillHeight">
+            <div class="HorizontalLayoutWrap-item l-LargeColumnLayout-paddingH" layout="horizontal" flex="fill" justify-content="center">
+              <div class="l-mediumPageMaxWidth SubmissionBody-column"> 
+                <!-- SubmissionBody-column is for paddingTop -->
+                <div class="OverviewSection">
+                  <div class="OverviewSection-header">
+                    <h3 class="OverviewSection-heading OverviewSection-header-item">
+                      Details
+                    </h3>
+                    <div class="OverviewSection-header-item">
+                      <button class="OverviewButton OverviewButton--small">View Confirmation</button>
                     </div>
-                    <div class="OverviewSection-body OverviewSection-body--topPanel">
-                      <div class="OverviewSection-body-item">
-                        <div class="OverviewSection-frame OverviewSectionPaddingH">
-                          <div class="OverviewMeta OverviewMeta--twoColumn">
-                            <div class="OverviewMeta-row OverviewMeta-item">
-                              <div class="OverviewMeta-item-label">Form Alias</div>
-                              <div class="OverviewMeta-item-value">WWTP - Emissions - Stage 1</div>
-                            </div>
-                            <div class="OverviewMeta-row OverviewMeta-item">
-                              <div class="OverviewMeta-item-label">Form Alias</div>
-                              <div class="OverviewMeta-item-value">WWTP - Emissions - Stage 1</div>
-                            </div>
-                            <div class="OverviewMeta-row OverviewMeta-item">
-                              <div class="OverviewMeta-item-label">Form Alias</div>
-                              <div class="OverviewMeta-item-value">WWTP - Emissions - Stage 1</div>
-                            </div>
-                            <div class="OverviewMeta-row OverviewMeta-item">
-                              <div class="OverviewMeta-item-label">Form Alias</div>
-                              <div class="OverviewMeta-item-value">WWTP - Emissions - Stage 1</div>
-                            </div>
-                            <div class="OverviewMeta-row OverviewMeta-item">
-                              <div class="OverviewMeta-item-label">Form Alias</div>
-                              <div class="OverviewMeta-item-value">WWTP - Emissions - Stage 1</div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    
                   </div>
-  
-                  <!-- Documents & Attachments -->
-  
-                  <div class="OverviewSection">
-                    <div class="OverviewSection-header">
-                      <h3 class="OverviewSection-heading OverviewSection-header-item">
-                        Documents &amp; Attachments
-                      </h3>
-                      <div class="OverviewSection-header-item">
-                        <button class="OverviewButton OverviewButton--small OverviewButton--green">
-                          Add New
-                        </button>
-                      </div>
-                    </div>
-                    <div class="OverviewSection-body">
-                      <tabs-wrapper items="testItems" filters="filters" tabs="tabs" initial-active-tab="all" show-empty="false" show-count="true" show-only-unique="true">
-                        <div class="OverviewSection-body-item">
-                          <pill-tabs tabs="$parent.$ctrl.tabs" active-tab="$parent.$ctrl.activeTab" on-change="$parent.$ctrl.activateTab"
-                            show-empty="false" tabs="$parent.$ctrl.tabs"></pill-tabs>
-                        </div>
-                        <div class="OverviewSection-body-item" ng-if="!$parent.$ctrl.items || !$parent.$ctrl.items.length">
-                          <div class="FlatListEmptyPlaceholder FlatListEmptyPlaceholder--small">
-                            None
+                  <div class="OverviewSection-body OverviewSection-body--topPanel">
+                    <div class="OverviewSection-body-item">
+                      <div class="OverviewSection-frame OverviewSectionPaddingH">
+                        <div class="OverviewMeta OverviewMeta--twoColumn">
+                          <div class="OverviewMeta-row OverviewMeta-item">
+                            <div class="OverviewMeta-item-label">Form Alias</div>
+                            <div class="OverviewMeta-item-value">WWTP - Emissions - Stage 1</div>
+                          </div>
+                          <div class="OverviewMeta-row OverviewMeta-item">
+                            <div class="OverviewMeta-item-label">Form Alias</div>
+                            <div class="OverviewMeta-item-value">WWTP - Emissions - Stage 1</div>
+                          </div>
+                          <div class="OverviewMeta-row OverviewMeta-item">
+                            <div class="OverviewMeta-item-label">Form Alias</div>
+                            <div class="OverviewMeta-item-value">WWTP - Emissions - Stage 1</div>
+                          </div>
+                          <div class="OverviewMeta-row OverviewMeta-item">
+                            <div class="OverviewMeta-item-label">Form Alias</div>
+                            <div class="OverviewMeta-item-value">WWTP - Emissions - Stage 1</div>
+                          </div>
+                          <div class="OverviewMeta-row OverviewMeta-item">
+                            <div class="OverviewMeta-item-label">Form Alias</div>
+                            <div class="OverviewMeta-item-value">WWTP - Emissions - Stage 1</div>
                           </div>
                         </div>
-                        <div class="WhitePanel" ng-if="$parent.$ctrl.items.length">
-                          <ul class="FlatList FlatList--small">
-                            <li class="FlatList-item UtilityItemsPaddingH" ng-repeat="item in $parent.$parent.$ctrl.currentlyFilteredItems">
-                              <div class="FlatList-item-split">
-                                <div class="FlatList-item-split-child FlatList-item-split-child--fill">
-                                  <div class="FlatList-item-icon FlatList-item-segment"></div>
-                                  <div class="FlatList-item-title FlatList-item-segment">
-                                    {{item.name}}
-                                  </div>
-                                  <div class="FlatList-item-chip FlatList-item-segment">
-                                    <div class="Chip Chip--smaller" ng-class="{'Chip--neutralBlue': item.isGenerated, 'Chip--gray': !item.isGenerated}">
-                                      {{item.isGenerated ? 'System-generated' : 'Added by Processor'}}
-                                    </div>
-                                  </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+                <!-- Documents & Attachments -->
+
+                <div class="OverviewSection">
+                  <div class="OverviewSection-header">
+                    <h3 class="OverviewSection-heading OverviewSection-header-item">
+                      Documents &amp; Attachments
+                    </h3>
+                    <div class="OverviewSection-header-item">
+                      <button class="OverviewButton OverviewButton--small OverviewButton--green">
+                        Add New
+                      </button>
+                    </div>
+                  </div>
+                  <div class="OverviewSection-body">
+                    <tabs-wrapper items="testItems" filters="filters" tabs="tabs" initial-active-tab="all" show-empty="false" show-count="true" show-only-unique="true">
+                      <div class="OverviewSection-body-item">
+                        <pill-tabs tabs="$parent.$ctrl.tabs" active-tab="$parent.$ctrl.activeTab" on-change="$parent.$ctrl.activateTab"
+                          show-empty="false" tabs="$parent.$ctrl.tabs"></pill-tabs>
+                      </div>
+                      <div class="OverviewSection-body-item" ng-if="!$parent.$ctrl.items || !$parent.$ctrl.items.length">
+                        <div class="FlatListEmptyPlaceholder FlatListEmptyPlaceholder--small">
+                          None
+                        </div>
+                      </div>
+                      <div class="WhitePanel" ng-if="$parent.$ctrl.items.length">
+                        <ul class="FlatList FlatList--small">
+                          <li class="FlatList-item UtilityItemsPaddingH" ng-repeat="item in $parent.$parent.$ctrl.currentlyFilteredItems">
+                            <div class="FlatList-item-split">
+                              <div class="FlatList-item-split-child FlatList-item-split-child--fill">
+                                <div class="FlatList-item-icon FlatList-item-segment"></div>
+                                <div class="FlatList-item-title FlatList-item-segment">
+                                  {{item.name}}
                                 </div>
-                                <div class="FlatList-item-split-child">
-                                  <div class="FlatList-item-title FlatList-item-segment">
-                                    {{item.name}}
+                                <div class="FlatList-item-chip FlatList-item-segment">
+                                  <div class="Chip Chip--smaller" ng-class="{'Chip--neutralBlue': item.isGenerated, 'Chip--gray': !item.isGenerated}">
+                                    {{item.isGenerated ? 'System-generated' : 'Added by Processor'}}
                                   </div>
                                 </div>
                               </div>
-                            </li>
-                          </ul>
-                        </div>
-                      </tabs-wrapper>
-                  
-                    </div>
+                              <div class="FlatList-item-split-child">
+                                <div class="FlatList-item-title FlatList-item-segment">
+                                  {{item.name}}
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </tabs-wrapper>
+                
                   </div>
-  
                 </div>
   
+  
               </div>
-  
-              <!-- Sidebar -->
-  
-              <div class="CenterColumnWrap-column CenterColumnWrap-column--aside">
-                <div class="SubmissionBody-column SubmissionBody-column--aside">
-  
-                  <div class="OverviewSection">
-                    <div class="OverviewSection-header">
-                      <div class="OverviewSection-header-split">
-                        <h3 class="OverviewSection-heading OverviewSection-header-item">
-                          Status
-                        </h3>
-                        <div class="OverviewSection-header-item">
-                          <div class="Chip Chip--small Chip--neutralBlue">
-                            In Process
-                          </div>
+              
+            </div>
+            
+            <!-- Sidebar -->
+            <div class="HorizontalLayoutWrap-item u-FloatedSidebar-style FloatedSidebar--widthMedium l-LargeColumnLayout-paddingH">
+              <!-- SubmissionBody-column is for paddingTop -->
+              <div class="SubmissionBody-column">
+                <div class="OverviewSection">
+                  <div class="OverviewSection-header">
+                    <div class="OverviewSection-header-split">
+                      <h3 class="OverviewSection-heading OverviewSection-header-item">
+                        Status
+                      </h3>
+                      <div class="OverviewSection-header-item">
+                        <div class="Chip Chip--small Chip--neutralBlue">
+                          In Process
                         </div>
                       </div>
                     </div>
-                    <div class="OverviewSection-body">
+                  </div>
+                  <div class="OverviewSection-body">
+                    <div class="OverviewActionButtonColumn">
+                      <div class="SlabButton">
+                        <!--                 <div class="SlabButton-icon SlabButton-element"></div> -->
+                        <div class="SlabButton-mainText">View Status History</div>
+                      </div>
+                      <div class="SlabButton">
+                        <!--                 <div class="SlabButton-icon SlabButton-element"></div> -->
+                        <div class="SlabButton-mainText">View Status History</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="OverviewSection" style="display:none;">
+                  <div class="OverviewSection-header">
+                    <div class="OverviewSection-header-split">
+                      <h3 class="OverviewSection-heading OverviewSection-header-item">
+                        Issues
+                      </h3>
+                      <div class="OverviewSection-header-item">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="OverviewSection-body">
+                    <div class="Pillbox">
+                      <div class="Pillbox-header Pillbox-header--correctionRequest">
+                        <h4 class="Pillbox-heading">
+                          1 Open Correction Request
+                        </h4>
+                      </div>
+                      <div class="Pillbox-body">
+                        <div class="Pillbox-body-item">
+                          <p class="Text Text--small Text--onlyInnerMargins">
+                            A processor has requested a correction on one or more areas of your submission. In order to have your submission processed,
+                            you must address the following issues and resubmit:
+                          </p>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="OverviewSection">
+                  <div class="OverviewSection-header">
+                    <div class="OverviewSection-header-split">
+                      <h3 class="OverviewSection-heading OverviewSection-header-item">
+                        Fees
+                      </h3>
+                      <div class="OverviewSection-header-item">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="OverviewSection-body">
+                    <div class="OverviewSection-body-item">
+                      <div class="Text">
+                        Standard Permit Fee
+                      </div>
+                      <div class="TextSplit">
+                        <div class="Text Text--bold">$110.00</div>
+                        <div class="Chip Chip--smaller Chip--green">Paid</div>
+                      </div>
+                    </div>
+                    <div class="OverviewSection-body-item">
                       <div class="OverviewActionButtonColumn">
                         <div class="SlabButton">
                           <!--                 <div class="SlabButton-icon SlabButton-element"></div> -->
-                          <div class="SlabButton-mainText">View Status History</div>
-                        </div>
-                        <div class="SlabButton">
-                          <!--                 <div class="SlabButton-icon SlabButton-element"></div> -->
-                          <div class="SlabButton-mainText">View Status History</div>
+                          <div class="SlabButton-mainText">View Payment Voucher</div>
                         </div>
                       </div>
                     </div>
                   </div>
-  
-                  <div class="OverviewSection" style="display:none;">
-                    <div class="OverviewSection-header">
-                      <div class="OverviewSection-header-split">
-                        <h3 class="OverviewSection-heading OverviewSection-header-item">
-                          Issues
-                        </h3>
-                        <div class="OverviewSection-header-item">
-                        </div>
-                      </div>
-                    </div>
-                    <div class="OverviewSection-body">
-                      <div class="Pillbox">
-                        <div class="Pillbox-header Pillbox-header--correctionRequest">
-                          <h4 class="Pillbox-heading">
-                            1 Open Correction Request
-                          </h4>
-                        </div>
-                        <div class="Pillbox-body">
-                          <div class="Pillbox-body-item">
-                            <p class="Text Text--small Text--onlyInnerMargins">
-                              A processor has requested a correction on one or more areas of your submission. In order to have your submission processed,
-                              you must address the following issues and resubmit:
-                            </p>
-                          </div>
-  
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-  
-                  <div class="OverviewSection">
-                    <div class="OverviewSection-header">
-                      <div class="OverviewSection-header-split">
-                        <h3 class="OverviewSection-heading OverviewSection-header-item">
-                          Fees
-                        </h3>
-                        <div class="OverviewSection-header-item">
-                        </div>
-                      </div>
-                    </div>
-                    <div class="OverviewSection-body">
-                      <div class="OverviewSection-body-item">
-                        <div class="Text">
-                          Standard Permit Fee
-                        </div>
-                        <div class="TextSplit">
-                          <div class="Text Text--bold">$110.00</div>
-                          <div class="Chip Chip--smaller Chip--green">Paid</div>
-                        </div>
-                      </div>
-                      <div class="OverviewSection-body-item">
-                        <div class="OverviewActionButtonColumn">
-                          <div class="SlabButton">
-                            <!--                 <div class="SlabButton-icon SlabButton-element"></div> -->
-                            <div class="SlabButton-mainText">View Payment Voucher</div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-  
                 </div>
-  
+
               </div>
+
             </div>
           </div>
 
@@ -260,9 +267,6 @@
       
     </div>
     
-      <!-- glitch button and style -->
-<!--       <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
-      <script src="https://button.glitch.me/button.js" data-style="glitch"></script> -->  
     <script type="text/javascript" src="/bundle.js"></script>
     
   </body>

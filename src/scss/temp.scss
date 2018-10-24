@@ -38,13 +38,13 @@
 }
 
 
-.OverviewButton--primary {
+.OverviewButton--primary, .SlabButton--primary {
     background: #146be6;
     color: white;
     border-color: #146be6;
 }
 
-.OverviewButton--primary:hover, .OverviewButton--primary:focus {
+.OverviewButton--primary, .SlabButton--primary:hover, .OverviewButton--primary, .SlabButton--primary:focus {
     background: white;
     border-color: white;
     color: #146be6;
@@ -79,14 +79,29 @@
 .HorizontalLayoutWrap-item--padded {
 }
 
+.l-LargeColumnLayout-paddingH {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
 @media screen and (min-width: 800px) { // TODO: config
   .HorizontalLayoutWrap {
     flex-direction: row;
   }
 
-  .LargeColumnLayout-paddingH {
+  .l-LargeColumnLayout-paddingH {
     padding-left: 40px;
     padding-right: 40px;
+  }
+  .l-LargeColumnLayout-paddingRight {
+    padding-right: 40px;
+  }
+  .l-LargeColumnLayout-paddingLeft {
+    padding-left: 40px;
+  }
+  
+  .FloatedSidebar--widthMedium {
+    max-width: 380px;
   }
 }
 
@@ -97,17 +112,18 @@
 }
 
 .l-mediumPageMaxWidth {
-  max-width: 1040px;
+  flex: 0 1 1040px;
 }
 
 .FloatedSidebar {
 
 }
 // .CenterColumnWrap-column--aside {
-.FloatedSidebar--style {
+.u-FloatedSidebar-style {
   background: white;
   box-shadow: 0px 0px 6px rgba(0,0,0,.13);
 }
 .FloatedSidebar--widthMedium {
-  max-width: 440px;
+  width: 100%;
+  min-width: 18rem;
 }
