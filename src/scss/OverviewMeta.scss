@@ -14,7 +14,10 @@
     display: table-cell;
   }
   .OverviewMeta-item-label {
-    max-width: 10em;
+    max-width: 5em;
+  }
+  .OverviewMeta-item-valueGroup-item {
+    display: block;
   }
 }
 
@@ -30,3 +33,15 @@
   color: $CommonMeta-value-color;
   font-weight: $CommonMeta-value-weight;
 }
+.OverviewMeta-item-label, .OverviewMeta-item-value {
+  padding-bottom: .5em;
+}
+.OverviewMeta-item-valueGroup-item {
+  padding-bottom: .25em;
+}
+
+
+// .OverviewMeta-item-valueGroup {
+// }
+// .OverviewMeta-item-valueGroup-item {
+// }

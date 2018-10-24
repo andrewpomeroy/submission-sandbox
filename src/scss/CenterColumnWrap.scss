@@ -11,8 +11,9 @@ $CenterColumnWrap-asideMinWidth: 18rem;
 }
 .CenterColumnWrap-content {
   // flex: 1;
+  // Using `flex-grow: 1` doesn't work in IE:
+  // https://github.com/philipwalton/flexbugs/issues/128
   flex: 0 1 $CenterColumnWrap-maxWidth;
-  max-width: $CenterColumnWrap-maxWidth;
   padding-left: $CenterColumnWrap-paddingH;
   padding-right: $CenterColumnWrap-paddingH;
 }

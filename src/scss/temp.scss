@@ -1,0 +1,113 @@
+.SubmissionHeader {
+    background: #242f40;
+}
+
+// buttons
+
+.OverviewButton, .SlabButton {
+    border: 2px solid currentColor;
+    color: #146be6;
+    background: none;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 14px;
+    &:hover, &:focus {
+      background: #146be6;
+      color: white;
+      border-color: #146be6;
+    }
+}
+
+.SlabButton {
+    min-height: 64px;
+    padding: .25em 1.5em;
+    box-shadow: none;
+
+    margin-bottom: 10px; // no
+
+}
+
+.SlabButton-icon {
+    height: 1.5em;
+    width: 1.5em;
+    margin-right: 1em;
+}
+
+.SlabButton-icon--faded {
+    opacity: 1;
+}
+
+
+.OverviewButton--primary {
+    background: #146be6;
+    color: white;
+    border-color: #146be6;
+}
+
+.OverviewButton--primary:hover, .OverviewButton--primary:focus {
+    background: white;
+    border-color: white;
+    color: #146be6;
+}
+
+// Body style
+
+
+.SubmissionBody {
+    background: #f7f7fc;
+}
+
+
+
+
+
+// New stuff
+
+
+
+
+.HorizontalLayoutWrap {
+  display: flex;
+  flex-direction: column; // undone w media query at min width
+}
+.HorizontalLayoutWrap--mixed {
+
+}
+.HorizontalLayoutWrap-item {
+
+}
+.HorizontalLayoutWrap-item--padded {
+}
+
+@media screen and (min-width: 800px) { // TODO: config
+  .HorizontalLayoutWrap {
+    flex-direction: row;
+  }
+
+  .LargeColumnLayout-paddingH {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+.CenterContentWrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.l-mediumPageMaxWidth {
+  max-width: 1040px;
+}
+
+.FloatedSidebar {
+
+}
+// .CenterColumnWrap-column--aside {
+.FloatedSidebar--style {
+  background: white;
+  box-shadow: 0px 0px 6px rgba(0,0,0,.13);
+}
+.FloatedSidebar--widthMedium {
+  max-width: 440px;
+}
