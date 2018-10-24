@@ -9,13 +9,18 @@ $OverviewButton-fontSize-default: 13px;
 $OverviewButton-fontSize-small: 12px;
 
 .OverviewButton {
+  @include ButtonStyle-base;
+  @include ButtonStyle-default;
+  &:hover, &:focus {
+    @include ButtonStyle-default-hover;
+  }
+  &:active {
+    @include ButtonStyle-default-active; 
+  }
   padding: $OverviewButton-paddingV $OverviewButton-paddingH;
-  background: $OverviewButton-bgColor-default;
-  color: $OverviewButton-color-default;
   border-radius: 3px;
   font-size: $OverviewButton-fontSize-default;
   font-weight: 500;
-  cursor: pointer;
   &:hover, &:focus {
     background-color: lighten($OverviewButton-bgColor-default, 10%);
     color: lighten($OverviewButton-color-default, 10%);

@@ -39,3 +39,17 @@ $Chip-borderRadius: 3px;
 .Chip--green {
   background-color: $app-color-neutralGreen;
 }
+
+.Chip--warning {
+  background-color: $app-color-warning;
+}
+
+.Chip-item {
+  &:not(:last-child) {
+    margin-right: .5em;
+  }
+}
+.Chip-icon {
+  height: 1em;
+  width: 1em;
+}

@@ -9,6 +9,7 @@ $app-color-highlightBlue: $color-electricBlue; // yikes
   background: none;
   border-radius: 5px;
   font-weight: 600;
+  cursor: pointer;
   transition: 70ms linear;
   transition-property: color, border-color, background-color;
 }

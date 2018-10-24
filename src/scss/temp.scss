@@ -123,3 +123,16 @@
   width: 100%;
   min-width: 18rem;
 }
+
+.Banner {
+    background: #fa9821;
+    color: white;
+    display: flex;
+    justify-content: center;
+    padding: 1em;
+}
+
+.Banner-icon {
+    width: 1em;
+    height: 1em;
+}
