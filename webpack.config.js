@@ -21,35 +21,26 @@ module.exports = {
         exclude: /node_modules/,
         include: path.join(__dirname, 'src'),
       },
-      // {
-      //   test: /\.css$/,
-      //   use: ['style-loader', 'css-loader']
-      // }
       {
         test:/\.(s*)css$/,
         use:['style-loader','css-loader', 'sass-loader'],
-      },
-      // {
-      //   test:/\.(s*)css$/,
-      //   exclude: [/node_modules/],
-      //   use: ExtractTextPlugin.extract({
-      //     fallback: 'style-loader',
-      //     use: ['css-loader', 'sass-loader'],
-      //   }),
-      // },
-      
-      // {
-      //   test: /.css$/,
-      //   exclude: [/node_modules/],
-      //   use: vendorsExtractPlugin.extract({
-      //     use: ['css-loader'],
-      //   }),
-      // },
-      // { test: /\.html$/, loader: 'ng-cache?prefix=[dir]/[dir]' },
+      },      
       {
         test: /\.html/,
         use: 'raw-loader'
+      },
+      // Fonts
+      {
+        test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
+        use: [{
+          loader: 'file-loader',
+          options: {
+            name: '[name].[ext]',
+            outputPath: 'fonts/'
+          }
+        }]
       }
+      // { test: /\.(png|woff|woff2|eot|ttf|svg)$/, use: ['url-loader?limit=100000'] }
     ],
   },
   watch: true
@@ -59,8 +50,8 @@ module.exports = {
   //     filename: 'bundle.css',
   //     allChunks: true
   //   }),
-    // new webpack.DefinePlugin({
-    //   SOCKET_URL: JSON.stringify(process.env.SOCKET_URL ? process.env.SOCKET_URL : 'wss://localhost:3000'),
-    // }),
+  // new webpack.DefinePlugin({
+  //   SOCKET_URL: JSON.stringify(process.env.SOCKET_URL ? process.env.SOCKET_URL : 'wss://localhost:3000'),
+  // }),
   // ],
 };

@@ -24,6 +24,7 @@
     "babel-preset-stage-1": "^6.24.1",
     "css-loader": "latest",
     "faker": "^4.1.0",
+    "file-loader": "^2.0.0",
     "style-loader": "latest",
     "webpack": "latest",
     "webpack-cli": "^3.1.1"
