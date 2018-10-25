@@ -7,10 +7,15 @@ body, html {
 }
 body, input, button, select, textarea {
   // font-family: "DIN Next LT Pro";
-  font-family: "Fakt Pro";
+  font-family: "Fakt Pro" !important;
   // font-family: "Open Sans";
   // font-family: "Source Sans Pro";
   // font-family: "Lato";
+}
+
+svg {
+  visibility: visible;
+  fill: currentColor;
 }
 
 // -- something -- //
@@ -24,10 +29,15 @@ html, body {
   flex: 1;
   // min-height: 100%;
 }
+body {
+  flex-direction: row;
+}
 .Outer {
   flex: 1 0 auto;
   display: flex;
   flex-direction: column;
+  align-self: flex-start;
+  min-height: 100%;
 }
 .SubmissionBody {
   flex: 1;
@@ -41,4 +51,294 @@ body {
 }
 .fillHeight {
   flex: 1;
+}
+
+
+.u-invisible {
+  visibility: hidden;
+}
+
+// .u-undoListStyles {
+//   @include undo-list-styles;
+// }
+
+.u-undoLinkStyles {
+  &, &:focus, &:hover, &:active {
+    text-decoration: none;
+  }
+}
+
+.u-headingInherit {
+  margin: 0;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+// ----- Legacy layout utilities, brought in from Sandbox ----- //
+// TODO: Review these
+
+.FlexView {
+	display: flex;
+	flex-direction: column;
+	flex: 1 1 0px;
+	// overflow: hidden;
+	justify-content: flex-start;
+	align-items: stretch;
+}
+.FlexView-segment {
+	flex: 0 0 auto;
+	flex: 0 1 auto;
+}
+.FlexView-fill {
+	flex: 1 1 0px;
+}
+
+.Flex {
+    display: flex;
+}
+.FlexY {
+	display: flex;
+    flex-direction: column;
+}
+.FlexX {
+	display: flex;
+    flex-direction: row;
+}
+
+.Flex-segment {
+    flex: 0 0 auto;
+}
+.Flex-stretch {
+    flex: 1 1 0px;
+}
+
+.u-scrollY {
+	overflow-y: auto;
+}
+
+.u-scrollX {
+	overflow-x: auto;
+}
+
+.u-noScroll {
+	overflow: hidden;
+}
+.scrollContainer
+{
+	overflow: auto;
+}
+
+.flexHeight
+{
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+}
+
+// ----- Layout ----- //
+
+.l-dialogFill {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.l-dialogFill--padded {
+  padding: 1em;
+}
+
+// ----- General Layout utilities ----- //
+
+[layout~="horizontal"],
+.layout-horizontal {
+  display: flex !important;
+  flex-direction: row !important;
+}
+[layout~="vertical"],
+.layout-vertical {
+  display: flex !important;
+  flex-direction: column !important;
+}
+[layout~="wrap"],
+.layout-wrap {
+  flex-wrap: wrap !important;
+}
+[flex~="fill"],
+.flex-fill {
+  flex: 1 !important;
+}
+[flex~="auto"],
+.flex-auto {
+  flex: 0 0 auto !important;
+}
+
+[align-self="center"],
+.align-self-center {
+	align-self: center !important;
+}
+[align-self="baseline"],
+.align-self-baseline {
+	align-self: baseline !important;
+}
+[align-self="start"],
+[align-self="flex-start"],
+.align-self-start {
+	align-self: flex-start !important;
+}
+[align-self="end"],
+[align-self="flex-end"],
+.align-self-end {
+	align-self: flex-end !important;
+}
+[align-self="stretch"],
+.align-self-stretch {
+	align-self: stretch !important;
+}
+
+[align-items="center"],
+.align-items-center {
+	align-items: center !important;
+}
+[align-items="baseline"],
+.align-items-baseline {
+	align-items: baseline !important;
+}
+[align-items="start"],
+[align-items="flex-start"],
+.align-items-start {
+	align-items: flex-start !important;
+}
+[align-items="end"],
+[align-items="flex-end"],
+.align-items-end {
+	align-items: flex-end !important;
+}
+[align-items="stretch"],
+.align-items-stretch {
+	align-items: stretch !important;
+}
+
+[justify="center"],
+[justify-content="center"],
+.justify-center {
+	justify-content: center !important;
+}
+[justify="baseline"],
+[justify-content="baseline"],
+.justify-baseline {
+	justify-content: baseline !important;
+}
+[justify="start"],
+[justify="flex-start"],
+[justify-content="start"],
+[justify-content="flex-start"],
+.justify-start {
+	justify-content: flex-start !important;
+}
+[justify="end"],
+[justify="flex-end"],
+[justify-content="end"],
+[justify-content="flex-end"],
+.justify-end {
+	justify-content: flex-end !important;
+}
+
+
+// ----- Type utilities ----- //
+
+.t-center {
+	text-align: center;
+}
+
+// ----- Screen Reader / accessibility utilities  ----- //
+
+// -- for screenreader-only (visibly hidden) text -- //
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
+
+// ----- SVGWRAP ----- //
+
+
+.SvgWrap {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	fill: currentColor;
+	&-icon {
+	    // max-width: 100%;
+	    // max-height: 100%;
+	    width: 100%;
+		height: 100%;
+	}
+
+	> img {
+		max-width: 100%; // Don't trigger reflow before svg injection has occurred
+		max-height: 100%; // Don't trigger reflow before svg injection has occurred
+	}
+	svg {
+		fill: inherit;
+		stroke: inherit;
+		// width: 1em;
+		// height: 1em;
+	}
+	img {
+		opacity: 0; // Don't show before svg injection has occurred
+	}
+}
+
+.SvgWrap--fillDimensions {
+	width: 100%;
+	height: 100%;
+}
+
+.SvgWrap--stroke {
+	stroke: currentColor;
+}
+
+.SvgWrap--inlineDefault {
+	height: 1.5em; width: 1.5em;
+}
+
+// Some SVGs we want the primary color to drive stroke color, rather than fill, so we define it as an attribute
+// Here we are just reinforcing this assertion by overriding any previous stroke color declarations.
+.SvgWrap svg[stroke="currentColor"] {
+    stroke: currentColor;
+}
+
+// ---------- _misc.mixin.scss --------------
+
+@mixin undo-list-styles() {
+	list-style-type: none;
+	margin: 0;
+	padding-left: 0;
+}
+
+@mixin GenericCloseX {
+  display: flex;
+  height: 20px;
+  width: 20px;
+  color: #b8e0ff;
+  cursor: pointer;
+  &:hover {
+    color: darken(#b8e0ff, 25%);
+    outline: 0;
+    box-shadow: none;
+  }
+  &:active, &:focus {
+    color: darken(#b8e0ff, 35%);
+    outline-color:transparent;
+  }
 }

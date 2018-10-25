@@ -1,22 +1,26 @@
 $OverviewButton-paddingV: .66em;
 $OverviewButton-paddingH: 1.125em;
 
-$OverviewButton-bgColor-default: #61b4d1;
-$OverviewButton-color-default: #004257;
+$OverviewButton-bgColor-default: #61b4d1;  //TODO: Config
+$OverviewButton-color-default: #004257; //TODO: Config
 
 // $OverviewButton-fontSize-default: 14px;
-$OverviewButton-fontSize-default: 14px;
+$OverviewButton-fontSize-default: 13px;
 $OverviewButton-fontSize-small: 12px;
 
 .OverviewButton {
-  border: 0;
+  @include ButtonStyle-base;
+  @include ButtonStyle-default;
+  &:hover, &:focus {
+    @include ButtonStyle-default-hover;
+  }
+  &:active {
+    @include ButtonStyle-default-active; 
+  }
   padding: $OverviewButton-paddingV $OverviewButton-paddingH;
-  background: $OverviewButton-bgColor-default;
-  color: $OverviewButton-color-default;
   border-radius: 3px;
   font-size: $OverviewButton-fontSize-default;
   font-weight: 500;
-  cursor: pointer;
   &:hover, &:focus {
     background-color: lighten($OverviewButton-bgColor-default, 10%);
     color: lighten($OverviewButton-color-default, 10%);
@@ -35,6 +39,15 @@ $OverviewButton-fontSize-small: 12px;
 .OverviewButton--green {
   background-color: $app-color-brightGreen;
   color: rgba(0,0,0,.65);
+}
+
+.OverviewButton-icon {
+  width: 1.75em;
+  height: 1.75em;
+  margin-right: .5em;
+  margin-left: -.25em;
+  margin-top: -.875em;
+  margin-bottom: -.875em;
 }
 
 .OverviewActionButtonColumn {

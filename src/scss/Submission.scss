@@ -1,13 +1,13 @@
-$Submission-header-paddingTop: 40px;
-$Submission-header-paddingBottom: 32px;
+$Submission-header-paddingTop: 32px;
+$Submission-header-paddingBottom: 24px;
 $Submission-header-paddingH: 48px;
 $Submission-header-bgColor: #005873;
 $Submission-header-mutedOpacity: .7;
 $Submission-header-textColor: #fff;
 $Submission-header-textColor-muted: rgba($Submission-header-textColor, $Submission-header-mutedOpacity);
 
-$Submission-backPanel-bgColor: $app-color-panel-b2;
-$Submission-panel-bgColor: $app-color-panel-b1;
+$Submission-backPanel-bgColor: $app-color-panel-b1;
+$Submission-panel-bgColor: $app-color-panel-top;
 
 // -- Header -- //
 
@@ -16,6 +16,12 @@ $Submission-panel-bgColor: $app-color-panel-b1;
   color: $Submission-header-textColor;
 }
 .SubmissionHeader-block {
+  // padding-top: $Submission-header-paddingTop / 2;
+  // padding-bottom: $Submission-header-paddingBottom / 2;
+  padding-top: $Submission-header-paddingTop;
+  padding-bottom: $Submission-header-paddingBottom;
+}
+.SubmissionHeader-block--heading {
   padding-top: $Submission-header-paddingTop;
   padding-bottom: $Submission-header-paddingBottom;
 }
@@ -64,9 +70,7 @@ $SubmissionSupplementals-paddingV: 4px;
 $SubmissionBody-column-paddingV: 36px;
 
 .SubmissionBody {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
+  background-color: $app-color-panel-b1;
   background-color: $Submission-backPanel-bgColor;
 }
 .SubmissionBody-columns {

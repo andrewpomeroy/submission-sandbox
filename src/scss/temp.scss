@@ -1,0 +1,138 @@
+.SubmissionHeader {
+    background-color: #242f40;
+}
+
+// buttons
+
+.OverviewButton, .SlabButton {
+  @include ButtonStyle-base;
+  @include ButtonStyle-default;
+  &:hover, &:focus {
+    @include ButtonStyle-default-hover;
+  }
+  &:active {
+    @include ButtonStyle-default-active; 
+  }
+}
+
+.OverviewButton--addNew {
+  @include ButtonStyle-addNew;
+  &:hover, &:focus {
+    @include ButtonStyle-addNew-hover;
+  }
+  &:active {
+    @include ButtonStyle-addNew-active; 
+  }
+}
+
+.SlabButton {
+    // margin-bottom: 10px; // no
+    & + & {
+      margin-top: 10px; // no
+  }
+}
+
+.OverviewButton--primary, .SlabButton--primary {
+  @include ButtonStyle-primary;
+  &:hover, &:focus {
+    @include ButtonStyle-primary-hover;
+  }
+  &:active {
+    @include ButtonStyle-primary-active;
+  }
+}
+
+
+// Body style
+
+
+.SubmissionBody {
+    background-color: #f7f7fc;
+}
+
+
+
+
+
+// New stuff
+
+
+.SvgWrap--stroke {
+  fill: none;
+}
+
+
+.HorizontalLayoutWrap {
+  display: flex;
+  flex-direction: column; // undone w media query at min width
+}
+.HorizontalLayoutWrap--mixed {
+
+}
+.HorizontalLayoutWrap-item {
+
+}
+.HorizontalLayoutWrap-item--padded {
+}
+
+.l-LargeColumnLayout-paddingH {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+@media screen and (min-width: 800px) { // TODO: config
+  .HorizontalLayoutWrap {
+    flex-direction: row;
+  }
+
+  .l-LargeColumnLayout-paddingH {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  .l-LargeColumnLayout-paddingRight {
+    padding-right: 40px;
+  }
+  .l-LargeColumnLayout-paddingLeft {
+    padding-left: 40px;
+  }
+  
+  .FloatedSidebar--widthMedium {
+    max-width: 380px;
+  }
+}
+
+.CenterContentWrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.l-mediumPageMaxWidth {
+  flex: 0 1 1040px;
+}
+
+.FloatedSidebar {
+
+}
+// .CenterColumnWrap-column--aside {
+.u-FloatedSidebar-style {
+  background-color: white;
+  box-shadow: 0px 0px 6px rgba(0,0,0,.13);
+}
+.FloatedSidebar--widthMedium {
+  width: 100%;
+  min-width: 18rem;
+}
+
+.Banner {
+    background: #fa9821;
+    color: white;
+    display: flex;
+    justify-content: center;
+    padding: 1em;
+}
+
+.Banner-icon {
+    width: 1em;
+    height: 1em;
+}

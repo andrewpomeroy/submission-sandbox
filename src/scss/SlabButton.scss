@@ -2,8 +2,10 @@
 
 // $SlabButton-paddingV: 1em;
 $SlabButton-paddingV: $UtilityItems-paddingV;
+$SlabButton-paddingV: .25em;
 // $SlabButton-paddingH: 1.125em;
 $SlabButton-paddingH: $UtilityItems-paddingH;
+$SlabButton-paddingH: 1.5em;
 
 $SlabButton-bgColor-default: $app-color-panel-top;
 // $SlabButton-bgColor-default: transparent;
@@ -11,13 +13,15 @@ $SlabButton-bgColor-default: $app-color-panel-top;
 $SlabButton-color-default: $app-color-electricBlue; // TODO: config
 
 // $SlabButton-fontSize-default: 14px;
-$SlabButton-fontSize-default: 14px;
-$SlabButton-fontSize-small: 12px;
+$SlabButton-fontSize-default: 15px;
+$SlabButton-fontSize-small: 13px;
+
+$SlabButton-minHeight: 64px;
 
 .SlabButton {
-  // border: 0;
   padding: $SlabButton-paddingV $SlabButton-paddingH;
   background: $SlabButton-bgColor-default;
+  min-height: $SlabButton-minHeight;
   // background: transparent;
   // background: rgba(white, .5);
   color: $SlabButton-color-default;
@@ -25,10 +29,7 @@ $SlabButton-fontSize-small: 12px;
   font-size: $SlabButton-fontSize-default;
   font-weight: 600;
   cursor: pointer;
-  // border-bottom: 2px solid darken($SlabButton-color-default, 5%);
-  // box-shadow: 0px 2px 2px rgba(0,0,0,.12);
-  @include commonPanelBoxShadow;
-  // box-shadow: 0px 2px 2px hsla(hue($SlabButton-color-default),80%,80%,.9);
+  // @include commonPanelBoxShadow;
   &:hover, &:focus {
     background-color: lighten($SlabButton-bgColor-default, 10%);
     color: lighten($SlabButton-color-default, 10%);
@@ -42,4 +43,18 @@ $SlabButton-fontSize-small: 12px;
   // border-top: 2px solid darken($SlabButton-color-default, 5%);
     
   }
+}
+
+.SlabButton--leftAligned {
+  justify-content: flex-start;
+}
+
+.SlabButton-icon {
+  height: 1.75em;
+  width: 1.75em;
+  margin-right: 1em;
+}
+
+.SlabButton-icon--faded {
+  opacity: .5;
 }
