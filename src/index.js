@@ -15,6 +15,7 @@ import submissionTab from './components/submission-tab';
 import tabsWrapper from './components/tabs-wrapper';
 import pillTabs from './components/pill-tabs';
 import pillTab from './components/pill-tab';
+import collapseContainer from './components/collapse-container';
 
 import './scss/index.scss';
 import 'angular-material/angular-material.css';
@@ -26,6 +27,7 @@ var MyApp = angular
   .component('tabsWrapper', tabsWrapper)
   .component('pillTabs', pillTabs)
   .component('pillTab', pillTab)
+  .component('collapseContainer', collapseContainer)
 
 MyApp.controller('DemoCtrl', DemoCtrl);
 DemoCtrl.$inject = ['$scope', '$timeout', '$interpolate', '$q'];
