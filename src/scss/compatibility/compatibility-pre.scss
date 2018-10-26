@@ -14,3 +14,10 @@ $app-color-correctionRequest: #f09d43; // redundant
 
 $UtilityItems-paddingV: 14px;
 $UtilityItems-paddingH: 18px;
+
+// Mixins
+@import 'common.mixins.scss';
+
+@import 'compatibility.scss';
+
+@import 'CommonMeta.config.scss';
