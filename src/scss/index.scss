@@ -1,12 +1,12 @@
+@import 'compatibility/compatibility-pre.scss';
 // Config
-@import '_base.theme.config.scss';
 @import 'backfill-config.scss';
 @import 'CommonMeta.config.scss';
 
 // Mixins
 @import 'common.mixins.scss';
 
-@import 'compatibility.scss';
+@import 'compatibility/compatibility.scss';
 
 @import 'ButtonStyle.mixin.scss';
 
