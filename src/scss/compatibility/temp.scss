@@ -1,65 +1,8 @@
-.SubmissionHeader {
-    background-color: #242f40;
-}
-
-// buttons
-
-// .OverviewButton, .SlabButton {
-//   @include ButtonStyle-base;
-//   @include ButtonStyle-default;
-//   &:hover, &:focus {
-//     @include ButtonStyle-default-hover;
-//   }
-//   &:active {
-//     @include ButtonStyle-default-active; 
-//   }
-// }
-
-.OverviewButton--addNew {
-  @include ButtonStyle-addNew;
-  &:hover, &:focus {
-    @include ButtonStyle-addNew-hover;
-  }
-  &:active {
-    @include ButtonStyle-addNew-active; 
-  }
-}
-
-.SlabButton {
-    // margin-bottom: 10px; // no
-    & + & {
-      margin-top: 10px; // no
-  }
-}
-
-.OverviewButton--primary, .SlabButton--primary {
-  @include ButtonStyle-primary;
-  &:hover, &:focus {
-    @include ButtonStyle-primary-hover;
-  }
-  &:active {
-    @include ButtonStyle-primary-active;
-  }
-}
-
-
 // Body style
-
-
-.SubmissionBody {
-    background-color: #f7f7fc;
-}
-
-
-
-
 
 // New stuff
 
 
-.SvgWrap--stroke {
-  fill: none;
-}
 
 
 .HorizontalLayoutWrap {

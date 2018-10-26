@@ -35,6 +35,26 @@ $OverviewButton-fontSize-small: 12px;
   background-color: $app-color-brightGreen;
   color: rgba(0,0,0,.65);
 }
+.OverviewButton--primary {
+  @include ButtonStyle-primary;
+  &:hover, &:focus {
+    @include ButtonStyle-primary-hover;
+  }
+  &:active {
+    @include ButtonStyle-primary-active; 
+  }
+}
+.OverviewButton--addNew {
+  @include ButtonStyle-addNew;
+  &:hover, &:focus {
+    @include ButtonStyle-addNew-hover;
+  }
+  &:active {
+    @include ButtonStyle-addNew-active; 
+  }
+}
+
+
 
 .OverviewButton-icon {
   width: 1.75em;

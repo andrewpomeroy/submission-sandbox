@@ -353,4 +353,18 @@ body {
   }
 }
 
+// ??
+
+.SvgWrap--stroke {
+  fill: none;
+}
+
+.SlabButton {
+    // margin-bottom: 10px; // no
+    & + & {
+      margin-top: 10px; // no
+  }
+}
+
+
 @import 'compatibility/fonts';

@@ -20,6 +20,7 @@ $app-color-highlightBlue: $color-electricBlue; // yikes
 
 @mixin ButtonStyle-default {
   color: $app-color-highlightBlue;
+  background-color: transparent;
   border: 2px solid currentColor;
 }
 @mixin ButtonStyle-default-hover {
