@@ -246,6 +246,16 @@ body {
 .justify-end {
 	justify-content: flex-end !important;
 }
+[justify="space-between"],
+[justify-content="space-between"],
+.justify-space-between {
+	justify-content: space-between !important;
+}
+[justify="space-around"],
+[justify-content="space-around"],
+.justify-space-around {
+	justify-content: space-around !important;
+}
 
 
 // ----- Type utilities ----- //
