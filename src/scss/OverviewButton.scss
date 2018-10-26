@@ -21,17 +21,9 @@ $OverviewButton-fontSize-small: 12px;
   border-radius: 3px;
   font-size: $OverviewButton-fontSize-default;
   font-weight: 500;
-  &:hover, &:focus {
-    background-color: lighten($OverviewButton-bgColor-default, 10%);
-    color: lighten($OverviewButton-color-default, 10%);
-    outline: 0;
-    box-shadow: none;
-  }
-  &:active {
-    background-color: darken($OverviewButton-bgColor-default, 10%);
-    color: darken($OverviewButton-color-default, 10%);
-  }
 }
+
+
 .OverviewButton--small {
   font-size: $OverviewButton-fontSize-small;
 }

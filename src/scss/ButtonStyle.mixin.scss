@@ -12,6 +12,9 @@ $app-color-highlightBlue: $color-electricBlue; // yikes
   cursor: pointer;
   transition: 70ms linear;
   transition-property: color, border-color, background-color;
+  &:focus {
+    outline: 0;
+  }
 }
 
 
@@ -25,7 +28,8 @@ $app-color-highlightBlue: $color-electricBlue; // yikes
   border-color: $app-color-highlightBlue;
 }
 @mixin ButtonStyle-default-active {
-  background-color: $app-color-highlightBlue;
+  background-color: darken($app-color-highlightBlue, 10%);
+  border-color: darken($app-color-highlightBlue, 10%);
 }
 
 

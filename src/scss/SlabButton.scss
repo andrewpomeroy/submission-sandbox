@@ -19,29 +19,21 @@ $SlabButton-fontSize-small: 13px;
 $SlabButton-minHeight: 64px;
 
 .SlabButton {
+  @include ButtonStyle-base;
+  @include ButtonStyle-default;
+  &:hover, &:focus {
+    @include ButtonStyle-default-hover;
+  }
+  &:active {
+    @include ButtonStyle-default-active;
+  }
   padding: $SlabButton-paddingV $SlabButton-paddingH;
   background: $SlabButton-bgColor-default;
   min-height: $SlabButton-minHeight;
-  // background: transparent;
-  // background: rgba(white, .5);
-  color: $SlabButton-color-default;
-  border-radius: 3px;
+  border-radius: 5px;
   font-size: $SlabButton-fontSize-default;
-  font-weight: 600;
-  cursor: pointer;
-  // @include commonPanelBoxShadow;
-  &:hover, &:focus {
-    background-color: lighten($SlabButton-bgColor-default, 10%);
-    color: lighten($SlabButton-color-default, 10%);
-    outline: 0;
-  }
-  &:active {
-    background-color: darken($SlabButton-bgColor-default, 10%);
-    color: darken($SlabButton-color-default, 10%);
-  }
   &:first-child {
-  // border-top: 2px solid darken($SlabButton-color-default, 5%);
-    
+  // border-top: 2px solid darken($SlabButton-color-default, 5%);    
   }
 }
 

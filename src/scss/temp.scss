@@ -4,16 +4,16 @@
 
 // buttons
 
-.OverviewButton, .SlabButton {
-  @include ButtonStyle-base;
-  @include ButtonStyle-default;
-  &:hover, &:focus {
-    @include ButtonStyle-default-hover;
-  }
-  &:active {
-    @include ButtonStyle-default-active; 
-  }
-}
+// .OverviewButton, .SlabButton {
+//   @include ButtonStyle-base;
+//   @include ButtonStyle-default;
+//   &:hover, &:focus {
+//     @include ButtonStyle-default-hover;
+//   }
+//   &:active {
+//     @include ButtonStyle-default-active; 
+//   }
+// }
 
 .OverviewButton--addNew {
   @include ButtonStyle-addNew;
