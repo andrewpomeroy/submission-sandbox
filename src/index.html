@@ -261,10 +261,193 @@
                 
                   </div>
                 </div>
-  
-  
+
+                <!-- Processing Steps -->
+
+                <div class="Overview-section">
+                  <div class="OverviewSection-header">
+                    <h3 class="OverviewSection-heading OverviewSection-header-item">
+                      Processing Steps
+                    </h3>
+                  </div>
+                </div>
+                <div class="OverviewSection-body">
+                  <div class="OverviewSection-body-item OverviewSection-body-item--flushTop">
+                    <div class="OverviewSection-frame">
+                      
+                      <!-- <div ng-if="!$ctrl.loading &amp;&amp; $ctrl.workflow" class="ng-scope"> -->
+                      <button class="LinkBlock LinkBlock--centered">
+                        <div class="LinkBlock-element LinkBlock-icon">
+                          X
+                        </div>
+                        <div class="LinkBlock-element LinkBlock-title">
+                          1 step completed
+                        </div>
+                      </button>
+                      <div class="BoxFrame">
+                        <div class="BoxFrame-header BoxFrame-header--centered">
+                          <div class="BoxFrame-header-subtitle">
+                            Current Step
+                          </div>
+                          <div class="BoxFrame-header-title">
+                            <h4 class="u-headingInherit">Step 6 of 9</h4>
+                          </div>
+                        </div>
+                        <div class="BoxFrame-content">
+                          <div class="CardRow CardRow--medium">
+                            <div class="Card Card--medium Card--linked">
+                              <div class="StepHeader StepHeader--split">
+                                <div class="StepHeader-number">
+                                  6A
+                                </div>
+                                <div class="StepHeader-title">
+                                  Elit et voluptate in excepteur adipisicing laborum consequat excepteur ullamco fugiat ut magna ipsum
+                                </div>
+                              </div>
+                              <div class="Card-content-item Card-content-item--alignRight">
+                                <div class="SplitContent SplitContent--small">
+                                  <div class="SplitContent-item">
+                                    <div class="Chip Chip--green">
+                                      Completed
+                                    </div>
+                                  </div>
+                                  <div class="SplitContent-item">
+                                    11/28/2018
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="Card-content-item Card-content-item--alignRight">
+                                <a href="" class="UsernameLink">
+                                  <div class="UsernameLink-icon">
+                                    X
+                                  </div>
+                                  <div class="UsernameLink-text">
+                                    Andrew Pomeroy
+                                  </div>
+                                </div>
+                              </a>
+                            </div>
+                            <div class="Card Card--medium Card--linked">
+                              <div class="StepHeader StepHeader--split">
+                                <div class="StepHeader-number">
+                                  6B
+                                </div>
+                                <div class="StepHeader-title">
+                                  Occaecat magna commodo sit minim officia voluptate cillum irure commodo
+                                </div>
+                              </div>
+                              <div class="Card-content-item Card-content-item--alignRight">
+                                <div class="SplitContent SplitContent--small">
+                                  <div class="SplitContent-item">
+                                    <div class="Chip Chip--green">
+                                      Completed
+                                    </div>
+                                  </div>
+                                  <div class="SplitContent-item">
+                                    11/28/2018
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="Card-content-item Card-content-item--alignRight">
+                                <a href="" class="UsernameLink">
+                                  <div class="UsernameLink-icon">
+                                    X
+                                  </div>
+                                  <div class="UsernameLink-text">
+                                    Andrew Pomeroy
+                                  </div>
+                                </div>
+                              </a>
+                            </div>
+                            <div class="Card Card--medium Card--linked">
+                              <div class="StepHeader StepHeader--split">
+                                <div class="StepHeader-number">
+                                  6A
+                                </div>
+                                <div class="StepHeader-title">
+                                  Ullamco incididunt deserunt officia enim velit incididunt proident ad esse
+                                </div>
+                              </div>
+                              <div class="Card-content-item Card-content-item--alignRight">
+                                <div class="SplitContent SplitContent--small">
+                                  <div class="SplitContent-item">
+                                    <div class="Chip Chip--green">
+                                      Completed
+                                    </div>
+                                  </div>
+                                  <div class="SplitContent-item">
+                                    11/28/2018
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="Card-content-item Card-content-item--alignRight">
+                                <a href="" class="UsernameLink">
+                                  <div class="UsernameLink-icon">
+                                    X
+                                  </div>
+                                  <div class="UsernameLink-text">
+                                    Andrew Pomeroy
+                                  </div>
+                                </div>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Processing Steps (raw markup) -->
+
+                <div class="Overview-section" style="display: none;">
+                  <div class="OverviewSection-header">
+                    <h3 class="OverviewSection-heading OverviewSection-header-item">
+                      Processing Steps
+                    </h3>
+                  </div>
+                </div>
+                <div class="OverviewSection-body">
+                  <div class="OverviewSection-body-item">
+                    <div class="OverViewSection-frame" ng-class="{'OverviewSectionPaddingH':$ctrl.offsetPaddedH}">
+                      <!-- ngIf: !$ctrl.loading && $ctrl.workflow -->
+                      <div ng-if="!$ctrl.loading &amp;&amp; $ctrl.workflow" class="ng-scope">
+                        <div>
+                          <!-- ngIf: !$ctrl.workflow.isCompleted -->
+                          <h4 ng-if="!$ctrl.workflow.isCompleted" ng-bind="($ctrl.workflow.completedStepsCount || 'No') + ' Step' + ($ctrl.workflow.completedStepsCount != 1 ? 's' :'') +  ' Completed'"
+                            class="ng-binding ng-scope">1 Step Completed</h4><!-- end ngIf: !$ctrl.workflow.isCompleted -->
+                          <!-- ngIf: $ctrl.workflow.isCompleted -->
+                        </div>
+                        <div>
+                          <h4 ng-bind="'Current Step ' + ($ctrl.currentLevel.sortOrder + 1) + ' of  ' + $ctrl.levels.length" class="ng-binding">Current
+                            Step 2 of 5</h4>
+                          <wnd-field-row class="ng-isolate-scope">
+                            <div class="FieldBlock-row">
+                              <!-- ngRepeat: step in $ctrl.currentLevel.data.steps -->
+                              <wnd-field wnd-property="data.step.0" wnd-label="Fee Processed" hide-label="true" ng-repeat="step in $ctrl.currentLevel.data.steps"
+                                class="ng-scope ng-isolate-scope wnd-field">
+                                <div class="Field Field--is-valid  Field--" ng-class="[{'Field--is-error': !$ctrl.wndProperty.isValid &amp;&amp; $ctrl.wndProperty.isActivated, 'Field--is-required': $ctrl.wndProperty.isRequired, 'Field--is-validating': $ctrl.wndProperty.isValidating, 'Field--is-valid': $ctrl.wndProperty.isValid, 'Field--autoWidth': $ctrl.autoWidth, 'Field--is-readOnly': $ctrl.wndProperty.wndReadOnly.isReadOnly}, '', 'Field--']">
+                                  <!-- ngIf: !$ctrl.hideLabel -->
+                                  <div class="Field-inputContainer" id="transclude-target">
+                                    <div ng-bind="step.name" class="ng-binding ng-scope">Fee Processed</div>
+                                    <!-- ngIf: step.data.completed -->
+                                    <!-- ngIf: step.data.assignedUser -->
+                                  </div>
+                                </div>
+                              </wnd-field><!-- end ngRepeat: step in $ctrl.currentLevel.data.steps -->
+                            </div>
+                          </wnd-field-row>
+                        </div>
+                        <div>
+                          <h4 ng-bind="($ctrl.workflow.remainingStepsCount || 'No') +  ' Step' + ($ctrl.workflow.remainingStepsCount !=1 ? 's' :'')+ ' Upcoming'"
+                            class="ng-binding">3 Steps Upcoming</h4>
+                        </div>
+                      </div>
+                  
+                    </div>
+                  </div>
+                </div>
               </div>
-              
             </div>
             
             <!-- Sidebar -->

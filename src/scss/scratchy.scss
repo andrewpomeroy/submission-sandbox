@@ -1,0 +1,40 @@
+.LinkBlock {
+    border: 0;
+    background: none;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    color: blue;
+}
+
+.LinkBlock--centered {
+    justify-content: center;
+}
+
+.LinkBlock-element:not(:last-child) {
+    margin-right: .5em;
+}
+
+.LinkBlock-element {
+    padding: 5px 0;
+}
+
+.LinkBlock-icon {
+    margin-top: -5px;
+    margin-bottom: -5px;
+}
+
+.OverviewSection-body-item--flushTop {
+    padding-top: 0;
+}
+
+color {}
+
+.BoxFrame {
+    background: white;
+    border: 1px solid gainsboro;
+    border-radius: 5px;
+}
+
+.BoxFrame-header.BoxFrame-header--centered {}
