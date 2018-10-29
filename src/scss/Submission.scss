@@ -1,7 +1,7 @@
 $Submission-header-paddingTop: 32px;
 $Submission-header-paddingBottom: 24px;
 $Submission-header-paddingH: 48px;
-$Submission-header-bgColor: #005873;
+$Submission-header-bgColor: #242f40;
 $Submission-header-mutedOpacity: .7;
 $Submission-header-textColor: #fff;
 $Submission-header-textColor-muted: rgba($Submission-header-textColor, $Submission-header-mutedOpacity);
@@ -72,7 +72,9 @@ $SubmissionBody-column-paddingV: 36px;
 .SubmissionBody {
   background-color: $app-color-panel-b1;
   background-color: $Submission-backPanel-bgColor;
+  background-color: #f7f7fc; // TODO: Config
 }
+
 .SubmissionBody-columns {
   // display: flex; // necessary?
 }

@@ -7,11 +7,6 @@ $SlabButton-paddingV: .25em;
 $SlabButton-paddingH: $UtilityItems-paddingH;
 $SlabButton-paddingH: 1.5em;
 
-$SlabButton-bgColor-default: $app-color-panel-top;
-// $SlabButton-bgColor-default: transparent;
-// $SlabButton-color-default: #324f78; // TODO: config
-$SlabButton-color-default: $app-color-electricBlue; // TODO: config
-
 // $SlabButton-fontSize-default: 14px;
 $SlabButton-fontSize-default: 15px;
 $SlabButton-fontSize-small: 13px;
@@ -19,29 +14,30 @@ $SlabButton-fontSize-small: 13px;
 $SlabButton-minHeight: 64px;
 
 .SlabButton {
-  padding: $SlabButton-paddingV $SlabButton-paddingH;
-  background: $SlabButton-bgColor-default;
-  min-height: $SlabButton-minHeight;
-  // background: transparent;
-  // background: rgba(white, .5);
-  color: $SlabButton-color-default;
-  border-radius: 3px;
-  font-size: $SlabButton-fontSize-default;
-  font-weight: 600;
-  cursor: pointer;
-  // @include commonPanelBoxShadow;
+  @include ButtonStyle-base;
+  @include ButtonStyle-default;
   &:hover, &:focus {
-    background-color: lighten($SlabButton-bgColor-default, 10%);
-    color: lighten($SlabButton-color-default, 10%);
-    outline: 0;
+    @include ButtonStyle-default-hover;
   }
   &:active {
-    background-color: darken($SlabButton-bgColor-default, 10%);
-    color: darken($SlabButton-color-default, 10%);
+    @include ButtonStyle-default-active;
   }
+  padding: $SlabButton-paddingV $SlabButton-paddingH;
+  min-height: $SlabButton-minHeight;
+  border-radius: 5px;
+  font-size: $SlabButton-fontSize-default;
   &:first-child {
-  // border-top: 2px solid darken($SlabButton-color-default, 5%);
-    
+  // border-top: 2px solid darken($SlabButton-color-default, 5%);    
+  }
+}
+
+.SlabButton--primary {
+  @include ButtonStyle-primary;
+  &:hover, &:focus {
+    @include ButtonStyle-primary-hover;
+  }
+  &:active {
+    @include ButtonStyle-primary-active;
   }
 }
 

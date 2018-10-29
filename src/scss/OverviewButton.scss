@@ -6,6 +6,7 @@ $OverviewButton-color-default: #004257; //TODO: Config
 
 // $OverviewButton-fontSize-default: 14px;
 $OverviewButton-fontSize-default: 13px;
+$OverviewButton-fontSize-large: 15px;
 $OverviewButton-fontSize-small: 12px;
 
 .OverviewButton {
@@ -21,25 +22,39 @@ $OverviewButton-fontSize-small: 12px;
   border-radius: 3px;
   font-size: $OverviewButton-fontSize-default;
   font-weight: 500;
-  &:hover, &:focus {
-    background-color: lighten($OverviewButton-bgColor-default, 10%);
-    color: lighten($OverviewButton-color-default, 10%);
-    outline: 0;
-    box-shadow: none;
-  }
-  &:active {
-    background-color: darken($OverviewButton-bgColor-default, 10%);
-    color: darken($OverviewButton-color-default, 10%);
-  }
 }
+
 .OverviewButton--small {
   font-size: $OverviewButton-fontSize-small;
+}
+.OverviewButton--large {
+  font-size: $OverviewButton-fontSize-large;
 }
 
 .OverviewButton--green {
   background-color: $app-color-brightGreen;
   color: rgba(0,0,0,.65);
 }
+.OverviewButton--primary {
+  @include ButtonStyle-primary;
+  &:hover, &:focus {
+    @include ButtonStyle-primary-hover;
+  }
+  &:active {
+    @include ButtonStyle-primary-active; 
+  }
+}
+.OverviewButton--addNew {
+  @include ButtonStyle-addNew;
+  &:hover, &:focus {
+    @include ButtonStyle-addNew-hover;
+  }
+  &:active {
+    @include ButtonStyle-addNew-active; 
+  }
+}
+
+
 
 .OverviewButton-icon {
   width: 1.75em;
