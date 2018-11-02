@@ -1,0 +1,51 @@
+<div class="OverviewSection ng-scope" ng-if="$ctrl.filteredSortedEvents &amp;&amp; $ctrl.filteredSortedEvents.length">
+	<div class="OverviewSection-header">
+		<div class="OverviewSection-header-split">
+			<h3 class="OverviewSection-heading OverviewSection-header-item">
+				Event Log
+			</h3>
+		</div>
+	</div>
+
+	<div class="OverviewSection-body">
+		<!-- ngRepeat: notation in $ctrl.filteredSortedEvents | limitTo:$ctrl.showRows --><div class="OverviewSection-body-item OverviewSection-body-item--sibling ng-scope" ng-repeat="notation in $ctrl.filteredSortedEvents | limitTo:$ctrl.showRows">
+			<div class="Text ng-binding">
+				Submission Locked - Submission Locked
+			</div>
+			<div class="Text ng-binding">
+				Change Audit - Created
+			</div>
+
+			<div class="TextSplit">
+				<div class="Text Text--bold ng-binding">Internal User</div>
+				<div class="Chip ng-binding">2018-10-25 8:13 AM</div>
+			</div>
+		</div><!-- end ngRepeat: notation in $ctrl.filteredSortedEvents | limitTo:$ctrl.showRows --><div class="OverviewSection-body-item OverviewSection-body-item--sibling ng-scope" ng-repeat="notation in $ctrl.filteredSortedEvents | limitTo:$ctrl.showRows">
+			<div class="Text ng-binding">
+				Submission Unlocked - Submission Unlocked
+			</div>
+			<div class="Text ng-binding">
+				Change Audit - Created
+			</div>
+
+			<div class="TextSplit">
+				<div class="Text Text--bold ng-binding">Internal User</div>
+				<div class="Chip ng-binding">2018-10-25 8:13 AM</div>
+			</div>
+		</div><!-- end ngRepeat: notation in $ctrl.filteredSortedEvents | limitTo:$ctrl.showRows --><div class="OverviewSection-body-item OverviewSection-body-item--sibling ng-scope" ng-repeat="notation in $ctrl.filteredSortedEvents | limitTo:$ctrl.showRows">
+			<div class="Text ng-binding">
+				Submission Locked - Submission Locked
+			</div>
+			<div class="Text ng-binding">
+				Change Audit - Created
+			</div>
+
+			<div class="TextSplit">
+				<div class="Text Text--bold ng-binding">Internal User</div>
+				<div class="Chip ng-binding">2018-11-01 3:35 PM</div>
+			</div>
+		</div><!-- end ngRepeat: notation in $ctrl.filteredSortedEvents | limitTo:$ctrl.showRows -->
+		<!-- ngIf: $ctrl.initialRowCount < $ctrl.totalRows -->
+		<!-- ngIf: $ctrl.totalRows === 0 -->
+	</div>
+</div>
