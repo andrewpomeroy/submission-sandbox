@@ -1,7 +1,4 @@
 {
-  "//1": "describes your app and its dependencies",
-  "//2": "https://docs.npmjs.com/files/package.json",
-  "//3": "updating this file will download and update your packages",
   "name": "starter-react",
   "version": "0.0.1",
   "description": "A small scaffold to get you started using React with Webpack",
@@ -44,8 +41,6 @@
     "mini-css-extract-plugin": "^0.4.2",
     "node-sass": "^4.9.3",
     "raw-loader": "^0.5.1",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
     "sass-loader": "^7.1.0"
   },
   "engines": {
