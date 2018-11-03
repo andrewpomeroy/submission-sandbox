@@ -1,0 +1,22 @@
+@mixin linkStyle-base {
+  color: $app-color-electricBlue;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 60ms linear;
+}
+@mixin linkStyle-hover {
+  color: lighten($app-color-electricBlue, 10%);
+}
+@mixin linkStyle-active {
+  color: darken($app-color-electricBlue, 10%);
+}
+
+@mixin linkStyle {
+  @include linkStyle-base;
+  &:hover, &:focus {
+    @include linkStyle-hover;
+  }
+  &:active {
+    @include linkStyle-active;
+  }
+}

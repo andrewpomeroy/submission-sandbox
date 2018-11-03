@@ -1,0 +1,74 @@
+.CardRow {
+    display: flex;
+}
+
+.Card {
+    border-radius: 5px;
+    background: white;
+    border: 1px solid gainsboro;
+}
+
+.Card--medium {
+    padding: 1rem 1.25rem;
+}
+
+.Card-content-item--alignRight {
+    align-self: flex-end;
+}
+
+.Card {
+    display: flex;
+    flex-direction: column;
+}
+
+.Card-content-item:not(:first-child) {
+    margin-top: .5rem;
+}
+
+.CardRow.CardRow--medium {
+    padding-left: .25rem;
+    padding-right: .25rem;
+    margin-right: -.25em;
+    margin-left: -.25em;
+}
+
+.CardRow > .Card {
+    margin-right: .25em;
+    margin-left: .25em;
+    flex: 1;
+}
+
+.Card .StepHeader {
+    flex: 1;
+}
+
+.Card--medium {
+    /* font-size: 12px; */
+}
+
+.Card--linked {
+    cursor: pointer;
+    &:hover, &:focus {
+        outline: 0;
+        box-shadow: 0;
+        border-color: $app-color-electricBlue;
+        background-color: rgba($app-color-electricBlue, .1);
+    }
+    &:active {
+        background-color: darken(rgba($app-color-electricBlue, .1), 10%);
+    }
+}
+
+.Card--green {
+    border-color: $app-color-brightGreen-text;
+    background-color: rgba($app-color-brightGreen, .1);
+    &.Card--linked {
+        &:hover, &:focus {
+            border-color: lighten($app-color-brightGreen-text, 10%);
+            background-color: lighten(rgba($app-color-brightGreen, .1), 10%);
+        }
+        &:active {
+            background-color: darken(rgba($app-color-brightGreen, .1), 10%);
+        }
+    }
+}

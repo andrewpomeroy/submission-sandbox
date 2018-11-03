@@ -1,11 +1,16 @@
 .LinkBlock {
+    display: flex;
+    align-items: center;
     border: 0;
     background: none;
-    display: flex;
-    flex-direction: row;
+    padding: 0;
+    margin: 0;
     width: 100%;
-    align-items: center;
-    color: blue;
+    padding: .5em;
+    @include linkStyle();
+    &:hover {
+        background-color: rgba($app-color-electricBlue, .1);
+    }
 }
 
 .LinkBlock--centered {
@@ -24,17 +29,3 @@
     margin-top: -5px;
     margin-bottom: -5px;
 }
-
-.OverviewSection-body-item--flushTop {
-    padding-top: 0;
-}
-
-color {}
-
-.BoxFrame {
-    background: white;
-    border: 1px solid gainsboro;
-    border-radius: 5px;
-}
-
-.BoxFrame-header.BoxFrame-header--centered {}

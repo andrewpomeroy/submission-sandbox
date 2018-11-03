@@ -1,0 +1,19 @@
+.StepHeader--split {
+    display: flex;
+}
+
+.StepHeader--split > *:not(:last-child) {
+    margin-right: 1em;
+}
+
+.StepHeader-number {
+    min-width: 2em;
+    background: gainsboro;
+    align-self: flex-start;
+    display: flex;
+    justify-content: center;
+    flex: 0 0 auto;
+    align-items: center;
+    min-height: 2em;
+    border-radius: 999px;
+}

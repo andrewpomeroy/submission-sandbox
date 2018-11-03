@@ -1,0 +1,21 @@
+.BoxFrame {
+    border: 1px solid gainsboro;
+    border-radius: 5px;
+}
+
+.BoxFrame-header {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.BoxFrame-header--centered {
+    align-items: center;
+}
+
+.BoxFrame-content {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 1rem;
+}

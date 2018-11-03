@@ -1,0 +1,8 @@
+.UsernameLink {
+    display: flex;
+    @include linkStyle();
+}
+
+.UsernameLink-icon {
+    margin-right: .5em;
+}
