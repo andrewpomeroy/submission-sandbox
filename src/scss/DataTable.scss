@@ -44,12 +44,12 @@
   display: block;
   padding: 4px;
   background-color: rgba(0,0,0,.05);
-  color: $app-color-electricBlue;
+  color: $color-electricBlue;
   &:hover, &:focus {
     background-color: $color-lightblue-highlight;
-    color: lighten($app-color-electricBlue, 10%);
+    color: lighten($color-electricBlue, 10%);
   }
   &:active {
-    color: darken($app-color-electricBlue, 10%);
+    color: darken($color-electricBlue, 10%);
   }
 }

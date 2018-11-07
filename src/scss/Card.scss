@@ -52,24 +52,24 @@
     &:hover, &:focus {
         outline: 0;
         box-shadow: 0;
-        border-color: rgba($app-color-electricBlue, .25);
-        background-color: rgba($app-color-electricBlue, .05);
+        border-color: rgba($color-electricBlue, .25);
+        background-color: rgba($color-electricBlue, .05);
     }
     &:active {
-        background-color: darken(rgba($app-color-electricBlue, .1), 10%);
+        background-color: darken(rgba($color-electricBlue, .1), 10%);
     }
 }
 
 .Card--green {
-    border-color: $app-color-brightGreen-text;
-    background-color: rgba($app-color-brightGreen, .1);
+    border-color: $color-brightGreen-text;
+    background-color: rgba($color-brightGreen, .1);
     &.Card--linked {
         &:hover, &:focus {
-            border-color: lighten($app-color-brightGreen-text, 20%);
-            background-color: lighten(rgba($app-color-brightGreen, .1), 20%);
+            border-color: lighten($color-brightGreen-text, 20%);
+            background-color: lighten(rgba($color-brightGreen, .1), 20%);
         }
         &:active {
-            background-color: darken(rgba($app-color-brightGreen, .1), 10%);
+            background-color: darken(rgba($color-brightGreen, .1), 10%);
         }
     }
 }

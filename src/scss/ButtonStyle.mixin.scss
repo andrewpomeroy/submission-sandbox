@@ -1,6 +1,14 @@
-$color-electricBlue: #146be6; // yikes
-$app-color-highlightBlue: $color-electricBlue; // yikes
-
+@mixin u-unstyleButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: 0;
+  padding: 0;
+  font-family: inherit;
+  font-size: 1em;
+  -webkit-appearance: none;
+}
 
 @mixin ButtonStyle-base {
   display: flex;
@@ -52,21 +60,21 @@ $app-color-highlightBlue: $color-electricBlue; // yikes
 
 @mixin ButtonStyle-addNew {
   background: none;
-  border-color: $app-color-brightGreen;
+  border-color: $color-brightGreen;
   color: rgba(0,0,0,.65);
   .OverviewButton-icon {
-    color: $app-color-brightGreen;
+    color: $color-brightGreen;
   }
 }
 @mixin ButtonStyle-addNew-hover {
-  background-color: $app-color-brightGreen;
-  border-color: $app-color-brightGreen;
+  background-color: $color-brightGreen;
+  border-color: $color-brightGreen;
   color: white;
   .OverviewButton-icon {
     color: white;
   }
 }
 @mixin ButtonStyle-addNew-active {
-  background-color: rgba($app-color-brightGreen, .9);
-  border-color: rgba($app-color-brightGreen, .9);
+  background-color: rgba($color-brightGreen, .9);
+  border-color: rgba($color-brightGreen, .9);
 }
