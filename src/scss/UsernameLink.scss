@@ -1,8 +1,11 @@
 .UsernameLink {
     display: flex;
     @include linkStyle();
+    align-items: center;
 }
 
 .UsernameLink-icon {
     margin-right: .5em;
+    height: 1em;
+    width: 1em;
 }

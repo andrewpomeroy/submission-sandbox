@@ -8,12 +8,22 @@
 
 .StepHeader-number {
     min-width: 2em;
-    background: gainsboro;
+    background: rgba(0,0,0,.17);
     align-self: flex-start;
     display: flex;
     justify-content: center;
     flex: 0 0 auto;
     align-items: center;
-    min-height: 2em;
+    height: 2em;
     border-radius: 999px;
+}
+
+// Lock down width and provide padding, such that an SVG icon will fill the remaining dimensions
+.StepHeader-number--icon {
+    width: 2em;
+    padding: 0.5em;
+}
+.StepHeader-number--complete {
+    background-color: $app-color-brightGreen;
+    color: white;
 }
