@@ -24,7 +24,6 @@ $color-lightblue-highlight: #78b5dd !default;
 $color-teal-highlight: #78dddd !default;
 // $color-red: #ff7a86 !default;
 $color-red: hsl(352, 67%, 54%) !default; // Darkened to meet 4.5 contrast ratio (accessibility)
-$color-neutralblue: #5488ab !default;
 $color-neutralblue-light: hsl(204, 50%, 75%) !default;
 $color-neutralblue-darkest: #3d627b !default;
 $color-neutralblue-darker: #2472a7 !default;
@@ -34,6 +33,14 @@ $color-yellow: #ffdf80 !default;
 $color-lightest-ADA-gray: hsl(0,0%,46%) !default;
 
 $color-brightblue: #2F9BE3;
+
+$color-blueGreen: #0092BF;
+$color-electricBlue: hsl(215, 84%, 49%);
+$color-neutralblue: #5488ab !default;
+$color-neutralBlue: #4868AB;
+$color-neutralGreen: #649498;
+$color-brightGreen: #78DDDD;
+$color-brightGreen-text: darken($color-brightGreen, 20%);
 
 // BASE MAPPINGS
 
@@ -57,7 +64,7 @@ $app-color-validation-error: $color-red !default;
 $app-color-validation-error-text: hsl(354, 73%, 45%) !default; // Darkened to meet 4.5 contrast ratio (accessibility)
 $app-color-validation-success: $color-teal-highlight !default;
 $app-color-validation-success-text: #008484 !default; // Darkened to meet 4.5 contrast ratio (accessibility)
-$app-color-warning: $color-yellow !default;
+$app-color-warning: $color-yellow !default; // TODO: .. consolidate with orange (for correction requests) -- too damn hard to see yellow in most places
 $app-color-warning-text: hsl(hue($app-color-warning), 10%, 62%) !default;
 $app-color-danger: $color-red !default;
 $app-color-danger-text: hsl(hue($app-color-danger), 10%, 62%) !default;
@@ -65,10 +72,11 @@ $app-color-info: $color-neutralblue-darkest !default;
 $app-color-search: $color-neutralblue-darkest !default;
 $app-color-filter-active: hsl(204, 100%, 93%) !default;
 
+$app-color-highlightBlue: $color-electricBlue;
 $app-color-muted: #969696 !default;
 
-$app-color-correctionRequest-base: $color-orange !default;
-$app-color-correctionRequest-base: #f09d43; // ?
+$app-color-correctionRequest-base: #f09d43 !default;
+$app-color-processingIssue-base: hsl(0,0%,30%) !default;
 $app-color-note-base: $color-brightblue !default;
 
 // Panel border/shadow/background definitions
