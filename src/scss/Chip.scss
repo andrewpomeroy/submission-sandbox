@@ -41,7 +41,9 @@ $Chip-borderRadius: 3px;
 }
 
 .Chip--warning {
-  background-color: $app-color-warning;
+  // background-color: $app-color-warning;
+  // too hard to see yellow
+  background-color: $color-orange; 
 }
 
 .Chip-item {

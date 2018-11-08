@@ -78,3 +78,34 @@
   background-color: rgba($color-brightGreen, .9);
   border-color: rgba($color-brightGreen, .9);
 }
+
+@mixin ButtonStyle-solidGreen {
+  background: $color-brightGreen;
+  border-color: $color-brightGreen;
+  color: white;
+}
+@mixin ButtonStyle-solidGreen-hover {
+  background-color: white;
+  border-color: white;
+  color: $color-brightGreen;
+}
+@mixin ButtonStyle-solidGreen-active {
+  background-color: mix(white, $color-brightGreen, 90%);
+  border-color: mix(white, $color-brightGreen, 90%);
+}
+
+
+@mixin ButtonStyle-orange {
+  background: $app-color-correctionRequest-base;
+  border-color: $app-color-correctionRequest-base;
+  color: white;
+}
+@mixin ButtonStyle-orange-hover {
+  background-color: white;
+  border-color: white;
+  color: $app-color-correctionRequest-base;
+}
+@mixin ButtonStyle-orange-active {
+  background-color: mix(white, $app-color-correctionRequest-base, 90%);
+  border-color: mix(white, $app-color-correctionRequest-base, 90%);
+}

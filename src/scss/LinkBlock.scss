@@ -19,6 +19,7 @@
     }
 }
 .LinkBlock--inactive {
+    cursor: default;
     &, &:hover, &:focus, &:active {
         color: $theme-text;
     }
@@ -26,6 +27,10 @@
 
 .LinkBlock--centered {
     justify-content: center;
+}
+
+.LinkBlock--small {
+    font-size: 14px;
 }
 
 .LinkBlock-element:not(:last-child) {

@@ -1,6 +1,11 @@
-@import 'compatibility/compatibility-pre.scss';
-// Config
+@import 'compatibility/compatibility.scss';
 
+// // Config
+// @import 'backfill-config.scss';
+@import 'CommonMeta.config.scss';
+
+// // Mixins
+@import 'common.mixins.scss';
 @import 'ButtonStyle.mixin.scss';
 @import 'linkStyle.mixin.scss';
 
@@ -29,6 +34,5 @@
 @import 'FlatList.scss';
 @import 'TabStrip.scss';
 @import 'StepHeader.scss';
-
-
 @import 'temp.scss';
+
