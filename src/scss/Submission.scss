@@ -70,8 +70,14 @@ $SubmissionSupplementals-paddingV: 4px;
 $SubmissionBody-column-paddingV: 36px;
 
 .SubmissionBody {
+  // background-color: $app-color-panel-b1;
+  // background-color: $Submission-backPanel-bgColor;
+  // background-color: #f7f7fc; // TODO: Config
+  background-color: $app-color-panel-top;
+}
+
+.SubmissionBody-sidebarStyle {
   background-color: $app-color-panel-b1;
-  background-color: $Submission-backPanel-bgColor;
   background-color: #f7f7fc; // TODO: Config
 }
 
@@ -83,10 +89,8 @@ $SubmissionBody-column-paddingV: 36px;
 }
 .SubmissionBody-column--main {
   // flex: 3;
-  background-color: $Submission-panel-bgColor;
   padding-left: $CenterColumnWrap-gutter;
   padding-right: $CenterColumnWrap-gutter;
-  @include commonPanelBoxShadow;
 }
 .SubmissionBody-column--aside {
   // flex: 1;
