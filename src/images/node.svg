@@ -1,0 +1,35 @@
+<svg version="1.1" class="AppForm-step-node-state AppForm-step-node-state--Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="24px" height="24px" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve">
+
+<g class="AppForm-step-node-state AppForm-step-node-state--group SvgState SvgState--group">
+	<g>
+		<circle class="SvgState--circle-primary" fill="inherit" stroke="inherit" stroke-miterlimit="10" cx="14.375" cy="12" r="6.643"/>
+		<circle fill="inherit" stroke="inherit" stroke-miterlimit="10" cx="9.625" cy="12" r="6.643"/>
+	</g>
+</g>
+<g class="AppForm-step-node-state AppForm-step-node-state--diamond SvgState SvgState--diamond">
+	
+		<rect class="SvgState--diamond-primary" x="6.19" y="6.19" transform="matrix(0.7071 0.7071 -0.7071 0.7071 12.0017 -4.9703)" fill="inherit" stroke="inherit" stroke-width="0.8723" stroke-miterlimit="10" width="11.621" height="11.621"/>
+</g>
+<g class="AppForm-step-node-state AppForm-step-node-state--diamondgroup SvgState SvgState--diamondgroup">
+	
+		<rect class="SvgState--diamond-primary" x="8.69" y="6.19" transform="matrix(0.7071 0.7071 -0.7071 0.7071 12.734 -6.7381)" fill="inherit" stroke="inherit" stroke-width="0.8723" stroke-miterlimit="10" width="11.621" height="11.621"/>
+	
+		<rect x="3.69" y="6.19" transform="matrix(0.7071 0.7071 -0.7071 0.7071 11.2694 -3.2024)" fill="inherit" stroke="inherit" stroke-width="0.8723" stroke-miterlimit="10" width="11.621" height="11.621"/>
+</g>
+<g class="AppForm-step-node-state AppForm-step-node-state--ok SvgState SvgState--ok">
+	<circle fill="#DEFFFF" stroke="#78DDDD" stroke-width="0.8034" stroke-miterlimit="10" cx="12" cy="12" r="9.398"/>
+	<polyline fill="none" stroke="#78DDDD" stroke-width="3.2136" stroke-miterlimit="10" points="16.3,8.925 10.66,15.075 7.7,12.342 
+			"/>
+</g>
+<g class="AppForm-step-node-state AppForm-step-node-state--error SvgState SvgState--error">
+	<circle fill="#FFEBED" stroke="#FF7A86" stroke-width="0.8034" stroke-miterlimit="10" cx="12" cy="12.001" r="7.336"/>
+	<g>
+		<line fill="none" stroke="#FF7A86" stroke-width="2" stroke-miterlimit="10" x1="9.216" y1="14.785" x2="14.784" y2="9.216"/>
+		<line fill="none" stroke="#FF7A86" stroke-width="2" stroke-miterlimit="10" x1="9.216" y1="9.216" x2="14.784" y2="14.785"/>
+	</g>
+</g>
+<g class="AppForm-step-node-state AppForm-step-node-state--circle SvgState SvgState--circle">
+	<circle class="SvgState--circle-primary" fill="inherit" stroke="inherit" stroke-width="0.8034" stroke-miterlimit="10" cx="12" cy="12" r="6.992"/>
+</g>
+</svg>

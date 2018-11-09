@@ -39,6 +39,11 @@ module.exports = {
             outputPath: 'fonts/'
           }
         }]
+      },
+      // Inline SVG 
+      {
+        test: /\.svg$/,
+        loader: 'svg-inline-loader'
       }
       // { test: /\.(png|woff|woff2|eot|ttf|svg)$/, use: ['url-loader?limit=100000'] }
     ],

@@ -23,6 +23,7 @@
     "faker": "^4.1.0",
     "file-loader": "^2.0.0",
     "style-loader": "latest",
+    "svg-inline-loader": "^0.8.0",
     "webpack": "latest",
     "webpack-cli": "^3.1.1"
   },

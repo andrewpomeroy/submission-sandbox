@@ -1,0 +1,21 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
+<g>
+	<g>
+		<g>
+			<g>
+				<path d="M12,4.7c-5.3,0-9.7,4.3-9.7,9.7c0,5.3,4.3,9.7,9.7,9.7s9.7-4.3,9.7-9.7C21.7,9,17.4,4.7,12,4.7z M12,22.4
+					c-4.4,0-8-3.6-8-8c0-4.4,3.6-8,8-8s8,3.6,8,8C20.1,18.8,16.5,22.4,12,22.4z"/>
+			</g>
+		</g>
+		<polygon points="8.7,12.7 12,7.1 15.3,12.7 		"/>
+	</g>
+</g>
+<g>
+	<circle cx="3.9" cy="4.7" r="1.5"/>
+	<circle cx="7.7" cy="2.5" r="1.5"/>
+	<circle cx="12" cy="1.5" r="1.5"/>
+	<circle cx="16.4" cy="2.5" r="1.5"/>
+	<circle cx="20.2" cy="4.7" r="1.5"/>
+</g>
+</svg>
