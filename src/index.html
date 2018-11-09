@@ -66,6 +66,9 @@
                     <div class="SubmissionSupplementals-item SubmissionSupplementals-item--noPaddingV">
                       <label><input type="checkbox" ng-model="userIsApplicant"> Nifty debug thing</label>
                     </div>
+                    <div class="SubmissionSupplementals-item SubmissionSupplementals-item--noPaddingV">
+                      <label><input type="checkbox" ng-model="notCurrentRevision"> Not Current Revision</label>
+                    </div>
                   </div>
   
                 </div>
@@ -81,22 +84,16 @@
           </div>
         </div>
       </header>
-      <!-- <div class="Banner">
+      <div class="Banner" ng-if="notCurrentRevision">
         <div class="Banner-icon">
           <div class="SvgWrap SvgWrap--fillDimensions">
-            <svg class="SvgWrap-icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-              viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
-              <g>
-                <path d="M18.4,10.1V8.2c0-3.7-3-6.7-6.7-6.7c-3.7,0-6.7,3-6.7,6.7v1.9c-0.9,0.2-1.6,0.9-1.6,1.9v8.6c0,1.1,0.9,1.9,1.9,1.9h12.6
-            		c1.1,0,1.9-0.9,1.9-1.9V12C20,11.1,19.3,10.3,18.4,10.1z M15.6,10.1H7.9V8.2c0-2.1,1.7-3.8,3.8-3.8c2.1,0,3.8,1.7,3.8,3.8V10.1z" />
-              </g>
-            </svg>
+            <get-svg name="history"></get-svg>
           </div>
         </div>
         <div class="Banner-text">
-          This submission is locked for review &mdash; It cannot be revised until processors have completed their review.
+          You are viewing <strong>Revision 1</strong>, which is 2 revisions behind the current version.
         </div>
-      </div> -->
+      </div>
       <div class="SubmissionBody" layout="vertical" style="flex: 1 0 auto;">
         <div class="HorizontalLayoutWrap fillHeight">
 

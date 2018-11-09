@@ -81,9 +81,6 @@ $SubmissionBody-column-paddingV: 36px;
   background-color: #f7f7fc; // TODO: Config
 }
 
-.SubmissionBody-columns {
-  // display: flex; // necessary?
-}
 .SubmissionBody-column {
   padding-top: $SubmissionBody-column-paddingV;
 }
@@ -91,7 +88,4 @@ $SubmissionBody-column-paddingV: 36px;
   // flex: 3;
   padding-left: $CenterColumnWrap-gutter;
   padding-right: $CenterColumnWrap-gutter;
-}
-.SubmissionBody-column--aside {
-  // flex: 1;
 }

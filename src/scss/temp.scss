@@ -1,21 +1,8 @@
-// Body style
-
 // New stuff
-
-
-
 
 .HorizontalLayoutWrap {
   display: flex;
   flex-direction: column; // undone w media query at min width
-}
-.HorizontalLayoutWrap--mixed {
-
-}
-.HorizontalLayoutWrap-item {
-
-}
-.HorizontalLayoutWrap-item--padded {
 }
 
 .l-LargeColumnLayout-paddingH {
@@ -73,12 +60,16 @@
     color: white;
     display: flex;
     justify-content: center;
+    align-items: center;
     padding: 1em;
 }
 
 .Banner-icon {
     width: 1em;
     height: 1em;
+    &:not(:last-child) {
+      margin-right: .5em;
+    }
 }
 
 .u-color-success {
