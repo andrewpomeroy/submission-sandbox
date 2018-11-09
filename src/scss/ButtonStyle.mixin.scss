@@ -1,3 +1,5 @@
+$color-neutralDark: #394b66; // TODO: config
+
 @mixin u-unstyleButton {
   display: inline-flex;
   align-items: center;
@@ -25,6 +27,16 @@
   }
 }
 
+@mixin ButtonStyle-shadow ($color, $darkenFactor: 20%, $distance: 2px) {
+  box-shadow: 0px $distance 0px darken($app-color-highlightBlue, $darkenFactor);  
+}
+@mixin ButtonStyle-activeTransform ($distance: 2px) {
+  box-shadow: none;
+  transform: translateY($distance);
+  transition-duration: 0;
+}
+
+
 
 @mixin ButtonStyle-default {
   color: $app-color-highlightBlue;
@@ -39,22 +51,30 @@
 @mixin ButtonStyle-default-active {
   background-color: darken($app-color-highlightBlue, 10%);
   border-color: darken($app-color-highlightBlue, 10%);
+  @include ButtonStyle-activeTransform;
 }
 
 
 @mixin ButtonStyle-primary {
-    background-color: $app-color-highlightBlue;
-    color: white;
-    border-color: $app-color-highlightBlue;
+  background-color: $app-color-highlightBlue;
+  color: white;
+  border-color: $app-color-highlightBlue;
+  @include ButtonStyle-shadow($app-color-highlightBlue, $darkenFactor: 10%);
 }
 @mixin ButtonStyle-primary-hover {
-  background-color: white;
-  border-color: white;
-  color: $app-color-highlightBlue;
+  // background-color: white;
+  // border-color: white;
+  // color: $app-color-highlightBlue;
+  background-color: lighten($app-color-highlightBlue, 10%);
+  border-color: lighten($app-color-highlightBlue, 10%);
 }
 @mixin ButtonStyle-primary-active {
-  background-color: mix(white, $app-color-highlightBlue, 90%);
-  border-color: mix(white, $app-color-highlightBlue, 90%);
+  // background-color: mix(white, $app-color-highlightBlue, 90%);
+  // border-color: mix(white, $app-color-highlightBlue, 90%);
+  background-color: darken($app-color-highlightBlue, 10%);
+  border-color: darken($app-color-highlightBlue, 10%);
+  // Redundant
+  // @include ButtonStyle-activeTransform;
 }
 
 
@@ -83,6 +103,7 @@
   background: $color-brightGreen;
   border-color: $color-brightGreen;
   color: white;
+  @include ButtonStyle-shadow($color-brightGreen);
 }
 @mixin ButtonStyle-solidGreen-hover {
   background-color: white;
@@ -92,6 +113,8 @@
 @mixin ButtonStyle-solidGreen-active {
   background-color: mix(white, $color-brightGreen, 90%);
   border-color: mix(white, $color-brightGreen, 90%);
+  // Redundant
+  // @include ButtonStyle-activeTransform;
 }
 
 
@@ -99,6 +122,7 @@
   background: $app-color-correctionRequest-base;
   border-color: $app-color-correctionRequest-base;
   color: white;
+  @include ButtonStyle-shadow($app-color-correctionRequest-base);
 }
 @mixin ButtonStyle-orange-hover {
   background-color: white;
@@ -108,4 +132,28 @@
 @mixin ButtonStyle-orange-active {
   background-color: mix(white, $app-color-correctionRequest-base, 90%);
   border-color: mix(white, $app-color-correctionRequest-base, 90%);
+  // Redundant
+  // @include ButtonStyle-activeTransform;
+}
+
+@mixin ButtonStyle-neutralDark {
+  background-color: $color-neutralDark;
+  color: white;
+  border-color: $color-neutralDark;
+  @include ButtonStyle-shadow($color-neutralDark, $darkenFactor: 25%);
+}
+@mixin ButtonStyle-neutralDark-hover {
+  // background-color: white;
+  // border-color: white;
+  // color: $color-neutralDark;
+  background-color: lighten($color-neutralDark, 10%);
+  border-color: lighten($color-neutralDark, 10%);
+}
+@mixin ButtonStyle-neutralDark-active {
+  // background-color: mix(white, $color-neutralDark, 90%);
+  // border-color: mix(white, $color-neutralDark, 90%);
+  background-color: darken($color-neutralDark, 10%);
+  border-color: darken($color-neutralDark, 10%);
+  // Redundant
+  // @include ButtonStyle-activeTransform;
 }

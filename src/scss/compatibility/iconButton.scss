@@ -1,0 +1,49 @@
+$iconButton-padding: .5em;
+
+.IconButton {
+    flex: 0 0 auto;
+    position: relative;
+    display: inline-flex;
+
+    background: none; // Undoing button styles
+    border: 0; // Undoing button styles
+    font-size: 1em; // Undoing button styles
+    color: inherit; // Undoing button styles
+
+    padding: $iconButton-padding;
+    // margin: -$iconButton-padding;
+    border-radius: 5px;
+
+    .SvgWrap {
+        opacity: .7;
+    }
+
+    &:hover {
+        background-color: rgba($color-lightblue-highlight, .4);
+        // color: white;
+        .SvgWrap {
+            opacity: 1;
+        }
+    }
+}
+
+.IconButton-count {
+    font-size: 0.65em;
+    background-color: $app-color-validation-error;
+    display: inline-block;
+    width: 1.35em;
+    height: 1.35em;
+    text-align: center;
+    color: white;
+    border-radius: 999px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: $iconButton-padding / 2;
+    bottom: $iconButton-padding / 2;
+}
+
+.IconButton--remove {
+    font-size: 10px;
+}

@@ -363,12 +363,10 @@ body {
   fill: none;
 }
 
-.SlabButton {
-    // margin-bottom: 10px; // no
-    & + & {
-      margin-top: 10px; // no
-  }
+.SvgWrap-icon > svg {
+  width: 100%;
+  height: 100%;
 }
 
-
 @import 'compatibility/fonts';
+@import 'compatibility/iconButton';

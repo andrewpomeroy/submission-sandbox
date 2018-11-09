@@ -41,7 +41,7 @@
                       </div>
                     </div>
   
-                    <div class="SubmissionSupplementals-item SubmissionSupplementals-item--noPaddingV" ng-if="userIsProcessor">
+                    <div class="SubmissionSupplementals-item SubmissionSupplementals-item--noPaddingV" ng-if="userIsApplicant">
                       <div class="Chip Chip--small Chip--warning">
                         <span class="Chip-item Chip-icon">
                           <div class="SvgWrap SvgWrap--fillDimensions">
@@ -64,117 +64,20 @@
 
                   <div class="SubmissionSupplementals-row">
                     <div class="SubmissionSupplementals-item SubmissionSupplementals-item--noPaddingV">
-                      <label><input type="checkbox" ng-model="userIsProcessor"> I am a Processor</label>
+                      <label><input type="checkbox" ng-model="userIsApplicant"> Nifty debug thing</label>
                     </div>
                   </div>
   
                 </div>
               </div>
-              <div class="SubmissionHeader-block">
-                <div class="SubmissionSupplementals">
-                  <div class="SubmissionSupplementals-row">
-                    <div class="SubmissionSupplementals-item SubmissionSupplementals-item--noPaddingV">
-                      <button class="SlabButton SlabButton--leftAligned SlabButton--primary">
-                        <div class="SlabButton-icon">
-                          <div class="SvgWrap SvgWrap--fillDimensions">
-                            <svg class="SvgWrap-icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"
-                              data-tags="printer,print">
-                              <g transform="scale(0.03125 0.03125)">
-                                <path d="M256 64h512v128h-512v-128z" />
-                                <path d="M960 256h-896c-35.2 0-64 28.8-64 64v320c0 35.2 28.794 64 64 64h192v256h512v-256h192c35.2 0 64-28.8 64-64v-320c0-35.2-28.8-64-64-64zM128 448c-35.346 0-64-28.654-64-64s28.654-64 64-64 64 28.654 64 64-28.652 64-64 64zM704 896h-384v-320h384v320z" />
-                              </g>
-                            </svg>
-                          </div>
-                        </div>
-                        <span class="SlabButton-mainText">
-                          Print
-                        </span>
-                      </button>
-                    </div>
-                    <div class="SubmissionSupplementals-item SubmissionSupplementals-item--noPaddingV">
-                      <button class="SlabButton SlabButton--leftAligned SlabButton--primary">
-                        <div class="SlabButton-icon">
-                          <div class="SvgWrap SvgWrap--fillDimensions">
-                            <svg class="SvgWrap-icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                              viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
-                              <g>
-                                <g>
-                                  <g>
-                                    <g>
-                                      <path d="M11,15.8c0.6,0.6,1.5,0.6,2.1,0l4.9-5c1.4-1.4-0.7-3.5-2.1-2.1l-1.7,1.7c-0.4,0.4-0.7,0.3-0.7-0.3V3.4
-                                      c0-0.8-0.7-1.5-1.5-1.5l0,0c-0.8,0-1.5,0.7-1.5,1.5v6.7c0,0.5-0.3,0.7-0.7,0.3L8.2,8.7c-1.4-1.4-3.5,0.7-2.1,2.1L11,15.8z" />
-                                    </g>
-                                    <g>
-                                      <path d="M19.4,19.6c0,0.3-0.2,0.5-0.5,0.5H5.1c-0.3,0-0.5-0.2-0.5-0.5v-2.9c0-0.8-0.7-1.5-1.5-1.5c-0.8,0-1.5,0.7-1.5,1.5V21
-                                      c0,1.1,0.9,2,2,2h16.7c1.1,0,2-0.9,2-2v-4.4c0-0.8-0.7-1.5-1.5-1.5c-0.8,0-1.5,0.7-1.5,1.5V19.6z" />
-                                    </g>
-                                  </g>
-                                </g>
-                              </g>
-                            </svg>
-                          </div>
-                        </div>
-                        <span class="SlabButton-mainText">
-                          Download
-                        </span>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
             </div>
           </div>
           <div class="HorizontalLayoutWrap-item FloatedSidebar--widthMedium l-LargeColumnLayout-paddingH" layout="horizontal" flex="fill" align-items="flex-end">
-            <div class="SubmissionHeader-block" flex="fill" layout="vertical" justify-content="flex-end">
-              <div class="SlabButton SlabButton--primary SlabButton--leftAligned" ng-if="userIsProcessor">
-                <span class="SlabButton-icon SlabButton-element">
-                  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                    viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
-                    <g>
-                      <g>
-                        <g>
-                          <path d="M13.5,17.4c-0.1-0.1-0.1-0.1-0.1-0.1c0,0,0,0,0,0c-0.5-0.5-0.9-1.1-1.2-1.6C12.1,15.8,12,15.9,12,16l-0.9,3.2
-                          c-0.1,0.4,0.1,0.6,0.5,0.4l3-1.1c0.1,0,0.2-0.1,0.3-0.2C14.2,18,13.7,17.6,13.5,17.4z" />
-                        </g>
-                        <g>
-                          <path d="M13.2,14.4c0,0.2,0,0.8,1.2,1.9c0.2,0.2,1,0.9,1.5,0.9c0.1,0,0.2,0,0.3-0.1l5.5-5.5c0,0,0.1-0.1,0.1-0.1
-                          c-0.7-0.3-1.2-0.8-1.4-1c-0.1-0.1-0.1-0.1-0.1-0.1c0,0,0,0,0,0c-0.6-0.6-1.1-1.2-1.3-1.8c0,0-0.1,0-0.1,0.1L13.2,14.4
-                          C13.2,14.4,13.2,14.4,13.2,14.4z" />
-                        </g>
-                        <g>
-                          <path d="M20.1,7.6c0,0.2,0,0.8,1.2,1.9c0.2,0.2,1,0.9,1.5,0.9c0.1,0,0.2,0,0.3-0.1l0.8-0.8C24,9.4,24,9.2,23.9,9l-2.4-2.4
-                          c-0.1-0.1-0.3-0.1-0.5,0L20.1,7.6C20.1,7.5,20.1,7.6,20.1,7.6z" />
-                        </g>
-                      </g>
-                      <g>
-                        <path d="M17.1,17.7v3.4H3.6V2.8h7.8v4.6c0,0.5,0.4,0.9,0.9,0.9h4.8v0.9l1.8-1.7V7.4c0-0.5-0.2-1-0.6-1.3l-4.8-4.6
-                        c-0.3-0.3-0.8-0.5-1.3-0.5H3.6c-1,0-1.8,0.8-1.8,1.8v18.3c0,1,0.8,1.8,1.8,1.8h13.5c1,0,1.8-0.8,1.8-1.8v-5.3L17.1,17.7z
-                          M13.2,3.7l2.9,2.8h-2.9V3.7z" />
-                      </g>
-                    </g>
-                  </svg>
-                </span>
+            <!-- <div class="SubmissionHeader-block" flex="fill" layout="vertical" justify-content="flex-end">
+              <div class="SlabButton SlabButton--primary" ng-if="userIsApplicant">
                 <span class="SlabButton-mainText">Revise Submission</span>
               </div>
-              <div class="SlabButtonCover SlabButtonCover--warning" ng-if="!userIsProcessor">
-                <div class="SlabButtonCover-icon">
-                  <div class="SvgWrap SvgWrap--fillDimensions">
-                    <svg class="SvgWrap-icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                      x="0px" y="0px" viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
-                      <g>
-                        <path d="M18.4,10.1V8.2c0-3.7-3-6.7-6.7-6.7c-3.7,0-6.7,3-6.7,6.7v1.9c-0.9,0.2-1.6,0.9-1.6,1.9v8.6c0,1.1,0.9,1.9,1.9,1.9h12.6
-                                c1.1,0,1.9-0.9,1.9-1.9V12C20,11.1,19.3,10.3,18.4,10.1z M15.6,10.1H7.9V8.2c0-2.1,1.7-3.8,3.8-3.8c2.1,0,3.8,1.7,3.8,3.8V10.1z" />
-                      </g>
-                    </svg>
-                  </div>
-                </div>
-                <div class="SlabButtonCover-mainText">
-                  <strong>Locked for Review</strong>
-                  <div class="Text Text--small">Further revision is not permitted until processors have completed review of this submission.</div>
-                </div>
-              </div>
-            </div>
+            </div> -->
           </div>
         </div>
       </header>
@@ -520,28 +423,112 @@
             <!-- SubmissionBody-column is for paddingTop -->
             <div class="SubmissionBody-column">
               <div class="OverviewSection">
-                <div class="OverviewSection-header OverviewSection-header--noSeparator">
-                  <div class="OverviewSection-header-split">
-                    <h3 class="OverviewSection-heading OverviewSection-header-item">
-                      Status
-                    </h3>
-                    <div class="OverviewSection-header-item">
-                      <div class="Chip Chip--small Chip--neutralBlue">
-                        In Process
-                      </div>
-                    </div>
-                  </div>
-                </div>
                 <div class="OverviewSection-body">
                   <div class="OverviewActionButtonColumn">
-                    <div class="SlabButton">
-                      <!--                 <div class="SlabButton-icon SlabButton-element"></div> -->
-                      <div class="SlabButton-mainText">View Status History</div>
+
+                    <!-- Locked-for-Review notice -->
+
+                    <div class="SlabButtonCover SlabButtonCover--warning" ng-if="!userIsApplicant">
+                      <div class="SlabButtonCover-icon">
+                        <div class="SvgWrap SvgWrap--fillDimensions">
+                          <svg class="SvgWrap-icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                            x="0px" y="0px" viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
+                            <g>
+                              <path d="M18.4,10.1V8.2c0-3.7-3-6.7-6.7-6.7c-3.7,0-6.7,3-6.7,6.7v1.9c-0.9,0.2-1.6,0.9-1.6,1.9v8.6c0,1.1,0.9,1.9,1.9,1.9h12.6
+                                                    c1.1,0,1.9-0.9,1.9-1.9V12C20,11.1,19.3,10.3,18.4,10.1z M15.6,10.1H7.9V8.2c0-2.1,1.7-3.8,3.8-3.8c2.1,0,3.8,1.7,3.8,3.8V10.1z" />
+                            </g>
+                          </svg>
+                        </div>
+                      </div>
+                      <div class="SlabButtonCover-mainText">
+                        <strong>Locked for Review</strong>
+                        <div class="Text Text--small">Further revision is not permitted until processors have completed review of this
+                          submission.</div>
+                      </div>
                     </div>
-                    <div class="SlabButton">
-                      <!--                 <div class="SlabButton-icon SlabButton-element"></div> -->
-                      <div class="SlabButton-mainText">View Status History</div>
+
+                    <!-- Revise -->
+
+                    <div class="SlabButton SlabButton--primary SlabButton--leftAligned" ng-if="userIsApplicant">
+                      <div class="SlabButton-icon SlabButton-element">
+                        <get-svg name="writeDoc"></get-svg>
+                      </div>
+                      <div class="SlabButton-mainText">Revise</div>
                     </div>
+
+                    <!-- Status -->
+
+                    <div class="SlabCell SlabCell--leftAligned">
+                      <!-- <div class="SlabCell-split" layout="horizontal" justify-content="space-between" align-items="center"> -->
+                      <div class="SlabCell-split">
+                        <div class="SlabCell-column SlabCell-infoSplitV">
+                          <div class="SlabCell-row SlabCell-title">
+                            Status
+                          </div>
+                          <div class="SlabCell-row">
+                            <div class="Chip Chip--small">
+                              Revised
+                            </div>
+                          </div>
+                        </div>
+                        <div class="SlabCell-column">
+                          <div class="IconButtonRow">
+                            <button class="SlabCell-actionButton IconButton SvgWrap">
+                              <get-svg name="wrench"></get-svg>
+                            </button>
+                            <button class="SlabCell-actionButton IconButton SvgWrap">
+                              <get-svg name="history"></get-svg>
+                            </button>
+                          </div>  
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Download -->
+
+                    <div class="SlabButton SlabButton--leftAligned SlabButton--neutralDark">
+                      <div class="SlabButton-icon SlabButton-element">
+                        <get-svg name="download"></get-svg>
+                      </div>
+                      <div class="SlabButton-mainText">Download</div>
+                    </div>
+
+                    <!-- Print -->
+
+                    <div class="SlabButton SlabButton--leftAligned SlabButton--neutralDark">
+                      <div class="SlabButton-icon SlabButton-element">
+                        <get-svg name="print"></get-svg>
+                      </div>
+                      <div class="SlabButton-mainText">Print</div>
+                    </div>
+
+                    <!-- Copy as New -->
+
+                    <div class="SlabButton SlabButton--leftAligned SlabButton--neutralDark">
+                      <div class="SlabButton-icon SlabButton-element">
+                        <get-svg name="copy"></get-svg>
+                      </div>
+                      <div class="SlabButton-mainText">Copy as New</div>
+                    </div>
+
+                    <!-- View Confirmation -->
+
+                    <div class="SlabButton SlabButton--leftAligned SlabButton--neutralDark">
+                      <div class="SlabButton-icon SlabButton-element">
+                        <get-svg name="receipt"></get-svg>
+                      </div>
+                      <div class="SlabButton-mainText">View Confirmation</div>
+                    </div>
+
+                    <!-- View Submission Details -->
+
+                    <div class="SlabButton SlabButton--leftAligned SlabButton--neutralDark">
+                      <div class="SlabButton-icon SlabButton-element">
+                        <get-svg name="magnifyingGlass"></get-svg>
+                      </div>
+                      <div class="SlabButton-mainText">View Submission Details</div>
+                    </div>
+
                   </div>
                 </div>
               </div>
@@ -598,7 +585,7 @@
                   </div>
                   <div class="OverviewSection-body-item">
                     <div class="OverviewActionButtonColumn">
-                      <div class="SlabButton">
+                      <div class="SlabButton SlabButton--leftAligned SlabButton--neutralDark">
                         <!--                 <div class="SlabButton-icon SlabButton-element"></div> -->
                         <div class="SlabButton-mainText">View Payment Voucher</div>
                       </div>

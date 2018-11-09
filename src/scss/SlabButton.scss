@@ -41,14 +41,28 @@ $SlabButton-minHeight: 64px;
   }
 }
 
+.SlabButton--neutralDark {
+  @include ButtonStyle-neutralDark;
+  &:hover, &:focus {
+    @include ButtonStyle-neutralDark-hover;
+  }
+  &:active {
+    @include ButtonStyle-neutralDark-active;
+  }
+}
+
 .SlabButton--leftAligned {
   justify-content: flex-start;
 }
 
-.SlabButton-icon {
+@mixin SlabButton-icon {
+  flex: 0 0 auto;
   height: 1.75em;
   width: 1.75em;
   margin-right: 1em;
+}
+.SlabButton-icon {
+  @include SlabButton-icon;
 }
 
 .SlabButton-icon--faded {
