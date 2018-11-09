@@ -10,6 +10,8 @@ import 'angular-animate';
 
 import faker from 'faker';
 
+import submissionTabsVertical from './components/submission-tabs-vertical';
+import submissionTabVertical from './components/submission-tab-vertical';
 import submissionTabs from './components/submission-tabs';
 import submissionTab from './components/submission-tab';
 import tabsWrapper from './components/tabs-wrapper';
@@ -23,8 +25,10 @@ import 'angular-material/angular-material.css';
 
 var MyApp = angular
   .module('MyApp', ['ngMaterial', 'ngMessages', 'ngSanitize'])
-  .component('submissionTab', submissionTab)
+  .component('submissionTabsVertical', submissionTabsVertical)
+  .component('submissionTabVertical', submissionTabVertical)
   .component('submissionTabs', submissionTabs)
+  .component('submissionTab', submissionTab)
   .component('tabsWrapper', tabsWrapper)
   .component('pillTabs', pillTabs)
   .component('pillTab', pillTab)

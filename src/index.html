@@ -16,8 +16,8 @@
     <div class="Outer" ng-controller="DemoCtrl as $ctrl" ng-app="MyApp" style="height: 100%">
       <header class="SubmissionHeader">
         <div class="HorizontalLayoutWrap">
-          <div class="HorizontalLayoutWrap-item l-LargeColumnLayout-paddingH" layout="horizontal" flex="fill" justify-content="center" align-items="flex-end">
-            <div class="l-mediumPageMaxWidth" layout="horizontal" justify-content="space-between" align-items="flex-end">
+          <div class="HorizontalLayoutWrap-item l-LargeColumnLayout-paddingH" layout="horizontal" flex="fill" justify-content="flex-start" align-items="flex-end">
+            <div layout="horizontal" justify-content="space-between" align-items="flex-end">
               <div class="SubmissionHeader-block SubmissionHeader-block--heading">
                 <div class="SubmissionHeading">
                   <span class="SubmissionHeading-subtitle">Submission</span>
@@ -97,20 +97,20 @@
           This submission is locked for review &mdash; It cannot be revised until processors have completed their review.
         </div>
       </div> -->
-      <submission-tabs>
-        <div class="HorizontalLayoutWrap">
-          <div class="HorizontalLayoutWrap-item l-LargeColumnLayout-paddingH" flex="fill" layout="horizontal" justify-content="center">
-            <div class="TabStrip-tabs l-mediumPageMaxWidth">
-              <submission-tab name="overview" display-name="Overview"></submission-tab>
-              <submission-tab name="forminput" display-name="Form Input"></submission-tab>
-            </div>
-          </div>
-          <!-- Spacer -->
-          <div class="HorizontalLayoutWrap-item FloatedSidebar--widthMedium l-LargeColumnLayout-paddingH"></div>
-        </div>
-      </submission-tabs>
       <div class="SubmissionBody" layout="vertical" style="flex: 1 0 auto;">
         <div class="HorizontalLayoutWrap fillHeight">
+
+          <div class="HorizontalLayoutWrap-item" flex="auto">
+            <div class="l-LargeColumnLayout-paddingLeft u-FloatedSidebar-style FloatedSidebar--widthSmall" layout="vertical" align-items="flex-end" style="height:100%;">
+              <div class="SubmissionBody-column">
+                <submission-tabs-vertical>
+                  <submission-tab-vertical name="overview" display-name="Overview"></submission-tab-vertical>
+                  <submission-tab-vertical name="forminput" display-name="Form Input"></submission-tab-vertical>
+                </submission-tabs-vertical>
+              </div>
+            </div>
+          </div>
+
           <div class="HorizontalLayoutWrap-item l-LargeColumnLayout-paddingH" layout="horizontal" flex="fill" justify-content="center">
             <!-- SubmissionBody-column is for paddingTop -->
             <div class="l-mediumPageMaxWidth SubmissionBody-column"> 

@@ -1,0 +1,19 @@
+.VerticalTabs-tab {
+  padding: 10px 22px;
+  border-bottom: 0;
+  border-right: 4px solid currentColor;
+  font-size: 13px;
+  font-weight: 600;
+  min-width: 180px;
+}
+
+.VerticalTabs-tab:not(.VerticalTabs-tab--is-active) {
+    color: #858585;
+    border-right-color: gainsboro;
+}
+
+.VerticalTabs-tab:not(.VerticalTabs-tab--is-active):hover {
+    background: rgba($app-color-highlightBlue, .1);
+    color: $app-color-highlightBlue;
+    border-right-color: rgba($app-color-highlightBlue, .25);
+}
