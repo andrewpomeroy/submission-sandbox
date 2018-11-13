@@ -25,16 +25,23 @@
     margin-top: .5rem;
 }
 
-.CardRow.CardRow--medium {
+.CardRow--medium {
     padding-left: .25rem;
     padding-right: .25rem;
     margin-right: -.25em;
     margin-left: -.25em;
 }
 
+.CardRow--naked {
+    margin: 0;
+    padding: 0;
+}
+
 .CardRow > .Card {
-    margin-right: .25em;
-    margin-left: .25em;
+    &:not(.Card--naked) {
+        margin-right: .25em;
+        margin-left: .25em;
+    }
     flex: 1;
 }
 
@@ -82,5 +89,28 @@
         &:active {
             background-color: darken(rgba($color-brightGreen, .1), 10%);
         }
+    }
+}
+
+.CardRow-bookend {
+    background: #f1f1f1;
+    align-self: stretch;
+}
+.CardRow-bookend--index {
+    width: 2.5rem;
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: bold;
+    color: gray;
+}
+
+.CardRow--separateRows {
+    margin-bottom: 10px;
+    border-bottom: 1px solid gainsboro;
+    &:not(:first-child) {
+        border-top: 1px solid gainsboro;
     }
 }
