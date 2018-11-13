@@ -94,6 +94,7 @@
 
 .CardRow-bookend {
     background: #f1f1f1;
+    background: rgba(0,0,0,.07);
     align-self: stretch;
 }
 .CardRow-bookend--index {
@@ -110,7 +111,17 @@
 .CardRow--separateRows {
     margin-bottom: 10px;
     border-bottom: 1px solid gainsboro;
+    border-top: 0 solid gainsboro;
     &:not(:first-child) {
-        border-top: 1px solid gainsboro;
+        border-top-width: 1px;
+    }
+}
+
+
+.CardRow--highlightBlue {
+    background-color: rgba($color-electricBlue, .1);
+    border-color: $color-electricBlue;
+    .CardRow-bookend {
+        background: rgba($color-electricBlue, .1);
     }
 }

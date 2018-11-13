@@ -327,7 +327,7 @@
                   <div class="OverviewSection-body-item OverviewSection-body-item--flushTop">
                     <div class="OverviewSection-frame">
                       <div class="CardRows">
-                        <div class="CardRow CardRow--naked CardRow--medium CardRow--separateRows" ng-repeat="item in [3,2,3,1] track by $index">
+                        <div class="CardRow CardRow--naked CardRow--medium CardRow--separateRows" ng-class="{'CardRow--highlightBlue': $index === 2}" ng-repeat="item in [3,2,3,1] track by $index">
                           <div class="CardRow-bookend CardRow-bookend--index">
                             {{$index + 1}}
                           </div>
