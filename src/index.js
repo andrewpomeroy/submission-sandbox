@@ -19,6 +19,7 @@ import pillTabs from './components/pill-tabs';
 import pillTab from './components/pill-tab';
 import collapseContainer from './components/collapse-container';
 import getSvg from './components/get-svg';
+import segments from './components/segments';
 
 import './scss/index.scss';
 import 'angular-material/angular-material.css';
@@ -34,6 +35,7 @@ var MyApp = angular
   .component('pillTab', pillTab)
   .component('collapseContainer', collapseContainer)
   .component('getSvg', getSvg)
+  .component('segments', segments)
 
 MyApp.controller('DemoCtrl', DemoCtrl);
 DemoCtrl.$inject = ['$scope', '$timeout', '$interpolate', '$q'];

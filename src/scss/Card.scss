@@ -46,6 +46,17 @@
     /* font-size: 12px; */
 }
 
+.Card--naked {
+    background-color: transparent;
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+}
+
+.Card--naked:not(:last-child) {
+    border-right: 1px solid gainsboro;
+}
+
 .Card--linked {
     cursor: pointer;
     transition: 70ms linear;

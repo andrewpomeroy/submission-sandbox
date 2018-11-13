@@ -46,6 +46,10 @@ $Chip-borderRadius: 3px;
   background-color: $color-orange; 
 }
 
+.Chip--noWrap {
+  white-space: nowrap;
+}
+
 .Chip-item {
   &:not(:last-child) {
     margin-right: .5em;

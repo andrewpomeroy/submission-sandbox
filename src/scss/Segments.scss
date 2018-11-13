@@ -1,0 +1,90 @@
+$Segment-color-complete: lighten($color-brightGreen, 10%);
+$Segment-color-active: hsl(0,0%,70%);
+$Segment-color-default: hsl(0,0%,90%);
+
+$Segment-barHeight: 14px;
+$Segment-bottomMargin: 12px;
+$Segment-arrowOverlap: 4px;
+$Segment-arrowSize: $Segment-arrowOverlap + $Segment-bottomMargin;
+$Segment-borderWidth: 1px;
+$Segment-arrowBottomOffset: -1 * ($Segment-barHeight + $Segment-bottomMargin + $Segment-borderWidth);
+
+$Segment-contentFrame-borderColor: gainsboro;
+$Segment-contentFrame-backgroundColor: white;
+$Segment-contentFrame-borderRadius: 5px;
+
+.Segments {
+    list-style-type: none;
+    margin: 0;
+    display: flex;
+    padding: 0;
+}
+
+.Segment {
+    flex: 1;
+    padding-bottom: 10px;
+    border-bottom: 14px solid $Segment-color-default;
+    padding: 6px 0;
+    margin-bottom: $Segment-bottomMargin;
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+.Segment:not(:last-child) {
+    margin-right: 2px;
+}
+
+.Segment--is-complete {
+    border-bottom-color: $Segment-color-complete;
+}
+.Segment--is-active {
+    border-bottom-color: $Segment-color-active;
+}
+
+
+.Segment--is-active {
+  position: relative;
+}
+.Segment--is-active:after, .Segment--is-active:before {
+  left: 50%;
+  border: solid transparent;
+  content: '';
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  bottom: -1 * ($Segment-barHeight - $Segment-arrowOverlap);
+  bottom: $Segment-arrowBottomOffset;
+}
+.Segment--is-active:after {
+	border-color: rgba(255, 255, 255, 0);
+	border-bottom-color: $Segment-contentFrame-backgroundColor;
+	border-width: $Segment-arrowSize;
+  margin-left: -$Segment-arrowSize;
+}
+.Segment--is-active:before {
+	border-color: rgba(222, 222, 222, 0);
+	border-bottom-color: $Segment-contentFrame-borderColor;
+	border-width: ($Segment-arrowSize + $Segment-borderWidth);
+	margin-left: -($Segment-arrowSize + $Segment-borderWidth);
+}
+
+.Segments-contentFrame {
+  padding: 10px;
+  border: $Segment-borderWidth solid $Segment-contentFrame-borderColor;
+  border-radius: 5px;
+}
+.Segments-contentFrame--noPadding {
+  padding: 0;
+}
+
+// Unused -- using .Chip instead
+.Segment-marker {
+  padding: 4px;
+  line-height: 1em;
+  white-space: nowrap;
+  text-align: center;
+  background: white;
+  box-shadow: 0px 2px 2px rgba(0,0,0,.2);
+  border-radius: 3px;
+}
