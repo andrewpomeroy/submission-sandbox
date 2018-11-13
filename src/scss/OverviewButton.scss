@@ -115,7 +115,10 @@ $OverviewButton-fontSize-small: 12px;
 .OverviewActionButtonColumn {
   display: flex;
   flex-direction: column;
-  > *:not(:last-child) {
+  > *:not(:last-child), {
     margin-bottom: 10px;
+  }
+  .OverviewActionButtonColumn-itemMarginTop {
+    margin-top: 10px;
   }
 }

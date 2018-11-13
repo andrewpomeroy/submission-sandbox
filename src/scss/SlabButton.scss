@@ -22,6 +22,7 @@ $SlabButton-minHeight: 64px;
   &:active {
     @include ButtonStyle-default-active;
   }
+  width: 100%;
   padding: $SlabButton-paddingV $SlabButton-paddingH;
   min-height: $SlabButton-minHeight;
   border-radius: 5px;
