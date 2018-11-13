@@ -41,6 +41,16 @@ $SlabButton-minHeight: 64px;
   }
 }
 
+.SlabButton--solidGreen {
+  @include ButtonStyle-solidGreen;
+  &:hover, &:focus {
+    @include ButtonStyle-solidGreen-hover;
+  }
+  &:active {
+    @include ButtonStyle-solidGreen-active;
+  }
+}
+
 .SlabButton--neutralDark {
   @include ButtonStyle-neutralDark;
   &:hover, &:focus {

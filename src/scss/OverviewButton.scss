@@ -66,6 +66,16 @@ $OverviewButton-fontSize-small: 12px;
   }
 }
 
+.OverviewButton--neutralDark {
+  @include ButtonStyle-neutralDark;
+  &:hover, &:focus {
+    @include ButtonStyle-neutralDark-hover;
+  }
+  &:active {
+    @include ButtonStyle-neutralDark-active;
+  }
+}
+
 .OverviewButton--orange {
   @include ButtonStyle-orange;
   &:hover, &:focus {

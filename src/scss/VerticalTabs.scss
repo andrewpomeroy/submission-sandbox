@@ -1,15 +1,26 @@
-.VerticalTabs-tab {
-  padding: 10px 22px;
-  border-bottom: 0;
-  border-right: 4px solid currentColor;
-  font-size: 13px;
-  font-weight: 600;
-  min-width: 180px;
+.VerticalTabs > [ng-transclude] {
+    display: flex;
+    flex-direction: column;
 }
 
-.VerticalTabs-tab:not(.VerticalTabs-tab--is-active) {
+.VerticalTabs-tab {
+  padding: 10px 22px 10px 0;
+  border: 0;
+  border-right: 4px solid currentColor;
+  font-size: 14px;
+  font-weight: 600;
+  min-width: 150px;
+  background-color: transparent;
+}
+
+.VerticalTabs-tab {
     color: #858585;
     border-right-color: gainsboro;
+}
+
+.VerticalTabs-tab--is-active {
+    color: $app-color-highlightBlue;
+    border-right-color: $app-color-highlightBlue;
 }
 
 .VerticalTabs-tab:not(.VerticalTabs-tab--is-active):hover {

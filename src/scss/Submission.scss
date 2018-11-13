@@ -80,6 +80,9 @@ $SubmissionBody-column-paddingV: 36px;
   background-color: $app-color-panel-b1;
   background-color: #f7f7fc; // TODO: Config
 }
+.SubmissionBody-sidebarStyle--dark {
+  background-color: $app-color-panel-b2;
+}
 
 .SubmissionBody-column {
   padding-top: $SubmissionBody-column-paddingV;

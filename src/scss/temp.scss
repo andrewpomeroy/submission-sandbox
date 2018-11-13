@@ -9,6 +9,12 @@
   padding-left: 20px;
   padding-right: 20px;
 }
+.l-LargeColumnLayout-paddingRight {
+  padding-right: 20px;
+}
+.l-LargeColumnLayout-paddingLeft {
+  padding-left: 20px;
+}
 
 @media screen and (min-width: 800px) { // TODO: config
   .HorizontalLayoutWrap {
@@ -34,6 +40,45 @@
     max-width: 240px;
   }
 }
+
+.mq-submission-breakSmall, .mq-submission-breakSmaller {
+  flex-direction: row;
+}
+
+@media screen and (max-width: 999px) {
+  .mq-submission-breakSmall {
+    flex-direction: column;
+  }
+  .mq-submission-breakSmall-widthDependent {
+    max-width: none;
+  }
+  .mq-submission-hideSmall {
+    display: none !important;
+  }
+}
+@media screen and (max-width: 699px) {
+  .mq-submission-breakSmaller {
+    flex-direction: column;
+  }
+  .mq-submission-breakSmaller-widthDependent {
+    max-width: none;
+  }
+  .mq-submission-hideSmaller {
+    display: none !important;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .mq-submission-showSmaller {
+    display: none !important;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .mq-submission-showSmall {
+    display: none !important;
+  }
+}
+
 
 .CenterContentWrap {
   display: flex;
