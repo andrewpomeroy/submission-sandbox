@@ -1,0 +1,8 @@
+<ul class="StepSegments">
+	<li class="StepSegment" ng-repeat="segment in $ctrl.steps" ng-class="{'StepSegment--is-complete': $ctrl.activeIndex > $index, 'StepSegment--is-active': $ctrl.activeIndex === $index}">
+		<span class="Chip Chip--small Chip--noWrap" ng-if="$ctrl.activeIndex === $index">
+			{{$ctrl.activeIndex + 1}} of {{$ctrl.steps.length}}
+		</span>
+	</li>
+</ul>
+<div ng-transclude="content" class="StepSegments-contentFrame StepSegments-contentFrame--noPadding"></div>
