@@ -1,5 +1,6 @@
 $StepSegment-color-complete: lighten($color-brightGreen, 10%);
-$StepSegment-color-active: hsl(0,0%,70%);
+$StepSegment-color-active: hsl(0,0%,75%);
+$StepSegment-color-activeComplete: $color-brightGreen;
 $StepSegment-color-default: hsl(0,0%,90%);
 
 $StepSegment-barHeight: 14px;
@@ -40,7 +41,9 @@ $StepSegment-contentFrame-borderRadius: 5px;
 .StepSegment--is-active {
     border-bottom-color: $StepSegment-color-active;
 }
-
+.StepSegment--is-active.StepSegment--is-complete {
+    border-bottom-color: $StepSegment-color-activeComplete;
+}
 
 .StepSegment--is-active {
   position: relative;

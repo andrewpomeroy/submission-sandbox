@@ -1,5 +1,4 @@
 import template from './tabs-wrapper.html';
-import _ from 'lodash';
 
 const TabsWrapper = {
 	template: template,
