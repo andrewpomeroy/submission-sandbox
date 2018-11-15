@@ -59,7 +59,7 @@ function DemoCtrl($scope, $timeout, $interpolate, $q) {
     {
       title: 'Elit et voluptate in excepteur adipisicing laborum consequat excepteur ullamco fugiat ut magna ipsum',
       assignee: 'Andrew Pomeroy',
-      assignedDate: '4/5/18'
+      completedDate: '4/5/18'
     },
     {
       title: 'Occaecat magna commodo sit minim officia voluptate cillum irure commodo',
@@ -67,7 +67,7 @@ function DemoCtrl($scope, $timeout, $interpolate, $q) {
     {
       title: 'Ullamco incididunt deserunt officia enim velit incididunt proident ad esse',
       assignee: 'Tom Brown',
-      assignedDate: '1/14/18'
+      completedDate: '1/14/18'
     }
   ]
 
@@ -81,7 +81,7 @@ function DemoCtrl($scope, $timeout, $interpolate, $q) {
       const newObj = {
         title: stageTemplate[getRand()].title,
         assignee: stageTemplate[getRand()].assignee,
-        assignedDate: stageTemplate[getRand()].assignedDate,
+        completedDate: stageTemplate[getRand()].completedDate,
         isCompleted: Boolean(Math.round(Math.random()))
       };
       stages[index].push(newObj);
