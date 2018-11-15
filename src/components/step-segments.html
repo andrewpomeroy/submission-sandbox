@@ -1,13 +1,16 @@
 <ul class="StepSegments">
 	<li class="StepSegment"
 		ng-repeat="segment in $ctrl.segments"
-		ng-class="{'StepSegment--is-complete': segment.isCompleted, 'StepSegment--is-active': $ctrl.activeIndex === $index}"
+		ng-class="{'StepSegment--is-complete': segment.isCompleted, 'StepSegment--is-active': $ctrl.activeIndex === $index, 'StepSegment--is-hovered': $ctrl.hoveredIndex === $index}"
+		ng-click="$ctrl.onClick($index)"
 		ng-mouseenter="$ctrl.onMouseEnter($index)"
 		ng-mouseleave="$ctrl.onMouseLeave($index)"
 		ng-focus="$ctrl.onFocus($index)"
-		ng-blur="$ctrl.onBlur($index)">
-		<span class="Chip Chip--small Chip--noWrap" ng-if="$ctrl.activeIndex === $index">
-			{{$ctrl.activeIndex + 1}} of {{$ctrl.segments.length}}
+		ng-blur="$ctrl.onBlur($index)"
+		tabindex="0"
+		>
+		<span class="Chip Chip--small Chip--noWrap" ng-if="$ctrl.activeIndex === $index || $ctrl.hoveredIndex === $index">
+			{{$index + 1}} of {{$ctrl.segments.length}}
 		</span>
 	</li>
 </ul>
