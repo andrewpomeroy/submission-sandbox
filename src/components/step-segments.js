@@ -4,7 +4,7 @@ const StepSegments = {
 	template: template,
 	bindings: {
 		initialActiveIndex: '<',
-		steps: '<',
+		segments: '<',
 	},
 	controller: StepSegmentsController,
 	transclude: {

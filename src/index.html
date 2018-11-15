@@ -229,31 +229,38 @@
                 <div class="OverviewSection-body">
                   <div class="OverviewSection-body-item OverviewSection-body-item--flushTop">
                     <div class="OverviewSection-frame">
-                    <step-segments steps="[{isCompleted:true},{isCompleted:true},{isCompleted:true},{},{},{}]" initial-active-index="3">
+                    <step-segments segments="stages" initial-active-index="3">
                         <content>
-                          <div class="CardRow CardRow--medium">
-                            <div class="Card Card--naked Card--medium Card--linked">
+                          <div class="CardRow CardRow--medium" ng-repeat="row in $parent.$ctrl.segments" ng-if="$index === $parent.$parent.$ctrl.activeIndex">
+                            <div class="Card Card--naked Card--medium Card--linked" ng-class="{'Card--green': step.isCompleted}" ng-repeat="step in row">
                               <div class="StepHeader StepHeader--split">
                                 <div class="StepHeader-number">
                                   6A
                                 </div>
-                                <div class="StepHeader-title">
-                                  Elit et voluptate in excepteur adipisicing laborum consequat excepteur ullamco fugiat ut magna ipsum
+                                <div class="StepHeader-title" ng-bind="step.title"></div>
+                              </div>
+                              <div class="Card-content-item Card-content-item--alignRight" ng-if="step.isCompleted || step.assignedDate">
+                                <div class="SplitContent SplitContent--small">
+                                  <div class="SplitContent-item" ng-if="step.isCompleted">
+                                    <div class="Chip Chip--green Chip--small">
+                                      Completed
+                                    </div>
+                                  </div>
+                                  <div class="SplitContent-item" ng-if="step.assignedDate">
+                                    11/28/2018
+                                  </div>
                                 </div>
                               </div>
-                          
-                              <div class="Card-content-item Card-content-item--alignRight">
-                                <button class="UsernameLink">
+                              <div class="Card-content-item Card-content-item--alignRight" ng-if="step.assignee">
+                                <button class="UsernameLink" ng-if="step.assignee">
                                   <div class="UsernameLink-icon SvgWrap">
                                     <get-svg name="user"></svg>
                                   </div>
-                                  <div class="UsernameLink-text">
-                                    Andrew Pomeroy
-                                  </div>
+                                  <div class="UsernameLink-text" ng-bind="step.assignee"></div>
                                 </button>
                               </div>
                             </div>
-                            <div class="Card Card--naked Card--medium Card--linked">
+                            <!-- <div class="Card Card--naked Card--medium Card--linked">
                               <div class="StepHeader StepHeader--split">
                                 <div class="StepHeader-number">
                                   6B
@@ -306,7 +313,7 @@
                                   </div>
                                 </button>
                               </div>
-                            </div>
+                            </div> -->
                           </div>
                         </content>
                       </step-segments>

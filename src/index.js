@@ -55,6 +55,41 @@ function DemoCtrl($scope, $timeout, $interpolate, $q) {
     }
   ];
 
+  const stageTemplate = [
+    {
+      title: 'Elit et voluptate in excepteur adipisicing laborum consequat excepteur ullamco fugiat ut magna ipsum',
+      assignee: 'Andrew Pomeroy',
+      assignedDate: '4/5/18'
+    },
+    {
+      title: 'Occaecat magna commodo sit minim officia voluptate cillum irure commodo',
+    },
+    {
+      title: 'Ullamco incididunt deserunt officia enim velit incididunt proident ad esse',
+      assignee: 'Tom Brown',
+      assignedDate: '1/14/18'
+    }
+  ]
+
+
+  let stages = [];
+  for (let index = 0; index < 6; index++) {
+    stages.push([]);
+    let len = stageTemplate.length;
+    let getRand = () => Math.round(Math.random() * (len - 1));
+    for (let innerIndex = 0; innerIndex < (Math.round(Math.random() * 4) + 1); innerIndex++) {
+      const newObj = {
+        title: stageTemplate[getRand()].title,
+        assignee: stageTemplate[getRand()].assignee,
+        assignedDate: stageTemplate[getRand()].assignedDate,
+        isCompleted: Boolean(Math.round(Math.random()))
+      };
+      stages[index].push(newObj);
+    }
+  }
+
+  $scope.stages = stages;
+
   
   $scope.filters = {
     systemGenerated: (item) => item.isGenerated,
