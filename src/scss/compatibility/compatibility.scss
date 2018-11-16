@@ -35,6 +35,15 @@ html, body {
 body {
   flex-direction: row;
 }
+.FullWrapper {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  min-height: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
 .Outer {
   flex: 1 0 auto;
   display: flex;
@@ -42,6 +51,7 @@ body {
   align-self: flex-start;
   min-height: 100%;
   max-width: 100%;
+  overflow-y: auto;
 }
 .SubmissionBody {
   flex: 1;
