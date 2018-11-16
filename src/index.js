@@ -43,21 +43,6 @@ function DemoCtrl($scope, $timeout, $interpolate, $q, $mdToast) {
   
   $scope.faker = faker;
   $scope.fake = faker.fake;
-
-  // $scope.toast = function () {
-  //   var toast = $mdToast.simple()
-  //     .textContent('Marked as read')
-  //     .action('UNDO')
-  //     .highlightAction(true)
-  //     .highlightClass('md-accent')// Accent is used by default, this just demonstrates the usage.
-  //     // .position(pinTo);
-
-  //   $mdToast.show(toast).then(function (response) {
-  //     if (response == 'ok') {
-  //       alert('You clicked the \'UNDO\' action.');
-  //     }
-  //   });
-  // }
   
   $scope.toast = function () {
     $mdToast.show({
@@ -67,8 +52,6 @@ function DemoCtrl($scope, $timeout, $interpolate, $q, $mdToast) {
       templateUrl: 'toast.html'
     });
   };
-
-
 
   $scope.testItems = [
     {

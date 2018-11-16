@@ -64,6 +64,7 @@ $SlabButton-minHeight: 64px;
 
 .SlabButton--leftAligned {
   justify-content: flex-start;
+  text-align: left;
 }
 
 @mixin SlabButton-icon {
