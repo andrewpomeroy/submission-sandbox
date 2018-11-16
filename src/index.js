@@ -44,20 +44,31 @@ function DemoCtrl($scope, $timeout, $interpolate, $q, $mdToast) {
   $scope.faker = faker;
   $scope.fake = faker.fake;
 
-  $scope.toast = function () {
-    var toast = $mdToast.simple()
-      .textContent('Marked as read')
-      .action('UNDO')
-      .highlightAction(true)
-      .highlightClass('md-accent')// Accent is used by default, this just demonstrates the usage.
-      // .position(pinTo);
+  // $scope.toast = function () {
+  //   var toast = $mdToast.simple()
+  //     .textContent('Marked as read')
+  //     .action('UNDO')
+  //     .highlightAction(true)
+  //     .highlightClass('md-accent')// Accent is used by default, this just demonstrates the usage.
+  //     // .position(pinTo);
 
-    $mdToast.show(toast).then(function (response) {
-      if (response == 'ok') {
-        alert('You clicked the \'UNDO\' action.');
-      }
+  //   $mdToast.show(toast).then(function (response) {
+  //     if (response == 'ok') {
+  //       alert('You clicked the \'UNDO\' action.');
+  //     }
+  //   });
+  // }
+  
+  $scope.toast = function () {
+    $mdToast.show({
+      hideDelay: 3000,
+      position: 'bottom right',
+      controller: 'ToastCtrl',
+      templateUrl: 'toast.html'
     });
-  }
+  };
+
+
 
   $scope.testItems = [
     {
@@ -135,3 +146,36 @@ function DemoCtrl($scope, $timeout, $interpolate, $q, $mdToast) {
   ]
 
 }
+
+MyApp.controller('ToastCtrl', ['$scope', '$mdToast', '$mdDialog', function ($scope, $mdToast, $mdDialog) {
+
+  var isDlgOpen;
+  
+  $scope.closeToast = function () {
+    if (isDlgOpen) return;
+
+    $mdToast
+      .hide()
+      .then(function () {
+        isDlgOpen = false;
+      });
+  };
+
+  $scope.openMoreInfo = function (e) {
+    if (isDlgOpen) return;
+    isDlgOpen = true;
+
+    $mdDialog
+      .show($mdDialog
+        .alert()
+        .title('More info goes here.')
+        .textContent('Something witty.')
+        .ariaLabel('More info')
+        .ok('Got it')
+        .targetEvent(e)
+      )
+      .then(function () {
+        isDlgOpen = false;
+      });
+  };
+}]);
