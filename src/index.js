@@ -46,10 +46,11 @@ function DemoCtrl($scope, $timeout, $interpolate, $q, $mdToast) {
   
   $scope.toast = function () {
     $mdToast.show({
-      hideDelay: 3000,
+      hideDelay: false,
       position: 'bottom right',
       controller: 'ToastCtrl',
-      templateUrl: 'toast.html'
+      templateUrl: 'toast.html',
+      autoWrap: false
     });
   };
 

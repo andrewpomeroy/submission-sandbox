@@ -1,0 +1,44 @@
+.BigToast-header-icon {
+  height: 30px;
+  width: 30px;
+  color: #78dddd;
+  margin-left: -15px;
+}
+
+.BigToast-header {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  justify-content: center;
+  border-bottom: 1px solid rgba(255,255,255,.5);
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+}
+
+md-toast .md-toast-content.md-toast-content--bigToast {
+  max-height: none;
+}
+
+.BigToast-header-item:not(:last-child) {
+  margin-right: 10px;
+}
+
+.BigToast-heading {
+  font-size: 22px;
+}
+
+.BigToast-footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.BigToast-body {
+  margin-bottom: 30px;
+  font-size: 16px;
+}
+
+.BigToast {
+  max-width: 600px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
