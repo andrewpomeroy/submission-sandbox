@@ -1,22 +1,29 @@
-.BigToast-header-icon {
-  height: 30px;
-  width: 30px;
-  color: #78dddd;
-  margin-left: -15px;
+.BigToast {
+  max-width: 600px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+md-toast .md-toast-content.md-toast-content--bigToast {
+  max-height: none;
 }
 
 .BigToast-header {
   display: flex;
   align-items: center;
-  margin-top: 20px;
   justify-content: center;
+  position: relative;
+  margin-top: 20px;
   border-bottom: 1px solid rgba(255,255,255,.5);
   margin-bottom: 30px;
   padding-bottom: 20px;
 }
 
-md-toast .md-toast-content.md-toast-content--bigToast {
-  max-height: none;
+.BigToast-header-icon {
+  height: 30px;
+  width: 30px;
+  color: #78dddd;
+  margin-left: -15px;
 }
 
 .BigToast-header-item:not(:last-child) {
@@ -37,8 +44,17 @@ md-toast .md-toast-content.md-toast-content--bigToast {
   font-size: 16px;
 }
 
-.BigToast {
-  max-width: 600px;
-  padding-left: 10px;
-  padding-right: 10px;
+.BigToast-header-item--close {
+  position: absolute;
+  right: 0;
+}
+
+.BigToast-closeButton {
+  font-size: 24px;
+  line-height: 32px;
+  min-width: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }
