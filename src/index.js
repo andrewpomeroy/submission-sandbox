@@ -49,7 +49,7 @@ function DemoCtrl($scope, $timeout, $interpolate, $q, $mdToast) {
       hideDelay: false,
       position: 'bottom right',
       controller: 'ToastCtrl',
-      templateUrl: 'toast.html',
+      templateUrl: 'templates/toast.html',
       autoWrap: false
     });
   };
