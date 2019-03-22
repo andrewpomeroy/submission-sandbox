@@ -56,5 +56,10 @@ md-toast .md-toast-content.md-toast-content--bigToast {
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 5px;
   cursor: pointer;
+}
+.BigToast-closeButton:hover, .BigToast-closeButton:focus {
+  outline: 0;
+  background: rgba(255,255,255,.1);
 }
