@@ -8,6 +8,8 @@ import 'angular-aria';
 import 'angular-sanitize';
 import 'angular-animate';
 
+import Moment from 'moment';
+
 import faker from 'faker';
 
 import submissionTabsVertical from './components/submission-tabs-vertical';
@@ -57,12 +59,34 @@ function DemoCtrl($scope, $timeout, $interpolate, $q, $mdToast) {
   $scope.testItems = [
     {
       name: "Something",
-      isGenerated: true
+      isGenerated: Math.round(Math.random()),
+      author: faker.name.findName(),
+      date: Moment(faker.date.past()).format('MM/DD/YYYY')
     },
     {
       name: "Something Else",
-      isGenerated: false
-    }
+      isGenerated: Math.round(Math.random()),
+      author: faker.name.findName(),
+      date: Moment(faker.date.past()).format('MM/DD/YYYY')
+    },
+    {
+      name: "Hello Hello",
+      isGenerated: Math.round(Math.random()),
+      author: faker.name.findName(),
+      date: Moment(faker.date.past()).format('MM/DD/YYYY')
+    },
+    {
+      name: "Something Else",
+      isGenerated: Math.round(Math.random()),
+      author: faker.name.findName(),
+      date: Moment(faker.date.past()).format('MM/DD/YYYY')
+    },
+    {
+      name: "Cursus Venenatis Sit Mattis Fusce",
+      isGenerated: Math.round(Math.random()),
+      author: faker.name.findName(),
+      date: Moment(faker.date.past()).format('MM/DD/YYYY')
+    },
   ];
 
   const stageTemplate = [

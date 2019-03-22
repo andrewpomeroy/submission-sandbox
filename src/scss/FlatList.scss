@@ -19,11 +19,22 @@ $FlatList-item-fontSize-smaller: 10px; // dunno
 .FlatList--smaller {
   font-size: $FlatList-item-fontSize-smaller; 
 }
+.FlatList--noPaddingV {
+  padding-top: 0;
+  padding-bottom: 0;
+}
 .FlatList-item {
   display: flex;
   align-items: center;
-  padding: 0 $FlatList-item-outerPaddingH;
+  padding: $FlatList-item-paddingV $FlatList-item-outerPaddingH;
 }
+
+.FlatList-item--lined {
+  &:not(:last-child) {
+    border-bottom: 1px solid hsl(0,0%,90%);
+  }
+}
+
 .FlatList-item-split {
   flex: 1;
   display: flex;
@@ -38,13 +49,24 @@ $FlatList-item-fontSize-smaller: 10px; // dunno
   flex: 1;
 }
 
+.FlatList-item-line {
+
+}
+.FlatList-item-line--marginTop {
+  margin-top: 6px;
+}
+
 .FlatList-item-segment {
-  padding-top: $FlatList-item-paddingV;
-  padding-bottom: $FlatList-item-paddingV;
   &:not(:last-child) {
     margin-right: .5em;
   }
 }
+
+.FlatList-item-title {
+  font-size: 1.15em;
+  font-weight: 600;
+}
+
 .FlatList-item--linked {
 
 }
