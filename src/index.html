@@ -102,9 +102,14 @@
               <div class="l-LargeColumnLayout-paddingLeft SubmissionBody-sidebarStyle FloatedSidebar--widthSmall" layout="vertical" align-items="flex-end" style="height:100%;">
                 <div class="SubmissionBody-column">
                   <submission-tabs-vertical>
-                    <submission-tab-vertical name="overview" display-name="Overview"></submission-tab-vertical>
-                    <submission-tab-vertical name="forminput" display-name="Form Input"></submission-tab-vertical>
-                    <submission-tab-vertical name="documentsAttachments" display-name="Documents & Attachments"></submission-tab-vertical>
+                    <div class="VerticalTabs-group">
+                      <submission-tab-vertical name="form" display-name="View Form"></submission-tab-vertical>
+                    </div>
+                    <div class="VerticalTabs-group">
+                      <div class="VerticalTabs-group-heading">Overview</div>
+                      <submission-tab-vertical name="summary" display-name="Summary"></submission-tab-vertical>
+                      <submission-tab-vertical name="documentsAttachments" display-name="Documents & Attachments"></submission-tab-vertical>
+                    </div>
                   </submission-tabs-vertical>
                 </div>
               </div>

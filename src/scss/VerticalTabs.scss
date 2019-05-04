@@ -28,3 +28,16 @@
     color: $app-color-highlightBlue;
     border-right-color: rgba($app-color-highlightBlue, .25);
 }
+
+.VerticalTabs-group:not(:last-child) {
+    margin-bottom: 40px;
+}
+
+.VerticalTabs-group-heading {
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: .04em;
+    margin-bottom: 12px;
+    color: hsl(221, 30%, 64%);
+}
