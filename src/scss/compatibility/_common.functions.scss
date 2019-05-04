@@ -1,0 +1,100 @@
+$font-size-base: 16px !default;
+
+@function strip-units($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+
+  @return $number;
+}
+
+$browser-context: $font-size-base !default; // Default
+
+@function emtopx($ems, $context: $browser-context) {
+  @return (strip-units($ems * $context)) * 1px;
+}
+// this?
+@function em($pixels, $context: $browser-context) {
+  @return #{$pixels/$context}em;
+}
+// or this? 
+@function calc-em($target-px, $context: $browser-context) {
+  @return ($target-px / $context) * 1em;
+} 
+@function calc-rem($target-px, $context: $browser-context) {
+  @return ($target-px / $context) * 1rem;
+}
+
+@mixin placeholderContents($color: $app-color-placeholder, $opacity: false) {
+  @if $opacity {
+    opacity: $opacity;
+  }
+  color: $color;
+}
+@mixin placeholder($color: $app-color-placeholder, $opacity: 1) {
+  // * Begrudgingly splitting these up into separate selectors
+  //   Browsers seem to throw a fit when you comma-delinate them
+  &::-webkit-input-placeholder {
+    @include placeholderContents($color: $color, $opacity: $opacity);
+    @content;
+  }
+  &::-moz-placeholder {
+    @include placeholderContents($color: $color, $opacity: $opacity);
+    @content;
+  }
+  &:-ms-input-placeholder {
+    @include placeholderContents($color: $color, $opacity: $opacity);
+    @content;
+  }
+  &:-moz-placeholder {
+    @include placeholderContents($color: $color, $opacity: $opacity);
+    @content;
+  }
+}
+
+@function map-merge-deep($map-old, $map-new, $overwrite: true){
+  // Iterate through each value of the new map
+  @each $key, $new-value in $map-new {
+    // Check if that value already exists on the old map
+    @if map-has-key($map-old, $key) {
+      
+      $old-value: map-get($map-old, $key);
+      $new-value-is-map: type-of($new-value) == map;
+      $old-value-is-map: type-of($old-value) == map;
+      
+      // If both are maps, recurse regardless of $overwrite
+      @if $old-value-is-map and $new-value-is-map {
+        $merged-value: map-merge-deep($old-value, $new-value);
+        $map-old: map-set($map-old, $key, $merged-value);
+      }@else{
+        // Otherwise check $overwrite
+        @if $overwrite{
+          $map-old: map-set($map-old, $key, $new-value);
+        }
+      }
+    // There is no existing key so add
+    }@else{
+      $map-old: map-set($map-old, $key, $new-value);  
+    }
+  }
+  @return $map-old;
+}
+
+@mixin mapValuesToCss($map) {
+  @each $key, $value in $map {
+    #{$key}: #{$value};
+  }
+}
+
+@function getModuleConfig($module, $custom: ()) {
+  $configProps: map-get-deep($moduleConfig, ($module, 'properties'));
+  $props: map-merge-deep($configProps, $custom);
+  // $config: map-set-deep($config, ($module, 'properties', 'testKey'), 'TESTVALUE');
+  @if map-get($themeConfig, $module) {
+    $props: map-merge-deep($props, map-get-deep($themeConfig, $module, 'properties'));
+  }
+  @if function-exists(#{$module}Calc) {
+    $props: call(#{$module}Calc, $props);
+  }
+  @return $props;
+};

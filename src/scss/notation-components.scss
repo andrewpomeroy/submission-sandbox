@@ -27,7 +27,7 @@ $NotationComponent-listItem-text-gray: $PanelList-item-text-gray;
     font-size: 14px;
     color: $NotationComponent-listItem-text-gray;
     clear: both;
-    @extend .u-clearfix;
+    // @extend .u-clearfix;
 }
 
 .NotationComment-message {

@@ -16,14 +16,14 @@ $SmallPanel-section-heading-text: $SmallPanel-text-gray;
 $SmallPanel-section-element-paddingV: 10px;
 
 .SmallPanel-body {
-  padding-left: $SmallPanel-innerPaddingH;
-  padding-right: $SmallPanel-innerPaddingH;
-  // background-color: rgba(0,0,0,.07);
-  background-color: #f9f9f9;
-  .SmallPanel--small & {
-      padding-left: $SmallPanel-innerPaddingH-small;
-      padding-right: $SmallPanel-innerPaddingH-small;        
-  }
+    padding-left: $SmallPanel-innerPaddingH;
+    padding-right: $SmallPanel-innerPaddingH;
+    // background-color: rgba(0,0,0,.07);
+    background-color: #f9f9f9;
+    .SmallPanel--small & {
+        padding-left: $SmallPanel-innerPaddingH-small;
+        padding-right: $SmallPanel-innerPaddingH-small;        
+    }
 }
 
 // Sections
@@ -50,6 +50,10 @@ $SmallPanel-section-element-paddingV: 10px;
 }
 
 // Body content
+
+.SmallPanel-description {
+    margin: 1em 0 .5em;
+}
 
 .Slab-title {
     font-size: 1em;
@@ -87,6 +91,7 @@ $SmallPanel-section-element-paddingV: 10px;
 }
 
 .SmallPanel-actions > * {
+    flex: 1;
     margin-left: .5em;
     margin-right: .5em;
     margin-bottom: .5em;
@@ -119,4 +124,23 @@ $SmallPanel-section-element-paddingV: 10px;
 }
 .SmallPanel-actionButton--cancel {
     background-color: #9facbd;
+}
+
+// Layout utilities 
+
+.SmallPanel-innerPaddingH {
+    padding-left: $SmallPanel-innerPaddingH;
+    padding-right: $SmallPanel-innerPaddingH;
+}
+.SmallPanel-innerPaddingH-small {
+    padding-left: $SmallPanel-innerPaddingH-small;
+    padding-right: $SmallPanel-innerPaddingH-small;
+}
+.SmallPanel-innerPaddingV {
+    padding-top: $SmallPanel-innerPaddingV;
+    padding-bottom: $SmallPanel-innerPaddingV;
+}
+.SmallPanel-innerPaddingV-small {
+    padding-top: $SmallPanel-innerPaddingV-small;
+    padding-bottom: $SmallPanel-innerPaddingV-small;
 }

@@ -1,0 +1,601 @@
+$config: getFieldConfig();
+
+$Material-input-borderColor: #d7d7d7;
+$Material-input-borderColor: #cccccc;
+// $Material-input-borderColor--active: rgb(100, 125, 145);
+$Material-input-borderColor--active: hsl(207, 39%, 71%);
+// $Material-input-borderColor--active: $Material-input-borderColor;
+$Material-input-borderWidth: 1px;
+$Material-input-borderRadius: 2px;
+$Material-input-height: 38px;
+$Material-input-paddingTop: 7px;
+$Material-input-paddingBottom: 1px;
+$Material-input-paddingLeft: 10px;
+$Material-input-paddingRight: 10px;
+$Material-input-fontSize: 14px;
+$Material-input-color: black;
+
+$Material-inputPlaceholder-baseColor: black;
+$Material-inputPlaceholder-color: rgba($Material-inputPlaceholder-baseColor, .5);
+// $Material-inputPlaceholder-color: hsl(208, 48%, 63%);
+// $Material-inputPlaceholder-color: #7ab0de;
+$Material-select-paddingLeft: 16px;
+$Material-select-paddingRight: 16px;
+
+$Material-floatLabel-leftOffset: 7px;
+$Material-floatLabel-topOffset: 4px; // Margin to create above each field
+$Material-floatLabel-color: #5c9ac8;
+$Material-floatLabel-color: hsl(198, 100%, 35%); // ADA contrast
+
+$RequiredStar-size: 15px;
+$RequiredStar-padding: 2px;
+$RequiredStar-margin: 3px;
+
+// --------- Base stuff --------- //
+
+
+button, select, html, textarea, input {
+    font-family: inherit;
+}
+
+
+// --------- Field layout --------- //
+
+
+.Field-inputContainer, md-select-header {
+	md-input-container, md-autocomplete {
+	    width: 100%;
+	}
+}
+.Field-inputContainer md-input-container {
+    margin: 0;
+    padding: 0;
+    margin-top: $Material-floatLabel-topOffset; // Making space for label here..
+}
+
+
+.FieldBlock .md-errors-spacer {
+    display: none;
+}
+
+
+wnd-select, wnd-text, wnd-timepicker, wnd-datepicker, wnd-typeahead, wnd-textarea {
+    min-height: $FieldInput-heightComputed;
+    .Field--is-readOnly & {
+        min-height: 0;
+    }
+	&, & .c-FieldBlock-split-item {
+	    // display: flex; // Commenting out doesn't seem to make a difference in terms of layout
+	    // align-items: flex-end; // Commenting out doesn't seem to make a difference in terms of layout
+	}
+}
+.Field--is-readOnly {
+	wnd-select, wnd-text, wnd-timepicker, wnd-datepicker, wnd-typeahead, wnd-textarea {
+		&, & .c-FieldBlock-split-item {
+			display: block;
+		}
+	}
+}
+
+
+// --------- Specific Control Layout --------- //
+
+
+wnd-checkbox, wnd-checkbox md-switch, wnd-checkbox md-checkbox {
+    margin: 0;
+}
+
+wnd-checkbox {
+	md-switch {
+	    height: auto;
+	    line-height: inherit;
+	    align-items: flex-start;
+	}
+	.md-label {
+	    float: none;
+	    flex: 1;
+	    white-space: normal;
+	    padding-top: calc((24px - 1em) / 2); // Top line of text aligns with middle of toggle button (24px is 'magic number' for toggle button height)
+	}
+	.md-container {
+	    float: none;
+	    flex: 0 0 auto;
+	}
+	.Field-requiredStar {
+		margin-top: calc((24px - $FieldRequiredStar-size) / 2); // Center align (24px is 'magic number' for toggle button height)
+	}
+}
+
+.Timepicker-table {
+	md-input-container:after
+	{
+		// Remove a weird float-clearing style so 
+		display: none;
+	}
+}
+
+.Timepicker-table {
+    border-spacing: 0;
+}
+
+.Timepicker-row {
+    vertical-align: bottom;
+}
+
+.Timepicker-separator {
+    vertical-align: bottom;
+    padding-bottom: 0.33em;
+}
+
+md-input-container {
+	td.Timepicker-inputCell {
+	    width: auto;
+	}
+	input.Timepicker-input {
+		width: 4em;
+		text-align: center;
+	}
+}
+
+wnd-required-indicator {
+    align-self: flex-start;
+    /* align-self: center; */
+}
+
+.CheckboxGroupContainer {
+	&-item {
+		display: flex;
+		align-items: stretch;
+	}
+	md-checkbox {
+		display: inline-flex;
+		align-items: flex-start;
+		.md-container {
+			position: relative;
+			top: 0;
+			display: block;
+			flex: 0 0 auto;
+			transform: none;
+		}
+		.md-label {
+			padding-top: .0625em; // slight nudge to vertically align with checkbox
+			margin-left: 10px;
+		}
+	}
+}
+
+.CheckboxGroupContainer--horizontal {
+    display: flex;
+    flex-wrap: wrap;
+}
+.CheckboxGroupContainer--horizontal .CheckboxGroupContainer-item {
+	padding-right: 1em;
+	width: 50%;
+	display: flex;
+	align-items: stretch;
+	
+}
+.CheckboxGroupContainer--columns--2 .CheckboxGroupContainer-item:last-child:not(:nth-child(2n)) {
+	// Give last item in collection full-width
+	width: auto;    
+}
+.CheckboxGroupContainer--columns--3 .CheckboxGroupContainer-item {
+    width: 33.3%;
+}
+.CheckboxGroupContainer--columns--4 .CheckboxGroupContainer-item {
+    width: 25%;
+}
+
+/* md-checkbox {
+    padding: .5em;
+    border: 1px solid gainsboro;
+    align-items: stretch;
+    width: 100%;
+} */
+
+// Select dialog //
+
+md-select-menu, md-select-menu md-content {
+    max-height: 800px;
+    max-height: calc(100vh - 16px); // 2 * 8px, the size of the select box's upper margin against the top of the viewport
+    max-width: 80vw;
+}
+md-select-menu {
+    // Allow wrapping of option text
+    md-option .md-text {
+        overflow: visible;
+        white-space: normal;
+    }
+    // Supporting text wrapping
+    md-option { 
+        // Convert md-option height to min-height
+        min-height: 48px; // original 'height' value
+        height: auto;
+        // Pad vertically to account for multiple lines
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+}
+
+
+// --------- Select dialog header ---------- //
+
+md-select-header {
+    display: block;
+    margin-bottom: $FieldInput-paddingV;
+    border-bottom: 1px solid gainsboro;
+}
+
+md-select-header md-input-container {
+    // Undo baked-in margin
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.material-select-header-addon {
+    padding-left: $Material-select-paddingLeft;
+    padding-right: $Material-select-paddingRight;
+    padding-top: $FieldInput-paddingV;
+    padding-bottom: $FieldInput-paddingV;
+    & + & {
+        padding-top: 0;
+    }
+}
+.material-select-header-addon--label {
+    font-size: 15px; // TODO: Config
+    // margin-bottom: $FieldInput-paddingV) * 1.;
+    .Field-label {
+        color: $Material-floatLabel-color;
+    }
+}
+.material-select-header-addon--search {
+    .md-input {
+        padding-left: $FieldInput-paddingH;
+        padding-right: $FieldInput-paddingH;
+    }
+    .md-errors-spacer {
+        display: none;
+    }
+}
+
+// IE was gettin crazy with the width on these guys
+.md-select-menu-container {
+    max-width: 800px;
+}
+
+// Allow contents to scroll independently of header
+.md-select-menu-container md-select-menu {
+    md-content {
+        overflow-y: visible;
+        display: flex;
+        flex-direction: column;
+    }
+}
+// Visually separate the first item from the header
+md-select-header ~ * md-option:first-child {
+    margin-top: 8px; // Standard material padding value
+}
+
+
+// ------------ Select option vertical display ------------ //
+
+.material-select-blockOption {
+    display: block;
+    & + & {
+        margin: .5em 0 .5em;
+        padding-top: .5em;
+        border-top: 1px solid #e8e8e8;
+    }
+}
+
+// ------------ Select dialog mask ------------ //
+
+.md-scroll-mask {
+    background: rgba(0,0,0,0.04);
+}
+
+
+// ------------ General input handling ? ------------ //
+
+
+md-input-container .md-input[disabled], [disabled] md-input-container .md-input {
+    background-color: gray;
+    /* background-repeat: repeat; */
+    /* background-image: linear-gradient(90deg,rgba(0,0,0,0.08) 0,rgba(0,0,0,0.08) 33%,transparent 0); */
+}
+
+md-input-container .md-input {
+    background: hsl(0,0%, 100%);
+    max-height: none;
+    height: $Material-input-height;
+    font-size: $Material-input-fontSize;    
+    line-height: 32px; // TODO: Magic number?
+	padding: $Material-input-paddingTop $Material-input-paddingRight $Material-input-paddingBottom $Material-input-paddingLeft;
+    border-width: $Material-input-borderWidth !important; // TODO: Fix specificity
+    border-color: $Material-input-borderColor !important; // TODO: Fix specificity
+    border-radius: $Material-input-borderRadius;
+    color: hsl(0, 0%, 6%);
+}
+
+md-input-container .md-input.ng-empty {
+    background: rgb(255, 255, 255); // ?
+}
+
+@mixin CustomMaterial-placeholder-typeStyle () {
+    color: $Material-inputPlaceholder-color;
+    font-style: italic;
+    font-size: $Material-input-fontSize;
+}
+
+md-input-container label:not(.md-no-float):not(.md-container-ignore), md-input-container .md-placeholder {
+    @include CustomMaterial-placeholder-typeStyle();
+    transform: translate3d($Material-input-paddingLeft, 30px, 0) scale(1);
+}
+
+md-input-container.md-input-focused label:not(.md-no-float), md-input-container.md-input-has-placeholder label:not(.md-no-float), md-input-container.md-input-has-value label:not(.md-no-float) {
+    transform: translate3d(-1px, 6px, 0) scale(0.75);
+    transform: translate3d($Material-floatLabel-leftOffset, 13px, 0) scale(0.75);
+    transform: translate3d($Material-floatLabel-leftOffset, 12px, 0) scale(0.85);
+    background: white;
+    border-radius: 3px;
+    width: auto;
+    padding: 0 4px; // TODO: Magic number?
+    font-style: normal;
+    color: $Material-floatLabel-color;
+}
+
+md-input-container.md-input-focused .md-input {
+	padding-bottom: $Material-input-paddingBottom;
+}
+
+// Has value, or is focused
+md-input-container.md-input-focused .md-input:not([disabled]), md-input-container .md-input.ng-not-empty {
+	// border-color: $Material-input-borderColor--active !important;
+}
+// Is focused
+md-input-container.md-input-focused .md-input:not([disabled]) {
+	border-color: $Material-input-borderColor--active !important;    
+}
+
+
+
+.FieldBlock-fields > * {
+    margin-bottom: 6px;
+}
+
+md-input-container.md-input-invalid .md-input,
+md-input-container.md-input-invalid .md-select-value {
+    border-color: $Field-error !important; // TODO: Use validation colors
+}
+
+md-input-container.md-input-invalid label {
+    color: $Field-error !important; // TODO: Use validation colors
+}
+
+.AppForm {
+    /* font-family: "Fakt Pro"; */
+    /* font-family: "Founders Grotesk Text Regular"; */
+    /* font-family: "Bulo"; */
+    /* font-family: "Roboto"; */
+    /* font-family: -apple-system,system-ui,BlinkMacSystemFont; */
+    /* font-family: "PT Sans"; */
+    /*     font-family: "Avenir LT Std"; */
+    /* font-family: "Proxima Nova"; */
+    /*     font-family: "Avenir Next"; */
+    // font-family: "Maison Neue";
+}
+
+.Field-requiredStar {
+    padding: $RequiredStar-padding;
+    height: $RequiredStar-size;
+    width: $RequiredStar-size;
+    background: white;
+    z-index: 5;
+    border-radius: 999px;
+    left: -$RequiredStar-size / 2;
+	// margin-top: 19px;
+	margin-top: ($Material-input-height / 2) + $Material-floatLabel-topOffset - ($RequiredStar-size / 2);
+    /* background: #cf4554; */
+    /* color: white; */
+}
+
+.Field-requiredStar--alignWithLabel {
+	position: absolute;
+	margin-top: 0;
+	top: 0;
+	left: -($RequiredStar-size + $RequiredStar-margin);
+}
+
+.Field-requiredStar--alignWithOutsideLabel {
+	position: absolute;
+	margin-top: 0;
+	top: calc(-#{$FieldLabel-marginBottom} - #{$Material-floatLabel-topOffset} - 1em + (#{$RequiredStar-size} / 3)); // Why 1/3 instead of 1/2? Who knows.
+	left: -($RequiredStar-size + $RequiredStar-margin);
+}
+
+
+// TODO: rework this so it doesn't need to override same selector in _FieldBlock.scss
+.FieldBlockGroup .FieldBlock .FieldBlock-label, .FieldBlockGroup .FieldBlock .Field-label, .FieldBlockGroup .FieldBlock-label {
+    text-transform: uppercase;
+    font-size: 13px; // TODO: Config
+    font-size: em(13px); // TODO: Config
+    letter-spacing: .06em;
+    margin-top: 0; // TODO: Config
+	margin-bottom: 8px; // TODO: Config
+    margin: .125em 0 $Material-floatLabel-topOffset; // TODO: where does 4px come from again?
+    color: $FieldBlock-subLabel-color;
+}
+
+.FieldBlock, .FieldBlockGroup {
+    margin-bottom: 1.25em;
+    margin-bottom: $FieldBlock-marginBottom;
+}
+.FieldBlock.FieldBlock--is-error {
+    margin-bottom: $FieldBlock-marginBottom - $FieldBlock-errorPaddingBottom;
+}
+
+.TextInput, .Select, .Field-input--select, .Field-input, .GridSearch-field-input, .GridSearch-field--advanced .GridSearch-field-input, .GridSearch-field-input--select {
+    font-family: inherit;
+}
+
+.Field-input--button {
+    text-transform: none;
+    letter-spacing: normal;
+    font-weight: 600;
+    box-shadow: none;
+    background: #5488ab;
+    color: white;
+    font-size: 14px;
+    padding: 9px 18px;
+}
+
+.FieldBlock-label, .Field-label {
+    margin-bottom: 1px;
+}
+.FieldBlockGroup-label {
+    margin-bottom: 4px;
+}
+
+.Field-inputContainer md-input-container {
+    margin-top: $Material-floatLabel-topOffset;
+    /* margin-top: 0; */
+}
+
+wnd-select, wnd-text, wnd-timepicker, wnd-datepicker, wnd-typeahead, wnd-textarea {
+    /* min-height: 27px; */
+}
+
+.md-select-value {
+	min-height: 28px; 
+	min-height: $Material-input-height - $Material-input-borderWidth * 2 - $Material-input-paddingBottom - $Material-input-paddingTop;
+	background: white;
+    // border: 1px solid #e6e6e6 !important;
+    border: $Material-input-borderWidth solid $Material-input-borderColor !important;
+    border-radius: $Material-input-borderRadius;
+    // Has value, or is focused
+	md-select.ng-not-empty:not([disabled]) &, md-select:not([disabled]):focus & {
+		// border-color: $Material-input-borderColor--active !important;
+    }
+    // Is focused
+    md-select:not([disabled]):focus & {
+        border-color: $Material-input-borderColor--active !important;
+    }
+}
+
+.md-select-value, .md-select-value.md-select-placeholder {
+    md-select:not([disabled]):focus &, & {
+        padding-bottom: $Material-input-paddingBottom;
+		padding-top: $Material-input-paddingTop;
+		padding-left: $Material-input-paddingLeft;
+		padding-right: $Material-input-paddingRight;
+        font-size: $Material-input-fontSize;
+        color: $Material-input-color;
+	}		
+}
+
+md-select .md-select-value.md-select-placeholder {
+    @include CustomMaterial-placeholder-typeStyle();
+}
+// Reverting from italic set on parent ^
+.md-select-icon {
+	font-style: normal;
+}
+// Allow selected value in select to wrap text 
+.md-select-value>span:not(.md-select-icon){
+     white-space: normal;
+}
+
+md-input-container.md-input-focused:not([md-no-float]) .md-select-value.md-select-placeholder {
+	padding-left: 0;
+}
+
+md-input-container.md-input-focused:not([md-no-float]) .md-select-placeholder span:first-child {
+	padding-top: $Material-input-paddingTop;
+	padding-left: $Material-input-paddingLeft;
+	background: white;
+    border-radius: 3px;
+    width: auto;
+    color: $Material-floatLabel-color;
+	
+	padding: 0 4px;
+	position: relative;
+	left: 6px;
+
+    transform: translateY(-18px) translateX(-4px) scale(.75);
+    transform: translateY(-4px) translateX(-4px) scale(.75);
+	transform: translateY(-17px) translateX(-4px) scale(.75);
+
+	transform: translateX(0) translateY(-18px) scale(.75);
+	
+	// Usually fills width, but in this case needs to be small so as not to cover the entire top border
+	// Needs to be compensated for, by changing layout of container (.md-select-placeholder)
+    flex: 0 0 auto;
+}
+// When select is focused, moves select arrow to end where it usually sits
+md-input-container.md-input-focused:not(.md-input-has-value) md-select .md-select-value.md-select-placeholder {
+    display: flex;
+    justify-content: space-between;
+}
+
+md-input-container.md-input-focused:not([md-no-float]) .md-select-value.md-select-placeholder {
+    /* padding: 0; */
+}
+
+// Allow datepicker calendar icon button to sit inside the field
+.md-datepicker-button.md-icon-button.md-button {
+    position: absolute;
+    z-index: 4;
+    top: 0;
+    left: 0;
+    margin-top: 0;
+    margin-left: 0;
+}
+
+// Give text input proper leftward space to accommodate calendar icon button
+.md-datepicker-input-container .md-input {
+    // padding-left: calc(#{$Material-input-paddingLeft} + 40px); // 40px is icon width
+    padding-left: 40px; // 40px is icon width
+    padding-right: 40px; // 40px is icon width
+    min-width: 160px;
+}
+
+// Allow datepicker input to be flush-left, now that the icon in inside
+.md-icon-button+.md-datepicker-input-container {
+    margin-left: 0;
+}
+
+// More padding (right hand side) on datepicker dropdown arrow
+.md-datepicker-triangle-button.md-button.md-icon-button {
+    transform: none;
+    margin-right: 0;
+}
+
+// Remove floating-label upper padding from special input container types
+.Timepicker-inputCell > md-input-container, .datetime-input md-input-container {
+    padding-top: 0;
+    margin-top: $Material-floatLabel-topOffset;
+}
+
+// Disabled styles
+
+md-select.md-default-theme[disabled] .md-select-value, md-select[disabled] .md-select-value {
+    background-size: 6px 6px;
+    background-repeat: repeat;
+    background-image: linear-gradient(-45deg, transparent 46%, rgba(0,0,0,.23) 49%, rgba(0,0,0,.23) 51%, transparent 55%);
+}
+
+
+////// -----------------------------------------------------
+////// -----------------------------------------------------
+////// -----------------------------------------------------
+
+.Field-inputContainer md-input-container {
+    // margin-top: 4px;
+}
+
+.Field-Table .Table-header-cell {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    opacity: .75;
+}
+

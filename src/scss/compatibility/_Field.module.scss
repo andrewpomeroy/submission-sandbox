@@ -1,0 +1,46 @@
+@debug($FieldLabel-marginBottom);
+
+// TODO: Assess if this pattern could work better for composable modules?
+// i.e. Using a mixin as such, for each major selector under the "Field" umbrella above.
+@mixin Field-label() {
+	display: inline-block;
+	color: $FieldLabel-color;
+	font-weight: 400;
+	font-size: $FieldLabel-fontSize;
+	font-size: em($FieldLabel-fontSize);
+	line-height: $FieldLabel-lineHeight;
+	margin-bottom: $FieldLabel-marginBottom;
+	// margin-bottom: em($FieldLabel-marginBottom, $context: $FieldLabel-fontSize);
+	&:empty {
+		display: none; // TODO: move up to .Field-label?
+	}
+}
+
+
+// @include Table(
+// 	$inputConfig: $Table-config--dark,
+// 	$modifier: dark,
+// 	$appends: (rowBorderBottom: map-get($Table-config--default, rowBorderBottom)
+// ));
+
+//TODO: Convert to use field module config
+.Field-Table {
+    min-width: $Field-maxWidth;
+    .Table-header-cell {
+        border-bottom-color: $FieldInput-borderColor;
+	    color: $FieldLabel-color;
+	    font-weight: $theme-fontWeight;
+    }
+    .Table-body-cell {
+    	border-color: rgba($FieldInput-borderColor, .33);
+    }
+}
+
+// Special width class must be applied to wnd-field containing directive rather than .Field
+// (it's the direct descendant of wnd-field-row)
+.wnd-field--quarterWidth {
+    max-width: 25%;
+    .Field {
+        min-width: 0px; // May not be necessary
+    }
+}

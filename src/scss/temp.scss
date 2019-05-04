@@ -106,7 +106,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 1em;
+    padding: 10px;
 }
 
 .Banner-icon {
@@ -119,4 +119,40 @@
 
 .u-color-success {
   color: $color-brightGreen; // TODO: Expand these classes, map to correct color vars
+}
+
+.BlockButton-warningMessages {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    width: 100%;
+    margin: .5em;
+    width: calc(100% - 1em);
+    background: $color-red;
+    color: white;
+}
+
+wnd-section-control-nav-buttons {
+    position: relative;
+}
+
+.BlockButton-warningMessages:after {
+    content: '';
+    width: 0;
+    height: 0;
+    border: .5em solid rgba(0,0,0,0);
+    border-top-color: $color-red;
+    position: absolute;
+    top: 100%;
+    left: 1em;
+}
+
+.BlockButton-warningMessage {
+  margin: 1em 1.25em;
+}
+
+// Upload progress indicator (wnd-upload)
+
+.FileUploadIndicatorWrapper {
+  color: $app-color-validation-success;
 }

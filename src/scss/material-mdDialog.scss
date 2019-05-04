@@ -1,0 +1,33 @@
+$mdDialog-small-width: 540px;
+
+$mdDialog-innerPaddingV: 28px;
+$mdDialog-innerPaddingH: 24px;
+
+$mdDialog-toolbars-PaddingV: 18px;
+
+.mdDialog--small {
+  min-width: 540px;
+}
+.mdDialog-body--padded {
+  padding: $mdDialog-innerPaddingV $mdDialog-innerPaddingH;
+}
+.mdDialog-body-segment--padded {
+  padding-left: $mdDialog-innerPaddingH;
+  padding-right: $mdDialog-innerPaddingH;
+  margin-top: $mdDialog-innerPaddingV;
+  margin-bottom: $mdDialog-innerPaddingV;
+}
+
+md-dialog .mdDialog-actions {
+    padding: $mdDialog-toolbars-PaddingV $mdDialog-innerPaddingH;
+}
+
+md-dialog .mdDialog-actions {
+  > *:not(:last-child) {
+    margin-right: $mdDialog-innerPaddingH / 2;
+  }
+}
+
+md-dialog .mdDialog-headerItems {
+    padding: $mdDialog-toolbars-PaddingV $mdDialog-innerPaddingH;
+}

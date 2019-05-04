@@ -1,0 +1,10 @@
+// Adapted from Bootstrap mixin `form-control-focus`
+@mixin input-focus($color: $TextInput-focus) {
+	// background: $TextInput-bgColor;
+	border-color: $color;
+	outline: 0;
+}
+@mixin input-focus-shadow($color: $TextInput-focus) {
+	$color-rgba: rgba(red($color), green($color), blue($color), .6);
+	box-shadow: $TextInput-boxShadow, 0 0 8px $color-rgba;
+}

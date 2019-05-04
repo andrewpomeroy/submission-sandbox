@@ -1,0 +1,71 @@
+// TODO: Merge and clean up
+
+// $FieldLabel-fontSize: $tinyFontSize !default;
+// $FieldLabel-fontSize: 17px !default;
+$FieldLabel-fontSize: $font-size-base !default;
+$FieldLabel-fontWeight: $theme-fontWeight !default;
+// $FieldLabel-lineHeight: 1.25 !default;
+$FieldLabel-lineHeight: 1.1 !default;
+// $FieldLabel-marginBottom: 10px !default;
+// $FieldLabel-marginBottom: emtopx(.333em) !default;
+$FieldLabel-marginBottom: 8px !default;
+// $FieldLabel-marginBottom: .333em !default;
+$FieldLabel-lineHeightComputed: $FieldLabel-fontSize * $FieldLabel-lineHeight + $FieldLabel-marginBottom !default;
+// $FieldLabel-color: $app-color-text-label;
+// $FieldLabel-color: #2168a6;
+$FieldLabel-color: #1e629d;
+$FieldLabel-color: hsl(206, 56%, 47%);
+$FieldLabel-color: hsl(204, 70%, 37%); // ADA contrast
+
+$FieldRequiredStar-size: 10px;
+
+$FieldInput-fontSize: $TextInput-fontSize !default;
+$FieldInput-lineHeight: $line-height-base !default;	
+$FieldInput-paddingV: $TextInput-paddingV !default;
+$FieldInput-paddingH: $TextInput-paddingH !default;
+$FieldInput-heightComputed: $FormControl-heightComputed !default;
+
+$FieldInput-color: $TextInput-color !default;
+$FieldInput-bgColor: $TextInput-bgColor !default;
+$FieldInput-borderWidth: $TextInput-borderWidth !default;
+$FieldInput-borderRadius: $TextInput-borderRadius !default;
+// $FieldInput-borderColor: darken($FieldInput-bgColor, 3%) !default;
+$FieldInput-borderColor: $TextInput-borderColor !default;
+$FieldInput-boxShadow: $TextInput-boxShadow !default;
+$FieldInput-focus: $TextInput-focus !default;
+
+$FieldInput-readOnlyColor: rgba($TextInput-color, .75) !default;
+
+$Field-marginBottom: emtopx(1.5em) !default; // 24px
+// Essentially converting rem width values to relative units
+// $Field-minWidth-rem: 10rem !default;
+// $Field-minWidth: strip-units($Field-minWidth-rem) * em($FieldInput-fontSize) !default;
+$Field-maxWidth-rem: 36rem !default;
+$Field-maxWidth: 36em !default;
+
+$Field-widthRatio-small: .4 !default;
+
+$Field-error: $color-red !default;
+// $Field-info: $app-chrome-darkgray !default;
+$Field-info: $color-neutralblue-light !default;
+
+$FieldMessage-paddingH: 14px !default;
+$FieldMessage-paddingV: 8px !default;
+$FieldMessage-marginH: 10px !default;
+$FieldMessage-marginV: 4px !default;
+
+$FieldMessage-iconSize: 18px !default;
+$FieldMessage-iconOffsetH: $FieldMessage-paddingH * (-.1) !default;
+$FieldMessage-arrowSize: 7px !default;
+
+// ------
+
+
+$FieldBlock-marginBottom: 34px;
+$FieldBlockGroup-marginBottom: 40px;
+$FieldBlockGroup-child-marginBottom: 18px;
+$FieldBlock-child-marginBottom: 6px;
+$FieldBlock-marginH: 10px;
+
+$FieldBlock-subLabel-color: #5689b5;
+$FieldBlock-subLabel-color: hsl(205, 49%, 45%); // ADA contrast

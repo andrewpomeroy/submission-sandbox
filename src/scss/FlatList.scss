@@ -68,7 +68,16 @@ $FlatList-item-fontSize-smaller: 10px; // dunno
 }
 
 .FlatList-item--linked {
-
+  cursor: pointer;
+  transition: 80ms linear;
+  transition-property: background-color, color;
+  &:hover, &:focus {
+    background-color: rgba($app-color-highlightBlue, .1);
+    color: $app-color-highlightBlue;
+  }
+  &:active {
+    background-color: rgba($app-color-highlightBlue, .2);
+  }
 }
 
 .FlatListEmptyPlaceholder {

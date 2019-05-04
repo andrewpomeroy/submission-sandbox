@@ -25,16 +25,12 @@
     margin-top: .5rem;
 }
 
+.CardRow, // remove this once we add more sizes?
 .CardRow--medium {
     padding-left: .25rem;
     padding-right: .25rem;
     margin-right: -.25em;
     margin-left: -.25em;
-}
-
-.CardRow--naked {
-    margin: 0;
-    padding: 0;
 }
 
 .CardRow > .Card {
@@ -62,6 +58,10 @@
 
 .Card--naked:not(:last-child) {
     border-right: 1px solid gainsboro;
+}
+
+.Card--noMaxWidth {
+    max-width: none;
 }
 
 .Card--linked {
@@ -120,8 +120,27 @@
 
 .CardRow--highlightBlue {
     background-color: rgba($color-electricBlue, .1);
-    border-color: $color-electricBlue;
+    border-top: 1px solid $color-electricBlue;
+    border-bottom: 1px solid $color-electricBlue;
     .CardRow-bookend {
         background: rgba($color-electricBlue, .1);
+    }
+}
+
+.CardRow--wrapping {
+    flex-wrap: wrap;
+    margin-right: -1px;
+    margin-bottom: -1px;
+    // overwriting 'not:(last-child)'
+    &.CardRow--medium {
+        margin-right: calc(-.25em - 1px);
+        // margin-left: calc(-.25em - 1px);
+    }
+    .Card--naked {
+        border-right: 1px solid gainsboro;
+        border-bottom: 1px solid gainsboro;
+    }
+    .Card {
+        min-width: 170px;
     }
 }

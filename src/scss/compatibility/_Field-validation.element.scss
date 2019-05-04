@@ -1,0 +1,288 @@
+$FieldBlock-errorPaddingBottom: 5px;
+$FieldBlock-errorPaddingTop: 5px;
+
+@mixin themify-FieldValidation($color, $modifier:false) {
+    .FieldBlock-validation-message
+    {
+        @if not ($modifier) {
+            background: $color;
+            &:after {
+                border-right-color: $color;
+            }
+            &:not(:first-child):before {
+                border-left-color: $color;
+            }
+        }
+        @else {
+            &--#{$modifier} {
+                background: $color;
+            }
+            &--#{$modifier}:after {
+                border-right-color: $color;
+            }
+            &--#{$modifier}:not(:first-child):before {
+                border-left-color: $color;
+            }
+        }
+    }
+    // When validation messages are stacked underneath field, rather than to the side
+    @media screen and (max-width: $mq-Form-collapse-max) {
+        // Change arrow direction, from left to up
+        .FieldBlock-validation-message {
+            @if not ($modifier) {
+                &:after {
+                    border-bottom-color: $color;
+                }
+            }
+            @else {
+                &--#{$modifier}:after {
+                    border-bottom-color: $color;
+                }
+            }
+        }
+    }
+}
+
+@mixin FormControl-errorStyle($color: $app-color-validation-error, $textColor: $app-color-validation-error-text) {
+    &, &:hover, &:focus, &:active {
+        border-color: $color;
+        color: $textColor;
+    }
+}
+@mixin FormControl-errorStyle-focus ($color: $app-color-validation-error) {
+    @include input-focus-shadow($color: $app-color-validation-error)
+}
+.Field--is-error .Field-input {
+    @include FormControl-errorStyle();
+    &:focus {
+        @include FormControl-errorStyle-focus();
+    }
+}
+
+
+.FieldBlock-validation {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;    
+    flex: 1 1 0px;
+}
+
+.FieldBlock-validation-message:after {
+    right: 100%;
+    top: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-color: transparent;
+    // border-right-color: $Field-info; // themify
+    border-width: $FieldMessage-arrowSize;
+    margin-top: -$FieldMessage-arrowSize;
+}
+.FieldBlock-validation-message--error:after {
+    // border-right-color: $Field-error; // themify
+}
+
+.FieldBlock-validation-message:not(:first-child):after {
+    display: none;
+}
+
+$FieldLabel-height: 28px; // TODO: Move?
+
+$InputHeight-calculated: ($FieldInput-paddingV * 2 + (1 * $FieldInput-fontSize));
+
+.FieldBlock-validation-message {
+    display: inline-flex;
+    align-items: center;
+    margin-left: $FieldMessage-marginH;
+    padding: $FieldMessage-paddingV $FieldMessage-paddingH;
+    color: white;
+    border-radius: $FieldInput-borderRadius;
+    position: relative;
+    &:not(:first-child) {
+        margin-top: $FieldMessage-marginV;
+    }
+    @media screen and (min-width: ($mq-Form-collapse-max + 1px)) {
+        &:not(:first-child) {
+            &:before {
+                content: '';
+                border-left: $FieldMessage-iconSize solid transparent;
+                height: $FieldMessage-marginV;
+                position: absolute;
+                top: -$FieldMessage-marginV;
+                left: $FieldMessage-iconOffsetH + $FieldMessage-paddingH;
+            }
+        }
+        &:first-child:last-child {
+            min-height: $InputHeight-calculated;
+            min-height: calc(#{$InputHeight-calculated} + 4px); // Why 4px? I don't know. It should be 2px
+        }
+    }
+}
+.FieldBlock-validation-message-text {
+    font-size: .8em;
+}
+
+.FieldBlock-validation-image, .FieldBlock-validation-icon {
+    flex: 0 0 auto;
+}
+.FieldBlock-validation-image {
+    height: $FieldMessage-iconSize;
+    width: $FieldMessage-iconSize;
+    margin-right: $FieldMessage-paddingH * .66;
+    margin-left: $FieldMessage-iconOffsetH;
+}
+.FieldBlock-validation-icon {
+    fill: white;
+}
+
+@include themify-FieldValidation($color: $Field-info);
+@include themify-FieldValidation($color: $Field-error, $modifier: error);
+
+
+// New error message layout
+// TODO: clean up redundancies from previous method, if any?
+
+.FieldBlock-validation-message:not(:first-child):before {
+    display: none;
+}
+
+.FieldBlock-validation-message:after {
+    display: none;
+}
+
+@media screen {
+    .FieldBlock.FieldBlock--is-error {
+        // background: rgb(255, 225, 227);
+        background-color: hsla(hue($Field-error), 100%, 70%, 0.2);
+        margin-left: -24px; // TODO: Fix, consolidate and configure
+        margin-right: -18px; // TODO: Fix, consolidate and configure
+        padding-left: 24px; // TODO: Fix, consolidate and configure
+        padding-right: 18px; // TODO: Fix, consolidate and configure
+        margin-top: -($FieldBlock-errorPaddingTop);
+        padding-top: $FieldBlock-errorPaddingTop;
+    }
+}
+
+.FieldBlock-validation {
+    flex: 1 1 0px;
+    padding-top: 0;
+    margin-bottom: 0;
+    justify-content: center;
+    align-items: stretch;
+    display: inline-flex;
+}
+
+
+// ---- STACKED VARIATION ---- //
+
+// When validation messages are stacked underneath field, rather than to the side
+
+@mixin FieldBlock--stacked {
+    // Situate messages below field
+    flex-direction: column;
+}
+@mixin FieldBlock--stacked-validation {
+    // flex-direction: row;
+    // flex-wrap: wrap;
+    // justify-content: flex-start;
+    // align-items: flex-start;
+    padding-top: 3px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    flex: 0 0 auto;
+    &--empty {
+        // Don't want it taking up extra vertical space, though in horizontal configurations we want it to stay wide as a placeholder
+        display: none;
+    }
+}
+@mixin FieldBlock--stacked-validation-message {
+    // margin-right: .3em;
+    // margin-top: 0;
+    // margin-bottom: .15em;
+    margin-left: 0;
+    &:after {
+        right: auto;
+        left: 15px;
+        top: -7px;
+        border-right-color: transparent;
+    }
+}
+
+.FieldBlock--stacked, {
+    @include FieldBlock--stacked;
+}
+.FieldBlock--stacked .FieldBlock-validation, {
+    @include FieldBlock--stacked-validation;
+}
+.FieldBlock--stacked .FieldBlock-validation-message, {
+    @include FieldBlock--stacked-validation-message;
+}
+
+@media screen and (max-width: $mq-Form-collapse-max) {
+    .FieldBlock {
+        @include FieldBlock--stacked;
+    }
+    .FieldBlock-validation {
+        @include FieldBlock--stacked-validation;
+    }
+    .FieldBlock-validation-message {
+        @include FieldBlock--stacked-validation-message;
+    }
+}
+
+
+
+
+.FieldBlock--is-error .Field-label--placeholderLabel:after {
+    // red background makes placeholderLabels stand out weirdly
+    border: 1px solid gainsboro;
+}
+.Field--is-error .Field-label--placeholderLabel:after {
+    border-color: $app-color-validation-error-text;
+    background-color: $app-color-validation-error;
+    color: white;
+}
+
+
+@mixin verticalValidationMessageDisplay($color: $Field-error, $size: $FieldMessage-arrowSize) {
+    bottom: 100%;
+    top: auto;
+    right: 50%;
+    border-color: transparent;
+    border-bottom-color: $color;
+    margin-right: -7px;
+}
+
+// Full-width validation overrides
+
+.FieldBlock--fullWidth {
+    flex-direction: column;
+    .FieldBlock-validation {
+        flex: 0 0 auto;
+        flex-wrap: wrap;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+    .FieldBlock-validation-message {
+        margin: 0;
+        // margin-bottom: .25em; // field margins
+        &:not(:first-child) {
+            margin-left: .25em;
+        }
+    }
+}
+
+// Simplifying vertical rhythm (continued from _FieldBlock.scss)
+
+.FieldBlock.FieldBlock--is-error {
+    padding-bottom: $FieldBlock-errorPaddingBottom;
+    padding-bottom: em($FieldBlock-errorPaddingBottom);
+    margin-bottom: em($FieldBlock-marginBottom - $FieldBlock-errorPaddingBottom);
+}
+.FieldBlockGroup .FieldBlock.FieldBlock--is-error {
+    margin-bottom: em($FieldBlockGroup-child-marginBottom - $FieldBlock-errorPaddingBottom);
+}

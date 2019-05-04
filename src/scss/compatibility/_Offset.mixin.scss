@@ -1,0 +1,84 @@
+$offsetH-default: 1em;
+$offsetH-default-rem: 1rem;
+
+$offsetV-default: .5em;
+$offsetV-default-rem: .5rem;
+
+// @mixin makeOffsetGroupItemroup($margin: $offsetH-default, $outerMargin: 0px, $usePadding: false) {
+// 	@include makeOffsetGroup($margin: $margin, $outerMargin: $outerMargin);
+// 	> .offsetGroup-Item {
+// 		@include makeOffsetGroupItem($margin: $margin);
+// 	}
+// }
+
+// $maxWidth -- supplies properly calculated values for the given max-width
+// $width -- supplies properly calculated values for the given width
+@mixin makeOffsetGroup($margin: $offsetH-default, $outerMargin: 0px, $maxWidth: false, $width: false) {
+	margin-left: calc(-#{$margin} / 2 + #{$outerMargin});
+	margin-right: calc(-#{$margin} / 2 + #{$outerMargin});
+	@if ($maxWidth) {
+		// max-width: calc(#{$maxWidth} + #{$margin});
+		max-width: calc(#{$maxWidth} + #{$margin} - #{$outerMargin * 2}); // Not sure about outerMargin yet, need a use case
+	}
+	@if ($width) {
+		// width: calc(#{$width} + #{$margin});
+		width: calc(#{$width} + #{$margin} - #{$outerMargin * 2}); // Not sure about outerMargin yet, need a use case
+	}
+}
+@mixin makeOffsetGroupItem($margin: $offsetH-default, $usePadding: false, $maxWidth: false, $width: false, $outerMargin: 0px) {
+	@if ($usePadding) {
+		padding-left: ($margin / 2);
+		padding-right: ($margin / 2);
+	}
+	@else {
+		margin-left: ($margin / 2);
+		margin-right: ($margin / 2);
+	}
+	@if ($maxWidth) {
+		// max-width: calc(#{$maxWidth} + #{$margin});
+		max-width: calc(#{$maxWidth} - #{$margin} - #{$outerMargin * 2}); // Not sure about outerMargin yet, need a use case
+	}
+	@if ($width) {
+		// width: calc(#{$width} + #{$margin});
+		width: calc(#{$width} - #{$margin} - #{$outerMargin * 2}); // Not sure about outerMargin yet, need a use case
+	}
+}
+.OffsetGroup {
+	@include makeOffsetGroup();
+}
+.OffsetGroup-item {
+	@include makeOffsetGroupItem();
+}
+.OffsetGroup--small {
+	@include makeOffsetGroup($offsetH-default / 2);
+}
+.OffsetGroup-item--small {
+	@include makeOffsetGroupItem($offsetH-default / 2);
+}
+
+// @mixin makeOffsetGroupItemroupV($margin: $offsetV-default, $outerMargin: 0px, $usePadding: false) {
+// 	@include makeOffsetGroupV($margin: $margin, $outerMargin: $outerMargin);
+// 	> .OffsetGroupV-Item {
+// 		@include makeOffsetGroupVItem($margin: $margin);
+// 	}
+// }
+@mixin makeOffsetGroupV($margin: $offsetV-default, $outerMargin: 0px) {
+	margin-top: calc(-#{$margin} / 2 + #{$outerMargin});
+	margin-bottom: calc(-#{$margin} / 2 + #{$outerMargin});
+}
+@mixin makeOffsetGroupVItem($margin: $offsetV-default, $usePadding: false) {
+	@if ($usePadding) {
+		padding-top: ($margin / 2);
+		padding-bottom: ($margin / 2);
+	}
+	@else {
+		margin-top: ($margin / 2);
+		margin-bottom: ($margin / 2);
+	}
+}
+.OffsetGroupV {
+	@include makeOffsetGroupV();
+}
+.OffsetGroupV-item {
+	@include makeOffsetGroupVItem();
+}

@@ -4,7 +4,7 @@
 var express = require('express');
 var app = express();
 
-var port = 3001;
+var port = 3002;
 
 // http://expressjs.com/en/starter/static-files.html
 app.use(express.static('public'));

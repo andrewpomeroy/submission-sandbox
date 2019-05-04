@@ -25,10 +25,13 @@ $color-neutralDark: #394b66; // TODO: config
   &:focus {
     outline: 0;
   }
+  &[disabled="disabled"], &.disabled {
+    opacity: .4;
+  }
 }
 
 @mixin ButtonStyle-shadow ($color, $darkenFactor: 20%, $distance: 2px) {
-  box-shadow: 0px $distance 0px darken($app-color-highlightBlue, $darkenFactor);  
+  box-shadow: 0px $distance 0px darken($color, $darkenFactor);  
 }
 @mixin ButtonStyle-activeTransform ($distance: 2px) {
   box-shadow: none;

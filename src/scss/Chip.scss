@@ -46,13 +46,18 @@ $Chip-borderRadius: 3px;
   background-color: $color-orange; 
 }
 
+.Chip--alert {
+  background-color: $app-color-danger; 
+  color: white; 
+}
+
 .Chip--noWrap {
   white-space: nowrap;
 }
 
 .Chip-item {
   &:not(:last-child) {
-    margin-right: .5em;
+    margin-right: .33em;
   }
 }
 .Chip-icon {

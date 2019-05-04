@@ -1,0 +1,22 @@
+@mixin undo-list-styles() {
+	list-style-type: none;
+	margin: 0;
+	padding-left: 0;
+}
+
+@mixin GenericCloseX {
+  display: flex;
+  height: 20px;
+  width: 20px;
+  color: #b8e0ff;
+  cursor: pointer;
+  &:hover {
+    color: darken(#b8e0ff, 25%);
+    outline: 0;
+    box-shadow: none;
+  }
+  &:active, &:focus {
+    color: darken(#b8e0ff, 35%);
+    outline-color:transparent;
+  }
+}

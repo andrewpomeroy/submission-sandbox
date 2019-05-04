@@ -1,0 +1,51 @@
+$FormControl-fontSize: $font-size-base !default;
+$FormControl-lineHeight: $line-height-base !default;
+$FormControl-fontFamily: $fontFamily !default;
+$FormControl-borderRadius: 3px !default;
+$FormControl-color: $app-color-text-control !default;
+$FormControl-bgColor: white !default;
+$FormControl-borderWidth: 1px !default;
+// $FormControl-borderColor: hsl(hue($theme-dark-gray-blue), 24%, 83%) !default;
+$FormControl-borderColor: hsl(hue($theme-dark-gray-blue), 20%, 87%) !default;
+// $FormControl-paddingV: .69em !default;
+// $FormControl-paddingV: 10px !default; // 10px / 16px
+$FormControl-paddingV: 8px !default; // 8px / 16px
+$FormControl-paddingH: $font-size-base !default;
+$FormControl-heightComputed: ($FormControl-fontSize * $FormControl-lineHeight) + ($FormControl-paddingV * 2) + ($FormControl-borderWidth * 2) !default;
+$FormControl-focus: saturate(lighten($color-lightblue-highlight, 10%), 10%) !default;
+$FormControl-boxShadow:  inset 0 2px 1px hsla(0, 0%, 0%, 0.04) !default;
+
+$FormControl-bgColor--disabled: #eeeeee !default;
+$FormControl-color--disabled: #969696 !default;
+
+$FormControl-color--empty: #969696 !default;
+
+$moduleConfig: () !default;
+$moduleConfig: map-merge-deep($moduleConfig, (
+	'FormControl': (
+		'properties': (
+			"fontSize": $smallFontSize,
+			"lineHeight": $line-height-base,
+			"borderRadius": 3px,
+			"color": $app-color-text-control,
+			"bgColor": white,
+			"borderWidth": 1px,
+			"borderColor": hsl(hue($theme-dark-gray-blue), 20%, 87%),
+			"paddingV": .69em,
+			"paddingH": 1em,
+			"focus": saturate(lighten($color-lightblue-highlight, 10%), 10%),
+			"boxShadow":  inset 0 2px 1px hsla(0, 0%, 0%, 0.04),
+			"bgColor--disabled": #eeeeee,
+			"color--disabled": #969696,
+			"color--empty": #969696
+		)
+	)
+));
+
+@function FormControlCalc($props) {
+	$new: (
+		heightComputed: map-get($props, fontSize) * map-get($props, lineHeight) + (map-get($props, paddingV) * 2),
+	);
+	$props: map-merge($props, $new);
+	@return $props;
+}

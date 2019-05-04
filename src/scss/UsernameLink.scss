@@ -5,8 +5,15 @@
     align-items: center;
 }
 
+.UsernameLink-nolink {
+    display: flex;
+    @include u-unstyleButton();    
+    align-items: center;
+}
+
 .UsernameLink-icon {
     margin-right: .5em;
     height: 1em;
     width: 1em;
 }
+

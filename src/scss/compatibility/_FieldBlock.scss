@@ -1,0 +1,265 @@
+// TODO: Proper config
+$FieldBlockGroup-indent: 18px;
+$FieldBlockGroup-border-width: 2px;
+$FieldBlockGroup-border-color: rgba(92, 154, 200, 0.25);
+
+.FieldBlockGroup {
+	position: relative;
+}
+.FieldBlock {
+    display: flex;
+	position: relative;
+}
+
+
+@mixin FieldBlock-contentLayout () {
+	display: flex;
+	flex-direction: column;
+	flex: 0 0 auto;
+}
+@mixin FieldBlock-contentWidth () {
+	width: 100%;
+	max-width: $Field-maxWidth;
+}
+@mixin FieldBlock-contentWidth--nested () {
+	max-width: calc(#{$Field-maxWidth} - #{$FieldBlockGroup-indent + $FieldBlockGroup-border-width});
+}
+
+.FieldBlock-content {
+	@include FieldBlock-contentLayout();
+	@include FieldBlock-contentWidth();
+
+	position: relative;
+}
+.FieldBlockGroup .FieldBlock-content:not(.FieldBlock-content--fullWidth) {
+	@include FieldBlock-contentWidth--nested();
+}
+.FieldBlock-content--fullWidth {
+	max-width: none;
+	.Field {
+		max-width: none;
+	}
+}
+.FieldBlock-contentLayout {
+	@include FieldBlock-contentLayout();
+}
+.FieldBlock-contentWidth {
+	@include FieldBlock-contentWidth();
+}
+
+@mixin FieldBlock-row-layout {
+		// @include makeOffsetGroupItem($usePadding: true);
+		// flex: 0 0 100%;
+		display: flex;
+	    flex-wrap: nowrap;
+		// flex-wrap: wrap;
+	    justify-content: flex-end;
+		// max-width: 100%;
+	    display: flex; // Aligning buttons
+	    align-items: stretch; // Aligning buttons
+	    align-items: flex-end; // Mixing material (included top-margin) and non-material controls 
+	    // justify-content: center; // Aligning buttons
+	    justify-content: flex-start; // Not sure why this was initially set to 'center'..?
+}
+@mixin FieldBlock-row-width {	
+    max-width: $Field-maxWidth;
+}
+.c-FieldBlock-row-layout {
+	@include FieldBlock-row-layout();
+}
+.c-FieldBlock-row-width {
+	@include FieldBlock-row-width();
+}
+
+
+.FieldBlock-row {
+	@include FieldBlock-row-layout();
+	@include FieldBlock-row-width();
+}
+
+@mixin Field-width {
+    width: auto;
+	flex: 1 1 0px;
+	// min-width: $Field-minWidth;
+}
+.c-Field-width {
+	@include Field-width;
+}
+.Field {
+	@include Field-width;
+}
+
+// TODO: DEPRECATE?
+// "Small" variation likely not in use
+@mixin Field-width--small {
+	flex-grow: $Field-widthRatio-small;
+	flex-shrink: $Field-widthRatio-small;
+	flex-basis: 0px;
+	// min-width: $Field-minWidth * $Field-widthRatio-small;
+}
+.Field--small,
+.c-Field-width--small 
+ {
+	@include Field-width--small; 
+}
+
+@mixin Field-width--auto {
+    flex: 0 1 auto;
+    // min-width: 0px; // not necessary after removing base minWidth?
+    // max-width: 40%; // Config?	
+}
+.Field--autoWidth,
+.c-Field-width--auto
+ {
+	@include Field-width--auto;
+}
+// Broaden?
+.Field-control {
+	display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    /* flex-direction: column; */
+    display: flex;
+    min-height: $FieldInput-heightComputed;
+    max-height: none;
+    /* max-width: 40%; */
+    flex: 1 1 auto;
+}
+
+.FieldBlock-row,
+.c-FieldBlock-split {
+	@include makeOffsetGroup($margin: $FieldBlock-marginH, $maxWidth: $Field-maxWidth);
+}
+.FieldBlock-row .Field,
+.c-FieldBlock-split-item {
+	@include makeOffsetGroupItem($margin: $FieldBlock-marginH);
+}
+
+
+.FieldBlock-label, .FieldBlockGroup-label {
+	@include Field-label;
+}
+
+.FieldBlock-labelSplit {
+	display: flex;
+	flex-direction: row;
+	.FieldBlock-label {
+		flex: 1 0 auto;
+	}
+	wnd-field {
+		flex: .5;
+	}
+}
+
+// Temporary fix for directive transclusion structure
+// This forces each field in a FieldBlock-row to display with equal width..
+// TODO: Figure out how to hoist width-specifying classes up to the wnd-field directive somehow
+.FieldBlock-row > wnd-field:not([auto-width]) {
+    flex: 1 1 0px;
+}
+
+.FieldBlockGroup {
+    display: block;
+}
+
+// Style subheadings for grouped field blocks (Contact > Address, etc.)
+.FieldBlockGroup .FieldBlock .FieldBlock-label {
+    text-transform: uppercase;
+    font-size: 13px; // TODO: Config
+    font-size: em(13px); // TODO: Config
+    letter-spacing: .06em;
+    margin-top: 0; // TODO: Config
+	margin-bottom: 8px; // TODO: Config
+}
+
+// --- BEGIN really awful workarounds for nested field blocks
+// 
+
+	// Create visual representation of nested field blocks
+	// TODO: Generate a class within the directive for the pertinent elements,
+	// to keep selector specificity low
+	wnd-field-block.FieldBlockGroup > .FieldBlock > .FieldBlock-content > .FieldBlock-fields,
+	div.FieldBlockGroup {
+		padding-left: $FieldBlockGroup-indent;
+	    border-left: $FieldBlockGroup-border-width solid $FieldBlockGroup-border-color;
+		// padding-top: .25em;
+	}
+
+	// Small separators for grouped field blocks with no subheadings
+	.FieldBlock-fields > wnd-field-block + wnd-field-block > .FieldBlock .FieldBlock-label:empty ~ .FieldBlock-fields:before, .FieldBlock-fields > wnd-field-block + wnd-field-block > .FieldBlock .FieldBlock-fields:first-child:before {
+	/*     position: absolute;
+	    content: '';
+	    top: -12px;
+	    left: 45%;
+	    z-index: 10;
+	    border-top: 1px solid gainsboro;
+	    width: 10%; */
+	}
+
+// --- END really awful workarounds for nested field blocks
+
+wnd-checkbox {
+	display: block;
+	margin-bottom: 20px; // TODO: Cringe
+}
+
+// Full-width validation overrides
+
+.FieldBlock--fullWidth {
+    flex-direction: column;
+    .FieldBlock-validation {
+        flex: 0 0 auto;
+        flex-wrap: wrap;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+    .FieldBlock-validation-message {
+        margin: 0;
+        // margin-bottom: .25em; // field margins
+        &:not(:first-child) {
+		    margin-left: .25em;
+		}
+    }
+}
+
+// WIP -- simplifying vertical rhythm
+
+.FieldBlock, .FieldBlockGroup {
+    // margin-bottom: 1.5em;
+    margin-bottom: $FieldBlock-marginBottom;
+    margin-bottom: em($FieldBlock-marginBottom);
+}
+
+.FieldBlockGroup .FieldBlock {
+    margin-bottom: $FieldBlockGroup-child-marginBottom;
+    margin-bottom: em($FieldBlockGroup-child-marginBottom);
+}
+
+.FieldBlockGroup > :last-child {
+    margin-bottom: 0;
+}
+
+.FieldBlock-fields > * {
+    margin-bottom: $FieldBlock-child-marginBottom;
+    margin-bottom: em($FieldBlock-child-marginBottom);
+}
+
+.FieldBlock-fields > :last-child {
+    margin-bottom: 0;
+}
+
+wnd-field, wnd-static-field, wnd-field-row {
+    display: block;
+}
+
+$FieldBlock-errorPaddingBottom: 10px;
+.FieldBlock--is-error {
+    padding-bottom: $FieldBlock-errorPaddingBottom;
+    padding-bottom: em($FieldBlock-errorPaddingBottom);
+    margin-bottom: em($FieldBlock-marginBottom - $FieldBlock-errorPaddingBottom);
+}
+
+.FieldBlock-row > :not([auto-width="true"]) {
+	flex: 1;
+}

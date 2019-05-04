@@ -1,19 +1,36 @@
-@import 'compatibility/compatibility.scss';
+@import "compatibility/compatibility.scss";
+
+@import "confirmation.scss";
+
+@import "temp-index.scss"; // stuff that was here in 'index' but doesn't belong
+
+@import "Slab.scss";
+@import "PanelHeaderStrip.scss";
+@import "SmallPanel.scss";
+@import "FieldMessage.scss";
+@import "panel-list-stuff.scss";
+@import "notation-components.scss";
+@import "NotationHintMenu.scss";
+@import "review.scss";
+@import "review2.scss";
+
+
+// // --- Migrated from Submission View --- //
 
 // // Config
 // @import 'backfill-config.scss';
 @import 'CommonMeta.config.scss';
+@import 'UtilityItems.config.scss';
 
 // // Mixins
 @import 'common.mixins.scss';
 @import 'ButtonStyle.mixin.scss';
 @import 'linkStyle.mixin.scss';
 
-// Common/composable
-@import 'UtilityItems.scss';
-
 @import 'CenterColumnWrap.scss';
 @import 'CollapseContainer.scss';
+@import 'ActionButtonRow.scss';
+@import 'Pane.scss';
 @import 'Submission.scss';
 @import 'OverviewSection.scss';
 @import 'Chip.scss';
@@ -24,6 +41,7 @@
 @import 'SlabButton.scss';
 @import 'SlabButtonCover.scss';
 @import 'SlabCell.scss';
+@import 'IconAlignedCount.scss';
 @import 'LinkBlock.scss';
 @import 'UsernameLink.scss';
 @import 'SplitContent.scss';
@@ -37,5 +55,17 @@
 @import 'VerticalTabs.scss';
 @import 'StepSegments.scss';
 @import 'StepHeader.scss';
+@import 'DataTable.scss';
 @import 'BigToast.scss';
+
+// Composable / utility styles
+@import 'UtilityItems.scss';
+
+// add-ons to library styles
+@import 'material-additions.scss';
+@import 'material-mdDialog.scss';
+
+// Disgusting hacks that should be reworked ASAP
+
 @import 'temp.scss';
+@import 'HACKS.scss';

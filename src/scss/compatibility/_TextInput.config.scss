@@ -1,0 +1,17 @@
+$TextInput-fontSize: $FormControl-fontSize !default;
+$TextInput-lineHeight: $FormControl-lineHeight !default;
+$TextInput-borderRadius: $FormControl-borderRadius !default;
+$TextInput-color: $FormControl-color !default;
+$TextInput-bgColor: $FormControl-bgColor !default;
+$TextInput-borderWidth: $FormControl-borderWidth !default;
+$TextInput-borderColor: $FormControl-borderColor !default;
+$TextInput-paddingV: $FormControl-paddingV !default;
+$TextInput-paddingH: $FormControl-paddingH !default;
+// $TextInput-heightComputed: $FormControl-paddingH !default;
+$TextInput-focus: $FormControl-focus !default;
+$TextInput-boxShadow: $FormControl-boxShadow !default;
+
+$TextInput-bgColor--disabled: $FormControl-bgColor--disabled !default;
+$TextInput-color--disabled: $FormControl-color--disabled !default;
+
+$TextInput-color--empty: $FormControl-color--empty !default;

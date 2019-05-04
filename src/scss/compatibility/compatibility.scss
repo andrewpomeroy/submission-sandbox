@@ -1,5 +1,33 @@
+// @import '_common.functions.scss';
 @import '_base.theme.config.scss';
+@import '_type.config.scss';
+// @import '_project.config.scss';
+@import '_layout.config.scss';
+// @import '_animation.config.scss';
+@import '_FormControl.config.scss';
+@import '_TextInput.config.scss';
+@import '_misc.mixin.scss';
+@import '_Offset.mixin.scss';
+@import '_TextInput.mixins.scss';
+@import '_Field.config.scss';
+@import '_Field.module.scss';
+@import '_FieldBlock.scss';
+@import '_Field-material.overrides.scss';
+@import '_Form.config.scss';
+@import '_Field-validation.element.scss';
 
+// $Field-error: $color-red !default;
+// // $Field-info: $app-chrome-darkgray !default;
+// $Field-info: $color-neutralblue-light !default;
+
+// $FieldMessage-paddingH: 14px !default;
+// $FieldMessage-paddingV: 8px !default;
+// $FieldMessage-marginH: 10px !default;
+// $FieldMessage-marginV: 4px !default;
+
+// $FieldMessage-iconSize: 18px !default;
+// $FieldMessage-iconOffsetH: $FieldMessage-paddingH * (-.1) !default;
+// $FieldMessage-arrowSize: 7px !default;
 
 * {
   box-sizing: border-box;

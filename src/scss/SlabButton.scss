@@ -1,10 +1,6 @@
 // -- SlabButton -- //  
 
-// $SlabButton-paddingV: 1em;
-$SlabButton-paddingV: $UtilityItems-paddingV;
-$SlabButton-paddingV: .25em;
-// $SlabButton-paddingH: 1.125em;
-$SlabButton-paddingH: $UtilityItems-paddingH;
+$SlabButton-paddingV: .5em;
 $SlabButton-paddingH: 1.5em;
 
 // $SlabButton-fontSize-default: 14px;
@@ -62,16 +58,27 @@ $SlabButton-minHeight: 64px;
   }
 }
 
+.SlabButton--warning {
+  @include ButtonStyle-orange;
+  &:hover, &:focus {
+    @include ButtonStyle-orange-hover;
+  }
+  &:active {
+    @include ButtonStyle-orange-active;
+  }
+}
+
 .SlabButton--leftAligned {
   justify-content: flex-start;
-  text-align: left;
 }
 
 @mixin SlabButton-icon {
   flex: 0 0 auto;
   height: 1.5em;
   width: 1.5em;
-  margin-right: 1em;
+  &:not(:only-child) {
+    margin-right: 1em;
+  }
 }
 .SlabButton-icon {
   @include SlabButton-icon;
@@ -79,4 +86,22 @@ $SlabButton-minHeight: 64px;
 
 .SlabButton-icon--faded {
   opacity: .5;
+}
+
+.SlabButton--iconOnly {
+  width: $SlabButton-minHeight;
+  height: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.SlabButton--iconOnly .SlabButton-icon {
+  /* height: 1.75em; */
+  /* width: 1.75em; */
+}
+
+.SlabButton-subText {
+  font-size: 12px;
+  font-weight: 500;
+  opacity: .7;
 }
