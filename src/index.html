@@ -317,7 +317,7 @@
                       <div class="OverviewSection-frame">
                       <step-segments segments="stages" initial-active-index="3">
                           <content>
-                            <div class="CardRow CardRow--medium" ng-repeat="row in $parent.$ctrl.segments" ng-if="$index === $parent.$parent.$ctrl.activeIndex">
+                            <div class="CardRow CardRow--wrapping CardRow--medium" ng-repeat="row in $parent.$ctrl.segments" ng-if="$index === $parent.$parent.$ctrl.activeIndex">
                               <div class="Card Card--naked Card--medium Card--linked" ng-class="{'Card--green': step.isCompleted}" ng-repeat="step in row">
                                 <div class="StepHeader StepHeader--split">
                                   <div class="StepHeader-number">
@@ -366,7 +366,7 @@
                     <div class="OverviewSection-body-item OverviewSection-body-item--flushTop">
                       <div class="OverviewSection-frame">
                         <div class="CardRows">
-                          <div class="CardRow CardRow--naked CardRow--medium CardRow--separateRows" ng-class="{'CardRow--highlightBlue': $index === 2}" ng-repeat="item in [3,2,3,1] track by $index">
+                          <div class="CardRow CardRow--wrapping CardRow--naked CardRow--medium CardRow--separateRows" ng-class="{'CardRow--highlightBlue': $index === 2}" ng-repeat="item in [3,2,3,1] track by $index">
                             <div class="CardRow-bookend CardRow-bookend--index">
                               {{$index + 1}}
                             </div>

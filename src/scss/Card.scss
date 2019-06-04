@@ -125,3 +125,21 @@
         background: rgba($color-electricBlue, .1);
     }
 }
+
+.CardRow--wrapping {
+    flex-wrap: wrap;
+    margin-right: -1px;
+    margin-bottom: -1px;
+    // overwriting 'not:(last-child)'
+    &.CardRow--medium {
+        margin-right: calc(-.25em - 1px);
+        // margin-left: calc(-.25em - 1px);
+    }
+    .Card--naked {
+        border-right: 1px solid gainsboro;
+        border-bottom: 1px solid gainsboro;
+    }
+    .Card {
+        min-width: 170px;
+    }
+}

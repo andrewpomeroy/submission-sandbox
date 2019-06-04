@@ -1,0 +1,16 @@
+.Card--naked {
+    border-right: 1px solid gainsboro;
+}
+
+.CardRow--medium {
+  margin-right: calc(-.25em - 1px);
+  margin-left: calc(-.25em - 1px);
+  margin-bottom: -1px;
+  flex-wrap: wrap;
+  /* overflow: hidden; */
+}
+
+.Card--naked {
+  border-bottom: 1px solid gainsboro;
+  min-width: 170px;
+}
