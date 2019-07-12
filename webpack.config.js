@@ -1,5 +1,4 @@
 const webpack = require('webpack');
-// const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const path = require('path');
 
 module.exports = {
@@ -45,18 +44,7 @@ module.exports = {
         test: /\.svg$/,
         loader: 'svg-inline-loader'
       }
-      // { test: /\.(png|woff|woff2|eot|ttf|svg)$/, use: ['url-loader?limit=100000'] }
     ],
   },
   watch: true
-  // devtool: 'source-map',
-  // plugins: [
-  //   new ExtractTextPlugin({
-  //     filename: 'bundle.css',
-  //     allChunks: true
-  //   }),
-  // new webpack.DefinePlugin({
-  //   SOCKET_URL: JSON.stringify(process.env.SOCKET_URL ? process.env.SOCKET_URL : 'wss://localhost:3000'),
-  // }),
-  // ],
 };
