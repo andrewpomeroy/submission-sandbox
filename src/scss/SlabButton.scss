@@ -30,18 +30,16 @@ $SlabButton-minHeight: 64px;
   &:first-child {
   // border-top: 2px solid darken($SlabButton-color-default, 5%);    
   }
-  
 }
 
 .SlabButton--primary {
   @include ButtonStyle-primary;
   &:hover, &:focus {
     @include ButtonStyle-primary-hover;
-  } 
+  }
   &:active {
     @include ButtonStyle-primary-active;
   }
-  
 }
 
 .SlabButton--solidGreen {

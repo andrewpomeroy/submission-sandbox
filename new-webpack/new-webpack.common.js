@@ -1,25 +1,25 @@
-// const CleanWebpackPlugin = require('clean-webpack-plugin');
-// const CopyWebpackPlugin = require('copy-webpack-plugin');
-// const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
-const webpack = require('webpack');
-const path = require('path');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const webpack = require("webpack");
+const path = require("path");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
-  devtool: 'source-map-eval', // new
-  entry: './src/index.js',
-  // entry: {
-  //   app: path.resolve(__dirname, '../src/scripts/index.js')
-  // },
-  output: {
-    path: path.join(__dirname, '../public'),
-    filename: 'bundle.js',
+  devtool: "source-map-eval", // new
+  // entry: './src/index.js',
+  entry: {
+    app: path.resolve(__dirname, "../src/index.js")
   },
   // output: {
-  //   path: path.join(__dirname, '../build'),
-  //   filename: 'js/[name].js'
+  //   path: path.join(__dirname, '../public'),
+  //   filename: 'bundle.js',
   // },
+  output: {
+    path: path.join(__dirname, "../build"),
+    filename: "js/[name].js"
+  },
   // optimization: {
   //   splitChunks: {
   //     chunks: 'all',
@@ -28,16 +28,16 @@ module.exports = {
   // },
   resolve: {
     alias: {
-      '~': path.resolve(__dirname, '../src')
+      "~": path.resolve(__dirname, "../src")
     }
   },
   module: {
     rules: [
       {
         test: /\.js?$/,
-        loader: 'babel-loader',
+        loader: "babel-loader",
         exclude: /node_modules/,
-        include: path.join(__dirname, '../src'),
+        include: path.join(__dirname, "../src"),
       },
       // {
       //   test: /\.mjs$/,
@@ -54,10 +54,10 @@ module.exports = {
       //     }
       //   }
       // },
-      {
-        test:/\.(s*)css$/,
-        use:['style-loader','css-loader', 'sass-loader'],
-      },
+      // {
+      //   test:/\.(s*)css$/,
+      //   use:['style-loader','css-loader', 'sass-loader'],
+      // },
       // {
       //   test: /\.(sa|sc|c)ss$/,
       //   use: [
@@ -73,41 +73,41 @@ module.exports = {
       // },
       {
         test: /\.html/,
-        use: 'raw-loader'
+        use: "raw-loader"
       },
       // Fonts
       {
         test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
         use: [{
-          loader: 'file-loader',
+          loader: "file-loader",
           options: {
-            name: '[name].[ext]',
-            outputPath: '../fonts/'
+            name: "[name].[ext]",
+            outputPath: "../fonts/"
           }
         }]
       },
       // Inline SVG 
       {
         test: /\.svg$/,
-        loader: 'svg-inline-loader'
+        loader: "svg-inline-loader"
       }
     ]
   },
   plugins: [
-    // new CleanWebpackPlugin(),
-    // new CopyWebpackPlugin([
-    //   { from: path.resolve(__dirname, '../public'), to: 'public' }
-    // ]),
-    // new HtmlWebpackPlugin({
-    //   template: path.resolve(__dirname, '../src/index.html')
-    // })
+    new CleanWebpackPlugin(),
+    new CopyWebpackPlugin([
+      { from: path.resolve(__dirname, "../public"), to: "public" }
+    ]),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, "../src/index.html")
+    }),
     new MiniCssExtractPlugin({
       // Options similar to the same options in webpackOptions.output
       // both options are optional
       // filename: devMode ? '[name].css' : '[name].[hash].css',
       // chunkFilename: devMode ? '[id].css' : '[id].[hash].css',
-      filename: '[name].css',
-      chunkFilename: '[id].css',
+      filename: "[name].css",
+      chunkFilename: "[id].css",
     }),
   ],
   watch: true // new
