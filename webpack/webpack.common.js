@@ -9,7 +9,7 @@ module.exports = {
   devtool: "source-map-eval", // new
   // entry: './src/index.js',
   entry: {
-    app: Path.resolve(__dirname, "../src/scripts/index.js")
+    app: Path.resolve(__dirname, "../src/index.js")
   },
   output: {
     path: Path.join(__dirname, "../build"),
@@ -79,10 +79,6 @@ module.exports = {
       //     'sass-loader',
       //   ],
       // },
-      // {
-      //   test: /\.html/,
-      //   use: "html-loader"
-      // },
       // Fonts
       {
         test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
@@ -93,6 +89,10 @@ module.exports = {
             outputPath: "../fonts/"
           }
         }]
+      },
+      {
+        test: /\.html/,
+        use: "html-loader"
       },
       // Inline SVG 
       {
