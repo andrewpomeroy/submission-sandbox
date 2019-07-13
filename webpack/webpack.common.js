@@ -1,19 +1,18 @@
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const CleanWebpackPlugin = require("clean-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
-const webpack = require("webpack");
-const path = require("path");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const Path = require("path");
+// const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
   devtool: "source-map-eval", // new
   // entry: './src/index.js',
   entry: {
-    app: path.resolve(__dirname, "../src/index.js")
+    app: Path.resolve(__dirname, "../src/scripts/index.js")
   },
   output: {
-    path: path.join(__dirname, "../build"),
+    path: Path.join(__dirname, "../build"),
     filename: "js/[name].js"
   },
   optimization: {
@@ -24,17 +23,30 @@ module.exports = {
   },
   resolve: {
     alias: {
-      "~": path.resolve(__dirname, "../src")
+      "~": Path.resolve(__dirname, "../src")
     }
   },
+  plugins: [
+    new CleanWebpackPlugin(),
+    new CopyWebpackPlugin([
+      { from: Path.resolve(__dirname, "../public"), to: "public" }
+    ]),
+    new HtmlWebpackPlugin({
+      template: Path.resolve(__dirname, "../src/index.html")
+    }),
+    // new MiniCssExtractPlugin({
+    //   filename: "[name].css",
+    //   chunkFilename: "[id].css",
+    // }),
+  ],
   module: {
     rules: [
-      {
-        test: /\.js?$/,
-        loader: "babel-loader",
-        exclude: /node_modules/,
-        include: path.join(__dirname, "../src"),
-      },
+      // {
+      //   test: /\.js?$/,
+      //   loader: "file-loader",
+      //   exclude: /node_modules/,
+      //   include: Path.join(__dirname, "../src"),
+      // },
       // {
       //   test: /\.mjs$/,
       //   include: /node_modules/,
@@ -67,10 +79,10 @@ module.exports = {
       //     'sass-loader',
       //   ],
       // },
-      {
-        test: /\.html/,
-        use: "html-loader"
-      },
+      // {
+      //   test: /\.html/,
+      //   use: "html-loader"
+      // },
       // Fonts
       {
         test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
@@ -89,18 +101,5 @@ module.exports = {
       }
     ]
   },
-  plugins: [
-    new CleanWebpackPlugin(),
-    new CopyWebpackPlugin([
-      { from: path.resolve(__dirname, "../public"), to: "public" }
-    ]),
-    new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, "../src/index.html")
-    }),
-    new MiniCssExtractPlugin({
-      filename: "[name].css",
-      chunkFilename: "[id].css",
-    }),
-  ],
-  watch: true // new
+  // watch: true // new
 };

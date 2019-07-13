@@ -1,224 +1,234 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Submission sandbox</title>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-      svg {
-        visibility: hidden;
-      }
-    </style>
-    <!-- <link rel="stylesheet" href="./main.css" /> -->
-  </head>
-  <body>
-    <!-- height: 100% seems to create full-height stuff, unfortunately breaks background at scroll point -->
-    <div class="FullWrapper" id="toast-container" ng-controller="DemoCtrl as $ctrl" ng-app="MyApp" style="height: 100%">
-      <div class="Outer" style="height: 100%">
-        <header class="SubmissionHeader">
-          <div class="HorizontalLayoutWrap">
-            <div class="HorizontalLayoutWrap-item l-LargeColumnLayout-paddingH" layout="horizontal" flex="fill" justify-content="flex-start" align-items="flex-end">
-              <div layout="horizontal" justify-content="space-between" align-items="flex-end">
-                <div class="SubmissionHeader-block SubmissionHeader-block--heading">
-                  <div class="SubmissionHeading">
-                    <span class="SubmissionHeading-subtitle">Submission</span>
-                    <h2 class="SubmissionHeading-main">Submission Name</h2>
-                  </div>
-                  <div class="SubmissionSupplementals">
-                    <div class="SubmissionSupplementals-row">
 
-                      <div class="SubmissionSupplementals-item">
-                        <span class="SubmissionSupplementals-item-label">
-                          ID #
-                        </span>
-                        <span class="SubmissionSupplementals-item-value">
-                          HNF-RJTA-ZWXYB
-                        </span>
+<head>
+  <title>Submission sandbox</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    svg {
+      visibility: hidden;
+    }
+  </style>
+  <!-- <link rel="stylesheet" href="./main.css" /> -->
+</head>
+
+<body>
+  <!-- height: 100% seems to create full-height stuff, unfortunately breaks background at scroll point -->
+  <div class="FullWrapper" id="toast-container" ng-controller="DemoCtrl as $ctrl" ng-app="MyApp" style="height: 100%">
+    <div class="Outer" style="height: 100%">
+      <header class="SubmissionHeader">
+        <div class="HorizontalLayoutWrap">
+          <div class="HorizontalLayoutWrap-item l-LargeColumnLayout-paddingH" layout="horizontal" flex="fill"
+            justify-content="flex-start" align-items="flex-end">
+            <div layout="horizontal" justify-content="space-between" align-items="flex-end">
+              <div class="SubmissionHeader-block SubmissionHeader-block--heading">
+                <div class="SubmissionHeading">
+                  <span class="SubmissionHeading-subtitle">Submission</span>
+                  <h2 class="SubmissionHeading-main">Submission Name</h2>
+                </div>
+                <div class="SubmissionSupplementals">
+                  <div class="SubmissionSupplementals-row">
+
+                    <div class="SubmissionSupplementals-item">
+                      <span class="SubmissionSupplementals-item-label">
+                        ID #
+                      </span>
+                      <span class="SubmissionSupplementals-item-value">
+                        HNF-RJTA-ZWXYB
+                      </span>
+                    </div>
+
+                    <div class="SubmissionSupplementals-item SubmissionSupplementals-item--noPaddingV">
+                      <div class="Chip Chip--small Chip--neutralBlue">
+                        Revision 2
                       </div>
-    
-                      <div class="SubmissionSupplementals-item SubmissionSupplementals-item--noPaddingV">
-                        <div class="Chip Chip--small Chip--neutralBlue">
-                          Revision 2
-                        </div>
-                      </div>
-    
-                      <div class="SubmissionSupplementals-item SubmissionSupplementals-item--noPaddingV" ng-if="userIsApplicant">
-                        <div class="Chip Chip--small Chip--warning">
-                          <span class="Chip-item Chip-icon">
-                            <div class="SvgWrap SvgWrap--fillDimensions">
-                              <svg class="SvgWrap-icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-                                y="0px" viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
-                                <g>
-                                  <path d="M18.4,10.1V8.2c0-3.7-3-6.7-6.7-6.7c-3.7,0-6.7,3-6.7,6.7v1.9c-0.9,0.2-1.6,0.9-1.6,1.9v8.6c0,1.1,0.9,1.9,1.9,1.9h12.6
+                    </div>
+
+                    <div class="SubmissionSupplementals-item SubmissionSupplementals-item--noPaddingV"
+                      ng-if="userIsApplicant">
+                      <div class="Chip Chip--small Chip--warning">
+                        <span class="Chip-item Chip-icon">
+                          <div class="SvgWrap SvgWrap--fillDimensions">
+                            <svg class="SvgWrap-icon" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                              xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 24 24"
+                              style="enable-background:new 0 0 24 24;" xml:space="preserve">
+                              <g>
+                                <path
+                                  d="M18.4,10.1V8.2c0-3.7-3-6.7-6.7-6.7c-3.7,0-6.7,3-6.7,6.7v1.9c-0.9,0.2-1.6,0.9-1.6,1.9v8.6c0,1.1,0.9,1.9,1.9,1.9h12.6
                                                               c1.1,0,1.9-0.9,1.9-1.9V12C20,11.1,19.3,10.3,18.4,10.1z M15.6,10.1H7.9V8.2c0-2.1,1.7-3.8,3.8-3.8c2.1,0,3.8,1.7,3.8,3.8V10.1z" />
-                                </g>
-                              </svg>
-                            </div>
-                          </span>
-                          <span class="Chip-item Chip-text">
-                            Locked For Review
-                          </span>
-                        </div>
+                              </g>
+                            </svg>
+                          </div>
+                        </span>
+                        <span class="Chip-item Chip-text">
+                          Locked For Review
+                        </span>
                       </div>
-                  
                     </div>
 
-                    <div class="SubmissionSupplementals-row">
-                      <div class="SubmissionSupplementals-item SubmissionSupplementals-item--noPaddingV">
-                        <label><input type="checkbox" ng-model="userIsApplicant"> Nifty debug thing</label>
-                      </div>
-                      <div class="SubmissionSupplementals-item SubmissionSupplementals-item--noPaddingV">
-                        <label><input type="checkbox" ng-model="notCurrentRevision"> Not Current Revision</label>
-                      </div>
-                    </div>
-    
                   </div>
+
+                  <div class="SubmissionSupplementals-row">
+                    <div class="SubmissionSupplementals-item SubmissionSupplementals-item--noPaddingV">
+                      <label><input type="checkbox" ng-model="userIsApplicant"> Nifty debug thing</label>
+                    </div>
+                    <div class="SubmissionSupplementals-item SubmissionSupplementals-item--noPaddingV">
+                      <label><input type="checkbox" ng-model="notCurrentRevision"> Not Current Revision</label>
+                    </div>
+                  </div>
+
                 </div>
               </div>
             </div>
-            <div class="HorizontalLayoutWrap-item FloatedSidebar--widthMedium l-LargeColumnLayout-paddingH" layout="horizontal" flex="fill" align-items="flex-end">
-              <!-- <div class="SubmissionHeader-block" flex="fill" layout="vertical" justify-content="flex-end">
+          </div>
+          <div class="HorizontalLayoutWrap-item FloatedSidebar--widthMedium l-LargeColumnLayout-paddingH"
+            layout="horizontal" flex="fill" align-items="flex-end">
+            <!-- <div class="SubmissionHeader-block" flex="fill" layout="vertical" justify-content="flex-end">
                 <div class="SlabButton SlabButton--primary" ng-if="userIsApplicant">
                   <span class="SlabButton-mainText">Revise Submission</span>
                 </div>
               </div> -->
-            </div>
-          </div>
-        </header>
-        <div class="Banner" ng-if="notCurrentRevision">
-          <div class="Banner-icon">
-            <div class="SvgWrap SvgWrap--fillDimensions">
-              <get-svg name="history"></get-svg>
-            </div>
-          </div>
-          <div class="Banner-text">
-            You are viewing <strong>Revision 1</strong>, which is 2 revisions behind the current version.
           </div>
         </div>
-        <div class="SubmissionBody" layout="vertical" style="flex: 1 0 auto;">
-          <div class="HorizontalLayoutWrap fillHeight">
+      </header>
+      <div class="Banner" ng-if="notCurrentRevision">
+        <div class="Banner-icon">
+          <div class="SvgWrap SvgWrap--fillDimensions">
+            <get-svg name="history"></get-svg>
+          </div>
+        </div>
+        <div class="Banner-text">
+          You are viewing <strong>Revision 1</strong>, which is 2 revisions behind the current version.
+        </div>
+      </div>
+      <div class="SubmissionBody" layout="vertical" style="flex: 1 0 auto;">
+        <div class="HorizontalLayoutWrap fillHeight">
 
-            <div class="HorizontalLayoutWrap-item" flex="auto">
-              <div class="l-LargeColumnLayout-paddingLeft SubmissionBody-sidebarStyle FloatedSidebar--widthSmall" layout="vertical" align-items="flex-end" style="height:100%;">
-                <div class="SubmissionBody-column">
-                  <submission-tabs-vertical>
-                    <submission-tab-vertical name="overview" display-name="Overview"></submission-tab-vertical>
-                    <submission-tab-vertical name="forminput" display-name="Form Input"></submission-tab-vertical>
-                    <submission-tab-vertical name="documentsAttachments" display-name="Documents & Attachments"></submission-tab-vertical>
-                  </submission-tabs-vertical>
-                </div>
+          <div class="HorizontalLayoutWrap-item" flex="auto">
+            <div class="l-LargeColumnLayout-paddingLeft SubmissionBody-sidebarStyle FloatedSidebar--widthSmall"
+              layout="vertical" align-items="flex-end" style="height:100%;">
+              <div class="SubmissionBody-column">
+                <submission-tabs-vertical>
+                  <submission-tab-vertical name="overview" display-name="Overview"></submission-tab-vertical>
+                  <submission-tab-vertical name="forminput" display-name="Form Input"></submission-tab-vertical>
+                  <submission-tab-vertical name="documentsAttachments" display-name="Documents & Attachments">
+                  </submission-tab-vertical>
+                </submission-tabs-vertical>
               </div>
             </div>
+          </div>
 
-            <div class="HorizontalLayoutWrap-item" layout="horizontal" flex="fill" justify-content="center">
-              <!-- SubmissionBody-column is for paddingTop -->
-              <div class="l-mediumPageMaxWidth l-LargeColumnLayout-paddingH SubmissionBody-column"> 
-                <div class="OverviewSection">
-                  <div class="OverviewSection-header">
-                    <h3 class="OverviewSection-heading OverviewSection-header-item">
-                      Details
-                    </h3>
-                    <div class="OverviewSection-header-item">
-                      <button class="OverviewButton OverviewButton--small">View Confirmation</button>
-                    </div>
+          <div class="HorizontalLayoutWrap-item" layout="horizontal" flex="fill" justify-content="center">
+            <!-- SubmissionBody-column is for paddingTop -->
+            <div class="l-mediumPageMaxWidth l-LargeColumnLayout-paddingH SubmissionBody-column">
+              <div class="OverviewSection">
+                <div class="OverviewSection-header">
+                  <h3 class="OverviewSection-heading OverviewSection-header-item">
+                    Details
+                  </h3>
+                  <div class="OverviewSection-header-item">
+                    <button class="OverviewButton OverviewButton--small">View Confirmation</button>
                   </div>
-                  <div class="OverviewSection-body OverviewSection-body--topPanel">
-                    <div class="OverviewSection-body-item">
-                      <div class="OverviewSection-frame OverviewSectionPaddingH">
-                        <div class="OverviewMeta OverviewMeta--twoColumn">
-                          <div class="OverviewMeta-row OverviewMeta-item">
-                            <div class="OverviewMeta-item-label">Form Alias</div>
-                            <div class="OverviewMeta-item-value">WWTP - Emissions - Stage 1</div>
-                          </div>
-                          <div class="OverviewMeta-row OverviewMeta-item">
-                            <div class="OverviewMeta-item-label">Form Alias</div>
-                            <div class="OverviewMeta-item-value">WWTP - Emissions - Stage 1</div>
-                          </div>
-                          <div class="OverviewMeta-row OverviewMeta-item">
-                            <div class="OverviewMeta-item-label">Form Alias</div>
-                            <div class="OverviewMeta-item-value">WWTP - Emissions - Stage 1</div>
-                          </div>
-                          <div class="OverviewMeta-row OverviewMeta-item">
-                            <div class="OverviewMeta-item-label">Form Alias</div>
-                            <div class="OverviewMeta-item-value">WWTP - Emissions - Stage 1</div>
-                          </div>
-                          <div class="OverviewMeta-row OverviewMeta-item">
-                            <div class="OverviewMeta-item-label">Form Alias</div>
-                            <div class="OverviewMeta-item-value">WWTP - Emissions - Stage 1</div>
-                          </div>
+                </div>
+                <div class="OverviewSection-body OverviewSection-body--topPanel">
+                  <div class="OverviewSection-body-item">
+                    <div class="OverviewSection-frame OverviewSectionPaddingH">
+                      <div class="OverviewMeta OverviewMeta--twoColumn">
+                        <div class="OverviewMeta-row OverviewMeta-item">
+                          <div class="OverviewMeta-item-label">Form Alias</div>
+                          <div class="OverviewMeta-item-value">WWTP - Emissions - Stage 1</div>
+                        </div>
+                        <div class="OverviewMeta-row OverviewMeta-item">
+                          <div class="OverviewMeta-item-label">Form Alias</div>
+                          <div class="OverviewMeta-item-value">WWTP - Emissions - Stage 1</div>
+                        </div>
+                        <div class="OverviewMeta-row OverviewMeta-item">
+                          <div class="OverviewMeta-item-label">Form Alias</div>
+                          <div class="OverviewMeta-item-value">WWTP - Emissions - Stage 1</div>
+                        </div>
+                        <div class="OverviewMeta-row OverviewMeta-item">
+                          <div class="OverviewMeta-item-label">Form Alias</div>
+                          <div class="OverviewMeta-item-value">WWTP - Emissions - Stage 1</div>
+                        </div>
+                        <div class="OverviewMeta-row OverviewMeta-item">
+                          <div class="OverviewMeta-item-label">Form Alias</div>
+                          <div class="OverviewMeta-item-value">WWTP - Emissions - Stage 1</div>
                         </div>
                       </div>
                     </div>
                   </div>
-
                 </div>
 
-                <!-- Documents & Attachments ABBREVIATED -->
-                
-                <div class="OverviewSection">
-                  <div class="OverviewSection-header">
-                    <h3 class="OverviewSection-heading OverviewSection-header-item">
-                      Documents &amp; Attachments
-                    </h3>
-                    <div class="OverviewSection-header-item">
-                      <button class="OverviewButton OverviewButton--small">View All</button>
-                    </div>
-                    <div class="OverviewSection-header-item">
-                      <button class="OverviewButton OverviewButton--small OverviewButton--addNew">
-                        <span class="OverviewButton-icon">
-                          <div class="SvgWrap SvgWrap--fillDimensions SvgWrap--stroke">
-                            <svg class="SvgWrap-icon" version="1.1" xmlns="http://www.w3.org/2000/svg"
-                              xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 16 16"
-                              style="enable-background:new 0 0 16 16;" xml:space="preserve" fill="none">
-                              <g>
-                                <line x1="8" y1="4.9" x2="8" y2="11.1" />
-                                <line x1="11.1" y1="8" x2="4.9" y2="8" />
-                              </g>
-                              <circle cx="8" cy="8" r="6.5" />
-                            </svg>
-                          </div>
-                        </span>
-                        <span class="OverviewButton-mainText">
-                          Add New
-                        </span>
-                      </button>
+              </div>
+
+              <!-- Documents & Attachments ABBREVIATED -->
+
+              <div class="OverviewSection">
+                <div class="OverviewSection-header">
+                  <h3 class="OverviewSection-heading OverviewSection-header-item">
+                    Documents &amp; Attachments
+                  </h3>
+                  <div class="OverviewSection-header-item">
+                    <button class="OverviewButton OverviewButton--small">View All</button>
+                  </div>
+                  <div class="OverviewSection-header-item">
+                    <button class="OverviewButton OverviewButton--small OverviewButton--addNew">
+                      <span class="OverviewButton-icon">
+                        <div class="SvgWrap SvgWrap--fillDimensions SvgWrap--stroke">
+                          <svg class="SvgWrap-icon" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 16 16"
+                            style="enable-background:new 0 0 16 16;" xml:space="preserve" fill="none">
+                            <g>
+                              <line x1="8" y1="4.9" x2="8" y2="11.1" />
+                              <line x1="11.1" y1="8" x2="4.9" y2="8" />
+                            </g>
+                            <circle cx="8" cy="8" r="6.5" />
+                          </svg>
+                        </div>
+                      </span>
+                      <span class="OverviewButton-mainText">
+                        Add New
+                      </span>
+                    </button>
+                  </div>
+                </div>
+                <div class="OverviewSection-body">
+                  <div class="OverviewSection-body-item" ng-if="!testItems || !testItems.length">
+                    <div class="FlatListEmptyPlaceholder FlatListEmptyPlaceholder--small">
+                      None
                     </div>
                   </div>
-                  <div class="OverviewSection-body">
-                    <div class="OverviewSection-body-item" ng-if="!testItems || !testItems.length">
-                      <div class="FlatListEmptyPlaceholder FlatListEmptyPlaceholder--small">
-                        None
-                      </div>
-                    </div>
-                    <div class="WhitePanel" ng-if="testItems && testItems.length">
-                      <ul class="FlatList FlatList--noPaddingV FlatList--small">
-                        <li class="FlatList-item FlatList-item--lined UtilityItemsPaddingH" ng-repeat="item in testItems">
-                          <div class="FlatList-item-split">
-                            <div class="FlatList-item-split-child FlatList-item-split-child--fill">
-                              <div layout="vertical">
-                                <div class="FlatList-item-line" layout="horizontal">
-                                  <!-- <div class="FlatList-item-icon FlatList-item-segment"></div> -->
-                                  <div class="FlatList-item-title FlatList-item-segment">
-                                    {{item.name}}
-                                  </div>
+                  <div class="WhitePanel" ng-if="testItems && testItems.length">
+                    <ul class="FlatList FlatList--noPaddingV FlatList--small">
+                      <li class="FlatList-item FlatList-item--lined UtilityItemsPaddingH" ng-repeat="item in testItems">
+                        <div class="FlatList-item-split">
+                          <div class="FlatList-item-split-child FlatList-item-split-child--fill">
+                            <div layout="vertical">
+                              <div class="FlatList-item-line" layout="horizontal">
+                                <!-- <div class="FlatList-item-icon FlatList-item-segment"></div> -->
+                                <div class="FlatList-item-title FlatList-item-segment">
+                                  {{item.name}}
                                 </div>
-                                <div class="FlatList-item-line--marginTop" layout="horizontal">
-                                  <div class="FlatList-item-segment">
-                                    Added by <strong>{{item.author}}</strong>
-                                  </div>
-                                  <div class="FlatList-item-segment">
-                                    {{item.date}}
-                                  </div>
-                                  <div class="FlatList-item-chip FlatList-item-segment">
-                                    <div class="Chip Chip--smaller" ng-class="{'Chip--neutralBlue': item.isGenerated, 'Chip--gray': !item.isGenerated}">
-                                      {{item.isGenerated ? 'System-generated' : 'Added by Processor'}}
-                                    </div>
+                              </div>
+                              <div class="FlatList-item-line--marginTop" layout="horizontal">
+                                <div class="FlatList-item-segment">
+                                  Added by <strong>{{item.author}}</strong>
+                                </div>
+                                <div class="FlatList-item-segment">
+                                  {{item.date}}
+                                </div>
+                                <div class="FlatList-item-chip FlatList-item-segment">
+                                  <div class="Chip Chip--smaller"
+                                    ng-class="{'Chip--neutralBlue': item.isGenerated, 'Chip--gray': !item.isGenerated}">
+                                    {{item.isGenerated ? 'System-generated' : 'Added by Processor'}}
                                   </div>
                                 </div>
                               </div>
                             </div>
-                            <!-- <div class="FlatList-item-split-child">
+                          </div>
+                          <!-- <div class="FlatList-item-split-child">
                               <div class="FlatList-item-segment" layout="vertical" align-items="flex-end">
                                 <div>
                                   Added by <strong>{{item.author}}</strong>
@@ -228,236 +238,249 @@
                                 </div>
                               </div>
                             </div> -->
-                          </div>
-                        </li>
-                        <li class="FlatList-item FlatList-item--addendum" ng-if="testItems.length > 3">
-                          <button class="LinkBlock">View More</button>
-                        </li>
-                      </ul>
-                    </div>
+                        </div>
+                      </li>
+                      <li class="FlatList-item FlatList-item--addendum" ng-if="testItems.length > 3">
+                        <button class="LinkBlock">View More</button>
+                      </li>
+                    </ul>
                   </div>
                 </div>
+              </div>
 
-                <!-- Documents & Attachments FULL -->
+              <!-- Documents & Attachments FULL -->
 
-                <div class="OverviewSection">
-                  <div class="OverviewSection-header">
-                    <h3 class="OverviewSection-heading OverviewSection-header-item">
-                      Documents &amp; Attachments
-                    </h3>
-                    <div class="OverviewSection-header-item">
-                      <button class="OverviewButton OverviewButton--small OverviewButton--addNew">
-                        <span class="OverviewButton-icon">
-                          <div class="SvgWrap SvgWrap--fillDimensions SvgWrap--stroke">
-                            <svg class="SvgWrap-icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                            viewBox="0 0 16 16" style="enable-background:new 0 0 16 16;" xml:space="preserve" fill="none">
+              <div class="OverviewSection">
+                <div class="OverviewSection-header">
+                  <h3 class="OverviewSection-heading OverviewSection-header-item">
+                    Documents &amp; Attachments
+                  </h3>
+                  <div class="OverviewSection-header-item">
+                    <button class="OverviewButton OverviewButton--small OverviewButton--addNew">
+                      <span class="OverviewButton-icon">
+                        <div class="SvgWrap SvgWrap--fillDimensions SvgWrap--stroke">
+                          <svg class="SvgWrap-icon" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 16 16"
+                            style="enable-background:new 0 0 16 16;" xml:space="preserve" fill="none">
                             <g>
                               <line x1="8" y1="4.9" x2="8" y2="11.1" />
                               <line x1="11.1" y1="8" x2="4.9" y2="8" />
                             </g>
                             <circle cx="8" cy="8" r="6.5" />
-                            </svg>
-                          </div>
-                        </span>
-                        <span class="OverviewButton-mainText">
-                          Add New
-                        </span>
-                      </button>
-                    </div>
-                  </div>
-                  <div class="OverviewSection-body">
-                    <tabs-wrapper items="testItems" filters="filters" tabs="tabs" initial-active-tab="all" show-empty="false" show-count="true" show-only-unique="true">
-                      <div class="OverviewSection-body-item">
-                        <pill-tabs tabs="$parent.$ctrl.tabs" active-tab="$parent.$ctrl.activeTab" on-change="$parent.$ctrl.activateTab"
-                          show-empty="false" tabs="$parent.$ctrl.tabs"></pill-tabs>
-                      </div>
-                      <div class="OverviewSection-body-item" ng-if="!$parent.$ctrl.items || !$parent.$ctrl.items.length">
-                        <div class="FlatListEmptyPlaceholder FlatListEmptyPlaceholder--small">
-                          None
+                          </svg>
                         </div>
-                      </div>
-                      <div class="WhitePanel" ng-if="$parent.$ctrl.items.length">
-                        <ul class="FlatList FlatList--small">
-                          <li class="FlatList-item UtilityItemsPaddingH" ng-repeat="item in $parent.$parent.$ctrl.currentlyFilteredItems">
-                            <div class="FlatList-item-split">
-                              <div class="FlatList-item-split-child FlatList-item-split-child--fill">
-                                <div class="FlatList-item-icon FlatList-item-segment"></div>
-                                <div class="FlatList-item-title FlatList-item-segment">
-                                  {{item.name}}
-                                </div>
-                                <div class="FlatList-item-chip FlatList-item-segment">
-                                  <div class="Chip Chip--smaller" ng-class="{'Chip--neutralBlue': item.isGenerated, 'Chip--gray': !item.isGenerated}">
-                                    {{item.isGenerated ? 'System-generated' : 'Added by Processor'}}
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="FlatList-item-split-child">
-                                <div class="FlatList-item-title FlatList-item-segment">
-                                  {{item.name}}
-                                </div>
-                              </div>
-                            </div>
-                          </li>
-                        </ul>
-                      </div>
-                    </tabs-wrapper>
-                
+                      </span>
+                      <span class="OverviewButton-mainText">
+                        Add New
+                      </span>
+                    </button>
                   </div>
                 </div>
-
-                <!-- Processing Steps -->
-
-                <div class="OverviewSection">
-                  <div class="OverviewSection-header">
-                    <h3 class="OverviewSection-heading OverviewSection-header-item">
-                      Processing Steps
-                    </h3>
-                  </div>
-                  <div class="OverviewSection-body">
-                    <div class="OverviewSection-body-item OverviewSection-body-item--flushTop">
-                      <div class="OverviewSection-frame">
-                      <step-segments segments="stages" initial-active-index="3">
-                          <content>
-                            <div class="CardRow CardRow--wrapping CardRow--medium" ng-repeat="row in $parent.$ctrl.segments" ng-if="$index === $parent.$parent.$ctrl.activeIndex">
-                              <div class="Card Card--naked Card--medium Card--linked" ng-class="{'Card--green': step.isCompleted}" ng-repeat="step in row">
-                                <div class="StepHeader StepHeader--split">
-                                  <div class="StepHeader-number">
-                                    6A
-                                  </div>
-                                  <div class="StepHeader-title" ng-bind="step.title"></div>
-                                </div>
-                                <div class="Card-content-item Card-content-item--alignRight" ng-if="step.isCompleted || step.completedDate">
-                                  <div class="SplitContent SplitContent--small">
-                                    <div class="SplitContent-item" ng-if="step.isCompleted">
-                                      <div class="Chip Chip--green Chip--small">
-                                        Completed
-                                      </div>
-                                    </div>
-                                    <div class="SplitContent-item" ng-if="step.completedDate" ng-bind="step.completedDate"></div>
-                                  </div>
-                                </div>
-                                <div class="Card-content-item Card-content-item--alignRight" ng-if="step.assignee">
-                                  <button class="UsernameLink" ng-if="step.assignee">
-                                    <div class="UsernameLink-icon SvgWrap">
-                                      <get-svg name="user"></svg>
-                                    </div>
-                                    <div class="UsernameLink-text" ng-bind="step.assignee"></div>
-                                  </button>
-                                </div>
-                              </div>
-                            </div>
-                          </content>
-                        </step-segments>
+                <div class="OverviewSection-body">
+                  <tabs-wrapper items="testItems" filters="filters" tabs="tabs" initial-active-tab="all"
+                    show-empty="false" show-count="true" show-only-unique="true">
+                    <div class="OverviewSection-body-item">
+                      <pill-tabs tabs="$parent.$ctrl.tabs" active-tab="$parent.$ctrl.activeTab"
+                        on-change="$parent.$ctrl.activateTab" show-empty="false" tabs="$parent.$ctrl.tabs"></pill-tabs>
+                    </div>
+                    <div class="OverviewSection-body-item" ng-if="!$parent.$ctrl.items || !$parent.$ctrl.items.length">
+                      <div class="FlatListEmptyPlaceholder FlatListEmptyPlaceholder--small">
+                        None
                       </div>
                     </div>
-    
-                  </div>
-                </div>
-
-
-                <!-- Processing Steps -- Expanded -->
-                
-                <div class="OverviewSection">
-                  <div class="OverviewSection-header">
-                    <h3 class="OverviewSection-heading OverviewSection-header-item">
-                      Processing Steps
-                    </h3>
-                  </div>
-                  <div class="OverviewSection-body">
-                    <div class="OverviewSection-body-item OverviewSection-body-item--flushTop">
-                      <div class="OverviewSection-frame">
-                        <div class="CardRows">
-                          <div class="CardRow CardRow--wrapping CardRow--naked CardRow--medium CardRow--separateRows" ng-class="{'CardRow--highlightBlue': $index === 2}" ng-repeat="item in [3,2,3,1] track by $index">
-                            <div class="CardRow-bookend CardRow-bookend--index">
-                              {{$index + 1}}
+                    <div class="WhitePanel" ng-if="$parent.$ctrl.items.length">
+                      <ul class="FlatList FlatList--small">
+                        <li class="FlatList-item UtilityItemsPaddingH"
+                          ng-repeat="item in $parent.$parent.$ctrl.currentlyFilteredItems">
+                          <div class="FlatList-item-split">
+                            <div class="FlatList-item-split-child FlatList-item-split-child--fill">
+                              <div class="FlatList-item-icon FlatList-item-segment"></div>
+                              <div class="FlatList-item-title FlatList-item-segment">
+                                {{item.name}}
+                              </div>
+                              <div class="FlatList-item-chip FlatList-item-segment">
+                                <div class="Chip Chip--smaller"
+                                  ng-class="{'Chip--neutralBlue': item.isGenerated, 'Chip--gray': !item.isGenerated}">
+                                  {{item.isGenerated ? 'System-generated' : 'Added by Processor'}}
+                                </div>
+                              </div>
                             </div>
-                            <div class="Card Card--naked Card--medium Card--linked">
+                            <div class="FlatList-item-split-child">
+                              <div class="FlatList-item-title FlatList-item-segment">
+                                {{item.name}}
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </tabs-wrapper>
+
+                </div>
+              </div>
+
+              <!-- Processing Steps -->
+
+              <div class="OverviewSection">
+                <div class="OverviewSection-header">
+                  <h3 class="OverviewSection-heading OverviewSection-header-item">
+                    Processing Steps
+                  </h3>
+                </div>
+                <div class="OverviewSection-body">
+                  <div class="OverviewSection-body-item OverviewSection-body-item--flushTop">
+                    <div class="OverviewSection-frame">
+                      <step-segments segments="stages" initial-active-index="3">
+                        <content>
+                          <div class="CardRow CardRow--wrapping CardRow--medium"
+                            ng-repeat="row in $parent.$ctrl.segments"
+                            ng-if="$index === $parent.$parent.$ctrl.activeIndex">
+                            <div class="Card Card--naked Card--medium Card--linked"
+                              ng-class="{'Card--green': step.isCompleted}" ng-repeat="step in row">
                               <div class="StepHeader StepHeader--split">
                                 <div class="StepHeader-number">
                                   6A
                                 </div>
-                                <div class="StepHeader-title">
-                                  Elit et voluptate in excepteur adipisicing laborum consequat excepteur ullamco fugiat ut magna ipsum
-                                </div>
+                                <div class="StepHeader-title" ng-bind="step.title"></div>
                               </div>
-                
-                              <div class="Card-content-item Card-content-item--alignRight">
-                                <button class="UsernameLink">
-                                  <div class="UsernameLink-icon SvgWrap">
-                                    <get-svg name="user"></get-svg>
-                                  </div>
-                                  <div class="UsernameLink-text">
-                                    Andrew Pomeroy
-                                  </div>
-                                </button>
-                              </div>
-                            </div>
-                            <div class="Card Card--naked Card--medium Card--linked" ng-if="item >= 2">
-                              <div class="StepHeader StepHeader--split">
-                                <div class="StepHeader-number">
-                                  6B
-                                </div>
-                                <div class="StepHeader-title">
-                                  Occaecat magna commodo sit minim officia voluptate cillum irure commodo
-                                </div>
-                              </div>
-                              <div class="Card-content-item Card-content-item--alignRight">
-                                <button class="UsernameLink">
-                                  <div class="UsernameLink-icon SvgWrap">
-                                    <get-svg name="user"></get-svg>
-                                  </div>
-                                  <div class="UsernameLink-text">
-                                    Andrew Pomeroy
-                                  </div>
-                                </button>
-                              </div>
-                            </div>
-                            <div class="Card Card--naked Card--medium Card--green Card--linked" ng-if="item >= 3">
-                              <div class="StepHeader StepHeader--split">
-                                <div class="StepHeader-number StepHeader-number--icon StepHeader-number--complete">
-                                  <div class="SvgWrap SvgWrap--fillDimensions">
-                                    <get-svg name="checkmarkCircle"></get-svg>
-                                  </div>
-                                </div>
-                                <div class="StepHeader-title">
-                                  Ullamco incididunt deserunt officia enim velit incididunt proident ad esse
-                                </div>
-                              </div>
-                              <div class="Card-content-item Card-content-item--alignRight">
+                              <div class="Card-content-item Card-content-item--alignRight"
+                                ng-if="step.isCompleted || step.completedDate">
                                 <div class="SplitContent SplitContent--small">
-                                  <div class="SplitContent-item">
+                                  <div class="SplitContent-item" ng-if="step.isCompleted">
                                     <div class="Chip Chip--green Chip--small">
                                       Completed
                                     </div>
                                   </div>
-                                  <div class="SplitContent-item">
-                                    11/28/2018
-                                  </div>
+                                  <div class="SplitContent-item" ng-if="step.completedDate"
+                                    ng-bind="step.completedDate"></div>
                                 </div>
                               </div>
-                              <div class="Card-content-item Card-content-item--alignRight">
-                                <button class="UsernameLink">
+                              <div class="Card-content-item Card-content-item--alignRight" ng-if="step.assignee">
+                                <button class="UsernameLink" ng-if="step.assignee">
                                   <div class="UsernameLink-icon SvgWrap">
-                                    <get-svg name="user"></get-svg>
+                                    <get-svg name="user"></svg>
                                   </div>
-                                  <div class="UsernameLink-text">
-                                    Andrew Pomeroy
-                                  </div>
+                                  <div class="UsernameLink-text" ng-bind="step.assignee"></div>
                                 </button>
                               </div>
                             </div>
                           </div>
-                        </div>                      
+                        </content>
+                      </step-segments>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+
+              <!-- Processing Steps -- Expanded -->
+
+              <div class="OverviewSection">
+                <div class="OverviewSection-header">
+                  <h3 class="OverviewSection-heading OverviewSection-header-item">
+                    Processing Steps
+                  </h3>
+                </div>
+                <div class="OverviewSection-body">
+                  <div class="OverviewSection-body-item OverviewSection-body-item--flushTop">
+                    <div class="OverviewSection-frame">
+                      <div class="CardRows">
+                        <div class="CardRow CardRow--wrapping CardRow--naked CardRow--medium CardRow--separateRows"
+                          ng-class="{'CardRow--highlightBlue': $index === 2}"
+                          ng-repeat="item in [3,2,3,1] track by $index">
+                          <div class="CardRow-bookend CardRow-bookend--index">
+                            {{$index + 1}}
+                          </div>
+                          <div class="Card Card--naked Card--medium Card--linked">
+                            <div class="StepHeader StepHeader--split">
+                              <div class="StepHeader-number">
+                                6A
+                              </div>
+                              <div class="StepHeader-title">
+                                Elit et voluptate in excepteur adipisicing laborum consequat excepteur ullamco fugiat ut
+                                magna ipsum
+                              </div>
+                            </div>
+
+                            <div class="Card-content-item Card-content-item--alignRight">
+                              <button class="UsernameLink">
+                                <div class="UsernameLink-icon SvgWrap">
+                                  <get-svg name="user"></get-svg>
+                                </div>
+                                <div class="UsernameLink-text">
+                                  Andrew Pomeroy
+                                </div>
+                              </button>
+                            </div>
+                          </div>
+                          <div class="Card Card--naked Card--medium Card--linked" ng-if="item >= 2">
+                            <div class="StepHeader StepHeader--split">
+                              <div class="StepHeader-number">
+                                6B
+                              </div>
+                              <div class="StepHeader-title">
+                                Occaecat magna commodo sit minim officia voluptate cillum irure commodo
+                              </div>
+                            </div>
+                            <div class="Card-content-item Card-content-item--alignRight">
+                              <button class="UsernameLink">
+                                <div class="UsernameLink-icon SvgWrap">
+                                  <get-svg name="user"></get-svg>
+                                </div>
+                                <div class="UsernameLink-text">
+                                  Andrew Pomeroy
+                                </div>
+                              </button>
+                            </div>
+                          </div>
+                          <div class="Card Card--naked Card--medium Card--green Card--linked" ng-if="item >= 3">
+                            <div class="StepHeader StepHeader--split">
+                              <div class="StepHeader-number StepHeader-number--icon StepHeader-number--complete">
+                                <div class="SvgWrap SvgWrap--fillDimensions">
+                                  <get-svg name="checkmarkCircle"></get-svg>
+                                </div>
+                              </div>
+                              <div class="StepHeader-title">
+                                Ullamco incididunt deserunt officia enim velit incididunt proident ad esse
+                              </div>
+                            </div>
+                            <div class="Card-content-item Card-content-item--alignRight">
+                              <div class="SplitContent SplitContent--small">
+                                <div class="SplitContent-item">
+                                  <div class="Chip Chip--green Chip--small">
+                                    Completed
+                                  </div>
+                                </div>
+                                <div class="SplitContent-item">
+                                  11/28/2018
+                                </div>
+                              </div>
+                            </div>
+                            <div class="Card-content-item Card-content-item--alignRight">
+                              <button class="UsernameLink">
+                                <div class="UsernameLink-icon SvgWrap">
+                                  <get-svg name="user"></get-svg>
+                                </div>
+                                <div class="UsernameLink-text">
+                                  Andrew Pomeroy
+                                </div>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
-                
                   </div>
+
                 </div>
+              </div>
 
             </div>
-            
+
             <!-- Sidebar -->
-            <div class="HorizontalLayoutWrap-item SubmissionBody-sidebarStyle FloatedSidebar--widthMedium l-LargeColumnLayout-paddingH">
+            <div
+              class="HorizontalLayoutWrap-item SubmissionBody-sidebarStyle FloatedSidebar--widthMedium l-LargeColumnLayout-paddingH">
               <!-- SubmissionBody-column is for paddingTop -->
               <div class="SubmissionBody-column">
                 <div class="OverviewSection">
@@ -469,10 +492,12 @@
                       <div class="SlabButtonCover SlabButtonCover--warning" ng-if="!userIsApplicant">
                         <div class="SlabButtonCover-icon">
                           <div class="SvgWrap SvgWrap--fillDimensions">
-                            <svg class="SvgWrap-icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                              x="0px" y="0px" viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
+                            <svg class="SvgWrap-icon" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                              xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 24 24"
+                              style="enable-background:new 0 0 24 24;" xml:space="preserve">
                               <g>
-                                <path d="M18.4,10.1V8.2c0-3.7-3-6.7-6.7-6.7c-3.7,0-6.7,3-6.7,6.7v1.9c-0.9,0.2-1.6,0.9-1.6,1.9v8.6c0,1.1,0.9,1.9,1.9,1.9h12.6
+                                <path
+                                  d="M18.4,10.1V8.2c0-3.7-3-6.7-6.7-6.7c-3.7,0-6.7,3-6.7,6.7v1.9c-0.9,0.2-1.6,0.9-1.6,1.9v8.6c0,1.1,0.9,1.9,1.9,1.9h12.6
                                                       c1.1,0,1.9-0.9,1.9-1.9V12C20,11.1,19.3,10.3,18.4,10.1z M15.6,10.1H7.9V8.2c0-2.1,1.7-3.8,3.8-3.8c2.1,0,3.8,1.7,3.8,3.8V10.1z" />
                               </g>
                             </svg>
@@ -480,7 +505,8 @@
                         </div>
                         <div class="SlabButtonCover-mainText">
                           <strong>Locked for Review</strong>
-                          <div class="Text Text--small">Further revision is not permitted until processors have completed review of this
+                          <div class="Text Text--small">Further revision is not permitted until processors have
+                            completed review of this
                             submission.</div>
                         </div>
                       </div>
@@ -517,7 +543,7 @@
                               <button class="SlabCell-actionButton IconButton SvgWrap">
                                 <get-svg name="history"></get-svg>
                               </button>
-                            </div>  
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -591,7 +617,8 @@
                       <div class="Pillbox-body">
                         <div class="Pillbox-body-item">
                           <p class="Text Text--small Text--onlyInnerMargins">
-                            A processor has requested a correction on one or more areas of your submission. In order to have your submission processed,
+                            A processor has requested a correction on one or more areas of your submission. In order to
+                            have your submission processed,
                             you must address the following issues and resubmit:
                           </p>
                         </div>
@@ -641,15 +668,20 @@
                         </collapse-container-heading>
                         <collapse-container-content>
                           <div class="Slab Slab--shadowed Slab--correction">
-                          <div class="Slab-headerGroup  u-undoLinkStyles Slab-headerGroup-innerPadChildren Slab-headerGroup--clickable">
+                            <div
+                              class="Slab-headerGroup  u-undoLinkStyles Slab-headerGroup-innerPadChildren Slab-headerGroup--clickable">
                               <div class="Slab-headingIconWrap Slab-headingIconWrap--primaryColor">
                                 <div class="SvgWrap SvgWrap--fillDimensions">
-                                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px"
-                                    width="18px" height="18px" viewBox="2 2 18 18" enable-background="new 2 2 18 18" xml:space="preserve" class="injected-svg SvgWrap-icon svg-inject"
+                                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    version="1.1" x="0px" y="0px" width="18px" height="18px" viewBox="2 2 18 18"
+                                    enable-background="new 2 2 18 18" xml:space="preserve"
+                                    class="injected-svg SvgWrap-icon svg-inject"
                                     data-src="static-assets/lib/svg/warning.svg!" focusable="false">
                                     <g>
                                       <g>
-                                        <path d="M11,2c-4.971,0-9,4.029-9,9s4.029,9,9,9s9-4.029,9-9S15.971,2,11,2z M12.482,15.909c0,0.641-0.524,1.163-1.164,1.163    H10.86c-0.639,0-1.161-0.522-1.161-1.163v-0.46c0-0.638,0.521-1.16,1.161-1.16h0.458c0.64,0,1.164,0.522,1.164,1.16V15.909z     M12.149,12.346c0,0.628-0.389,1.146-0.859,1.146h-0.403c-0.472,0-0.857-0.518-0.857-1.146L9.5,6.217    c0-0.708,0.579-1.288,1.287-1.288h0.604c0.708,0,1.288,0.581,1.288,1.288L12.149,12.346z"></path>
+                                        <path
+                                          d="M11,2c-4.971,0-9,4.029-9,9s4.029,9,9,9s9-4.029,9-9S15.971,2,11,2z M12.482,15.909c0,0.641-0.524,1.163-1.164,1.163    H10.86c-0.639,0-1.161-0.522-1.161-1.163v-0.46c0-0.638,0.521-1.16,1.161-1.16h0.458c0.64,0,1.164,0.522,1.164,1.16V15.909z     M12.149,12.346c0,0.628-0.389,1.146-0.859,1.146h-0.403c-0.472,0-0.857-0.518-0.857-1.146L9.5,6.217    c0-0.708,0.579-1.288,1.287-1.288h0.604c0.708,0,1.288,0.581,1.288,1.288L12.149,12.346z">
+                                        </path>
                                       </g>
                                     </g>
                                   </svg>
@@ -676,8 +708,10 @@
         </div>
       </div>
     </div>
-    
-    <script type="text/javascript" src="/app.js"></script>
-    
-  </body>
+
+  </div>
+  </div>
+
+</body>
+
 </html>

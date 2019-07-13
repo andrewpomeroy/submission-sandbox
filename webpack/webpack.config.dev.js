@@ -19,15 +19,15 @@ module.exports = merge(common, {
   ],
   module: {
     rules: [
-      // {
-      //   test: /\.(js)$/,
-      //   include: Path.resolve(__dirname, '../src'),
-      //   enforce: 'pre',
-      //   loader: 'eslint-loader',
-      //   options: {
-      //     emitWarning: true,
-      //   }
-      // },
+      {
+        test: /\.(js)$/,
+        include: Path.resolve(__dirname, "../src"),
+        enforce: "pre",
+        loader: "eslint-loader",
+        options: {
+          emitWarning: true,
+        }
+      },
       {
         test: /\.(js)$/,
         include: Path.resolve(__dirname, "../src"),
@@ -37,6 +37,7 @@ module.exports = merge(common, {
         test: /\.s?css$/i,
         use: ["style-loader", "css-loader?sourceMap=true", "sass-loader"]
       }
-    ]
-  }
+    ],
+  },
+  watch: true
 });
