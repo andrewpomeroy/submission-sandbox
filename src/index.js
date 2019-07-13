@@ -23,6 +23,8 @@ import collapseContainer from "./components/collapse-container";
 import getSvg from "./components/get-svg";
 import stepSegments from "./components/step-segments";
 
+import toastTemplate from "./templates/toast.html";
+
 import "./scss/index.scss";
 import "angular-material/angular-material.css";
 
@@ -51,7 +53,8 @@ function DemoCtrl($scope, $timeout, $interpolate, $q, $mdToast) {
       hideDelay: false,
       position: "bottom right",
       controller: "ToastCtrl",
-      templateUrl: "templates/toast.html",
+      template: toastTemplate,
+      // templateUrl: "./templates/toast.html",
       autoWrap: false
     });
   };
