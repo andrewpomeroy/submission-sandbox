@@ -73,7 +73,7 @@ module.exports = {
       // },
       {
         test: /\.html/,
-        use: "raw-loader"
+        use: "html-loader"
       },
       // Fonts
       {
