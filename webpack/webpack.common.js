@@ -43,7 +43,8 @@ module.exports = {
     rules: [
       // Images
       {
-        test: /\.(ico|jpg|jpeg|png|gif|webp)(\?.*)?$/,
+        // test: /\.(ico|jpg|jpeg|png|gif|webp)(\?.*)?$/,
+        test: /\.(ico|jpg|jpeg|png|gif|webp|ttf|woff|woff2)(\?.*)?$/,
         use: {
           loader: "file-loader",
           options: {
@@ -52,16 +53,16 @@ module.exports = {
         }
       },
       // Fonts
-      {
-        test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
-        use: [{
-          loader: "file-loader",
-          options: {
-            name: "[name].[ext]",
-            outputPath: "../fonts/"
-          }
-        }]
-      },
+      // {
+      //   test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
+      //   use: [{
+      //     loader: "file-loader",
+      //     options: {
+      //       name: "[name].[ext]",
+      //       outputPath: "../fonts/"
+      //     }
+      //   }]
+      // },
       {
         test: /\.html/,
         use: "html-loader"
