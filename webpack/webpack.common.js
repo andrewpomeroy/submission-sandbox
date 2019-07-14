@@ -41,44 +41,16 @@ module.exports = {
   ],
   module: {
     rules: [
-      // {
-      //   test: /\.js?$/,
-      //   loader: "file-loader",
-      //   exclude: /node_modules/,
-      //   include: Path.join(__dirname, "../src"),
-      // },
-      // {
-      //   test: /\.mjs$/,
-      //   include: /node_modules/,
-      //   type: 'javascript/auto'
-      // },
-
-      // {
-      //   test: /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)(\?.*)?$/,
-      //   use: {
-      //     loader: 'file-loader',
-      //     options: {
-      //       name: '[path][name].[ext]'
-      //     }
-      //   }
-      // },
-      // {
-      //   test:/\.(s*)css$/,
-      //   use:['style-loader','css-loader', 'sass-loader'],
-      // },
-      // {
-      //   test: /\.(sa|sc|c)ss$/,
-      //   use: [
-      //     {
-      //       loader: MiniCssExtractPlugin.loader,
-      //       options: {
-      //         hmr: process.env.NODE_ENV === 'development',
-      //       },
-      //     },
-      //     'css-loader',
-      //     'sass-loader',
-      //   ],
-      // },
+      // Images
+      {
+        test: /\.(ico|jpg|jpeg|png|gif|webp)(\?.*)?$/,
+        use: {
+          loader: "file-loader",
+          options: {
+            name: "[path][name].[ext]"
+          }
+        }
+      },
       // Fonts
       {
         test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
