@@ -1,20 +1,20 @@
 // server.js
 
 // init project
-var express = require('express');
+var express = require("express");
 var app = express();
 
 var port = 3002;
 
 // http://expressjs.com/en/starter/static-files.html
-app.use(express.static('public'));
+app.use(express.static("public"));
 
 // http://expressjs.com/en/starter/basic-routing.html
 app.get("/", function(request, response) {
-  response.sendFile(__dirname + '/src/index.html');
+  response.sendFile(__dirname + "/src/index.html");
 });
 
 // listen for requests :)
 var listener = app.listen(port, function () {
-  console.log('Your app is listening on port ' + listener.address().port);
+  console.log("Your app is listening on port " + listener.address().port);
 });

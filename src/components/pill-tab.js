@@ -1,46 +1,46 @@
-import template from './pill-tab.html';
+import template from "./pill-tab.html";
 
 const PillTab = {
-	template: template,
-	bindings: {
-		name: '@',
-		displayName: '@',
-		showWhenSolo: '<'
-	},
-	require: {
-		pillTabs: '^pillTabs'
-	},
-	controller: PillTabController
+  template: template,
+  bindings: {
+    name: "@",
+    displayName: "@",
+    showWhenSolo: "<"
+  },
+  require: {
+    pillTabs: "^pillTabs"
+  },
+  controller: PillTabController
 };
 
 PillTabController.$inject = [];
 
 function PillTabController() {
-	var $ctrl = this;
+  var $ctrl = this;
 
-	Object.defineProperties(this, {
-		shouldShow: {
-			get: function getter() {
-				return !(this.pillTabs.showEmpty === false && this.count === 0);
-			},
-		},
-		isActive: {
-			get: function getter() {
-				return this.name === this.pillTabs.activeTab;
-			}
-		},
-		count: {
-			get: function getter() {
-				return this.pillTabs.getFilteredItems(this.name) && this.pillTabs.getFilteredItems(this.name).length;
-			}
-		}
-	});
+  Object.defineProperties(this, {
+    shouldShow: {
+      get: function getter() {
+        return !(this.pillTabs.showEmpty === false && this.count === 0);
+      },
+    },
+    isActive: {
+      get: function getter() {
+        return this.name === this.pillTabs.activeTab;
+      }
+    },
+    count: {
+      get: function getter() {
+        return this.pillTabs.getFilteredItems(this.name) && this.pillTabs.getFilteredItems(this.name).length;
+      }
+    }
+  });
 
-	this.$onInit = function() {
-		$ctrl.clickHandler = function () {
-			$ctrl.pillTabs.onChange($ctrl.name);
-		}
-	}; 
+  this.$onInit = function() {
+    $ctrl.clickHandler = function () {
+      $ctrl.pillTabs.onChange($ctrl.name);
+    };
+  }; 
 }
 
 export default PillTab;

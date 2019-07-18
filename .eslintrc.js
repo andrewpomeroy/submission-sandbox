@@ -10,7 +10,7 @@ module.exports = {
     },
     "rules": {
         "indent": [
-            "warning",
+            1,
             2
         ],
         "linebreak-style": [
