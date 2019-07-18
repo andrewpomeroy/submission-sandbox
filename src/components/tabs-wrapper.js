@@ -77,6 +77,7 @@ function TabsWrapperController() {
     if ($ctrl.showOnlyUnique !== false) $ctrl.showOnlyUnique = true;
 
     if ($ctrl.noFilterTabCount > 1) {
+      // eslint-disable-next-line no-console
       console.warn("More than one 'all' tab (no filter criteria) has been defined, something's probably not right.");
     }
 

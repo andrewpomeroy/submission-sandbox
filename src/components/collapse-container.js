@@ -10,7 +10,6 @@ const CollapseContainer = {
     "collapseContainerContent": "?collapseContainerContent"
   },
   controller: CollapseContainerController,
-  template
 };
 
 CollapseContainerController.$inject = [];
@@ -24,7 +23,6 @@ function CollapseContainerController() {
   };
 
   this.$onInit = function() {
-    const $ctrl = this;
   };
 }
 

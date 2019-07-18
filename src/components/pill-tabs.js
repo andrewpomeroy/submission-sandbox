@@ -38,7 +38,6 @@ function PillTabsController() {
   });
 
   this.$onInit = function() {
-    const $ctrl = this;
 
     if (this.showEmpty === undefined) this.showEmpty = this.tabsWrapper.showEmpty;
     if (this.showCount === undefined) this.showCount = this.tabsWrapper.showCount;

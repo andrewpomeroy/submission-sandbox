@@ -154,7 +154,7 @@ function CollapseContainerController($element) {
   this.$onInit = function() {
 
     if (!blobs[$ctrl.name]) {
-      console.error(`no svg named '${$ctrl.name}'!`);
+      throw `no svg named '${$ctrl.name}'!`;
     }
 
     else $element[0].innerHTML = blobs[$ctrl.name];
