@@ -71,6 +71,10 @@ module.exports = {
             name: "[name].[ext]",
             // outputPath: "../fonts/"
             outputPath: (url, resourcePath, context) => {
+              // console.log("url", url);
+              // console.log("resourcePath", resourcePath);
+              // console.log("context", context);
+
               // `resourcePath` is original absolute path to asset
               // `context` is directory where stored asset (`rootContext`) or `context` option
 
