@@ -24,8 +24,7 @@ module.exports = {
   resolve: {
     alias: {
       "~": Path.resolve(__dirname, "../src")
-    },
-    symlinks: false
+    }
   },
   plugins: [
     new CleanWebpackPlugin(),
@@ -63,41 +62,6 @@ module.exports = {
       //     }
       //   }
       // },
-      // Fonts
-      {
-        test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
-        use: [{
-          loader: "file-loader",
-          options: {
-            name: "[name].[ext]",
-            // outputPath: "../fonts/"
-            outputPath: (url, resourcePath, context) => {
-              // console.log("url", url);
-              // console.log("resourcePath", resourcePath);
-              // console.log("context", context);
-
-              // `resourcePath` is original absolute path to asset
-              // `context` is directory where stored asset (`rootContext`) or `context` option
-
-              // To get relative path you can use
-              // const relativePath = path.relative(context, resourcePath);
-
-              const relativePath = Path.relative(context, resourcePath);
-
-              // if (/my-custom-image\.png/.test(resourcePath)) {
-              //   return `other_output_path/${url}`;
-              // }
-
-              // if (/images/.test(context)) {
-              //   return `image_output_path/${url}`;
-              // }
-
-              // return `output_path/${url}`;
-              return relativePath;
-            }
-          }
-        }]
-      },
       {
         test: /\.html/,
         use: "html-loader"

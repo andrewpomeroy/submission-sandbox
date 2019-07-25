@@ -34,9 +34,34 @@ module.exports = merge(common, {
         use : [
           MiniCssExtractPlugin.loader,
           "css-loader",
-          "sass-loader"
+          {
+            // Allows us to use relative font paths in *.scss files
+            loader: "resolve-url-loader",
+            options: {
+              debug: true
+            }
+          },
+          {
+            loader: "sass-loader",
+            options: {
+              // source maps need to be handed off to resolve-url-loader so it can do its thing
+              sourceMap: true,
+              sourceMapContents: false
+            }
+          }
         ]
-      }
+      },
+      // Fonts
+      {
+        test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
+        use: [{
+          loader: "file-loader",
+          options: {
+            name: "[name].[ext]",
+            outputPath: "assets/fonts/"
+          }
+        }]
+      },
     ]
   }
 });
