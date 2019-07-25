@@ -24,7 +24,8 @@ module.exports = {
   resolve: {
     alias: {
       "~": Path.resolve(__dirname, "../src")
-    }
+    },
+    symlinks: false
   },
   plugins: [
     new CleanWebpackPlugin(),
