@@ -62,6 +62,18 @@ module.exports = merge(common, {
           }
         }]
       },
+      // Images
+      {
+        test: /\.(ico|jpg|jpeg|png|gif|webp)(\?.*)?$/,
+        use: [{
+          loader: "file-loader",
+          options: {
+            name: "[name].[ext]",
+            // May need to be changed to preserve relative paths
+            outputPath: "assets/images/"
+          }
+        }]
+      },
     ]
   }
 });
