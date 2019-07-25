@@ -4,27 +4,23 @@ const getSvg = {
   bindings: {
     name: "@"
   },
-  controller: CollapseContainerController,
+  controller: getSvgController,
 };
 
-CollapseContainerController.$inject = ["$element"];
+getSvgController.$inject = ["$element"];
 
-function CollapseContainerController($element) {
-
+function getSvgController($element) {
   const $ctrl = this;
-
 
   $element.addClass("SvgWrap-icon");
 
   this.$onInit = function() {
-
     if (!SVGBlobs[$ctrl.name]) {
       throw `no svg named '${$ctrl.name}'!`;
     }
-
     else $element[0].innerHTML = SVGBlobs[$ctrl.name];
-
   };
+  
 }
 
 export default getSvg;
