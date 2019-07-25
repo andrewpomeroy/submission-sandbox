@@ -38,7 +38,7 @@ module.exports = merge(common, {
             // Allows us to use relative font paths in *.scss files
             loader: "resolve-url-loader",
             options: {
-              debug: true
+              // debug: true
             }
           },
           {
