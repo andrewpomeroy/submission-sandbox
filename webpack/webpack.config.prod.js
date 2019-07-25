@@ -51,29 +51,6 @@ module.exports = merge(common, {
           }
         ]
       },
-      // Fonts
-      {
-        test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
-        use: [{
-          loader: "file-loader",
-          options: {
-            name: "[name].[ext]",
-            outputPath: "assets/fonts/"
-          }
-        }]
-      },
-      // Images
-      {
-        test: /\.(ico|jpg|jpeg|png|gif|webp)(\?.*)?$/,
-        use: [{
-          loader: "file-loader",
-          options: {
-            name: "[name].[ext]",
-            // May need to be changed to preserve relative paths
-            outputPath: "assets/images/"
-          }
-        }]
-      },
     ]
   }
 });

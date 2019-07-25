@@ -58,29 +58,6 @@ module.exports = merge(common, {
             }
           }]
       },
-      // Images
-      {
-        test: /\.(ico|jpg|jpeg|png|gif|webp)(\?.*)?$/,
-        use: {
-          loader: "file-loader",
-          options: {
-            name: "[path][name].[ext]"
-          }
-        }
-      },
-      // Fonts
-      {
-        test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
-        use: [{
-          loader: "file-loader",
-          options: {
-            name: "[name].[ext]",
-            outputPath: (url, resourcePath, context) => {
-              return Path.relative(context, resourcePath);
-            }
-          }
-        }]
-      },
     ],
   },
   watch: true
