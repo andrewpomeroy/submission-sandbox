@@ -20,7 +20,7 @@ import tabsWrapper from "./components/tabs-wrapper";
 import pillTabs from "./components/pill-tabs";
 import pillTab from "./components/pill-tab";
 import collapseContainer from "./components/collapse-container";
-import getSvg from "./components/get-svg";
+import getStaticAssetsSvg from "./components/get-static-assets-svg";
 import stepSegments from "./components/step-segments";
 
 import toastTemplate from "./templates/toast.html";
@@ -38,7 +38,7 @@ var MyApp = angular
   .component("pillTabs", pillTabs)
   .component("pillTab", pillTab)
   .component("collapseContainer", collapseContainer)
-  .component("getSvg", getSvg)
+  .component("getStaticAssetsSvg", getStaticAssetsSvg)
   .component("stepSegments", stepSegments);
 
 MyApp.controller("DemoCtrl", DemoCtrl);
