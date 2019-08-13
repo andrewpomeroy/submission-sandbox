@@ -24,11 +24,22 @@
 				<md-button ng-click="complete()">Mark Complete</md-button>
 			</md-menu-item>
 			<md-menu-item>
-				<md-button ng-click="reassign()">Reassign</md-button>
+				<md-button ng-click="$ctrl.reassign($event, $ctrl.step)">Reassign</md-button>
 			</md-menu-item>
 			<md-menu-item>
 				<md-button ng-click="delete()">Delete</md-button>
 			</md-menu-item>
 		</md-menu-content>
   </md-menu>
+  <div style="visibility: hidden">
+    <div class="md-dialog-container" id="{{$ctrl.reassignDialogId}}">
+      <md-dialog>
+        <div class="BigSelectMenu">
+          <button class="BigSelectMenu-item" ng-repeat="user in $ctrl.users" ng-click="$mdMenu.close()">
+            {{user.username}}
+          </button>
+        </div>
+      </md-dialog>
+    </div>
+  </div>
 </div>

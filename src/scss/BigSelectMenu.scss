@@ -1,0 +1,25 @@
+.BigSelectMenu {
+    max-width: 400px;
+    border-radius: 5px;
+}
+.BigSelectMenu-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    border: 0;
+    padding: 12px 20px;
+    font-size: 20px;
+    font-weight: 500;
+    color: $app-color-highlightBlue;
+    background-color: white;
+    &:not(:last-child) {
+        border-bottom: 1px solid gainsboro;
+    }
+    &:hover, &:focus {
+        background-color: $app-color-highlightBlue;
+        color: white;
+    }
+    transition: 70ms linear;
+    transition-property: color, background-color;
+}
