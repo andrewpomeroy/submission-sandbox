@@ -343,9 +343,10 @@
                             <div class="Card Card--naked Card--medium Card--linked"
                               ng-class="{'Card--green': step.isCompleted}" ng-repeat="step in row">
                               <div class="StepHeader StepHeader--split">
-                                <div class="StepHeader-number">
+                                <button class="StepHeader-number StepHeader-number--button">
+                                  <md-tooltip md-direction="top">Mark Complete</md-tooltip>
                                   6A
-                                </div>
+                                </button>
                                 <div class="StepHeader-title" ng-bind="step.title"></div>
                               </div>
                               <div class="Card-content-item Card-content-item--alignRight"
@@ -399,9 +400,10 @@
                           </div>
                           <div class="Card Card--naked Card--medium Card--linked">
                             <div class="StepHeader StepHeader--split">
-                              <div class="StepHeader-number">
+                              <button class="StepHeader-number StepHeader-number--button">
+                                <md-tooltip md-direction="top">Mark Complete</md-tooltip>
                                 6A
-                              </div>
+                              </button>
                               <div class="StepHeader-title">
                                 Elit et voluptate in excepteur adipisicing laborum consequat excepteur ullamco fugiat ut
                                 magna ipsum
@@ -421,9 +423,10 @@
                           </div>
                           <div class="Card Card--naked Card--medium Card--linked" ng-if="item >= 2">
                             <div class="StepHeader StepHeader--split">
-                              <div class="StepHeader-number">
+                              <button class="StepHeader-number StepHeader-number--button">
+                                <md-tooltip md-direction="top">Mark Complete</md-tooltip>
                                 6B
-                              </div>
+                              </button>
                               <div class="StepHeader-title">
                                 Occaecat magna commodo sit minim officia voluptate cillum irure commodo
                               </div>
@@ -441,11 +444,12 @@
                           </div>
                           <div class="Card Card--naked Card--medium Card--green Card--linked" ng-if="item >= 3">
                             <div class="StepHeader StepHeader--split">
-                              <div class="StepHeader-number StepHeader-number--icon StepHeader-number--complete">
+                              <button class="StepHeader-number StepHeader-number--icon StepHeader-number--complete StepHeader-number--button">
+                                <md-tooltip md-direction="top">Mark Incomplete</md-tooltip>
                                 <div class="SvgWrap SvgWrap--fillDimensions">
                                   <get-svg name="checkmarkCircle"></get-svg>
                                 </div>
-                              </div>
+                              </button>
                               <div class="StepHeader-title">
                                 Ullamco incididunt deserunt officia enim velit incididunt proident ad esse
                               </div>
