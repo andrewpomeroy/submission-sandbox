@@ -22,6 +22,7 @@ import pillTab from "./components/pill-tab";
 import collapseContainer from "./components/collapse-container";
 import getSvg from "./components/get-svg";
 import stepSegments from "./components/step-segments";
+import stepMenu from "./components/step-menu";
 
 import toastTemplate from "./templates/toast.html";
 
@@ -39,7 +40,8 @@ var MyApp = angular
   .component("pillTab", pillTab)
   .component("collapseContainer", collapseContainer)
   .component("getSvg", getSvg)
-  .component("stepSegments", stepSegments);
+  .component("stepSegments", stepSegments)
+  .component("stepMenu", stepMenu);
 
 MyApp.controller("DemoCtrl", DemoCtrl);
 DemoCtrl.$inject = ["$scope", "$timeout", "$interpolate", "$q", "$mdToast"];
