@@ -43,6 +43,7 @@ module.exports = merge(common, {
             }
           },
           "css-loader?sourceMap=true",
+          // Allows us to use relative font paths in *.scss files
           {
             loader: "resolve-url-loader",
             options: {
@@ -56,7 +57,7 @@ module.exports = merge(common, {
               sourceMapContents: false
             }
           }]
-      }
+      },
     ],
   },
   watch: true

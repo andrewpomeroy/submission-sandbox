@@ -1,15 +1,15 @@
 import { SVGBlobs } from "@windsor/static-assets";
 
-const getSvg = {
+const getStaticAssetsSvg = {
   bindings: {
     name: "@"
   },
-  controller: getSvgController,
+  controller: getStaticAssetsSvgController,
 };
 
-getSvgController.$inject = ["$element"];
+getStaticAssetsSvgController.$inject = ["$element"];
 
-function getSvgController($element) {
+function getStaticAssetsSvgController($element) {
   const $ctrl = this;
 
   $element.addClass("SvgWrap-icon");
@@ -23,4 +23,4 @@ function getSvgController($element) {
   
 }
 
-export default getSvg;
+export default getStaticAssetsSvg;
