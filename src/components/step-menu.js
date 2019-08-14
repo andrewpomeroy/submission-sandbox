@@ -19,13 +19,24 @@ function StepMenuController($mdDialog) {
   //   this.reassignDialogForStep = step;
   // }
 
-  this.reassign = function ($event, step) {
+  this.reassign = function ($event) {
     $mdDialog.show({
       contentElement: "#" + $ctrl.reassignDialogId,
       // parent: angular.element(document.body),
       targetEvent: $event,
       clickOutsideToClose: true,
+      // controller: reassignDialogCtrl,
+      locals: {
+        step: $ctrl.step
+      }
     });
+    function reassignDialogCtrl($scope, $mdDialog, step) {
+      console.log("opening dialog with", step);
+      $scope.selectUser = user => {
+        console.log(user); 
+        $mdDialog.hide();
+      };
+    }
   };
 
   this.isAssigned = (user) => user.isAssigned;
