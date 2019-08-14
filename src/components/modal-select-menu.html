@@ -1,17 +1,15 @@
-<!-- <div class="md-dialog-container" id="{{$ctrl.dialogId}}"> -->
-  <md-dialog>
-    <div class="ModalSelectMenu">
-      <div class="ModalSelectMenu-header">
-        <div class="ModalSelectMenu-title">
-          Reassign
-        </div>
-        <button class="ModalSelectMenu-closeButton" ng-click="$mdDialog.hide()">&times;</button>
+<md-dialog>
+  <div class="ModalSelectMenu">
+    <div class="ModalSelectMenu-header">
+      <div class="ModalSelectMenu-title">
+        {{title}}
       </div>
-      <div class="ModalSelectMenu-list">
-        <button class="ModalSelectMenu-item" ng-repeat="user in users" ng-click="selectUser(user)" ng-class="{'ModalSelectMenu-item--is-active': isAssigned(user)}">
-          {{user.username}}
-        </button>
-      </div>  
+      <button class="ModalSelectMenu-closeButton" ng-click="close()">&times;</button>
     </div>
-  </md-dialog>
-<!-- </div> -->
+    <div class="ModalSelectMenu-list">
+      <button class="ModalSelectMenu-item" ng-repeat="item in items" ng-click="selectItem(item)" ng-class="{'ModalSelectMenu-item--is-active': itemIsSelectedFn(item)}">
+        {{itemDisplayFn ? itemDisplayFn(item) : item}}
+      </button>
+    </div>
+  </div>
+</md-dialog>

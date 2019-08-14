@@ -3,9 +3,13 @@ import faker from "faker";
 
 const ModalSelectMenu = {
   bindings: {
+    title: "@",
     isOpen: "<",
     openEvent: "<",
     onClose: "<",
+    items: "<",
+    itemDisplayFn: "<",
+    itemIsSelectedFn: "<"
   },
   controller: ModalSelectMenuCtrl
 };
@@ -22,23 +26,34 @@ function ModalSelectMenuCtrl($mdDialog) {
         // parent: angular.element(document.body),
         targetEvent: $ctrl.openEvent,
         clickOutsideToClose: true,
-        controller: ["$scope", "$mdDialog", "step", "users", function reassignDialogCtrl ($scope, $mdDialog, step, users) {
-          $scope.step = step,
-          $scope.users = users,
-          $scope.isAssigned = (user) => user.isAssigned;
-          $scope.selectUser = user => {
-            $ctrl.selectedUser = user;
+        controller: ["$scope", "$mdDialog", "step", "users", "title", "items", "itemDisplayFn", "itemIsSelectedFn", function reassignDialogCtrl($scope, $mdDialog, step, users, title, items, itemDisplayFn, itemIsSelectedFn) {
+
+          $scope.step = step;
+          $scope.users = users;
+          $scope.title = title;
+          $scope.items = items;
+          $scope.itemDisplayFn = itemDisplayFn;
+          $scope.itemIsSelectedFn = itemIsSelectedFn;
+
+          $scope.selectItem = item => {
+            $ctrl.selectedItem = item;
             $mdDialog.hide();
           };
+          $scope.close = () => $mdDialog.hide();
+
         }],
         template: modalTemplate,
         locals: {
           step: $ctrl.step,
-          users: $ctrl.users
+          users: $ctrl.users,
+          title: $ctrl.title,
+          items: $ctrl.items,
+          itemDisplayFn: $ctrl.itemDisplayFn,
+          itemIsSelectedFn: $ctrl.itemIsSelectedFn,
         }
       })
         .finally(() => {
-          $ctrl.onClose($ctrl.selectedUser);
+          $ctrl.onClose($ctrl.selectedItem);
         })
       ;
     }
@@ -46,14 +61,6 @@ function ModalSelectMenuCtrl($mdDialog) {
   
 
   this.$onInit = function() {
-    $ctrl.users = [];
-    // create fake "users" list
-    for (let index = 0; index < (Math.floor(Math.random() * 20) + 50); index++) {
-      $ctrl.users.push({ username: faker.name.findName() });
-    }
-    // Mock effect of designating one user as current assignee
-    const int = Math.floor(Math.random() * $ctrl.users.length);
-    $ctrl.users[int].isAssigned = true;
   }; 
 }
 
