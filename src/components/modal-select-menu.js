@@ -22,9 +22,12 @@ function ModalSelectMenuCtrl($mdDialog) {
 
   this.$onChanges = (changes) => {
     if (changes.isOpen && changes.isOpen.currentValue === true) {
+      $ctrl.selectedItem = undefined;
+      
       $mdDialog.show({
         // parent: angular.element(document.body),
         targetEvent: $ctrl.openEvent,
+        closeTo: $ctrl.openEvent.currentTarget,
         clickOutsideToClose: true,
         controller: ["$scope", "$mdDialog", "step", "users", "title", "items", "itemDisplayFn", "itemIsSelectedFn", function reassignDialogCtrl($scope, $mdDialog, step, users, title, items, itemDisplayFn, itemIsSelectedFn) {
 
@@ -54,8 +57,7 @@ function ModalSelectMenuCtrl($mdDialog) {
       })
         .finally(() => {
           $ctrl.onClose($ctrl.selectedItem);
-        })
-      ;
+        });
     }
   };
   
