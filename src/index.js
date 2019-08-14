@@ -23,6 +23,7 @@ import collapseContainer from "./components/collapse-container";
 import getStaticAssetsSvg from "./components/get-static-assets-svg";
 import stepSegments from "./components/step-segments";
 import stepMenu from "./components/step-menu";
+import modalSelectMenu from "./components/modal-select-menu";
 
 import toastTemplate from "./templates/toast.html";
 
@@ -41,7 +42,8 @@ var MyApp = angular
   .component("collapseContainer", collapseContainer)
   .component("getStaticAssetsSvg", getStaticAssetsSvg)
   .component("stepSegments", stepSegments)
-  .component("stepMenu", stepMenu);
+  .component("stepMenu", stepMenu)
+  .component("modalSelectMenu", modalSelectMenu);
 
 MyApp.controller("DemoCtrl", DemoCtrl);
 DemoCtrl.$inject = ["$scope", "$timeout", "$interpolate", "$q", "$mdToast"];

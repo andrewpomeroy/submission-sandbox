@@ -1,4 +1,4 @@
-.BigSelectMenu {
+.ModalSelectMenu {
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -7,13 +7,13 @@
     border-radius: 5px;
 }
 
-.BigSelectMenu-list {
+.ModalSelectMenu-list {
     flex: 1;
     padding-top: 4px;
     overflow-y: auto;
 }
 
-.BigSelectMenu-item {
+.ModalSelectMenu-item {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -29,6 +29,7 @@
         border-bottom: 1px solid gainsboro;
     }
     &:hover, &:focus {
+        outline: 0;
         background-color: $app-color-highlightBlue;
         color: white;
     }
@@ -36,15 +37,16 @@
     transition-property: color, background-color;
 }
 
-.BigSelectMenu-item--is-active {
+.ModalSelectMenu-item--is-active {
     background-color: rgba($app-color-highlightBlue, .15);
     color: darken($app-color-highlightBlue, 10%);
 }
 
-.BigSelectMenu-closeButton {
+.ModalSelectMenu-closeButton {
     font-size: 24px;
     line-height: 32px;
     min-width: 32px;
+    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -59,7 +61,7 @@
     }
 }
 
-.BigSelectMenu-header {
+.ModalSelectMenu-header {
     flex: 0 0 auto;
     position: relative;
     display: flex;
@@ -73,10 +75,10 @@
     font-weight: 400;
 }
 
-.BigSelectMenu-title {
+.ModalSelectMenu-title {
     flex: 1;
 }
 
-.BigSelectMenu-closeButton {
+.ModalSelectMenu-closeButton {
     color: inherit;
 }

@@ -24,30 +24,12 @@
 				<md-button ng-click="complete()">Mark Complete</md-button>
 			</md-menu-item>
 			<md-menu-item>
-				<md-button ng-click="$ctrl.reassign($event, $ctrl.step)">Reassign</md-button>
+				<md-button ng-click="$ctrl.reassign($ctrl.step, $event)">Reassign</md-button>
 			</md-menu-item>
 			<md-menu-item>
 				<md-button ng-click="delete()">Delete</md-button>
 			</md-menu-item>
 		</md-menu-content>
-  </md-menu>
-  <div style="visibility: hidden">
-    <div class="md-dialog-container" id="{{$ctrl.reassignDialogId}}">
-      <md-dialog>
-        <div class="BigSelectMenu">
-					<div class="BigSelectMenu-header">
-						<div class="BigSelectMenu-title">
-							Reassign
-						</div>
-						<button class="BigSelectMenu-closeButton" ng-click="$mdDialog.hide()">&times;</button>
-					</div>
-					<div class="BigSelectMenu-list">
-						<button class="BigSelectMenu-item" ng-repeat="user in $ctrl.users" ng-click="selectUser(user)" ng-class="{'BigSelectMenu-item--is-active': $ctrl.isAssigned(user)}">
-							{{user.username}}
-						</button>
-					</div>
-        </div>
-      </md-dialog>
-    </div>
-  </div>
+	</md-menu>
+	<modal-select-menu is-open="$ctrl.reassignActive" open-event="$ctrl.$reassignEvent" on-close="$ctrl.onReassign" step="$ctrl.step"></modal-select-menu>
 </div>
