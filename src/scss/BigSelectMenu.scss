@@ -1,7 +1,18 @@
 .BigSelectMenu {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
     max-width: 400px;
+    min-width: 300px;
     border-radius: 5px;
 }
+
+.BigSelectMenu-list {
+    flex: 1;
+    padding-top: 4px;
+    overflow-y: auto;
+}
+
 .BigSelectMenu-item {
     display: flex;
     align-items: center;
@@ -9,8 +20,9 @@
     width: 100%;
     border: 0;
     padding: 12px 20px;
-    font-size: 20px;
-    font-weight: 500;
+    font-size: 16px;
+    font-family: inherit;
+    font-weight: 400;
     color: $app-color-highlightBlue;
     background-color: white;
     &:not(:last-child) {
@@ -22,4 +34,49 @@
     }
     transition: 70ms linear;
     transition-property: color, background-color;
+}
+
+.BigSelectMenu-item--is-active {
+    background-color: rgba($app-color-highlightBlue, .15);
+    color: darken($app-color-highlightBlue, 10%);
+}
+
+.BigSelectMenu-closeButton {
+    font-size: 24px;
+    line-height: 32px;
+    min-width: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 70ms background-color linear;
+    &:hover, &:focus {
+        outline: 0;
+        background: rgba(0,0,0,.1);
+    }
+}
+
+.BigSelectMenu-header {
+    flex: 0 0 auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid gainsboro;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.12);
+    padding: 11px 17px;
+    font-size: 16px;
+    background-color: hsl(0, 0%, 95%);
+    color: #555555;
+    font-weight: 400;
+}
+
+.BigSelectMenu-title {
+    flex: 1;
+}
+
+.BigSelectMenu-closeButton {
+    color: inherit;
 }

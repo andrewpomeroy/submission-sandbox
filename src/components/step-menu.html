@@ -35,9 +35,17 @@
     <div class="md-dialog-container" id="{{$ctrl.reassignDialogId}}">
       <md-dialog>
         <div class="BigSelectMenu">
-          <button class="BigSelectMenu-item" ng-repeat="user in $ctrl.users" ng-click="$mdMenu.close()">
-            {{user.username}}
-          </button>
+					<div class="BigSelectMenu-header">
+						<div class="BigSelectMenu-title">
+							Reassign
+						</div>
+						<button class="BigSelectMenu-closeButton">&times;</button>
+					</div>
+					<div class="BigSelectMenu-list">
+						<button class="BigSelectMenu-item" ng-repeat="user in $ctrl.users" ng-click="$mdMenu.close()" ng-class="{'BigSelectMenu-item--is-active': $ctrl.isAssigned(user)}">
+							{{user.username}}
+						</button>
+					</div>
         </div>
       </md-dialog>
     </div>
