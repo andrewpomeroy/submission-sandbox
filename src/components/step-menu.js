@@ -9,9 +9,7 @@ const StepMenu = {
   controller: StepMenuController
 };
 
-// StepMenuController.$inject = ["$mdDialog"];
-
-function StepMenuController($mdDialog) {
+function StepMenuController() {
   var $ctrl = this;
 
   this.reassign = function (step, $event) {

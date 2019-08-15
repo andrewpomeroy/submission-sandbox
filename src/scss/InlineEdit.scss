@@ -1,0 +1,35 @@
+$inlineEdit-transition: 80ms linear; 
+
+.InlineEditWrap {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin: -4px;
+    padding: 4px;
+    cursor: pointer;
+    outline: 1px solid transparent;
+    &:hover, &:focus {
+        outline: 1px solid $color-lightblue-highlight;
+        .InlineEdit-icon {
+            opacity: 1;
+        }
+    }
+    transition: $inlineEdit-transition;
+    transition-property: outline;
+}
+.InlineEdit-value {
+    // flex: 1;
+}
+.InlineEdit-icon {
+    opacity: 0;
+    flex: 0 0 auto;
+    width: 1em;
+    height: 1em;
+    margin-left: .5em;
+    color: $color-lightblue-highlight;
+    transition: $inlineEdit-transition;
+    transition-property: opacity;
+    .SvgWrap-icon {
+        fill: currentColor; // ??
+    }
+}

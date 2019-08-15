@@ -24,6 +24,7 @@ import getStaticAssetsSvg from "./components/get-static-assets-svg";
 import stepSegments from "./components/step-segments";
 import stepMenu from "./components/step-menu";
 import modalSelectMenu from "./components/modal-select-menu";
+import inlineEdit from "./components/inline-edit";
 
 import toastTemplate from "./templates/toast.html";
 
@@ -43,7 +44,8 @@ var MyApp = angular
   .component("getStaticAssetsSvg", getStaticAssetsSvg)
   .component("stepSegments", stepSegments)
   .component("stepMenu", stepMenu)
-  .component("modalSelectMenu", modalSelectMenu);
+  .component("modalSelectMenu", modalSelectMenu)
+  .component("inlineEdit", inlineEdit);
 
 MyApp.controller("DemoCtrl", DemoCtrl);
 DemoCtrl.$inject = ["$scope", "$timeout", "$interpolate", "$q", "$mdToast"];

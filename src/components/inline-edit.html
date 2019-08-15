@@ -1,0 +1,7 @@
+<div class="InlineEditWrap" role="button" tabindex="0">
+	<span class="InlineEdit-value" ng-if="$ctrl.hasTranscludedContent" ng-transclude></span>
+	<span class="InlineEdit-value" ng-if="!$ctrl.hasTranscludedContent" ng-bind="$ctrl.value"></span>
+	<div class="InlineEdit-icon">
+		<get-static-assets-svg name="pencil"></get-static-assets-svg>
+	</div>
+</div>
