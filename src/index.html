@@ -141,25 +141,9 @@
                   <div class="OverviewSection-body-item">
                     <div class="OverviewSection-frame OverviewSectionPaddingH">
                       <div class="OverviewMeta OverviewMeta--twoColumn">
-                        <div class="OverviewMeta-row OverviewMeta-item">
-                          <div class="OverviewMeta-item-label">Form Alias</div>
-                          <div class="OverviewMeta-item-value">WWTP - Emissions - Stage 1</div>
-                        </div>
-                        <div class="OverviewMeta-row OverviewMeta-item">
-                          <div class="OverviewMeta-item-label">Form Alias</div>
-                          <div class="OverviewMeta-item-value">WWTP - Emissions - Stage 1</div>
-                        </div>
-                        <div class="OverviewMeta-row OverviewMeta-item">
-                          <div class="OverviewMeta-item-label">Form Alias</div>
-                          <div class="OverviewMeta-item-value">WWTP - Emissions - Stage 1</div>
-                        </div>
-                        <div class="OverviewMeta-row OverviewMeta-item">
-                          <div class="OverviewMeta-item-label">Form Alias</div>
-                          <div class="OverviewMeta-item-value">WWTP - Emissions - Stage 1</div>
-                        </div>
-                        <div class="OverviewMeta-row OverviewMeta-item">
-                          <div class="OverviewMeta-item-label">Form Alias</div>
-                          <div class="OverviewMeta-item-value">WWTP - Emissions - Stage 1</div>
+                        <div class="OverviewMeta-row OverviewMeta-item" ng-repeat="fakeMetaItem in fakeMeta">
+                          <div class="OverviewMeta-item-label">{{fakeMetaItem.label}}</div>
+                          <div class="OverviewMeta-item-value">{{fakeMetaItem.value}}</div>
                         </div>
                       </div>
                     </div>

@@ -160,6 +160,21 @@ function DemoCtrl($scope, $timeout, $interpolate, $q, $mdToast) {
     }
   ];
 
+  // const makeFakeMetaItem = (key, index) => ({
+  //   label: key,
+  //   value: (faker.commerce[key])()
+  // });
+  // $scope.fakeMeta = Object.keys(faker.commerce).map((key, index) => makeFakeMetaItem(key, index));
+  const makeFakeMetaItem = () => ({
+    label: faker.commerce.department(),
+    value: Math.floor(Math.random() * 1.55) ? faker.commerce.productName() : faker.commerce.price()
+  });
+  $scope.fakeMeta = [];
+  for (let index = 0; index < Math.floor(Math.random() * 5) + 5; index++) {
+    console.log(Math.floor(Math.random() * 1.25));
+    $scope.fakeMeta.push(makeFakeMetaItem());
+  }
+
 }
 
 MyApp.controller("ToastCtrl", ["$scope", "$mdToast", "$mdDialog", function ($scope, $mdToast, $mdDialog) {
