@@ -21,13 +21,13 @@
 		</button>
 		<md-menu-content>
 			<md-menu-item>
-				<md-button ng-click="complete()">Mark Complete</md-button>
+				<md-button ng-click="$ctrl.onToggleComplete()">Mark Complete</md-button>
 			</md-menu-item>
 			<md-menu-item>
 				<md-button ng-click="$ctrl.openReassignDialog($ctrl.step, $event)">Reassign</md-button>
 			</md-menu-item>
 			<md-menu-item>
-				<md-button ng-click="delete()">Delete</md-button>
+				<md-button ng-click="$ctrl.onDelete()">Delete</md-button>
 			</md-menu-item>
 		</md-menu-content>
 	</md-menu>

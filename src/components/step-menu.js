@@ -22,6 +22,7 @@ function StepMenuController() {
 
   this.reassign = (user) => {
     $ctrl.reassignActive = false;
+    $ctrl.onReassign(user);
   };
 
   this.reassignUserItemDisplayFn = (item) => item.displayName;
