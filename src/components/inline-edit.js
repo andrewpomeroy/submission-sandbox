@@ -25,12 +25,12 @@ function InlineEditCtrl($transclude, $element, $timeout) {
     }
   });
 
-  this.onBlur = () => {
+  this.onBlur = ($event) => {
     this.confirmEdit();
   };
+
   this.onKeyDown = ($event) => {
     $event.stopPropagation();    
-    console.log($event.keyCode);
     switch($event.keyCode) {
     case 13:
       this.confirmEdit(true);
@@ -49,14 +49,15 @@ function InlineEditCtrl($transclude, $element, $timeout) {
     $ctrl.width = $element[0].getBoundingClientRect().width;
 
     const input = [].slice.call($element.find("input")).filter(x => x.id === "inlineEditInput")[0];
-    $timeout(() => input.focus());
+    $timeout(() => input.focus(), 10);
   };
+
   this.confirmEdit = (refocus) => {
-    console.log("confirmEdit", refocus);
     if (refocus) $ctrl.refocusContainer();
     $ctrl.closeOutEditMode();
     if ($ctrl.onCommit) $ctrl.onCommit($ctrl.inputModel);
   };
+
   this.cancelEdit = (refocus) => {
     if (refocus) $ctrl.refocusContainer();
     $ctrl.closeOutEditMode();
@@ -65,6 +66,7 @@ function InlineEditCtrl($transclude, $element, $timeout) {
   this.closeOutEditMode = () => {
     $ctrl.isEditing = false;
   };
+
   this.refocusContainer = () => {
     $timeout(() => {
       [].slice.call($element.find("div"))
@@ -73,19 +75,11 @@ function InlineEditCtrl($transclude, $element, $timeout) {
     });
   };
 
-
-
   this.$onInit = function () {
     $transclude((clone) => {
       $ctrl.hasTranscludedContent = Boolean(Object.keys(clone).length);
     });
 
-    // $element.on("focusout", ($event) => {
-    //   console.log("focusout", $event);
-    // });
-  };
-  this.$onDestroy = () => {
-    // $element.off("focusout");
   };
 }
 
