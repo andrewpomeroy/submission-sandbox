@@ -357,11 +357,21 @@
                                 </div>
                               </div>
                               <div class="Card-content-item Card-content-item--alignRight" ng-if="step.assignee">
-                                <button class="UsernameLink" ng-if="step.assignee">
-                                  <div class="UsernameLink-icon SvgWrap">
-                                    <get-static-assets-svg name="user"></svg>
+                                <button
+                                  class="InlineEditWrap"
+                                  role="button"
+                                  tabindex="0">
+                                  <div class="InlineEdit-value">
+                                    <div class="UsernameLink" ng-if="step.assignee">
+                                      <div class="UsernameLink-icon SvgWrap">
+                                        <get-static-assets-svg name="user"></svg>
+                                      </div>
+                                      <div class="UsernameLink-text" ng-bind="step.assignee"></div>
+                                    </div>
                                   </div>
-                                  <div class="UsernameLink-text" ng-bind="step.assignee"></div>
+                                  <div class="InlineEdit-icon" ng-class="{'InlineEdit-element--is-hidden': $ctrl.isEditing}">
+                                    <get-static-assets-svg name="pencil"></get-static-assets-svg>
+                                  </div>
                                 </button>
                               </div>
                             </div>
@@ -407,12 +417,22 @@
                             </div>
 
                             <div class="Card-content-item Card-content-item--alignRight">
-                              <button class="UsernameLink">
-                                <div class="UsernameLink-icon SvgWrap">
-                                  <get-static-assets-svg name="user"></get-static-assets-svg>
+                              <button
+                                  class="InlineEditWrap"
+                                  role="button"
+                                  tabindex="0">
+                                <div class="InlineEdit-value">
+                                  <div class="UsernameLink">
+                                    <div class="UsernameLink-icon SvgWrap">
+                                      <get-static-assets-svg name="user"></get-static-assets-svg>
+                                    </div>
+                                    <div class="UsernameLink-text">
+                                      Andrew Pomeroy
+                                    </div>
+                                  </div>
                                 </div>
-                                <div class="UsernameLink-text">
-                                  Andrew Pomeroy
+                                <div class="InlineEdit-icon" ng-class="{'InlineEdit-element--is-hidden': $ctrl.isEditing}">
+                                  <get-static-assets-svg name="pencil"></get-static-assets-svg>
                                 </div>
                               </button>
                             </div>
@@ -429,12 +449,22 @@
                               <step-menu step="item"></step-menu>
                             </div>
                             <div class="Card-content-item Card-content-item--alignRight">
-                              <button class="UsernameLink">
-                                <div class="UsernameLink-icon SvgWrap">
-                                  <get-static-assets-svg name="user"></get-static-assets-svg>
+                              <button
+                                  class="InlineEditWrap"
+                                  role="button"
+                                  tabindex="0">
+                                <div class="InlineEdit-value">
+                                  <div class="UsernameLink">
+                                    <div class="UsernameLink-icon SvgWrap">
+                                      <get-static-assets-svg name="user"></get-static-assets-svg>
+                                    </div>
+                                    <div class="UsernameLink-text">
+                                      Andrew Pomeroy
+                                    </div>
+                                  </div>
                                 </div>
-                                <div class="UsernameLink-text">
-                                  Andrew Pomeroy
+                                <div class="InlineEdit-icon" ng-class="{'InlineEdit-element--is-hidden': $ctrl.isEditing}">
+                                  <get-static-assets-svg name="pencil"></get-static-assets-svg>
                                 </div>
                               </button>
                             </div>
@@ -465,12 +495,22 @@
                               </div>
                             </div>
                             <div class="Card-content-item Card-content-item--alignRight">
-                              <button class="UsernameLink">
-                                <div class="UsernameLink-icon SvgWrap">
-                                  <get-static-assets-svg name="user"></get-static-assets-svg>
+                              <button
+                                  class="InlineEditWrap"
+                                  role="button"
+                                  tabindex="0">
+                                <div class="InlineEdit-value">
+                                  <div class="UsernameLink">
+                                    <div class="UsernameLink-icon SvgWrap">
+                                      <get-static-assets-svg name="user"></get-static-assets-svg>
+                                    </div>
+                                    <div class="UsernameLink-text">
+                                      Andrew Pomeroy
+                                    </div>
+                                  </div>
                                 </div>
-                                <div class="UsernameLink-text">
-                                  Andrew Pomeroy
+                                <div class="InlineEdit-icon" ng-class="{'InlineEdit-element--is-hidden': $ctrl.isEditing}">
+                                  <get-static-assets-svg name="pencil"></get-static-assets-svg>
                                 </div>
                               </button>
                             </div>

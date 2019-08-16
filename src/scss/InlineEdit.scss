@@ -2,6 +2,12 @@ $inlineEdit-transition: 80ms linear;
 $inlineEdit-padding: 4px;
 
 .InlineEditWrap {
+    // undo button styles
+    border: 0;
+    background: none;
+    font-family: inherit;
+    padding: 0;
+    // resume normal styles
     position: relative;
     display: inline-flex;
     flex-direction: row;
@@ -24,9 +30,6 @@ $inlineEdit-padding: 4px;
 }
 .InlineEditWrap--is-editing {
     // padding: 0; // Let the input provide its own padding
-}
-.InlineEdit-value {
-    // flex: 1;
 }
 .InlineEdit-element--is-hidden {
     visibility: hidden;
