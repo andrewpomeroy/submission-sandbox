@@ -1,5 +1,6 @@
 import "@babel/polyfill";
 
+import "jquery";
 import angular from "angular";
 import "angular-sanitize";
 import "angular-material";

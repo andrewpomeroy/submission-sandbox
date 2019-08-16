@@ -1,7 +1,10 @@
-<div class="InlineEditWrap" role="button" tabindex="0">
-	<span class="InlineEdit-value" ng-if="$ctrl.hasTranscludedContent" ng-transclude></span>
-	<span class="InlineEdit-value" ng-if="!$ctrl.hasTranscludedContent" ng-bind="$ctrl.value"></span>
-	<div class="InlineEdit-icon">
+<div class="InlineEditWrap" role="button" tabindex="0" ng-class="{'InlineEditWrap--is-editing' : $ctrl.isEditing}" ng-click="$ctrl.enableEdit($event)">
+	<span class="InlineEdit-value" ng-if="$ctrl.hasTranscludedContent && !$ctrl.isEditing" ng-transclude></span>
+	<span class="InlineEdit-value" ng-if="!$ctrl.hasTranscludedContent && !$ctrl.isEditing" ng-bind="$ctrl.value"></span>
+	<div class="InlineEdit-icon" ng-if="!$ctrl.isEditing">
 		<get-static-assets-svg name="pencil"></get-static-assets-svg>
 	</div>
+	<md-input-container class="InlineEditWrap-inputContainer" ng-show="$ctrl.isEditing">
+		<input id="inlineEditInput" ng-model="$ctrl.inputModel" ng-blur="$ctrl.onBlur()" ng-keydown="$ctrl.onKeyDown" />
+	</md-input-container>
 </div>

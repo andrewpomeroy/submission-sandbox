@@ -8,10 +8,12 @@ $inlineEdit-transition: 80ms linear;
     padding: 4px;
     cursor: pointer;
     outline: 1px solid transparent;
-    &:hover, &:focus {
-        outline: 1px solid $color-lightblue-highlight;
-        .InlineEdit-icon {
-            opacity: 1;
+    &:not(.InlineEditWrap--is-editing) {
+        &:hover, &:focus {
+            outline: 1px solid $color-lightblue-highlight;
+            .InlineEdit-icon {
+                opacity: 1;
+            }
         }
     }
     transition: $inlineEdit-transition;
@@ -31,5 +33,15 @@ $inlineEdit-transition: 80ms linear;
     transition-property: opacity;
     .SvgWrap-icon {
         fill: currentColor; // ??
+    }
+    .InlineEditWrap--is-editing & {
+        display: none;
+    }
+}
+.InlineEditWrap-inputContainer {
+    margin: 0;
+    padding: 0;
+    .md-errors-spacer {
+        display: none;
     }
 }
