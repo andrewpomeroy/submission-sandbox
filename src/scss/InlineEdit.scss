@@ -1,13 +1,16 @@
 $inlineEdit-transition: 80ms linear; 
+$inlineEdit-padding: 4px;
 
 .InlineEditWrap {
+    position: relative;
     display: inline-flex;
     flex-direction: row;
     align-items: flex-start;
-    margin: -4px;
-    padding: 4px;
+    // margin: -$inlineEdit-padding;
+    // padding: $inlineEdit-padding;
     cursor: pointer;
     outline: 1px solid transparent;
+    outline-offset: 4px;
     &:not(.InlineEditWrap--is-editing) {
         &:hover, &:focus {
             outline: 1px solid $color-lightblue-highlight;
@@ -19,8 +22,15 @@ $inlineEdit-transition: 80ms linear;
     transition: $inlineEdit-transition;
     transition-property: outline;
 }
+.InlineEditWrap--is-editing {
+    // padding: 0; // Let the input provide its own padding
+}
 .InlineEdit-value {
     // flex: 1;
+}
+.InlineEdit-element--is-hidden {
+    visibility: hidden;
+    pointer-events: none;
 }
 .InlineEdit-icon {
     opacity: 0;
@@ -44,4 +54,12 @@ $inlineEdit-transition: 80ms linear;
     .md-errors-spacer {
         display: none;
     }
+}
+.InlineEdit-input {
+    position: absolute;
+    margin-left: -$inlineEdit-padding;
+    margin-top: -$inlineEdit-padding;
+    padding: $inlineEdit-padding;
+    width: calc(100% + #{$inlineEdit-padding});
+    min-width: 16em;
 }
