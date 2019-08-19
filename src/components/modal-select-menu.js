@@ -1,5 +1,4 @@
 import modalTemplate from "./modal-select-menu.html";
-import faker from "faker";
 
 const ModalSelectMenu = {
   bindings: {
@@ -25,7 +24,6 @@ function ModalSelectMenuCtrl($mdDialog) {
       $ctrl.selectedItem = undefined;
       
       $mdDialog.show({
-        // parent: angular.element(document.body),
         targetEvent: $ctrl.openEvent,
         closeTo: $ctrl.openEvent.currentTarget,
         onComplete: $ctrl.handleOnComplete,
@@ -39,30 +37,30 @@ function ModalSelectMenuCtrl($mdDialog) {
           $scope.itemDisplayFn = itemDisplayFn;
           $scope.itemIsSelectedFn = itemIsSelectedFn;
 
+          $scope.onOpenComplete = () => {
+            const listElement = [].slice.call($element.find("div")).find(x => x.hasAttribute("modal-select-menu-list"));
+            listElement.style.minHeight = listElement.getBoundingClientRect().height + "px";
+          };
+
+          $scope.close = () => $mdDialog.hide();
+
           $scope.selectItem = item => {
             $ctrl.selectedItem = item;
             $mdDialog.hide();
           };
-          $scope.close = () => $mdDialog.hide();
-          $scope.onOpenComplete = () => {
-            console.log($element);
-            const listElement = [].slice.call($element.find("div")).find(x => x.hasAttribute("modal-select-menu-list"));
-            listElement.style.minHeight = listElement.getBoundingClientRect().height + "px";
-
-
-          };
-
-          $scope.$watch("stringFilter", (newValue, oldValue) => {
-            // console.log(newValue, oldValue);
+        
+          $scope.$watch("stringFilter", (newValue) => {
             $scope.filterValue = newValue != null && newValue.trim().toLowerCase();
             $scope.applyDisplayTransformations();
           });
+
           $scope.applyDisplayTransformations = () => {
             $scope.displayedItems = $scope.items.filter(x => {
               if ($scope.filterValue == false || $scope.filterValue === "") return true; 
               return x.displayName.trim().toLowerCase().indexOf($scope.filterValue) !== -1;
             });
           };
+
           $scope.applyDisplayTransformations();
           
         }],

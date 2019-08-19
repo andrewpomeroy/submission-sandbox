@@ -178,12 +178,15 @@ function DemoCtrl($scope, $timeout, $interpolate, $q, $mdToast) {
   }
 
   $scope.onReassign = function (user) {
+    // eslint-disable-next-line
     console.log("onReassign", user);
   };
   $scope.onDelete = function () {
+    // eslint-disable-next-line
     console.log("onDelete");
   };
   $scope.onToggleComplete = function (isComplete) {
+    // eslint-disable-next-line
     console.log("onToggleComplete", isComplete);
   };
 

@@ -25,7 +25,7 @@ function InlineEditCtrl($transclude, $element, $timeout) {
     }
   });
 
-  this.onBlur = ($event) => {
+  this.onBlur = () => {
     this.confirmEdit();
   };
 
