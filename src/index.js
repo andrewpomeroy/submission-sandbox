@@ -174,9 +174,18 @@ function DemoCtrl($scope, $timeout, $interpolate, $q, $mdToast) {
   });
   $scope.fakeMeta = [];
   for (let index = 0; index < Math.floor(Math.random() * 5) + 5; index++) {
-    console.log(Math.floor(Math.random() * 1.25));
     $scope.fakeMeta.push(makeFakeMetaItem());
   }
+
+  $scope.onReassign = function (user) {
+    console.log("onReassign", user);
+  };
+  $scope.onDelete = function () {
+    console.log("onDelete");
+  };
+  $scope.onToggleComplete = function (isComplete) {
+    console.log("onToggleComplete", isComplete);
+  };
 
 }
 

@@ -342,7 +342,7 @@
                                   6A
                                 </button>
                                 <div class="StepHeader-title" ng-bind="step.title"></div>
-                                <step-menu step="item"></step-menu>
+                                <step-menu step="item" on-reassign="onReassign" on-delete="onDelete" on-toggle-complete="onToggleComplete"></step-menu>
                               </div>
                               <div class="Card-content-item Card-content-item--alignRight"
                                 ng-if="step.isCompleted || step.completedDate">
@@ -413,7 +413,7 @@
                                 Elit et voluptate in excepteur adipisicing laborum consequat excepteur ullamco fugiat ut
                                 magna ipsum
                               </div>
-                              <step-menu step="item"></step-menu>
+                              <step-menu step="item" on-reassign="onReassign" on-delete="onDelete" on-toggle-complete="onToggleComplete"></step-menu>
                             </div>
 
                             <div class="Card-content-item Card-content-item--alignRight">
@@ -446,7 +446,7 @@
                               <div class="StepHeader-title">
                                 Occaecat magna commodo sit minim officia voluptate cillum irure commodo
                               </div>
-                              <step-menu step="item"></step-menu>
+                              <step-menu step="item" on-reassign="onReassign" on-delete="onDelete" on-toggle-complete="onToggleComplete"></step-menu>
                             </div>
                             <div class="Card-content-item Card-content-item--alignRight">
                               <button
@@ -480,7 +480,7 @@
                               <div class="StepHeader-title">
                                 Ullamco incididunt deserunt officia enim velit incididunt proident ad esse
                               </div>
-                              <step-menu step="item"></step-menu>
+                              <step-menu step="item" on-reassign="onReassign" on-delete="onDelete" on-toggle-complete="onToggleComplete"></step-menu>
                             </div>
                             <div class="Card-content-item Card-content-item--alignRight">
                               <div class="SplitContent SplitContent--small">

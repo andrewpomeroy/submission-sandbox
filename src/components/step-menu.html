@@ -21,15 +21,15 @@
 		</button>
 		<md-menu-content>
 			<md-menu-item>
-				<md-button ng-click="complete()">Mark Complete</md-button>
+				<md-button ng-click="$ctrl.onToggleComplete()">Mark Complete</md-button>
 			</md-menu-item>
 			<md-menu-item>
-				<md-button ng-click="$ctrl.reassign($ctrl.step, $event)">Reassign</md-button>
+				<md-button ng-click="$ctrl.openReassignDialog($ctrl.step, $event)">Reassign</md-button>
 			</md-menu-item>
 			<md-menu-item>
-				<md-button ng-click="delete()">Delete</md-button>
+				<md-button ng-click="$ctrl.onDelete()">Delete</md-button>
 			</md-menu-item>
 		</md-menu-content>
 	</md-menu>
-	<modal-select-menu title="Reassign" items="$ctrl.users" item-display-fn="$ctrl.reassignUserItemDisplayFn" item-is-selected-fn="$ctrl.reassignUserIsSelectedFn" is-open="$ctrl.reassignActive" open-event="$ctrl.$reassignEvent" on-close="$ctrl.onReassign" step="$ctrl.step"></modal-select-menu>
+	<modal-select-menu title="Reassign" items="$ctrl.users" item-display-fn="$ctrl.reassignUserItemDisplayFn" item-is-selected-fn="$ctrl.reassignUserIsSelectedFn" is-open="$ctrl.reassignActive" open-event="$ctrl.$reassignEvent" on-close="$ctrl.reassign" step="$ctrl.step"></modal-select-menu>
 </div>
