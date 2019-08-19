@@ -28,8 +28,9 @@ function ModalSelectMenuCtrl($mdDialog) {
         // parent: angular.element(document.body),
         targetEvent: $ctrl.openEvent,
         closeTo: $ctrl.openEvent.currentTarget,
+        onComplete: $ctrl.handleOnComplete,
         clickOutsideToClose: true,
-        controller: ["$scope", "$mdDialog", "step", "users", "title", "items", "itemDisplayFn", "itemIsSelectedFn", function reassignDialogCtrl($scope, $mdDialog, step, users, title, items, itemDisplayFn, itemIsSelectedFn) {
+        controller: ["$scope", "$element", "$mdDialog", "step", "users", "title", "items", "itemDisplayFn", "itemIsSelectedFn", function reassignDialogCtrl($scope, $element, $mdDialog, step, users, title, items, itemDisplayFn, itemIsSelectedFn) {
 
           $scope.step = step;
           $scope.users = users;
@@ -43,7 +44,27 @@ function ModalSelectMenuCtrl($mdDialog) {
             $mdDialog.hide();
           };
           $scope.close = () => $mdDialog.hide();
+          $scope.onOpenComplete = () => {
+            console.log($element);
+            const listElement = [].slice.call($element.find("div")).find(x => x.hasAttribute("modal-select-menu-list"));
+            listElement.style.minHeight = listElement.getBoundingClientRect().height + "px";
 
+
+          };
+
+          $scope.$watch("stringFilter", (newValue, oldValue) => {
+            // console.log(newValue, oldValue);
+            $scope.filterValue = newValue != null && newValue.trim().toLowerCase();
+            $scope.applyDisplayTransformations();
+          });
+          $scope.applyDisplayTransformations = () => {
+            $scope.displayedItems = $scope.items.filter(x => {
+              if ($scope.filterValue == false || $scope.filterValue === "") return true; 
+              return x.displayName.trim().toLowerCase().indexOf($scope.filterValue) !== -1;
+            });
+          };
+          $scope.applyDisplayTransformations();
+          
         }],
         template: modalTemplate,
         locals: {
@@ -61,6 +82,9 @@ function ModalSelectMenuCtrl($mdDialog) {
     }
   };
   
+  this.handleOnComplete = (scope) => {
+    scope.onOpenComplete();
+  };
 
   this.$onInit = function() {
   }; 

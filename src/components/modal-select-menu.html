@@ -4,12 +4,15 @@
       <div class="ModalSelectMenu-title">
         {{title}}
       </div>
+      <input ng-model="stringFilter">
       <button class="ModalSelectMenu-closeButton" ng-click="close()">&times;</button>
     </div>
-    <div class="ModalSelectMenu-list">
-      <button class="ModalSelectMenu-item" ng-repeat="item in items" ng-click="selectItem(item)" ng-class="{'ModalSelectMenu-item--is-active': itemIsSelectedFn(item)}">
-        {{itemDisplayFn ? itemDisplayFn(item) : item}}
-      </button>
+    <div class="ModalSelectMenu-list" modal-select-menu-list>
+      <div class="ModalSelectMenu-list-inner">
+        <button class="ModalSelectMenu-item" ng-repeat="item in displayedItems" ng-click="selectItem(item)" ng-class="{'ModalSelectMenu-item--is-active': itemIsSelectedFn(item)}">
+          {{itemDisplayFn ? itemDisplayFn(item) : item}}
+        </button>
+      </div>
     </div>
   </div>
 </md-dialog>

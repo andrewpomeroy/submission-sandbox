@@ -11,6 +11,9 @@
 .Card--medium {
     padding: 1rem 1.25rem;
 }
+.Card--medium.Card--compact {
+    padding: 1rem .75rem;
+}
 
 .Card-content-item--alignRight {
     align-self: flex-end;

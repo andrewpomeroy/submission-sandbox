@@ -334,7 +334,7 @@
                           <div class="CardRow CardRow--wrapping CardRow--medium"
                             ng-repeat="row in $parent.$ctrl.segments"
                             ng-if="$index === $parent.$parent.$ctrl.activeIndex">
-                            <div class="Card Card--naked Card--medium Card--linked"
+                            <div class="Card Card--naked Card--compact Card--medium Card--linked"
                               ng-class="{'Card--green': step.isCompleted}" ng-repeat="step in row">
                               <div class="StepHeader StepHeader--split">
                                 <button class="StepHeader-number StepHeader-number--button">
@@ -403,7 +403,7 @@
                           <div class="CardRow-bookend CardRow-bookend--index">
                             {{$index + 1}}
                           </div>
-                          <div class="Card Card--naked Card--medium Card--linked">
+                          <div class="Card Card--naked Card--compact Card--medium Card--linked">
                             <div class="StepHeader StepHeader--split">
                               <button class="StepHeader-number StepHeader-number--button">
                                 <md-tooltip md-direction="top">Mark Complete</md-tooltip>
@@ -437,7 +437,7 @@
                               </button>
                             </div>
                           </div>
-                          <div class="Card Card--naked Card--medium Card--linked" ng-if="item >= 2">
+                          <div class="Card Card--naked Card--compact Card--medium Card--linked" ng-if="item >= 2">
                             <div class="StepHeader StepHeader--split">
                               <button class="StepHeader-number StepHeader-number--button">
                                 <md-tooltip md-direction="top">Mark Complete</md-tooltip>
@@ -469,7 +469,7 @@
                               </button>
                             </div>
                           </div>
-                          <div class="Card Card--naked Card--medium Card--green Card--linked" ng-if="item >= 3">
+                          <div class="Card Card--naked Card--compact Card--medium Card--green Card--linked" ng-if="item >= 3">
                             <div class="StepHeader StepHeader--split">
                               <button class="StepHeader-number StepHeader-number--icon StepHeader-number--complete StepHeader-number--button">
                                 <md-tooltip md-direction="top">Mark Incomplete</md-tooltip>
