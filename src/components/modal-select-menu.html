@@ -1,11 +1,15 @@
 <md-dialog>
   <div class="ModalSelectMenu">
     <div class="ModalSelectMenu-header">
-      <div class="ModalSelectMenu-title">
-        {{title}}
+      <div class="ModalSelectMenu-header-row">
+        <div class="ModalSelectMenu-title">
+          {{title}}
+        </div>
+        <button class="ModalSelectMenu-closeButton" ng-click="close()">&times;</button>
       </div>
-      <input ng-model="stringFilter">
-      <button class="ModalSelectMenu-closeButton" ng-click="close()">&times;</button>
+      <div class="ModalSelectMenu-header-row">
+        <input class="ModalSelectMenu-filterBox" ng-model="stringFilter" />
+      </div>
     </div>
     <div class="ModalSelectMenu-list" modal-select-menu-list>
       <div class="ModalSelectMenu-list-inner">
