@@ -1,6 +1,12 @@
 $inlineEdit-transition: 80ms linear; 
 $inlineEdit-padding: 4px;
 
+// Hack selector for IE only -- lets us fix the IE-specific layout issue
+@media screen and (min-width:0\0) {
+    inline-edit {
+        display: flex; 
+    }
+}
 .InlineEditWrap {
     // undo button styles
     border: 0;

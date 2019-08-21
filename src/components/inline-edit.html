@@ -10,7 +10,8 @@
 		<!-- <input id="inlineEditInput" ng-model="$ctrl.inputModel" ng-blur="$ctrl.onBlur($event)" ng-keydown="$ctrl.onKeyDown" ng-style="{'height': $ctrl.height + 'px', 'min-width': $ctrl.width + 'px'}"/> -->
 	<input id="inlineEditInput"
 		class="InlineEdit-input"
-		ng-show="$ctrl.isEditing"
+		ng-if="$ctrl.isEditing"
+		wnd-autofocus="true"
 		ng-model="$ctrl.inputModel"
 		ng-blur="$ctrl.onBlur($event)"
 		ng-keydown="$ctrl.onKeyDown($event)"/>

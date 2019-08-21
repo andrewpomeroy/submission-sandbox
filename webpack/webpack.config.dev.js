@@ -31,7 +31,11 @@ module.exports = merge(common, {
       {
         test: /\.(js)$/,
         include: Path.resolve(__dirname, "../src"),
-        loader: "babel-loader"
+        loader: "babel-loader",
+        options: {
+          presets: ["@babel/preset-env"],
+          sourceMaps: true
+        }
       },
       {
         test: /\.s?css$/i,

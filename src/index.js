@@ -26,12 +26,14 @@ import stepSegments from "./components/step-segments";
 import stepMenu from "./components/step-menu";
 import modalSelectMenu from "./components/modal-select-menu";
 import inlineEdit from "./components/inline-edit";
+import wndAutofocus from "./components/wnd-autofocus";
 
 import toastTemplate from "./templates/toast.html";
 
 import "./scss/index.scss";
 import "angular-material/angular-material.css";
 
+// eslint-disable-next-line
 var MyApp = angular
   .module("MyApp", ["ngMaterial", "ngMessages", "ngSanitize"])
   .component("submissionTabsVertical", submissionTabsVertical)
@@ -46,7 +48,9 @@ var MyApp = angular
   .component("stepSegments", stepSegments)
   .component("stepMenu", stepMenu)
   .component("modalSelectMenu", modalSelectMenu)
-  .component("inlineEdit", inlineEdit);
+  .component("inlineEdit", inlineEdit)
+  .directive("wndAutofocus", wndAutofocus);
+
 
 MyApp.controller("DemoCtrl", DemoCtrl);
 DemoCtrl.$inject = ["$scope", "$timeout", "$interpolate", "$q", "$mdToast"];

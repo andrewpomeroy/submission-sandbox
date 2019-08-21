@@ -48,8 +48,11 @@ function InlineEditCtrl($transclude, $element, $timeout) {
     $ctrl.height = $element[0].getBoundingClientRect().height;
     $ctrl.width = $element[0].getBoundingClientRect().width;
 
-    const input = [].slice.call($element.find("input")).filter(x => x.id === "inlineEditInput")[0];
-    $timeout(() => input.focus(), 10);
+    // const input = [].slice.call($element.find("input")).filter(x => x.id === "inlineEditInput")[0];
+    // $timeout(() => {
+    //   console.log(input);
+    //   input.focus(), 10;
+    // });
   };
 
   this.confirmEdit = (refocus) => {

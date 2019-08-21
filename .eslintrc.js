@@ -13,10 +13,10 @@ module.exports = {
             1,
             2
         ],
-        "linebreak-style": [
-            "error",
-            "unix"
-        ],
+        // "linebreak-style": [
+        //     "error",
+        //     "unix"
+        // ],
         "quotes": [
             "error",
             "double"
