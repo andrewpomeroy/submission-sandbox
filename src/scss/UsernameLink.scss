@@ -2,7 +2,8 @@
     display: flex;
     @include u-unstyleButton();
     @include linkStyle();
-    align-items: center;
+    align-items: flex-start;
+    text-align: left;
 }
 
 .UsernameLink-nolink {
