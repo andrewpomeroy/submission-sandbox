@@ -1,5 +1,5 @@
 import "@babel/polyfill";
-
+console.log("sldkgj");
 import "jquery";
 import angular from "angular";
 import "angular-sanitize";
@@ -13,6 +13,8 @@ import Moment from "moment";
 
 import faker from "faker";
 
+import "@windsor/form-ng";
+
 import submissionTabsVertical from "./components/submission-tabs-vertical";
 import submissionTabVertical from "./components/submission-tab-vertical";
 import submissionTabs from "./components/submission-tabs";
@@ -25,7 +27,8 @@ import getStaticAssetsSvg from "./components/get-static-assets-svg";
 import stepSegments from "./components/step-segments";
 import stepMenu from "./components/step-menu";
 import modalSelectMenu from "./components/modal-select-menu";
-import inlineEdit from "./components/inline-edit";
+// import inlineEdit from "./components/inline-edit";
+import calendarTest from "./components/calendar-test";
 import wndAutofocus from "./components/wnd-autofocus";
 
 import toastTemplate from "./templates/toast.html";
@@ -35,7 +38,7 @@ import "angular-material/angular-material.css";
 
 // eslint-disable-next-line
 var MyApp = angular
-  .module("MyApp", ["ngMaterial", "ngMessages", "ngSanitize"])
+  .module("MyApp", ["wnd.form", "ngMaterial", "ngMessages", "ngSanitize"])
   .component("submissionTabsVertical", submissionTabsVertical)
   .component("submissionTabVertical", submissionTabVertical)
   .component("submissionTabs", submissionTabs)
@@ -48,7 +51,8 @@ var MyApp = angular
   .component("stepSegments", stepSegments)
   .component("stepMenu", stepMenu)
   .component("modalSelectMenu", modalSelectMenu)
-  .component("inlineEdit", inlineEdit)
+  // .component("inlineEdit", inlineEdit)
+  .component("calendarTest", calendarTest)
   .directive("wndAutofocus", wndAutofocus);
 
 
@@ -56,8 +60,14 @@ MyApp.controller("DemoCtrl", DemoCtrl);
 DemoCtrl.$inject = ["$scope", "$timeout", "$interpolate", "$q", "$mdToast"];
 function DemoCtrl($scope, $timeout, $interpolate, $q, $mdToast) {
   
+
   $scope.faker = faker;
   $scope.fake = faker.fake;
+
+  $scope.test = function () {
+    console.log("heyo");
+  };
+
   
   $scope.toast = function () {
     $mdToast.show({
@@ -227,4 +237,5 @@ MyApp.controller("ToastCtrl", ["$scope", "$mdToast", "$mdDialog", function ($sco
         isDlgOpen = false;
       });
   };
+
 }]);

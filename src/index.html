@@ -144,7 +144,7 @@
                         <div class="OverviewMeta-row OverviewMeta-item" ng-repeat="fakeMetaItem in fakeMeta">
                           <div class="OverviewMeta-item-label">{{fakeMetaItem.label}}</div>
                           <div class="OverviewMeta-item-value">
-                            <inline-edit value="fakeMetaItem.value">
+                            <inline-edit on-commit="nothing" value="fakeMetaItem.value">
                               <span>{{$parent.$ctrl.value}}</span>
                             </inline-edit>
                           </div>
@@ -152,7 +152,7 @@
                         <div class="OverviewMeta-row OverviewMeta-item">
                           <div class="OverviewMeta-item-label">Esse adipisicing irure aliqua pariatur labore mollit esse qui laboris amet enim voluptate duis duis.</div>
                           <div class="OverviewMeta-item-value">
-                            <inline-edit value="'Fugiat nostrud nostrud cillum culpa ut tempor in. Anim magna non nisi voluptate proident occaecat amet.'"></inline-edit>
+                            <inline-edit-slug on-activate="test">A value</inline-edit>
                           </div>
                         </div>
                       </div>
@@ -746,6 +746,9 @@
                       </collapse-container>
                     </div>
                   </div>
+
+                  <calendar-test></calendar-test>
+
                 </div>
 
               </div>

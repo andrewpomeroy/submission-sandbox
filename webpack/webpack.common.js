@@ -1,6 +1,7 @@
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const webpack = require("webpack");
 
 const Path = require("path");
 
@@ -21,7 +22,9 @@ module.exports = {
   },
   resolve: {
     alias: {
-      "~": Path.resolve(__dirname, "../src")
+      // "~": Path.resolve(__dirname, "../src"),
+      // "angular": Path.resolve(Path.join(__dirname, "node_modules", "angular"))
+      
     }
   },
   plugins: [
@@ -32,12 +35,24 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: Path.resolve(__dirname, "../src/index.html")
     }),
+    new webpack.ProvidePlugin({
+      "$": "jquery",
+      "jQuery": "jquery",
+      "window.jQuery": "jquery",
+    })
   ],
   module: {
     rules: [
       {
         test: /\.html/,
-        use: "html-loader"
+        use: [
+          {
+            loader: "html-loader",
+            options: {
+              interpolate: true
+            }
+          }
+        ]
       },
       // Inline SVG 
       {
