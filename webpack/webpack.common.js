@@ -22,9 +22,8 @@ module.exports = {
   },
   resolve: {
     alias: {
-      // "~": Path.resolve(__dirname, "../src"),
-      // "angular": Path.resolve(Path.join(__dirname, "node_modules", "angular"))
-      
+      "~": Path.resolve(__dirname, "../src"),
+      angular$: Path.resolve(Path.join(__dirname, "..", "node_modules", "angular"))
     }
   },
   plugins: [

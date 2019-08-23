@@ -1,9 +1,8 @@
 import "@babel/polyfill";
-console.log("sldkgj");
 import "jquery";
 import angular from "angular";
 import "angular-sanitize";
-import "angular-material";
+import "@windsor/angular-material";
 import "angular-messages";
 import "angular-aria";
 import "angular-sanitize";
@@ -34,9 +33,7 @@ import wndAutofocus from "./components/wnd-autofocus";
 import toastTemplate from "./templates/toast.html";
 
 import "./scss/index.scss";
-import "angular-material/angular-material.css";
 
-// eslint-disable-next-line
 var MyApp = angular
   .module("MyApp", ["wnd.form", "ngMaterial", "ngMessages", "ngSanitize"])
   .component("submissionTabsVertical", submissionTabsVertical)
@@ -67,6 +64,7 @@ function DemoCtrl($scope, $timeout, $interpolate, $q, $mdToast) {
   $scope.test = function () {
     console.log("heyo");
   };
+  $scope.testDate = new Date();
 
   
   $scope.toast = function () {

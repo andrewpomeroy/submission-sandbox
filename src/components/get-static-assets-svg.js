@@ -1,4 +1,5 @@
-import { SVGBlobs } from "@windsor/static-assets";
+import SVGBlobs from "@windsor/static-assets";
+
 
 const getStaticAssetsSvg = {
   bindings: {
