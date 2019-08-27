@@ -841,16 +841,16 @@
   resolved "https://nexus.windsorcloud.com/repository/npm/@windsor/angular-material/-/angular-material-2.0.0.tgz#6c3783f28e14754266c8bd8a8350894289d76a71"
   integrity sha1-bDeD8o4UdUJmyL2Kg1CJQonXanE=
 
-"@windsor/form-ng@^5.0.2":
-  version "5.0.2"
-  resolved "https://nexus.windsorcloud.com/repository/npm/@windsor/form-ng/-/form-ng-5.0.2.tgz#927e63e1fb7f32fddb83c9c77bac3d87d3f39d29"
-  integrity sha1-kn5j4ft/Mv3bg8nHe6w9h9PznSk=
+"@windsor/form-ng@^5.1.1":
+  version "5.1.1"
+  resolved "https://nexus.windsorcloud.com/repository/npm/@windsor/form-ng/-/form-ng-5.1.1.tgz#743d725b8884542dddc166bf9db7152a6ee402a9"
+  integrity sha512-sUR3jQRCrtJsQ6SDFRWeZZyZRdEBah3MP5FJJN18lDN++eeNaiW/do3AkY4zWAlsi/BU+aV2z1AUfv7nGAB+nw==
   dependencies:
     "@windsor/angular-material" "^2.0.0"
     "@windsor/global-adapter-js" "^2.0.1"
     "@windsor/resources-js" "^3.0.0"
     "@windsor/standard-data-model-js" "^2.0.0"
-    "@windsor/static-assets" "5.0.7"
+    "@windsor/static-assets" "^5.1.0"
     angular "1.5.11"
     angular-animate "1.5.11"
     angular-aria "1.5.11"
@@ -920,11 +920,6 @@
     "@windsor/log-js" "^2.0.0"
     "@windsor/model-js" "^7.0.0"
     lodash "^4.14.2"
-
-"@windsor/static-assets@5.0.7":
-  version "5.0.7"
-  resolved "https://nexus.windsorcloud.com/repository/npm/@windsor/static-assets/-/static-assets-5.0.7.tgz#14c0a0328078f7e204e85188ade01f007ec545e4"
-  integrity sha512-Cy0TtRj/iP8p9ClobKBRhh22J+xDlXRTIFcEln1JZeGcDAPZBATxNI6jTH4mGwGhN2LNq031mMVKCqRYp9fTOw==
 
 "@windsor/static-assets@^5.1.0":
   version "5.1.0"

@@ -1,0 +1,4 @@
+<inline-edit-slug on-activate="$ctrl.openDateDialog" >
+	<span ng-bind="$ctrl.date"></span>
+</inline-edit-slug>
+<calendar-popup ng-if="$ctrl.dialogIsOpen" date="$ctrl.date" on-select="$ctrl.onSelect"></calendar-popup>

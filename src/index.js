@@ -26,8 +26,8 @@ import getStaticAssetsSvg from "./components/get-static-assets-svg";
 import stepSegments from "./components/step-segments";
 import stepMenu from "./components/step-menu";
 import modalSelectMenu from "./components/modal-select-menu";
-// import inlineEdit from "./components/inline-edit";
-import calendarTest from "./components/calendar-test";
+import calendarPopup from "./components/calendar-popup";
+import inlineEditDate from "./components/inline-edit-date";
 import wndAutofocus from "./components/wnd-autofocus";
 
 import toastTemplate from "./templates/toast.html";
@@ -49,7 +49,8 @@ var MyApp = angular
   .component("stepMenu", stepMenu)
   .component("modalSelectMenu", modalSelectMenu)
   // .component("inlineEdit", inlineEdit)
-  .component("calendarTest", calendarTest)
+  .component("calendarPopup", calendarPopup)
+  .component("inlineEditDate", inlineEditDate)
   .directive("wndAutofocus", wndAutofocus);
 
 
@@ -61,11 +62,10 @@ function DemoCtrl($scope, $timeout, $interpolate, $q, $mdToast) {
   $scope.faker = faker;
   $scope.fake = faker.fake;
 
-  $scope.test = function () {
-    console.log("heyo");
-  };
   $scope.testDate = new Date();
-
+  $scope.handleDateChange = value => {
+    $scope.testDate = value;
+  };
   
   $scope.toast = function () {
     $mdToast.show({
