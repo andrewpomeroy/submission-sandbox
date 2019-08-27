@@ -18,6 +18,8 @@ function InlineEditDateCtrl($transclude, $element, $timeout) {
 
   $ctrl.onSelect = (value) => {
     $ctrl.onCommit(value);
+  };
+  $ctrl.onClose = () => {
     $ctrl.dialogIsOpen = false;
   };
 

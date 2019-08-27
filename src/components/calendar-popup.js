@@ -3,7 +3,8 @@ import modalTemplate from "./calendar-popup.html";
 const CalendarPopup = {
   bindings: {
     "date": "<",
-    "onSelect": "<"
+    "onSelect": "<",
+    "onClose": "<",
   },
   controller: CalendarPopupCtrl,
 };
@@ -23,6 +24,7 @@ function CalendarPopupCtrl($mdDialog) {
         locals: {
           date: $ctrl.date,
           onSelect: $ctrl.onSelect,
+          onClose: $ctrl.onClose
         },
         onComplete: $ctrl.handleDialogOpenComplete,
         controller: ["$scope", "$mdDialog", "$timeout", "date", "onSelect", function calendarDialogCtrl ($scope, $mdDialog, $timeout, date, onSelect) {
@@ -35,6 +37,7 @@ function CalendarPopupCtrl($mdDialog) {
       })
       .finally(function () {
         $ctrl.isOpen = false;
+        $ctrl.onClose();
       });
 
     $ctrl.handleDialogOpenComplete = (scope) => {
