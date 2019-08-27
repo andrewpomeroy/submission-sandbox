@@ -2,13 +2,14 @@
   <div class="ModalSelectMenu">
     <div class="ModalSelectMenu-header">
       <div class="ModalSelectMenu-header-row">
-        <div class="ModalSelectMenu-title">
+        <div class="ModalSelectMenu-title" id="modalSelectMenu-title">
           {{title}}
         </div>
         <button class="ModalSelectMenu-closeButton" ng-click="close()">&times;</button>
       </div>
       <div class="ModalSelectMenu-header-row">
-        <input class="ModalSelectMenu-filterBox" ng-model="stringFilter" />
+        <label class="sr-only" id="modalSelectMenu-filterLabel">{{$ctrl.filterPlaceholder || 'Filter items...'}}</label>
+        <input class="ModalSelectMenu-filterBox" ng-model="stringFilter" aria-labelledby="modalSelectMenu-title modalSelectMenu-filterLabel" placeholder="{{$ctrl.filterPlaceholder || 'Filter items...'}}" wnd-autofocus="true" />
       </div>
     </div>
     <div class="ModalSelectMenu-list" modal-select-menu-list>
