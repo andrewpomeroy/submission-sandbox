@@ -8,7 +8,8 @@ const ModalSelectMenu = {
     onClose: "<",
     items: "<",
     itemDisplayFn: "<",
-    itemIsSelectedFn: "<"
+    itemIsSelectedFn: "<",
+    filterPlaceholder: "@"
   },
   controller: ModalSelectMenuCtrl
 };
@@ -28,6 +29,7 @@ function ModalSelectMenuCtrl($mdDialog) {
         closeTo: $ctrl.openEvent.currentTarget,
         onComplete: $ctrl.handleOnComplete,
         clickOutsideToClose: true,
+        focusOnOpen: false,
         controller: ["$scope", "$element", "$mdDialog", "step", "users", "title", "items", "itemDisplayFn", "itemIsSelectedFn", function reassignDialogCtrl($scope, $element, $mdDialog, step, users, title, items, itemDisplayFn, itemIsSelectedFn) {
 
           $scope.step = step;
